@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="de" data-lang="de" data-scheme="skulls"
+      data-title-de="sKulls Forge – Forks, Addons und Repositories für Kodi"
+      data-title-en="sKulls Forge – forks, add-ons and repositories for Kodi"
+      data-desc-de="Kostenloses Windows-Tool: eigene Kodi-Forks aus offiziellen APKs bauen, eigene Addons entwickeln und ein eigenes Repository veröffentlichen – aus einem Guss."
+      data-desc-en="Free Windows tool: build your own Kodi forks from official APKs, develop your own add-ons and publish your own repository – cast in one piece.">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sKulls Forge – Forks, Addons und Repositories für Kodi</title>
+  <meta name="description" content="Kostenloses Windows-Tool: eigene Kodi-Forks aus offiziellen APKs bauen, eigene Addons entwickeln und ein eigenes Repository veröffentlichen – aus einem Guss.">
+  <meta name="theme-color" content="#111318">
+  <meta property="og:title" content="sKulls Forge">
+  <meta property="og:description" content="Aus einem Guss: Forks, Addons und Repositories für Kodi">
+  <meta property="og:image" content="assets/shots/de/skulls/overview.webp">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/logo-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/logo-256.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+</head>
+<body>
+<!-- Punktraster im Hintergrund (läuft beim Scrollen mit) -->
+<canvas class="bg-dots" aria-hidden="true"></canvas>
+
+<!-- ============ Navigation ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a>
+    <nav class="nav-links" aria-label="Seiten">
+      <a href="#features"><span lang="de">Funktionen</span><span lang="en">Features</span></a>
+      <a href="#schemes"><span lang="de">Farbschemata</span><span lang="en">Color schemes</span></a>
+      <a href="#changelog">Changelog</a>
+      <a href="#download">Download</a>
+    </nav>
+    <div class="nav-tools">
+      <a class="pill" data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        <span class="label">GitHub</span>
+      </a>
+      <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <button type="button" data-lang="de" aria-pressed="true">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <div class="scheme">
+        <button class="pill" id="scheme-toggle" type="button" aria-haspopup="true" aria-expanded="false"
+                title="Farbschema / Color scheme">
+          <i class="scheme-dot" aria-hidden="true"></i><span class="label" id="scheme-label">sKulls Neon</span>
+        </button>
+        <div class="scheme-menu" id="scheme-menu" role="menu" aria-label="Farbschema"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ Hero: Kamerafahrt ============ -->
+<section class="hero-scene" data-scene="hero">
+  <div class="stage">
+    <div class="cam">
+      <div class="wrap hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow"><b lang="de">Neu</b><b lang="en">New</b>
+          <span lang="de">Version 2 · jetzt mit eigenen Addons und Repository</span>
+          <span lang="en">Version 2 · now with your own add-ons and repository</span>
+        </div>
+        <h1 lang="de">Forks. Addons.<br>Repositories.<br><span style="color:var(--accent)">Aus einem Guss.</span></h1>
+        <h1 lang="en">Forks. Add-ons.<br>Repositories.<br><span style="color:var(--accent)">Cast in one piece.</span></h1>
+        <p class="lead" lang="de"><strong>sKulls Forge</strong> ist ein kostenloses Windows-Tool, das aus offiziellen
+          Kodi-APKs eigene Apps baut – mit eigenem Namen, Branding, fest eingebauten Addons und fertigen Einstellungen.
+          Dazu entwickelst du eigene Addons und veröffentlichst dein eigenes Repository. Alles in einer Oberfläche.</p>
+        <p class="lead" lang="en"><strong>sKulls Forge</strong> is a free Windows tool that turns official Kodi APKs
+          into your own apps – with your own name, branding, built-in add-ons and ready-made settings. On top, you
+          develop your own add-ons and publish your own repository. All in one interface.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#features">
+            <span lang="de">Entdecken</span><span lang="en">Explore</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#download">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>
+            Download <span class="soon" lang="de">bald</span><span class="soon" lang="en">soon</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-col" aria-hidden="true">
+          <i class="mark tl"></i><i class="mark tr"></i><i class="mark bl"></i><i class="mark br"></i>
+          <div class="app-icon"><img src="assets/img/logo-256.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="fly">
+      <div class="window">
+        <div class="window-bar"><img src="assets/img/logo-64.png" alt="" width="16" height="16">
+          <span class="title">sKulls Forge</span><span class="ctl"><i></i><i></i><i></i></span></div>
+        <img data-shot="overview" src="assets/shots/de/skulls/overview.webp" width="1400" height="877"
+             data-alt-de="Übersicht: alle Forks, Repositories und Addons auf einen Blick"
+             data-alt-en="Overview: all forks, repositories and add-ons at a glance"
+             alt="Übersicht: alle Forks, Repositories und Addons auf einen Blick">
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span lang="de">Scrollen</span><span lang="en">Scroll</span><i></i></div>
+  </div>
+</section>
+
+<!-- ============ Zahlen ============ -->
+<div class="wrap reveal">
+  <div class="stats">
+    <div class="stat"><b>18–22</b><span lang="de">Kodi-Versionen (Leia bis Piers)</span><span lang="en">Kodi versions (Leia to Piers)</span></div>
+    <div class="stat"><b>2</b><span lang="de">CPU-Varianten in einem Durchgang</span><span lang="en">CPU variants in one run</span></div>
+    <div class="stat"><b>5</b><span lang="de">Addon-Vorlagen</span><span lang="en">add-on templates</span></div>
+    <div class="stat"><b>8</b><span lang="de">Farbschemata, DE/EN</span><span lang="en">color schemes, DE/EN</span></div>
+  </div>
+</div>
+
+<!-- ============ Feature-Tour ============ -->
+<section id="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker" lang="de">Alles in einem Werkzeug</div><div class="kicker" lang="en">Everything in one tool</div>
+        <h2 lang="de">Bauen, formen,<br>veröffentlichen.</h2><h2 lang="en">Build, shape,<br>publish.</h2>
+      </div>
+      <p lang="de">Vom Original-Kodi zur eigenen App, vom Addon-Entwurf zur fertigen ZIP und vom Ordner zum
+        öffentlichen Repository – ohne zwischen Programmen zu wechseln.</p>
+      <p lang="en">From stock Kodi to your own app, from add-on draft to finished ZIP and from folder to public
+        repository – without switching between programs.</p>
+    </div>
+
+    <div class="tour reveal">
+      <div class="tour-tabs" role="tablist">
+        <button class="tour-tab" role="tab" aria-selected="true" data-view="overview"
+                data-alt-de="Übersicht aller Forks, Repositories und Addons" data-alt-en="Overview of all forks, repositories and add-ons">
+          <strong><span class="n">01</span><span lang="de">Übersicht</span><span lang="en">Overview</span></strong>
+          <p lang="de">Alle Forks, Repositories und Addons auf einen Blick: Version, Kodi-Basis, letzter Build, Zeitplan, neue Kodi-Version und GitHub-Downloads.</p>
+          <p lang="en">All forks, repositories and add-ons at a glance: version, Kodi base, last build, schedule, new Kodi version and GitHub downloads.</p>
+        </button>
+        <button class="tour-tab" role="tab" aria-selected="false" data-view="fork"
+                data-alt-de="Fork aus einer Original-APK" data-alt-en="Fork from an original APK">
+          <strong><span class="n">02</span><span lang="de">Fork aus Original-APK</span><span lang="en">Fork from original APK</span></strong>
+          <p lang="de">Neuer Package-Name – der Fork läuft neben dem Original. Batch-Build für arm64 und armv7, Update-Builds mit update.json und „Was ist neu“.</p>
+          <p lang="en">New package name – the fork runs next to the original. Batch build for arm64 and armv7, update builds with update.json and “What's new”.</p>
+        </button>
+        <button class="tour-tab" role="tab" aria-selected="false" data-view="branding"
+                data-alt-de="Branding: Icon, Banner, Splash" data-alt-en="Branding: icon, banner, splash">
+          <strong><span class="n">03</span>Branding</strong>
+          <p lang="de">App-Icon, Android-TV-Banner, Splash-Screen und Vendor-Logo – automatisch in alle Größen skaliert. Dazu Estuary-Hauptmenü und eigener Hintergrund.</p>
+          <p lang="en">App icon, Android TV banner, splash screen and vendor logo – scaled to all sizes automatically. Plus the Estuary main menu and your own background.</p>
+        </button>
+        <button class="tour-tab" role="tab" aria-selected="false" data-view="embed"
+                data-alt-de="Addons fest in die APK einbetten" data-alt-en="Embed add-ons into the APK">
+          <strong><span class="n">04</span><span lang="de">Addons einbetten</span><span lang="en">Embed add-ons</span></strong>
+          <p lang="de">Addons und Repositories fest einbauen, direkt aus dem Kodi-Repository passend zu Kodi-Version und CPU, Einstellungen vorbelegen und die APK verkleinern.</p>
+          <p lang="en">Build in add-ons and repositories, straight from the Kodi repository matching Kodi version and CPU, preset their settings and slim down the APK.</p>
+        </button>
+        <button class="tour-tab" role="tab" aria-selected="false" data-view="addons"
+                data-alt-de="Eigene Addons entwickeln und prüfen" data-alt-en="Develop and check your own add-ons">
+          <strong><span class="n">05</span><span lang="de">Eigene Addons</span><span lang="en">Your own add-ons</span></strong>
+          <p lang="de">Aus Vorlagen anlegen, addon.xml bearbeiten, für Kodi 18–22 prüfen (Python-Version, Syntax, Abhängigkeiten), Version samt Changelog erhöhen, saubere ZIP bauen und per ADB testen.</p>
+          <p lang="en">Create from templates, edit the addon.xml, check for Kodi 18–22 (Python version, syntax, dependencies), bump the version with changelog, build a clean ZIP and test via ADB.</p>
+        </button>
+        <button class="tour-tab" role="tab" aria-selected="false" data-view="repo"
+                data-alt-de="Eigenes Kodi-Repository" data-alt-en="Your own Kodi repository">
+          <strong><span class="n">06</span><span lang="de">Eigenes Repository</span><span lang="en">Your own repository</span></strong>
+          <p lang="de">addons.xml mit Prüfsummen, Zweige für Kodi 18 und 19+, Repository-Addon und index.html – hochgeladen per FTP/SFTP oder in einem Commit zu GitHub Pages.</p>
+          <p lang="en">addons.xml with checksums, branches for Kodi 18 and 19+, repository add-on and index.html – uploaded via FTP/SFTP or in one commit to GitHub Pages.</p>
+        </button>
+        <button class="tour-tab" role="tab" aria-selected="false" data-view="settings"
+                data-alt-de="Einstellungen: Farbschema, Projekt-Ordner, Upload-Ziele" data-alt-en="Settings: color scheme, project folder, upload targets">
+          <strong><span class="n">07</span><span lang="de">Einstellungen</span><span lang="en">Settings</span></strong>
+          <p lang="de">Ein Projekt-Ordner für alle Daten, zentrale Upload-Ziele mit Verbindungstest, acht Farbschemata, Sprachen und eine Werkseinstellung mit Papierkorb.</p>
+          <p lang="en">One project folder for all data, central upload targets with connection test, eight color schemes, languages and a factory reset with recycle bin.</p>
+        </button>
+      </div>
+      <div class="window">
+        <div class="window-bar"><img src="assets/img/logo-64.png" alt="" width="16" height="16">
+          <span class="title">sKulls Forge</span><span class="ctl"><i></i><i></i><i></i></span></div>
+        <img id="tour-shot" data-shot="overview" src="assets/shots/de/skulls/overview.webp" width="1400" height="877"
+             data-alt-de="Übersicht aller Forks, Repositories und Addons" data-alt-en="Overview of all forks, repositories and add-ons"
+             alt="Übersicht aller Forks, Repositories und Addons" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Raster: was noch drin ist ============ -->
+<section style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="grid-panel">
+      <i class="mark tl"></i><i class="mark tr"></i><i class="mark bl"></i><i class="mark br"></i><i class="mark tc"></i><i class="mark bc"></i>
+      <div class="grid-intro">
+        <canvas class="dither dim" aria-hidden="true"></canvas>
+        <h2 lang="de">Gebaut auf dem, was Kodi schon kann.</h2>
+        <h2 lang="en">Built on what Kodi already does.</h2>
+        <div class="cells">
+          <div class="cell"><span class="num">01</span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 7a4 4 0 11-3.9 4.9L3 20v-3h3v-3h3l2.1-2.1"/><circle cx="16" cy="7" r="1"/></svg>
+            <h3 lang="de">Signatur mit Schutz</h3><h3 lang="en">Signing with protection</h3>
+            <p lang="de">Keystore-Verwaltung, automatische Sicherung und Zertifikat-Prüfung – Updates passen immer.</p>
+            <p lang="en">Keystore management, automatic backup and certificate check – updates always fit.</p></div>
+          <div class="cell"><span class="num">02</span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+            <h3 lang="de">ADB &amp; Gerätetest</h3><h3 lang="en">ADB &amp; device test</h3>
+            <p lang="de">Per USB oder WLAN installieren, auf allen Geräten gleichzeitig – mit Absturzprüfung und Screenshot.</p>
+            <p lang="en">Install via USB or Wi-Fi, on all devices at once – with crash check and screenshot.</p></div>
+          <div class="cell"><span class="num">03</span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/></svg>
+            <h3 lang="de">Kindersicherung</h3><h3 lang="en">Parental lock</h3>
+            <p lang="de">Kodis Master-Lock mit Code und gesperrten Bereichen – ideal für eine Kids-Variante.</p>
+            <p lang="en">Kodi's master lock with a code and locked areas – ideal for a kids variant.</p></div>
+          <div class="cell"><span class="num">04</span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <h3 lang="de">Automatische Builds</h3><h3 lang="en">Automatic builds</h3>
+            <p lang="de">Nachts per Aufgabenplanung: neues Kodi übernehmen, bauen, hochladen – mit Download-Seite.</p>
+            <p lang="en">At night via Task Scheduler: take over new Kodi, build, upload – with a download page.</p></div>
+        </div>
+      </div>
+      <div class="grid-hot">
+        <canvas class="dither" aria-hidden="true"></canvas>
+        <div class="cells">
+          <div class="cell" style="border-top:0"><span class="num">05</span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            <h3 lang="de">Gesamtsicherung</h3><h3 lang="en">Full backup</h3>
+            <p lang="de">Alle Projekte, Keystores und Einstellungen verschlüsselt (AES-256) in einer Datei – für den Umzug auf einen neuen PC.</p>
+            <p lang="en">All projects, keystores and settings encrypted (AES-256) in one file – for moving to a new PC.</p></div>
+          <div class="cell" style="border-top:0"><span class="num">06</span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+            <h3 lang="de">Kommandozeile</h3><h3 lang="en">Command line</h3>
+            <p lang="de">Bauen, prüfen, sichern und Repositories veröffentlichen – auch ohne Oberfläche, z.B. im Skript.</p>
+            <p lang="en">Build, check, back up and publish repositories – without the interface too, e.g. in a script.</p></div>
+          <div class="cell"><span class="num">07</span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 010 12h-3"/></svg>
+            <h3 lang="de">Rückgängig &amp; Kürzel</h3><h3 lang="en">Undo &amp; shortcuts</h3>
+            <p lang="de">Jede Änderung am Profil lässt sich zurücknehmen; Tastenkürzel für alle wichtigen Aktionen.</p>
+            <p lang="en">Every change to the profile can be undone; keyboard shortcuts for all important actions.</p></div>
+          <div class="cell"><span class="num">08</span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+            <h3 lang="de">Weitere Sprachen</h3><h3 lang="en">More languages</h3>
+            <p lang="de">Deutsch und Englisch eingebaut, weitere per Sprachdatei (.po) oder vom Sprach-Server.</p>
+            <p lang="en">German and English built in, more via language files (.po) or from the language server.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Farbschemata ============ -->
+<section id="schemes" style="padding-top:20px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker" lang="de">Dein Look</div><div class="kicker" lang="en">Your look</div>
+        <h2 lang="de">Acht Farbschemata –<br>wie im Tool.</h2><h2 lang="en">Eight color schemes –<br>just like the tool.</h2>
+      </div>
+      <p lang="de">Klick auf ein Schema: Diese Seite und alle Screenshots wechseln mit. Oben rechts lässt
+        es sich jederzeit wieder wechseln.</p>
+      <p lang="en">Click a scheme: this page and all screenshots switch along. Switch again any time at the
+        top right.</p>
+    </div>
+    <div class="schemes reveal">
+      <button class="scheme-card" type="button" data-scheme-choice="dark"><img data-shot="overview" data-scheme-shot="dark" src="assets/shots/de/dark/overview.webp" alt="" loading="lazy"><span><i class="swatch" style="--s-bg:#202020;--s-accent:#4ca3ff"></i><b data-scheme-name="dark">Dunkel</b></span></button>
+      <button class="scheme-card" type="button" data-scheme-choice="light"><img data-shot="overview" data-scheme-shot="light" src="assets/shots/de/light/overview.webp" alt="" loading="lazy"><span><i class="swatch" style="--s-bg:#f3f3f3;--s-accent:#0067c0"></i><b data-scheme-name="light">Hell</b></span></button>
+      <button class="scheme-card" type="button" data-scheme-choice="skulls"><img data-shot="overview" data-scheme-shot="skulls" src="assets/shots/de/skulls/overview.webp" alt="" loading="lazy"><span><i class="swatch" style="--s-bg:#111318;--s-accent:#3d8bff"></i><b data-scheme-name="skulls">sKulls Neon</b></span></button>
+      <button class="scheme-card" type="button" data-scheme-choice="midnight"><img data-shot="overview" data-scheme-shot="midnight" src="assets/shots/de/midnight/overview.webp" alt="" loading="lazy"><span><i class="swatch" style="--s-bg:#0f172a;--s-accent:#38bdf8"></i><b data-scheme-name="midnight">Mitternacht</b></span></button>
+      <button class="scheme-card" type="button" data-scheme-choice="graphite"><img data-shot="overview" data-scheme-shot="graphite" src="assets/shots/de/graphite/overview.webp" alt="" loading="lazy"><span><i class="swatch" style="--s-bg:#1c1c1e;--s-accent:#ff9f0a"></i><b data-scheme-name="graphite">Graphit</b></span></button>
+      <button class="scheme-card" type="button" data-scheme-choice="nord"><img data-shot="overview" data-scheme-shot="nord" src="assets/shots/de/nord/overview.webp" alt="" loading="lazy"><span><i class="swatch" style="--s-bg:#2e3440;--s-accent:#88c0d0"></i><b data-scheme-name="nord">Nord</b></span></button>
+      <button class="scheme-card" type="button" data-scheme-choice="sand"><img data-shot="overview" data-scheme-shot="sand" src="assets/shots/de/sand/overview.webp" alt="" loading="lazy"><span><i class="swatch" style="--s-bg:#f4efe6;--s-accent:#a8561c"></i><b data-scheme-name="sand">Sand</b></span></button>
+      <button class="scheme-card" type="button" data-scheme-choice="mint"><img data-shot="overview" data-scheme-shot="mint" src="assets/shots/de/mint/overview.webp" alt="" loading="lazy"><span><i class="swatch" style="--s-bg:#eef5f2;--s-accent:#0f8a6a"></i><b data-scheme-name="mint">Mint</b></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Changelog ============ -->
+<section id="changelog">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker">Changelog</div>
+        <h2 lang="de">Was sich<br>getan hat.</h2><h2 lang="en">What's<br>new.</h2>
+      </div>
+      <p lang="de">Vom Fork Builder zur Schmiede für alles rund um Kodi: Forks, Addons und Repositories.</p>
+      <p lang="en">From fork builder to a forge for everything around Kodi: forks, add-ons and repositories.</p>
+    </div>
+    <div class="timeline">
+      <article class="release current reveal">
+        <div><div class="ver" lang="de">In Arbeit</div><div class="ver" lang="en">In progress</div>
+          <div class="date" lang="de">nächste Version</div><div class="date" lang="en">next version</div></div>
+        <div>
+          <h3 lang="de">Addons, Repository und neue Oberfläche</h3><h3 lang="en">Add-ons, repository and a new interface</h3>
+          <ul lang="de">
+            <li><strong>Neuer Name sKulls Forge</strong> – „Aus einem Guss: Forks, Addons und Repositories für Kodi“</li>
+            <li><strong>Seitenleiste</strong> mit Übersicht, Forks, Addons, Repository, Wizard, Einstellungen, Werkzeugen und Detail-Log</li>
+            <li><strong>Eigene Addons</strong>: Vorlagen, Bearbeiten, Prüfung für Kodi 18–22, Version und Changelog, saubere ZIP, Test per ADB</li>
+            <li><strong>Eigenes Repository</strong>: addons.xml mit Prüfsummen, Zweige für Kodi 18 und 19+, Upload per FTP/SFTP oder GitHub Pages</li>
+            <li><strong>Projekt-Ordner</strong> in Dokumente mit je einem Ordner pro Projekt, zentrale <strong>Upload-Ziele</strong>, Werkseinstellung</li>
+            <li>Übersicht mit Repositories und Addons, Tooltips in allen Tabellen</li>
+          </ul>
+          <ul lang="en">
+            <li><strong>New name sKulls Forge</strong> – “Cast in one piece: forks, add-ons and repositories for Kodi”</li>
+            <li><strong>Sidebar</strong> with overview, forks, add-ons, repository, wizard, settings, tools and detail log</li>
+            <li><strong>Your own add-ons</strong>: templates, editing, check for Kodi 18–22, version and changelog, clean ZIP, test via ADB</li>
+            <li><strong>Your own repository</strong>: addons.xml with checksums, branches for Kodi 18 and 19+, upload via FTP/SFTP or GitHub Pages</li>
+            <li><strong>Project folder</strong> in Documents with one folder per project, central <strong>upload targets</strong>, factory reset</li>
+            <li>Overview with repositories and add-ons, tooltips in all tables</li>
+          </ul>
+        </div>
+      </article>
+      <article class="release reveal">
+        <div><div class="ver">2.0.0</div><div class="date">2026-09-29</div></div>
+        <div>
+          <h3 lang="de">Großes Update</h3><h3 lang="en">Big update</h3>
+          <ul lang="de">
+            <li><strong>8 Farbschemata</strong>, Startbildschirm, Symbole an Tabs, Menüs und Knöpfen</li>
+            <li><strong>Übersicht aller Forks</strong> als Startseite, Rückgängig/Wiederholen, Tastenkürzel</li>
+            <li>Übersetzungen als <strong>.po-Dateien</strong> und ein Sprach-Server für weitere Sprachen</li>
+            <li>Verschlüsselte <strong>Gesamtsicherung</strong> (AES-256) und bereinigtes Diagnosepaket</li>
+            <li><strong>Kindersicherung</strong>, „Was ist neu“ nach Updates, Download-Seite mit abgesicherter update.json</li>
+          </ul>
+          <ul lang="en">
+            <li><strong>8 color schemes</strong>, splash screen, icons on tabs, menus and buttons</li>
+            <li><strong>Overview of all forks</strong> as start page, undo/redo, keyboard shortcuts</li>
+            <li>Translations as <strong>.po files</strong> and a language server for more languages</li>
+            <li>Encrypted <strong>full backup</strong> (AES-256) and a cleaned diagnostic package</li>
+            <li><strong>Parental lock</strong>, “What's new” after updates, download page with a secured update.json</li>
+          </ul>
+        </div>
+      </article>
+      <article class="release reveal">
+        <div><div class="ver">1.0.0</div><div class="date" lang="de">Erste Version</div><div class="date" lang="en">First release</div></div>
+        <div>
+          <h3>sKulls Kodi Fork Builder</h3>
+          <ul lang="de"><li>Fork aus offiziellen Kodi-APKs mit neuem Package-Namen, Branding, eingebetteten Addons, Kodi-Einstellungen, Signatur, Update-Builds, ADB-Installation und Gerätetest</li></ul>
+          <ul lang="en"><li>Fork from official Kodi APKs with a new package name, branding, embedded add-ons, Kodi settings, signing, update builds, ADB install and device test</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Download ============ -->
+<section id="download" style="padding-top:40px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker">Download</div>
+        <h2 lang="de">Bald zum<br>Download.</h2><h2 lang="en">Download<br>coming soon.</h2>
+      </div>
+      <p lang="de">Der Installer entsteht, sobald das Tool komplett ausgebaut ist. Python und Java kommen mit – du
+        musst nichts extra installieren. Jede Datei bekommt ihre SHA-256-Prüfsumme.</p>
+      <p lang="en">The installer will be built once the tool is complete. Python and Java are included – nothing
+        extra to install. Every file gets its SHA-256 checksum.</p>
+    </div>
+    <div class="downloads reveal">
+      <div class="dl" data-download="installer">
+        <header><h3 lang="de">Installer</h3><h3 lang="en">Installer</h3><span class="soon" lang="de">bald</span><span class="soon" lang="en">soon</span></header>
+        <p lang="de">Einrichtung mit Verknüpfungen, Dateizuordnung für .skbackup und sicherer Deinstallation – deine Keystores bleiben erhalten.</p>
+        <p lang="en">Setup with shortcuts, file association for .skbackup and a safe uninstall – your keystores are kept.</p>
+        <code class="file">sKulls-Forge-Setup-2.x.exe</code><span class="hash"></span>
+        <a class="btn btn-ghost" href="#download" aria-disabled="true">
+          <span data-when="soon"><span lang="de">Bald verfügbar</span><span lang="en">Coming soon</span></span>
+          <span data-when="ready"><span lang="de">Herunterladen</span><span lang="en">Download</span></span></a>
+      </div>
+      <div class="dl" data-download="portable">
+        <header><h3>Portable</h3><span class="soon" lang="de">bald</span><span class="soon" lang="en">soon</span></header>
+        <p lang="de">Als ZIP zum Entpacken, z.B. auf einen USB-Stick. Die Daten liegen wie gewohnt im Projekt-Ordner.</p>
+        <p lang="en">As a ZIP to unpack, e.g. onto a USB stick. Your data stays in the project folder as usual.</p>
+        <code class="file">sKulls-Forge-Portable-2.x.zip</code><span class="hash"></span>
+        <a class="btn btn-ghost" href="#download" aria-disabled="true">
+          <span data-when="soon"><span lang="de">Bald verfügbar</span><span lang="en">Coming soon</span></span>
+          <span data-when="ready"><span lang="de">Herunterladen</span><span lang="en">Download</span></span></a>
+      </div>
+      <div class="dl" data-download="source">
+        <header><h3 lang="de">Quellcode</h3><h3 lang="en">Source code</h3><span class="soon" lang="de">bald</span><span class="soon" lang="en">soon</span></header>
+        <p lang="de">Der Python-Quellcode kommt auf GitHub – mit README, Changelog und Kommandozeile.</p>
+        <p lang="en">The Python source code is coming to GitHub – with README, changelog and command line.</p>
+        <code class="file">GitHub</code><span class="hash"></span>
+        <a class="btn btn-ghost" href="#download" aria-disabled="true">
+          <span data-when="soon"><span lang="de">Bald verfügbar</span><span lang="en">Coming soon</span></span>
+          <span data-when="ready"><span lang="de">Zu GitHub</span><span lang="en">To GitHub</span></span></a>
+      </div>
+    </div>
+    <div class="req reveal">
+      <span lang="de">Windows 10 / 11 (64 Bit)</span><span lang="en">Windows 10 / 11 (64-bit)</span>
+      <span lang="de">Python und Java inklusive</span><span lang="en">Python and Java included</span>
+      <span lang="de">Offizielle Kodi-APKs 18–22</span><span lang="en">Official Kodi APKs 18–22</span>
+      <span lang="de">ADB mitgeliefert</span><span lang="en">ADB bundled</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Mitmachen ============ -->
+<section class="cta">
+  <div class="wrap reveal">
+    <h2 lang="de">Schmiede mit.</h2><h2 lang="en">Forge with us.</h2>
+    <p lang="de">sKulls Forge wächst mit seinen Nutzern. Ideen, Fehler oder Wünsche? Schau auf GitHub vorbei.</p>
+    <p lang="en">sKulls Forge grows with its users. Ideas, bugs or wishes? Drop by on GitHub.</p>
+    <a class="btn btn-primary" data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      <span lang="de">Auf GitHub</span><span lang="en">On GitHub</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#top"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a>
+      <p class="disclaimer" lang="de">Kodi® ist eine Marke der XBMC Foundation. sKulls Forge steht in keiner Verbindung zur
+        XBMC Foundation und ist kein offizielles Kodi-Produkt. Es nutzt offizielle Kodi-APKs als Grundlage; mit dem Tool
+        erstellte Forks müssen die GPL-Lizenz von Kodi einhalten. © <span id="year">2026</span> sKulls</p>
+      <p class="disclaimer" lang="en">Kodi® is a trademark of the XBMC Foundation. sKulls Forge is not affiliated with
+        the XBMC Foundation and is not an official Kodi product. It uses official Kodi APKs as its base; forks created
+        with the tool must comply with Kodi's GPL license. © 2026 sKulls</p>
+    </div>
+    <nav aria-label="Fußzeile">
+      <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Legal notice</span></a>
+      <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
+      <a href="#changelog">Changelog</a>
+      <a data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ============ Schleife: Kamera zoomt in die eigene Startseite und landet wieder oben ============ -->
+<section class="loop-scene" data-scene="loop" aria-hidden="true">
+  <div class="stage">
+    <div class="loop-cam">
+      <p class="loop-intro"><span lang="de">Und noch einmal von vorn</span><span lang="en">And once more from the top</span></p>
+      <div class="window loop-window">
+        <div class="window-bar"><img src="assets/img/logo-64.png" alt="" width="16" height="16">
+          <span class="title">sKulls Forge</span><span class="ctl"><i></i><i></i><i></i></span></div>
+        <div class="loop-screen"><div class="mini"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Großansicht"><img alt=""></div>
+</body>
+</html>
