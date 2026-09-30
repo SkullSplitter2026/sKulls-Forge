@@ -1,7 +1,7 @@
 /* Einstellungen der Website – hier zentral ändern */
 window.FORGE_SITE = {
   // GitHub-Link oben, im Mitmach-Bereich und in der Fußzeile (später z.B. das Repo des Tools)
-  github: "https://github.com/SkullSplitter2026",
+  github: "https://github.com/SkullSplitter2026/sKulls-Forge",
 
   // Downloads: solange url leer ist, steht dort „Bald verfügbar“
   downloads: {
