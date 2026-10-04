@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="assets/img/logo.png" alt="sKulls Forge" width="160">
+<img src="resources/logo.png" alt="sKulls Forge" width="160">
 
 # sKulls Forge
 
@@ -14,7 +14,7 @@
 <br>
 **Build your own Kodi forks from official Kodi APKs – with branding, add-ons, settings, signing and ADB install**
 
-![Version](https://img.shields.io/badge/version-2.0.0-2f6fb5?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-3.5.0-2f6fb5?style=for-the-badge)
 ![Python](https://img.shields.io/badge/python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Kodi](https://img.shields.io/badge/Kodi-18%20Leia%20→%2022%20Piers-17B2E7?style=for-the-badge&logo=kodi&logoColor=white)
 ![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D6?style=for-the-badge&logo=windows&logoColor=white)
@@ -22,6 +22,8 @@
 ![Sprachen](https://img.shields.io/badge/Sprachen-DE%20·%20EN%20·%20%2B%20.po-8a4fff?style=for-the-badge)
 
 ### 🌐 [🇩🇪 Deutsch](#de) &nbsp;·&nbsp; [🇬🇧 English](#en) &nbsp;·&nbsp; 📜 [Versionsverlauf / Changelog](CHANGELOG.md)
+
+🔗 **Website:** [skullsplitter2026.github.io/sKulls-Forge](https://skullsplitter2026.github.io/sKulls-Forge/)
 
 </div>
 
@@ -58,6 +60,7 @@
   - [🎛️ Tab 6 – Kodi-Einstellungen](#de-f-kodi)
   - [🔐 Tab 7 – Signatur](#de-f-signatur)
   - [🏗️ Tab 8 – Build & Installation](#de-f-build)
+  - [📺 Tab 9 – Fork-Funktionen](#de-f-fork)
   - [🔎 Tab Detail-Log](#de-f-detaillog)
   - [🔒 Kindersicherung](#de-f-kindersicherung)
   - [🗂️ Profile](#de-f-profile)
@@ -70,6 +73,7 @@
   - [🧭 Übersicht aller Forks](#de-f-uebersicht)
   - [🧩 Eigene Addons](#de-f-addons)
   - [🗂️ Eigenes Repository](#de-f-repository)
+  - [🧙 Eigener Wizard](#de-f-wizard)
   - [💾 Gesamtsicherung](#de-f-gesamtsicherung)
   - [⌨️ Tastatur, Rückgängig & Barrierefreiheit](#de-f-tastatur)
   - [🩺 Diagnosepaket](#de-f-diagnose)
@@ -498,6 +502,27 @@ python main.py
 | 🔳 **QR-Codes** | Zu jeder APK ein `…_qr.png` mit dem Download-Link (sobald eine Download-Adresse bekannt ist) – zum Abscannen mit dem Handy. Benötigt `pip install qrcode`. |
 | 📜 **Log** | Alle Ausgaben farbig (Fehler, Warnungen, Erfolg), löschen und speichern. |
 
+<a id="de-f-fork"></a>
+
+### 📺 Tab 9 – Fork-Funktionen
+
+Alles, was der Fork später **beim Nutzer** kann – ohne eigenes Addon schreiben zu müssen.
+
+| Feature | Erklärung |
+|---|---|
+| 🧰 **Fork-Center** | Eigener Menüpunkt in den Favoriten: Wartung (Cache, Vorschaubilder, Addons neu laden, Log hochladen, Startzeit-Analyse), Sicherung auf USB-Stick/Netzwerk und zurück, Hilfe/FAQ (DE/EN mit Bildern), Support-Info mit kurzem Code, Zurücksetzen auf den Auslieferungszustand. Läuft unter Kodi 18 bis 22. |
+| 📢 **Mitteilungen** | Der Fork zeigt beim Start Mitteilungen aus einer `messages.json` auf deinem Server – jede nur einmal, DE/EN. Vorlage mit *messages.json speichern*. |
+| 🧯 **Absturzberichte** | Nach einem Absturz fragt der Fork, ob das Log (ohne Zugangsdaten) an deinen Server oder einen Discord-Webhook gehen darf. |
+| 🧹 **Speicherpflege** | Hintergrund-Dienst: Vorschaubilder ausdünnen, alte Logs löschen – Abstände und Grenzen hier einstellbar. |
+| 📱📺 **Geräteprofile** | Erkennt Handy, Tablet, TV-Box oder Fire TV und passt Oberflächengröße, Bildwiederholrate und Puffer an. |
+| 🔑 **Zugangsdaten abfragen** | Passwörter, MAC-Adressen oder Portal-Zugänge kommen nicht ins APK: der Fork fragt sie beim ersten Start ab. |
+| 👨‍👩‍👧 **Familie & Kiosk** | Kinderprofil mit Anmeldebildschirm und ausgeblendeten Menüpunkten, Bildschirmzeit pro Tag (mit Code verlängerbar), Kiosk-Modus für Hotel, Wartezimmer oder Ferienwohnung. Im Fork steht nur der SHA-256-Wert des Codes. |
+| 🖼️ **Oberfläche** | Bildschirmschoner mit Fork-Logo oder Diashow, Fernbedienungs-Vorlagen (Fire TV, Shield, Mi Box, Air-Mouse), RSS-Laufschrift, externe Player (`playercorefactory.xml`), `advancedsettings.xml` als Formular mit Vorlagen. |
+| 🚀 **App & Updates** | App-Name je Sprache, Autostart nach dem Einschalten (TV-Boxen), Addon-Updates pro Addon sperren, **In-App-Update** (der Fork lädt die APK selbst und öffnet den Installer), **Pflicht-Update** ab Version-Code, Fire-TV-Downloader-Code für die Download-Seite, RSS-Feed neuer Versionen. |
+
+> 💡 **Rollback:** Im Build-Verlauf baut *Als Rollback bauen* einen früheren Stand mit einem höheren Version-Code –
+> Android erlaubt kein Zurückgehen, so bekommen alle Forks ihn als normales Update.
+
 <a id="de-f-detaillog"></a>
 
 ### 🔎 Tab Detail-Log
@@ -606,9 +631,11 @@ eingebettete Addons, gesetzte Standard-Einstellungen, Userdata und **alle Warnun
 
 | Feature | Erklärung |
 |---|---|
-| 🧭 **Seitenleiste** | Links stehen die Bereiche **Übersicht**, **Forks** (die Tabs 1–8), **Addons**, **Repository** und **Wizard**, unten **Einklappen**, **Einstellungen**, **Werkzeuge** und **Detail-Log**. Eingeklappt bleiben nur die Symbole (Name als Tooltip). Bei schmalem Fenster (unter 1360 Pixel) klappt sie automatisch ein; Tabs, die nicht ganz ins Fenster passen, lassen sich scrollen. *Wizard* ist noch im Aufbau und zeigt, was geplant ist. |
+| 🧭 **Seitenleiste** | Links stehen die Bereiche **Übersicht**, **Forks** (die Tabs 1–8), **Addons**, **Repository** und **Wizard**, unten **Einklappen**, **Einstellungen**, **Werkzeuge** und **Detail-Log**. Eingeklappt bleiben nur die Symbole (Name als Tooltip). Bei schmalem Fenster (unter 1360 Pixel) klappt sie automatisch ein; Tabs, die nicht ganz ins Fenster passen, lassen sich scrollen. |
 | ⚙️ **Einstellungen** | `Strg+,`: *Bereinigen / Werkseinstellung* (Zwischenspeicher, Protokolle, Einstellungen, Projekt-Ordner – mit Papierkorb und vorheriger Gesamtsicherung), Farbschema, Startbildschirm, Seitenleiste, Sprache und Sprach-Server, **Projekt-Ordner** (anzeigen, ändern, Ordner anlegen, Daten übernehmen), **Upload-Ziele** (FTP, FTPS, SFTP, GitHub – mit *Verbindung testen*; Fork-Upload und Repository wählen nur noch Ziel und Unterordner), Werkzeuge (apktool-Pfad, gefundene Programme), Suche nach neuen Kodi-Versionen beim Start, Ordner öffnen. |
-| 🧰 **Werkzeuge** | Alle Helfer als Kacheln: Gesamtsicherung, Diagnosepaket, Kodi-APK herunterladen, neue Kodi-Version prüfen, Build-Verlauf, Builds vergleichen, Zeitplan, Profil teilen, Ordner. |
+| ⚡ **Schneller bauen** | *Einstellungen*: mehrere APKs gleichzeitig bauen und Build-Cache (entpackte Original-APK wiederverwenden). Vor einem Update per ADB werden die Daten des installierten Forks gesichert. |
+| 🔔 **Benachrichtigung & Web** | Nach dem Build Nachricht per Telegram (auch mit APK), Discord oder E-Mail. Web-Oberfläche: Builds im Browser oder vom Handy starten (Passwort, standardmäßig nur dieser PC). |
+| 🧰 **Werkzeuge** | Alle Helfer als Kacheln: Gesamtsicherung, Diagnosepaket, Kodi-APK herunterladen, neue Kodi-Version prüfen, Build-Verlauf, Builds vergleichen, Zeitplan, Profil teilen, Ordner – dazu APK-Größe, Kodi-Log prüfen, Download-Statistik, Abhängigkeitsbaum, Skin-Einstellungen, Portal-Seite, Kodi-Nightly prüfen, Windows-Portable, Gerät per QR-Code koppeln, Bildschirm spiegeln (scrcpy), Geräte-Info und Daten zurückspielen. |
 | 🎨 **Farbschemata** | *Einstellungen*, *Ansicht → Farbschema* oder das ☀-Symbol oben rechts: **System** (folgt der Windows-Einstellung live), die ursprünglichen Designs **Hell** und **Dunkel** sowie **sKulls Neon**, **Mitternacht**, **Graphit**, **Nord** (dunkel) und **Sand**, **Mint** (hell). Dunkle Schemata bekommen eine dunkle Titelleiste. |
 | ✨ **Symbole** | Tabs, Menüeinträge und die wichtigsten Knöpfe haben Symbole (Windows-Symbolschrift Segoe Fluent Icons) – scharf in jeder Größe und immer in der Farbe des Schemas. Hauptaktionen wie **FORK BUILD** sind in der Akzentfarbe hervorgehoben. |
 | 🖼️ **Startbildschirm** | Beim Start erscheint das sKulls-Logo mit Name, Slogan, Version und Fortschritt. Abschaltbar über *Ansicht → Startbildschirm anzeigen*. Das Logo ist auch Fenstersymbol und steht im Kopfbereich. |
@@ -657,6 +684,7 @@ In der Seitenleiste unter **Addons** entstehen eigene Kodi-Addons. Jedes Addon i
 | ✨ **Neu aus Vorlage…** | Video-Plugin (`plugin.video.…`), Programm-Script (`script.…`), Dienst (`service.…`), Kontextmenü (`context.…`) oder Bibliothek (`script.module.…`). Angelegt werden `addon.xml`, lauffähiger Beispielcode (Python 2 und 3), `settings.xml`, Sprachdateien Englisch/Deutsch, `changelog.txt` und ein Symbol. Die ID wird aus Art und Name vorgeschlagen. |
 | 📥 **Übernehmen…** | Vorhandenes Addon als ZIP oder Ordner in den Addons-Ordner holen (z.B. ein angepasstes `pvr.stalker`) – ohne `.git`, `__pycache__`, `.pyc`. |
 | 📝 **Angaben** | Name, Version, Anbieter, Kurzbeschreibung, Beschreibung, Neuigkeiten, Lizenz, Webseite, Quellcode und die Kodi-Version (setzt `xbmc.python`: Kodi 18 = 2.26.0, Kodi 19+ = 3.0.0, Kodi 20+ = 3.0.1). *Speichern* schreibt die `addon.xml` – Erweiterungen, weitere Sprachen und Kommentare bleiben erhalten. |
+| ✍️ **Formatierung** | Der ✎-Knopf neben Name, Anbieter, Kurzbeschreibung, Beschreibung und Neuigkeiten öffnet einen Editor wie in Kodi: **Fett**, *Kursiv*, Farbe (eigene Palette, eigene und zuletzt benutzte Farben), Groß-/Kleinschreibung und Zeilenumbruch, mit Quelltext-Ansicht, Vorschau und Hinweisen auf fehlerhafte Tags. Namen nur mit Fett und Farbe. Gibt es auch beim Repository und beim Wizard. |
 | 🔗 **Abhängigkeiten** | Hinzufügen, bearbeiten (Mindestversion, optional) und entfernen. Die Spalte *Stand* zeigt, ob das Addon im Addons-Ordner liegt, zu Kodi gehört oder aus einem Repository kommen muss. *Online prüfen* sucht fehlende im offiziellen Kodi-Repository. |
 | 🔢 **Version erhöhen…** | Neue Version mit Änderungen (eine je Zeile): Eintrag oben in `changelog.txt` und wahlweise in `<news>`. |
 | 🔎 **Prüfen** | `addon.xml`, ID, Version, Name/Anbieter, fehlende Programmdateien und Bilder, passende Python-Version für die gewählte Kodi-Version (*Prüfen für*), **Python-Syntax** aller Dateien, typische Python-2-Reste (`xbmc.translatePath`, `iconImage=`, `has_key`), Abhängigkeiten, Sprachordner, Bildgrößen, Reste wie `.git` und Größe. |
@@ -679,11 +707,87 @@ und automatisch aktualisiert. Das Projekt liegt in `Repository/<Name>/`, das Erg
 | 🌿 **Zweige** | Ein Zweig für alle Kodi-Versionen oder *Kodi 18 + 19 trennen*: `zips` für Kodi 19 und neuer (Python 3, Prüfung per SHA-256) und `leia` für Kodi 18 (Python 2, MD5). Jedes Addon kann in allen oder nur in bestimmten Zweigen stehen (*Zweige…*). |
 | 📦 **Addons** | Ordner oder ZIPs hinzufügen, *Alle aus Ordner* oder *Aus Fork übernehmen*. Die ZIPs werden sauber neu gepackt (Wurzelordner = Addon-ID, ohne `.git`, `__pycache__`, `.pyc`), Bilder aus `<assets>` werden daneben abgelegt. |
 | 🔎 **Prüfen** | Addon-ID und Version, Python-Version passend zum Zweig (z.B. Python-3-Addon im Kodi-18-Zweig), fehlende Bilder. Nach dem Bauen zeigt die Spalte *Stand*: neu, aktualisiert, unverändert oder **Inhalt geändert** (gleiche Version, aber anderer Inhalt – Kodi würde kein Update sehen). |
+| 🏛️ **Offizielle Kodi-Addons** | *Offizielle markieren* zeigt in der Spalte *Kodi-Repo*, welche Addons das offizielle Kodi-Repository für **jede** Kodi-Version des Zweigs anbietet. Mit *Addons aus dem offiziellen Kodi-Repository nicht aufnehmen* (Standard) lässt der Bau sie weg – Kodi holt sie selbst. Eine eigene, neuere Fassung bleibt im Repository. |
 | 🏗️ **Bauen** | `addons.xml` + `.md5` je Zweig, je Addon `<id>-<version>.zip` mit `.md5` und `.sha256`, Repository-ZIP zum Installieren und eine `index.html` (für *Aus ZIP-Datei installieren* über eine Kodi-Quelle). Ältere Versionen bleiben bis zur eingestellten Anzahl erhalten. |
 | ⬆️ **Hochladen** | FTP, FTPS, SFTP (nur geänderte Dateien) oder **GitHub**: alle Änderungen landen in *einem* Commit im gewählten Branch und Ordner – passend für GitHub Pages. Optional werden alte Dateien im GitHub-Ordner entfernt. Passwort/Token nur in `config/settings.json`. |
 | 📺 **Zum Fork hinzufügen** | Trägt das Repository-Addon in Tab 5 des geladenen Fork-Profils ein (eine ältere Version derselben ID wird ersetzt). |
 
 > 💡 Kommandozeile: `python main.py repo-build <projekt> [--upload]` und `python main.py repo-list`.
+
+<a id="de-f-wizard"></a>
+
+### 🧙 Eigener Wizard
+
+Unter **Wizard** entsteht ein eigenes **Wizard-Addon** für Kodi, über das du deine **Builds** verteilst – fertige
+Kodi-Einrichtungen mit Addons, Skin und Einstellungen. Das Projekt liegt in `Wizard/<Name>/`, alles zum Hochladen in
+`Wizard/<Name>/Build/`.
+
+| Schritt | Erklärung |
+|---|---|
+| 🧙 **Wizard-Addon** | ID (wird aus dem Namen vorgeschlagen, z.B. `plugin.program.meinwizard`), Name, Version (*Version erhöhen*), Anbieter, Kurzbeschreibung, *Was ist neu*, Symbol, Fanart und Farbschema (sKulls Neon, Forge, Fusion, Mitternacht, Graphit, Mint). |
+| 📦 **Builds** | Je Build Name, Kennung, Version, Kodi-Version, Beschreibung, *Was ist neu* und Bild. Quelle ist ein Kodi-Ordner (mit `portable_data`), ein Kodi-Datenordner mit `addons` und `userdata` oder eine fertige Build-ZIP. Beim Packen bleiben Cache, Vorschaubilder, Pakete, Logs, Absturzberichte und die Datenbanken, die Kodi selbst neu aufbaut (Addons, Textures, EPG, TV), draußen. Neu gepackt wird nur bei neuer Version – oder mit *Builds neu packen*. |
+| 💬 **Kontakt und Save Data** | Begrüßung und Kontaktzeilen („Telegram: @kanal“) für die Seite *Kontakt* im Wizard. *Save Data*: Addon-IDs, deren Einstellungen beim Installieren eines Builds erhalten bleiben. *Repository*: bleibt zusammen mit dem Wizard **immer** erhalten – bei Build-Installation, Fresh Start, Restore und in der Wartung wird es nie gelöscht, nie durch eine ältere Fassung ersetzt und nie ausgeschaltet; ist es im Forge gebaut, liefert der Wizard es mit und installiert es beim ersten Start. |
+| 📥 **Aus altem Wizard importieren…** | Übernimmt eine Build-ZIP des alten Wizards (sKullsWizard/OpenWizard-Art): Name und Version aus der `.txt` daneben, Kodi-Version aus dem Skin, GUI-Paket (`<Name>_guisettings.zip`) und die Liste der Binär-Addons (`build_binaries.txt`). Der alte Wizard bleibt samt Daten draußen. |
+| 🧩 **Binär-Addons** | PVR-, Inputstream- und andere Binär-Addons gibt es je System und CPU in eigener Fassung. Sie kommen nicht in den Build (ihre Einstellungen schon) – der Wizard lädt sie **nach dem Neustart passend zum Gerät** aus den Repositories (Windows, Android, macOS, Linux), bestätigt Kodis Rückfrage selbst und versucht es bis zu dreimal. Im Build-Dialog: *GUI-Paket*, *Nachinstallieren*, *Weglassen* und die automatische Erkennung. |
+| 📰 **RSS-Feed…** | Build-News als **Laufschrift auf Kodis Startseite**: je Zeile ein Eintrag, Platzhalter `{build}` `{version}` `{kodi}` `{date}` `{changelog}` `{addons}` `{size}` (je Build) sowie `{wizard}` `{wizard_version}` `{updated}` `{contact}`; Zeilen mit leerem Platzhalter entfallen. Vorgabe: aktueller Stand je Build, „Was ist neu“ und die Wizard-Version – eigene Meldungen einfach dazuschreiben. Live-Vorschau, Kanal-Titel, Intervall. `rss.xml` entsteht beim Bauen und wird mit hochgeladen; der Wizard trägt den Feed in Kodi ein (Satz 1 der `RssFeeds.xml`, auch wieder nach Build-Installation, Fresh Start oder Restore) und hat in den Einstellungen einen Schalter, der den vorherigen Feed zurückbringt. |
+| 🏗️ **Bauen** | `builds.json` (Name, Version, Kodi, Größe, SHA-256), `builds/<kennung>-<version>.zip`, `wizard/<id>-<version>.zip` und das Wizard-Addon als Ordner in `Wizard/<Name>/Addon/`. Alte Versionen werden entfernt. |
+| 🔐 **Passwortschutz** | Im Build-Dialog *Mit Passwort schützen* (mindestens 6 Zeichen). Der Forge verschlüsselt den Build (PBKDF2-SHA256 + SHAKE-256, nur Pythons Standardbibliothek – jedes Kodi ab 19 kann ihn öffnen); online liegt nur die unlesbare `.skz`-Datei, die Inhaltsliste wird für geschützte Builds nicht veröffentlicht. Das Passwort steht nur in den Einstellungen, nie im Projekt oder in der Build-Liste. Im Wizard fragt der Build nach dem Passwort; auf Wunsch merkt sich das Gerät den abgeleiteten Schlüssel (nicht das Passwort) für Updates. Beim Hochladen entfernt der Forge veraltete eigene Dateien (z.B. eine frühere ungeschützte ZIP) vom Server. |
+| 🔒 **Zugangsdaten entfernen** | Beim Packen (Ordner und fertige ZIP) entfernt der Wizard Passwörter, Tokens, API-Schlüssel, MAC-Adressen, Seriennummern und Anmeldungen: aus den Einstellungen der Addons (auch PVR-`instance-settings`, JSON- und INI-Dateien), aus deren SQLite-Datenbanken, aus `guisettings.xml` (Webserver-/Proxy-Passwort, Sperrcode), aus Adressen in `sources.xml`, `favourites.xml`, `advancedsettings.xml` und Kodis Video-Datenbank (`user:pass@`, `?password=`); `passwords.xml`, Token-, Cookie- und Login-Dateien fallen weg, MySQL-Zugänge ebenso. Kodi und die Addons nehmen danach ihre Standardwerte. *Behalten:* `addon.id` (ganzes Addon) oder `addon.id:einstellung`, für Kodis Einstellungen `guisettings:einstellung`. *Zugangsdaten prüfen…* zeigt vorher, was entfernt würde – nur mit Namen, nie mit Werten. Abschalten geht nur nach Rückfrage. |
+| ⬆️ **Hochladen** | Wie beim Repository über die Upload-Ziele: FTP/FTPS/SFTP (nur Änderungen) oder GitHub (ein Commit). GitHub nimmt höchstens 95 MB je Datei an – größere Builds per FTP/SFTP. *Adresse im Netz* ist die öffentliche Adresse des Build-Ordners. |
+| 🧩 **In Addons übernehmen** | Kopiert das Wizard-Addon in den Addons-Bereich – von dort ins eigene Repository oder in einen Fork. |
+
+**In Kodi** (ab Kodi 19) zeigt der Wizard die Builds mit Version, Größe und Kodi-Version und installiert sie sicher:
+herunterladen, Größe und SHA-256 prüfen, komplett entpacken, erst dann aufräumen und übernehmen – Save Data,
+Whitelist-Addons, der Wizard selbst und sein Repository bleiben erhalten. Dazu kommen Wartung (Cache, Pakete, Vorschaubilder, alte
+Datenbanken, Absturzberichte), Addon-Werkzeuge, Log-Anzeige, System-Tweaks, Backup/Restore, Fresh Start, Build- und
+Wizard-Updates und Einstellungen. Die Oberfläche ist ein eigenes Vollbild-Fenster unabhängig vom Skin, auf Deutsch
+oder Englisch je nach Kodi-Sprache.
+
+**Build-Info** (eigener Menüpunkt): Der Forge legt jedem Build eine Inhaltsliste bei (Name, Version, Erstellungsdatum, Kodi-Version, Skin, alle Addons mit Version und Art). Der Wizard zeigt sie mit Installationsdatum und vergleicht mit dem aktuellen Stand (aktualisiert, fehlt, ausgeschaltet, zusätzlich installiert); *Als Textdatei speichern* legt sie z.B. auf einen USB-Stick. Im Forge liegt dieselbe Liste als Text unter `Wizard/<Name>/Build-Info/`.
+
+**Update-Hinweise**: Der Wizard prüft laut Intervall (und mit *Jetzt nach Updates suchen*) neue Versionen von Wizard, Repository und Build, bietet sie an und zeigt „Update verfügbar“ in der Kopfzeile, eine Übersicht in den Einstellungen und eine Benachrichtigung. Fehlt das Repository, bietet er es zur Installation an.
+
+**Neu in 3.3** – Komfort: **Einrichtungsassistent** beim ersten Start (Sprache, Wartung, Save Data, Backups),
+**Suche** in langen Auswahllisten, **Schnellzugriff** auf zuletzt benutzte Werkzeuge, **Ansicht** große/kleine Kacheln
+oder Liste (Vorgabe im Forge), **Build-Kacheln mit Fanart** und Abzeichen „Neu“, „Update“, „Empfohlen“,
+**Bildergalerie** je Build (Screenshots im Forge hinterlegen), **Startbild** und sanfte Übergänge, geschätzte
+**Downloadzeit** (nach dem Speedtest). Wartung: **Alles aufräumen** mit Auswahl, **Speicher-Assistent** (größte
+Addon-Daten und Caches einzeln leeren), **Datenbanken** mit Markierung unbenutzter Versionen und Tipps,
+**advancedsettings.xml von Hand** mit Tipps zu jedem Wert, **Abhängigkeiten prüfen** und reparieren, Herkunft jedes
+Addons, **Ergebnisliste** nach „Alle Addons aktualisieren“. Backups: neue Art **Kompletter Build ohne Addon-Daten**
+(ohne Zugangsdaten, vorhandene Addon-Daten bleiben beim Wiederherstellen), eigener **Name**, **automatische Backups** nach Zeitplan, **Build-Wechsel mit Parken** (der bisherige Build wird als
+Komplett-Backup geparkt und lässt sich zurückholen). Sicherheit: **PIN** für Fresh Start, Build-Installation,
+Wiederherstellen und Löschen, „Nein“ ist bei gefährlichen Fragen vorausgewählt, **Selbstschutz** (Prüfsummen aller
+Wizard-Dateien – bei Veränderung warnt der Wizard beim Öffnen: abbrechen, reparieren oder weiter), **Passwort wird
+automatisch erkannt** – auch bei „Build aus Datei“ (`.skz` mit `.skz.json` daneben). Im Forge fragt ein neuer Build,
+ob er mit einem Passwort geschützt werden soll.
+
+**Neu in 3.5** – **Kompletter Build** wird 1:1 gesichert und zurückgespielt: alle Einstellungen, auch Passwörter,
+API-Keys, MAC-Adressen und Tokens in Addon-Caches, dazu Save Data, die Wizard-Einstellungen und welche Addons
+ausgeschaltet waren. Stammt das Backup von einem anderen System (z.B. PC → Android-Box), lädt der Wizard die
+Binär-Addons passend nach – ihre Einstellungen bleiben. Unter **Windows** werden auch Dateien ersetzt, die Kodi gerade
+offen hält: Binär-Addons und Dienste werden dafür kurz ausgeschaltet, gesperrte Dateien nachgefasst und notfalls
+ersetzt, sobald Kodi beendet ist (Android, Linux und macOS sperren nicht). Eine neue Datenbank bekommt nie alte
+SQLite-Begleitdateien (`-wal`). Fortschrittsbalken und Abschlussmeldung sehen jetzt in jedem Skin gleich aus.
+
+Weitere Werkzeuge im Wizard: **Repositories prüfen** testet jede Adresse aller Repositories (auch der mit Kodi
+gelieferten, z.B. dem offiziellen) und meldet OK, teilweise oder nicht erreichbar. **Alle Addons aktualisieren** lädt
+die Addon-Listen neu und installiert jedes verfügbare Update – meldet Kodi Updates sonst nur, gilt das nur für diesen
+Lauf. **Backups** gibt es komplett, komplett ohne Addon-Daten, nur Addons, Addons mit ihren Daten, nur Daten, nur Addon-Daten, nur Oberfläche
+sowie Favoriten und Quellen; zurückgespielt wird aus dem Backup-Ordner (auch USB oder Netzwerk) oder aus einer beliebigen
+Datei. **Build aus Datei** installiert eine lokale Build-ZIP ohne Server. Der Wizard läuft überall, wo Kodi läuft
+(Windows, Android, macOS, Linux): alle Pfade kommen von Kodi, Kodis Datenbanken werden nur gelesen, Kodis eigener
+Temp- und Log-Ordner wird nie gelöscht.
+
+**Leistung & Speicher** (Wartung → System Tweaks, auch im Menü der advancedsettings.xml) zeigt Arbeitsspeicher und
+Speicherplatz des Geräts als Balken – mit dem Platz, den der vorgeschlagene Puffer braucht, und dem, was sich aufräumen
+lässt – und schlägt passende Werte vor: Puffergröße, Lesefaktor, Puffer-Modus, Größe der Vorschaubilder und Fanarts
+sowie die automatische Wartung. Drei Profile (Sparsam, Ausgewogen, Maximal), jede Zeile mit Begründung und einzeln
+abwählbar. Der Puffer richtet sich nach dem RAM (Kodi belegt etwa das Dreifache) und bleibt bei 32-Bit-Kodi kleiner;
+ab Kodi 20 landen die Werte in Kodis Einstellungen, bei Kodi 19 in der advancedsettings.xml. *Zurücksetzen* stellt
+den Stand vor dem ersten Übernehmen wieder her.
+
+> 💡 Kommandozeile: `python main.py wizard-build <projekt> [--upload] [--repack]` und `python main.py wizard-list`.
 
 <a id="de-f-gesamtsicherung"></a>
 
@@ -818,10 +922,21 @@ python main.py restore D:\sicherung.skbackup [--yes]      # Gesamtsicherung wied
 python main.py diagnose [ZIEL.zip]                        # bereinigtes Diagnosepaket
 python main.py lang-template fr Français                  # Sprachdatei lang/fr.po anlegen/ergänzen
 python main.py lang-index                                 # Dateien für den Sprach-Server (server/languages/)
+python main.py site-stats --site ORDNER --repo BESITZER/REPO  # Download-Zahlen für die Website (assets/stats.json)
+python main.py web [--port 8765]                          # Web-Oberfläche (Passwort in den Einstellungen)
+python main.py apk-size output/xyz_signed.apk             # Größen-Analyse mit Spar-Tipps
+python main.py log-check kodi.log                         # bekannte Fehler im Kodi-Log erklären
+python main.py download-stats BESITZER/REPO               # Downloads je Version/CPU mit Verlauf
+python main.py portal [--out ORDNER]                      # Übersichtsseite aller Forks
+python main.py nightly-check profiles/meinfork.json       # Addons gegen die neueste Kodi-Nightly prüfen
+python main.py win-portable profiles/meinfork.json [--kodi ORDNER]   # portables Kodi für Windows (ZIP)
 python main.py lang-list [--url URL]                      # Sprachen auf dem Sprach-Server
 python main.py lang-download fr [--url URL]               # Sprache laden bzw. aktualisieren
 python main.py repo-build meinrepo [--upload] [--full]    # eigenes Repository bauen (und hochladen)
 python main.py repo-list                                  # Repository-Projekte anzeigen
+python main.py wizard-build meinwizard [--upload] [--repack]  # Wizard bauen: Builds, Wizard-Addon, builds.json
+python main.py wizard-list                                # Wizard-Projekte anzeigen
+python main.py wizard-check meinwizard                    # prüfen, welche Zugangsdaten beim Packen entfernt werden
 python main.py addon-list                                 # eigene Addons mit Kurzprüfung
 python main.py addon-check plugin.video.x [--kodi 21]     # Addon prüfen
 python main.py addon-build plugin.video.x [--kodi 21]     # prüfen und ZIP nach Addons/ZIPs bauen
@@ -853,7 +968,7 @@ python main.py addon-build plugin.video.x [--kodi 21]     # prüfen und ZIP nach
 | 📂 `Presets/` | eigene Presets |
 | 📂 `Temp/` | temporäre Dateien (werden automatisch aufgeräumt) |
 | 📂 `Logs/` | Protokolle `forge.log` und `auto.log` (automatische Builds) |
-| 📂 `Wizard/` | `Wizard/Build/` = fertige Wizard-ZIP, `Wizard/Source/` = entpackte Fassung |
+| 📂 `Wizard/<Name>/` | Wizard-Projekt `<Name>.json`, `Build/` = alles zum Hochladen (builds.json, Builds, Wizard-ZIP), `Addon/` = Wizard-Addon als Ordner; `Wizard/Source/` = Ablage für Kodi-Ordner, aus denen Builds entstehen |
 | 📂 `Backups/` | Gesamtsicherungen, `Backups/Keystores/` automatische Keystore-Sicherungen, `restore_<Zeit>/` beim Wiederherstellen ersetzte Dateien |
 | 📂 `History/` | Build-Verlauf |
 | 📂 `Projects/<Projekt>/` | **ein Ordner je Fork-Projekt:** |
@@ -986,6 +1101,7 @@ offizielles Kodi-Produkt. Mit dem Tool erstellte Forks müssen die **GPL-Lizenz*
   - [🎛️ Tab 6 – Kodi settings](#en-f-kodi)
   - [🔐 Tab 7 – Signing](#en-f-signing)
   - [🏗️ Tab 8 – Build & Install](#en-f-build)
+  - [📺 Tab 9 – Fork features](#en-f-fork)
   - [🔎 Detail log tab](#en-f-detaillog)
   - [🔒 Parental lock](#en-f-lock)
   - [🗂️ Profiles](#en-f-profiles)
@@ -998,6 +1114,7 @@ offizielles Kodi-Produkt. Mit dem Tool erstellte Forks müssen die **GPL-Lizenz*
   - [🧭 Overview of all forks](#en-f-overview)
   - [🧩 Your own add-ons](#en-f-addons)
   - [🗂️ Your own repository](#en-f-repository)
+  - [🧙 Your own wizard](#en-f-wizard-addon)
   - [💾 Full backup](#en-f-fullbackup)
   - [⌨️ Keyboard, undo & accessibility](#en-f-keyboard)
   - [🩺 Diagnostic package](#en-f-diagnose)
@@ -1425,6 +1542,27 @@ python main.py
 | 🔳 **QR codes** | For every APK a `…_qr.png` with the download link (as soon as a download address is known) – to scan with a phone. Needs `pip install qrcode`. |
 | 📜 **Log** | All output colored (errors, warnings, success), clear and save. |
 
+<a id="en-f-fork"></a>
+
+### 📺 Tab 9 – Fork features
+
+Everything the fork can do later **for your users** – without writing an add-on yourself.
+
+| Feature | Explanation |
+|---|---|
+| 🧰 **Fork Center** | A menu of its own in the favourites: maintenance (cache, thumbnails, reload add-ons, upload log, startup analysis), backup to USB stick/network and back, help/FAQ (DE/EN with images), support info with a short code, reset to factory state. Runs on Kodi 18 to 22. |
+| 📢 **Messages** | On start the fork shows messages from a `messages.json` on your server – each only once, DE/EN. Template via *Save messages.json*. |
+| 🧯 **Crash reports** | After a crash the fork asks whether the log (without credentials) may be sent to your server or a Discord webhook. |
+| 🧹 **Storage care** | Background service: thin out thumbnails, delete old logs – intervals and limits set here. |
+| 📱📺 **Device profiles** | Detects phone, tablet, TV box or Fire TV and adjusts interface size, refresh rate and buffer. |
+| 🔑 **Ask for credentials** | Passwords, MAC addresses or portal logins stay out of the APK: the fork asks for them on first start. |
+| 👨‍👩‍👧 **Family & kiosk** | Kids profile with login screen and hidden menu items, daily screen time (extendable with a code), kiosk mode for hotels, waiting rooms or holiday flats. The fork only contains the SHA-256 value of the code. |
+| 🖼️ **Interface** | Screensaver with the fork logo or a slideshow, remote templates (Fire TV, Shield, Mi Box, air mouse), RSS ticker, external players (`playercorefactory.xml`), `advancedsettings.xml` as a form with templates. |
+| 🚀 **App & updates** | App name per language, autostart after power-on (TV boxes), lock updates per add-on, **in-app update** (the fork downloads the APK itself and opens the installer), **mandatory update** below a version code, Fire TV Downloader code for the download page, RSS feed of new versions. |
+
+> 💡 **Rollback:** in the build history *Build as rollback* builds an earlier state with a higher version code –
+> Android does not allow going back, so all forks get it as a normal update.
+
 <a id="en-f-detaillog"></a>
 
 ### 🔎 Detail log tab
@@ -1533,9 +1671,11 @@ default settings, userdata and **all warnings**.
 
 | Feature | Description |
 |---|---|
-| 🧭 **Sidebar** | On the left are the areas **Overview**, **Forks** (tabs 1–8), **Add-ons**, **Repository** and **Wizard**, at the bottom **Collapse**, **Settings**, **Tools** and **Detail log**. Collapsed, only the icons remain (name as tooltip). In a narrow window (below 1360 pixels) it collapses automatically; tabs that do not fit completely can be scrolled. *Wizard* is still under construction and shows what is planned. |
+| 🧭 **Sidebar** | On the left are the areas **Overview**, **Forks** (tabs 1–8), **Add-ons**, **Repository** and **Wizard**, at the bottom **Collapse**, **Settings**, **Tools** and **Detail log**. Collapsed, only the icons remain (name as tooltip). In a narrow window (below 1360 pixels) it collapses automatically; tabs that do not fit completely can be scrolled. |
 | ⚙️ **Settings** | `Ctrl+,`: *Clean up / factory reset* (caches, logs, settings, project folder – with recycle bin and a full backup first), color scheme, splash screen, sidebar, language and language server, **project folder** (show, change, create folders, take over data), **upload targets** (FTP, FTPS, SFTP, GitHub – with *Test connection*; fork upload and repository only choose target and subfolder), tools (apktool path, programs found), check for new Kodi versions on start, open folders. |
-| 🧰 **Tools** | All helpers as tiles: full backup, diagnostic package, download Kodi APK, check for a new Kodi version, build history, compare builds, schedule, share profile, folders. |
+| ⚡ **Faster builds** | *Settings*: build several APKs at the same time and build cache (reuse the unpacked original APK). Before an update via ADB the data of the installed fork is backed up. |
+| 🔔 **Notification & web** | After the build a message via Telegram (also with the APK), Discord or email. Web interface: start builds in the browser or from a phone (password, only this PC by default). |
+| 🧰 **Tools** | All helpers as tiles: full backup, diagnostic package, download Kodi APK, check for a new Kodi version, build history, compare builds, schedule, share profile, folders – plus APK size, check Kodi log, download statistics, dependency tree, skin settings, portal page, check Kodi nightly, Windows portable, pair a device by QR code, mirror the screen (scrcpy), device info and restore data. |
 | 🎨 **Color schemes** | *Settings*, *View → Color scheme* or the ☀ icon at the top right: **System** (follows the Windows setting live), the original **Light** and **Dark** designs plus **sKulls Neon**, **Midnight**, **Graphite**, **Nord** (dark) and **Sand**, **Mint** (light). Dark schemes get a dark title bar. |
 | ✨ **Icons** | Tabs, menu entries and the most important buttons have icons (Windows icon font Segoe Fluent Icons) – sharp at any size and always in the scheme's color. Main actions such as **FORK BUILD** are highlighted in the accent color. |
 | 🖼️ **Splash screen** | On start the sKulls logo appears with name, slogan, version and progress. Can be turned off via *View → Show splash screen*. The logo is also the window icon and shown in the header. |
@@ -1584,6 +1724,7 @@ In the sidebar under **Add-ons** you create your own Kodi add-ons. Every add-on 
 | ✨ **New from template…** | Video plugin (`plugin.video.…`), program script (`script.…`), service (`service.…`), context menu (`context.…`) or library (`script.module.…`). Created are `addon.xml`, working example code (Python 2 and 3), `settings.xml`, English/German language files, `changelog.txt` and an icon. The ID is suggested from type and name. |
 | 📥 **Take over…** | Bring an existing add-on as ZIP or folder into the Addons folder (e.g. a customized `pvr.stalker`) – without `.git`, `__pycache__`, `.pyc`. |
 | 📝 **Details** | Name, version, provider, summary, description, news, license, website, source code and the Kodi version (sets `xbmc.python`: Kodi 18 = 2.26.0, Kodi 19+ = 3.0.0, Kodi 20+ = 3.0.1). *Save* writes the `addon.xml` – extensions, other languages and comments are kept. |
+| ✍️ **Formatting** | The ✎ button next to name, provider, summary, description and news opens an editor like in Kodi: **bold**, *italic*, colour (own palette, own and recently used colours), upper/lower case and line breaks, with source view, preview and hints on broken tags. Names only with bold and colour. Also available for the repository and the wizard. |
 | 🔗 **Dependencies** | Add, edit (minimum version, optional) and remove. The *Status* column shows whether the add-on is in the Addons folder, part of Kodi or has to come from a repository. *Check online* looks up missing ones in the official Kodi repository. |
 | 🔢 **Increase version…** | New version with changes (one per line): entry at the top of `changelog.txt` and optionally in `<news>`. |
 | 🔎 **Check** | `addon.xml`, ID, version, name/provider, missing program files and images, matching Python version for the chosen Kodi version (*Check for*), **Python syntax** of all files, typical Python 2 leftovers (`xbmc.translatePath`, `iconImage=`, `has_key`), dependencies, language folders, image sizes, leftovers like `.git` and size. |
@@ -1606,11 +1747,84 @@ updates them automatically. The project is stored in `Repository/<name>/`, the r
 | 🌿 **Branches** | One branch for all Kodi versions or *Separate Kodi 18 + 19*: `zips` for Kodi 19 and newer (Python 3, SHA-256 check) and `leia` for Kodi 18 (Python 2, MD5). Every add-on can be in all or only some branches (*Branches…*). |
 | 📦 **Add-ons** | Add folders or ZIPs, *All from folder* or *Take from fork*. The ZIPs are repacked cleanly (root folder = add-on ID, without `.git`, `__pycache__`, `.pyc`), images from `<assets>` are placed next to them. |
 | 🔎 **Check** | Add-on ID and version, Python version matching the branch (e.g. a Python 3 add-on in the Kodi 18 branch), missing images. After building, the *Status* column shows: new, updated, unchanged or **content changed** (same version but different content – Kodi would not see an update). |
+| 🏛️ **Official Kodi add-ons** | *Mark official* shows in the *Kodi repo* column which add-ons the official Kodi repository offers for **every** Kodi version of the branch. With *Do not include add-ons from the official Kodi repository* (default) the build leaves them out – Kodi gets them itself. Your own, newer version stays in the repository. |
 | 🏗️ **Build** | `addons.xml` + `.md5` per branch, per add-on `<id>-<version>.zip` with `.md5` and `.sha256`, the repository ZIP for installing and an `index.html` (for *Install from zip file* via a Kodi source). Older versions are kept up to the chosen number. |
 | ⬆️ **Upload** | FTP, FTPS, SFTP (changed files only) or **GitHub**: all changes go into *one* commit in the chosen branch and folder – suitable for GitHub Pages. Old files in the GitHub folder can be removed. Password/token only in `config/settings.json`. |
 | 📺 **Add to fork** | Adds the repository add-on to tab 5 of the loaded fork profile (an older version with the same ID is replaced). |
 
 > 💡 Command line: `python main.py repo-build <project> [--upload]` and `python main.py repo-list`.
+
+<a id="en-f-wizard-addon"></a>
+
+### 🧙 Your own wizard
+
+Under **Wizard** you create your own **wizard add-on** for Kodi to distribute your **builds** – finished Kodi setups
+with add-ons, skin and settings. The project is in `Wizard/<Name>/`, everything for uploading in `Wizard/<Name>/Build/`.
+
+| Step | Explanation |
+|---|---|
+| 🧙 **Wizard add-on** | ID (suggested from the name, e.g. `plugin.program.mywizard`), name, version (*Increase version*), provider, summary, *What's new*, icon, fanart and color scheme (sKulls Neon, Forge, Fusion, Midnight, Graphite, Mint). |
+| 📦 **Builds** | Per build: name, key, version, Kodi version, description, *What's new* and image. The source is a Kodi folder (with `portable_data`), a Kodi data folder with `addons` and `userdata` or a finished build ZIP. Packing leaves out cache, thumbnails, packages, logs, crash reports and the databases Kodi rebuilds itself (Addons, Textures, EPG, TV). A build is only repacked for a new version – or with *Repack builds*. |
+| 💬 **Contact and save data** | Greeting and contact lines ("Telegram: @channel") for the *Contact* page in the wizard. *Save data*: add-on IDs whose settings are kept when a build is installed. *Repository*: **always** kept together with the wizard – during build installation, fresh start, restore and maintenance it is never deleted, never replaced by an older version and never disabled; if it is built in the Forge, the wizard includes it and installs it on the first start. |
+| 📥 **Import from old wizard…** | Takes over a build ZIP of the old wizard (sKullsWizard/OpenWizard style): name and version from the `.txt` next to it, Kodi version from the skin, GUI package (`<Name>_guisettings.zip`) and the list of binary add-ons (`build_binaries.txt`). The old wizard and its data are left out. |
+| 🧩 **Binary add-ons** | PVR, inputstream and other binary add-ons exist per system and CPU. They don't go into the build (their settings do) – the wizard installs them **after the restart to match the device** from the repositories (Windows, Android, macOS, Linux), confirms Kodi's question itself and tries up to three times. In the build dialog: *GUI package*, *Install afterwards*, *Leave out* and automatic detection. |
+| 📰 **RSS feed…** | Build news as **ticker on Kodi's home screen**: one entry per line, placeholders `{build}` `{version}` `{kodi}` `{date}` `{changelog}` `{addons}` `{size}` (per build) and `{wizard}` `{wizard_version}` `{updated}` `{contact}`; lines with an empty placeholder are left out. Default: current state per build, "what's new" and the wizard version – simply add your own announcements. Live preview, channel title, interval. `rss.xml` is created when building and uploaded with the rest; the wizard sets the feed up in Kodi (set 1 of `RssFeeds.xml`, again after build installation, fresh start or restore) and has a switch in its settings that brings back the previous feed. |
+| 🏗️ **Build** | `builds.json` (name, version, Kodi, size, SHA-256), `builds/<key>-<version>.zip`, `wizard/<id>-<version>.zip` and the wizard add-on as a folder in `Wizard/<Name>/Addon/`. Old versions are removed. |
+| 🔐 **Password protection** | In the build dialog *Protect with a password* (at least 6 characters). The Forge encrypts the build (PBKDF2-SHA256 + SHAKE-256, Python's standard library only – every Kodi from 19 can open it); online there is only the unreadable `.skz` file, the content list is not published for protected builds. The password is only stored in the settings, never in the project or the build list. In the wizard the build asks for the password; if wanted, the device remembers the derived key (not the password) for updates. When uploading, the Forge removes its own outdated files (e.g. an earlier unprotected ZIP) from the server. |
+| 🔒 **Remove credentials** | When packing (folder and finished ZIP) the wizard removes passwords, tokens, API keys, MAC addresses, serial numbers and logins: from the add-ons' settings (also PVR `instance-settings`, JSON and INI files), from their SQLite databases, from `guisettings.xml` (web server/proxy password, lock code), from addresses in `sources.xml`, `favourites.xml`, `advancedsettings.xml` and Kodi's video database (`user:pass@`, `?password=`); `passwords.xml`, token, cookie and login files are left out, as are MySQL logins. Kodi and the add-ons then use their default values. *Keep:* `addon.id` (whole add-on) or `addon.id:setting`, for Kodi's settings `guisettings:setting`. *Check credentials…* shows beforehand what would be removed – names only, never values. Turning it off asks for confirmation. |
+| ⬆️ **Upload** | Like the repository via the upload targets: FTP/FTPS/SFTP (changes only) or GitHub (one commit). GitHub accepts at most 95 MB per file – upload larger builds via FTP/SFTP. *Web address* is the public address of the build folder. |
+| 🧩 **Copy to add-ons** | Copies the wizard add-on into the add-ons area – from there into your own repository or a fork. |
+
+**In Kodi** (Kodi 19 and newer) the wizard shows the builds with version, size and Kodi version and installs them
+safely: download, check size and SHA-256, unpack completely, only then clean up and move into place – save data,
+whitelisted add-ons, the wizard itself and its repository are kept. On top there is maintenance (cache, packages, thumbnails, old
+databases, crash reports), add-on tools, log viewer, system tweaks, backup/restore, fresh start, build and wizard
+updates and settings. The interface is its own full-screen window independent of the skin, in German or English
+depending on Kodi's language.
+
+**Build info** (own menu item): the Forge adds a content list to every build (name, version, build date, Kodi version, skin, all add-ons with version and kind). The wizard shows it with the installation date and compares it with the current state (updated, missing, disabled, installed in addition); *Save as text file* puts it e.g. on a USB stick. In the Forge the same list is kept as text in `Wizard/<Name>/Build-Info/`.
+
+**Update notices**: the wizard checks by interval (and with *Check for updates now*) for new versions of the wizard, the repository and the build, offers them and shows "Update available" in the header, an overview in the settings and a notification. If the repository is missing, it offers to install it.
+
+**New in 3.3** – comfort: **setup assistant** on first start (language, maintenance, save data, backups),
+**search** in long selection lists, **quick access** to recently used tools, **view** large/small tiles or list
+(default set in the Forge), **build tiles with fanart** and the badges “New”, “Update”, “Recommended”, **picture
+gallery** per build (add screenshots in the Forge), **splash screen** and smooth transitions, estimated **download
+time** (after the speed test). Maintenance: **clean up everything** with a choice, **storage assistant** (clear the
+largest add-on data and caches one by one), **databases** with unused versions marked and tips, **advancedsettings.xml
+by hand** with tips for every value, **check and repair dependencies**, origin of every add-on, **result list** after
+“Update all add-ons”. Backups: new kind **complete build without add-on data**
+(no credentials, existing add-on data stays when restoring), own **name**, **automatic backups** on a
+schedule, **build switch with parking** (the current build is parked as a complete backup and can be brought back).
+Security: **PIN** for fresh start, build installation, restore and deleting, “No” is preselected for dangerous
+questions, **self-protection** (checksums of all wizard files – if something was changed, the wizard warns on
+opening: cancel, repair or continue), **the password is detected automatically** – also for “build from file” (`.skz`
+with the `.skz.json` next to it). In the Forge a new build asks whether it should be protected with a password.
+
+**New in 3.5** – a **complete build** is backed up and restored 1:1: all settings including passwords, API keys, MAC
+addresses and tokens in add-on caches, plus save data, the wizard settings and which add-ons were disabled. If the
+backup comes from another system (e.g. PC → Android box), the wizard reinstalls the binary add-ons to match – their
+settings are kept. On **Windows** even files Kodi keeps open are replaced: binary add-ons and services are briefly
+disabled, locked files are retried and, if needed, replaced as soon as Kodi has closed (Android, Linux and macOS don't
+lock files). A new database never gets old SQLite side files (`-wal`). Progress bar and final message now look the same
+in every skin.
+
+More tools in the wizard: **Check repositories** tests every address of all repositories (also the ones shipped with
+Kodi, e.g. the official one) and reports OK, partly or not reachable. **Update all add-ons** reloads the add-on lists
+and installs every available update – if Kodi otherwise only notifies, this applies to this run only. **Backups**
+come as complete, complete without add-on data, add-ons only, add-ons with their data, data only, add-on data only, interface only and favourites
+and sources; restore from the backup folder (also USB or network) or from any file. **Build from file** installs a
+local build ZIP without a server. The wizard runs wherever Kodi runs (Windows, Android, macOS, Linux): all paths
+come from Kodi, Kodi's databases are only read, Kodi's own temp and log folder is never deleted.
+
+**Performance & storage** (maintenance → system tweaks, also in the advancedsettings.xml menu) shows the device's memory
+and storage as bars – including the space the suggested buffer needs and what can be cleaned up – and suggests
+suitable values: buffer size, read factor, buffer mode, thumbnail and fanart size and automatic maintenance. Three
+profiles (light, balanced, maximum), every row with a reason and individually selectable. The buffer follows the RAM
+(Kodi uses about three times the size) and stays smaller with 32-bit Kodi; from Kodi 20 the values go into Kodi's
+settings, with Kodi 19 into advancedsettings.xml. *Reset* restores the state from before the first apply.
+
+> 💡 Command line: `python main.py wizard-build <project> [--upload] [--repack]` and `python main.py wizard-list`.
 
 <a id="en-f-fullbackup"></a>
 
@@ -1743,10 +1957,21 @@ python main.py restore D:\backup.skbackup [--yes]         # restore full backup
 python main.py diagnose [TARGET.zip]                      # cleaned diagnostic package
 python main.py lang-template fr Français                  # create/update lang/fr.po
 python main.py lang-index                                 # files for the language server (server/languages/)
+python main.py site-stats --site FOLDER --repo OWNER/REPO # download numbers for the website (assets/stats.json)
+python main.py web [--port 8765]                          # web interface (password in the settings)
+python main.py apk-size output/xyz_signed.apk             # size analysis with tips
+python main.py log-check kodi.log                         # explain known errors in a Kodi log
+python main.py download-stats OWNER/REPO                  # downloads per version/CPU with history
+python main.py portal [--out FOLDER]                      # overview page of all forks
+python main.py nightly-check profiles/myfork.json         # check add-ons against the latest Kodi nightly
+python main.py win-portable profiles/myfork.json [--kodi FOLDER]   # portable Kodi for Windows (ZIP)
 python main.py lang-list [--url URL]                      # languages on the language server
 python main.py lang-download fr [--url URL]               # download or update a language
 python main.py repo-build myrepo [--upload] [--full]      # build your own repository (and upload it)
 python main.py repo-list                                  # show repository projects
+python main.py wizard-build mywizard [--upload] [--repack]    # build the wizard: builds, wizard add-on, builds.json
+python main.py wizard-list                                # show wizard projects
+python main.py wizard-check mywizard                      # check which credentials are removed when packing
 python main.py addon-list                                 # your own add-ons with a quick check
 python main.py addon-check plugin.video.x [--kodi 21]     # check an add-on
 python main.py addon-build plugin.video.x [--kodi 21]     # check and build the ZIP into Addons/ZIPs
@@ -1778,7 +2003,7 @@ python main.py addon-build plugin.video.x [--kodi 21]     # check and build the 
 | 📂 `Presets/` | your own presets |
 | 📂 `Temp/` | temporary files (cleaned up automatically) |
 | 📂 `Logs/` | log files `forge.log` and `auto.log` (automatic builds) |
-| 📂 `Wizard/` | `Wizard/Build/` = finished wizard ZIP, `Wizard/Source/` = unpacked version |
+| 📂 `Wizard/<Name>/` | wizard project `<Name>.json`, `Build/` = everything for uploading (builds.json, builds, wizard ZIP), `Addon/` = wizard add-on as a folder; `Wizard/Source/` = place for Kodi folders that builds are made from |
 | 📂 `Backups/` | full backups, `Backups/Keystores/` automatic keystore backups, `restore_<time>/` files replaced during a restore |
 | 📂 `History/` | build history |
 | 📂 `Projects/<project>/` | **one folder per fork project:** |
