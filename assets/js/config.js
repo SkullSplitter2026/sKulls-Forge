@@ -1,14 +1,25 @@
 /* Einstellungen der Website – hier zentral ändern */
 window.FORGE_SITE = {
-  // GitHub-Link oben, im Mitmach-Bereich und in der Fußzeile (später z.B. das Repo des Tools)
-  github: "https://github.com/SkullSplitter2026/sKulls-Forge",
+  // Adresse der Website (GitHub Pages)
+  site: "https://skullsplitter2026.github.io/sKulls-Forge/",
 
-  // Downloads: solange url leer ist, steht dort „Bald verfügbar“
+  // GitHub-Link oben, im Mitmach-Bereich und in der Fußzeile (später z.B. das Repo des Tools)
+  github: "https://github.com/SkullSplitter2026",
+
+  // Download: solange url leer ist, steht dort „Bald verfügbar“. Ein Setup für alles - es installiert oder
+  // entpackt auf Wunsch eine portable Version (keine eigene Portable-ZIP mehr)
   downloads: {
-    installer: { url: "", file: "sKulls-Forge-Setup-2.x.exe", sha256: "" },
-    portable:  { url: "", file: "sKulls-Forge-Portable-2.x.zip", sha256: "" },
-    source:    { url: "", file: "Quellcode (GitHub)", sha256: "" }
+    installer: { url: "", file: "sKulls-Forge-Setup-3.x.exe", sha256: "" }
+    // Quellcode: momentan nicht öffentlich (eigene Karte ohne Download in index.html)
   },
+
+  // Besucherzähler: Abacus (ohne Konto, ohne Cookies) - service: "" schaltet ihn ab.
+  // Der Zählerstand gehört zu namespace/key; beim Testen auf localhost wird nur gelesen, nicht gezählt.
+  counter: { service: "abacus", base: "https://abacus.jasoncameron.dev", namespace: "skullsplitter2026-skulls-forge",
+             key: "visits" },
+
+  // Download-Zähler: Datei auf dieser Website, schreibt der Forge (python main.py site-stats ...)
+  stats: "assets/stats.json",
 
   // Standard beim ersten Besuch
   defaultScheme: "skulls",

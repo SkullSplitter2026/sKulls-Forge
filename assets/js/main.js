@@ -69,6 +69,7 @@
     if (desc && meta) meta.setAttribute("content", desc);
     $all("[data-alt-de]").forEach(function (el) { el.setAttribute("alt", el.getAttribute("data-alt-" + lang)); });
     fillSchemeNames();
+    if (typeof renderNumbers === "function") renderNumbers();
     updateShots();
     var label = $("#scheme-label");
     if (label) label.textContent = schemeInfo(scheme)[lang] || scheme;
@@ -127,6 +128,26 @@
     });
   }
 
+  /* Wizard-Rundgang: Reiter wechseln das Kodi-Bild */
+  function initWizardTour() {
+    var tabs = $all(".wiz-tab"), img = $("#wiz-shot");
+    if (!tabs.length || !img) return;
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (t) { t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
+        img.style.opacity = "0";
+        setTimeout(function () {
+          img.setAttribute("data-alt-de", tab.getAttribute("data-alt-de"));
+          img.setAttribute("data-alt-en", tab.getAttribute("data-alt-en"));
+          img.setAttribute("alt", tab.getAttribute("data-alt-" + lang));
+          img.onload = function () { img.style.opacity = "1"; };
+          img.src = tab.getAttribute("data-src");
+          setTimeout(function () { img.style.opacity = "1"; }, 400);
+        }, 150);
+      });
+    });
+  }
+
   /* Großansicht */
   function initLightbox() {
     var box = $("#lightbox"), big = $("#lightbox img");
@@ -158,6 +179,55 @@
       }
       if (hash) hash.textContent = d.sha256 ? "SHA-256: " + d.sha256 : "";
     });
+  }
+
+  /* Zähler: Besuche (Abacus, keine Cookies) und Downloads (stats.json vom Forge) */
+  function formatNumber(n) {
+    try { return Number(n).toLocaleString(lang === "de" ? "de-DE" : "en-US"); } catch (e) { return String(n); }
+  }
+  function renderNumbers() {
+    $all("[data-n]").forEach(function (el) {
+      el.textContent = formatNumber(el.getAttribute("data-n")) + (el.getAttribute("data-suffix") || "");
+    });
+  }
+  function initCounters() {
+    var c = SITE.counter || {}, box = $("[data-counter='visits']");
+    if (box && c.service === "abacus" && c.base && c.namespace && c.key && window.fetch) {
+      var local = /^(localhost|127\.0\.0\.1|\[::1\]|)$/.test(location.hostname) || location.protocol === "file:";
+      var url = c.base.replace(/\/$/, "") + "/" + (local ? "get" : "hit") + "/" +
+                encodeURIComponent(c.namespace) + "/" + encodeURIComponent(c.key);
+      fetch(url, { mode: "cors", credentials: "omit", referrerPolicy: "no-referrer" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          if (!d || typeof d.value !== "number") return;
+          $(".value", box).setAttribute("data-n", d.value);
+          renderNumbers();
+          box.hidden = false;
+        })
+        .catch(function () { /* Zähldienst nicht erreichbar: Anzeige bleibt verborgen */ });
+    }
+    var dl = $("[data-counter='downloads']");
+    if (!dl || !SITE.stats || !window.fetch) return;
+    fetch(SITE.stats, { cache: "no-cache" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (s) {
+        var total = s && typeof s.total === "number" ? s.total : 0;
+        if (total) $(".value", dl).setAttribute("data-n", total);
+        $(".value", dl).hidden = !total;
+        $(".label-some", dl).hidden = !total;
+        $(".label-none", dl).hidden = !!total;
+        var files = (s && s.files) || {};
+        $all("[data-dl-count]").forEach(function (el) {
+          var n = files[el.getAttribute("data-dl-count")];
+          if (typeof n === "number" && n > 0) {
+            el.setAttribute("data-n", n);
+            el.setAttribute("data-suffix", " Downloads");
+            el.hidden = false;
+          }
+        });
+        renderNumbers();
+      })
+      .catch(function () { dl.hidden = true; });
   }
 
   /* Einblenden beim Scrollen */
@@ -192,7 +262,7 @@
     var icon = $(".app-icon", hero), fly = $(".fly", hero), hint = $(".scroll-hint", hero);
     var lStage = loop && $(".stage", loop), lCam = loop && $(".loop-cam", loop), lWin = loop && $(".loop-window", loop);
     var lScreen = loop && $(".loop-screen", loop), mini = loop && $(".mini", loop), lIntro = loop && $(".loop-intro", loop);
-    var g = {}, running = false, jumping = false, dctx = dots && dots.getContext && dots.getContext("2d");
+    var g = {}, running = false, dctx = dots && dots.getContext && dots.getContext("2d");
     if (loop) loop.setAttribute("inert", "");
 
     function wanted() { return !motionOff && window.innerWidth >= 900 && window.innerHeight >= 560; }
@@ -223,7 +293,7 @@
       fly.style.width = fly.style.height = "";
       if (dots) { dots.width = window.innerWidth; dots.height = window.innerHeight; }
       if (!scenes.on) { request(); return; }
-      var vw = window.innerWidth, vh = window.innerHeight, sh = vh - NAV_H, bar = 34;
+      var vw = document.documentElement.clientWidth, vh = window.innerHeight, sh = vh - NAV_H, bar = 34;   // Breite ohne Scrollbalken
       // Ziel: Screenshot groß und mittig
       var w = Math.min(1180, vw - 64), h = w * 877 / 1400 + bar;
       if (h > sh - 40) { h = sh - 40; w = (h - bar) * 1400 / 877; }
@@ -286,6 +356,7 @@
       var sx = g.o.x + (g.start.x - g.o.x) * Z, sy = g.o.y + (g.start.y - g.o.y) * Z, sw = g.start.w * Z;
       var rw = lerp(sw, g.fin.w, f), rx = lerp(sx, g.fin.x, f), ry = lerp(sy, g.fin.y, f);
       fly.style.opacity = span(p, 0.14, 0.26).toFixed(3);
+      fly.style.pointerEvents = f > 0.95 ? "" : "none";   // erst klickbar (Großansicht), wenn er ganz da ist
       fly.style.transform = "translate(" + rx.toFixed(1) + "px," + ry.toFixed(1) + "px) scale(" + (rw / g.fin.w).toFixed(5) + ")";
       if (hint) hint.style.opacity = (1 - span(p, 0, 0.06)).toFixed(3);
       // Schleife
@@ -297,12 +368,10 @@
         lIntro.style.opacity = (1 - span(q, 0.02, 0.2)).toFixed(3);
         // Ganz unten angekommen: nahtlos zurück an den Anfang
         var atEnd = window.scrollY >= g.loopTop + g.loopRange - 2;
-        if (atEnd && q > 0.998 && !jumping) {
-          jumping = true;
+        if (atEnd && q > 0.995) {
           smooth.y = 0;
           window.scrollTo({ top: 0, left: 0, behavior: "instant" });
           render();
-          setTimeout(function () { jumping = false; }, 400);
         }
       }
     }
@@ -322,7 +391,7 @@
     // Für Kontrollbilder: ?at=1200 springt direkt an diese Scrollposition
     var at = /[?&]at=(\d+)/.exec(location.search);
     function jumpAt() { if (at) { window.scrollTo({ top: +at[1], left: 0, behavior: "instant" }); smooth.y = window.scrollY; render(); } }
-    layout(); jumpAt();
+    layout();
     // Bilder/Schriften können die Höhen noch ändern
     window.addEventListener("load", function () { layout(); jumpAt(); });
   }
@@ -362,7 +431,7 @@
           var v = base * (0.35 + 0.65 * flick);
           if (v < 0.08 + s * 0.35) continue;
           ctx.fillStyle = item.dim
-            ? "rgba(" + glow + "," + Math.min(0.55, v * 0.6).toFixed(3) + ")"
+            ? "rgba(" + glow + "," + Math.min(0.3, v * 0.36).toFixed(3) + ")"
             : "rgba(0,0,0," + Math.min(0.5, v * 0.55).toFixed(3) + ")";
           ctx.fillRect(x, y, 1, 1);
         }
@@ -411,6 +480,8 @@
     setLang(lang, false);
     setScheme(scheme, false);
     initTour();
+    initWizardTour();
+    initCounters();
     initLightbox();
     initReveal();
     initScenes();
