@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="resources/logo.png" alt="sKulls Forge" width="160">
+<img src="assets/img/logo.png" alt="sKulls Forge" width="160">
 
 # sKulls Forge
 
