@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="de" data-lang="de" data-scheme="skulls"
+      data-title-de="Anleitung – sKulls Forge" data-title-en="Guide – sKulls Forge">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anleitung – sKulls Forge</title>
+  <meta name="description" content="Anleitung zu sKulls Forge: Erste Schritte, Forks, Fork-Funktionen, Addons, Repository, Wizard, Werkzeuge.">
+  <meta name="theme-color" content="#111318">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a>
+    <nav class="nav-links" aria-label="Seiten">
+      <a href="index.html"><span lang="de">Startseite</span><span lang="en">Home</span></a>
+      <a href="anleitung.html" aria-current="page"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <button type="button" data-lang="de" aria-pressed="true">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <div class="scheme">
+        <button class="pill" id="scheme-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Farbschema / Color scheme">
+          <i class="scheme-dot" aria-hidden="true"></i><span class="label" id="scheme-label">sKulls Neon</span></button>
+        <div class="scheme-menu" id="scheme-menu" role="menu" aria-label="Farbschema"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="guide">
+  <div class="wrap">
+    <nav class="toc" aria-label="Inhalt">
+      <b><span lang="de">Inhalt</span><span lang="en">Contents</span></b>
+      <a href="#start"><span lang="de">Erste Schritte</span><span lang="en">Getting started</span></a>
+      <a href="#forks">Forks</a>
+      <a href="#fork-features"><span lang="de">Fork-Funktionen</span><span lang="en">Fork features</span></a>
+      <a href="#addons">Addons</a>
+      <a href="#repository">Repository</a>
+      <a href="#wizard">Wizard</a>
+      <a href="#wizard-kodi"><span lang="de">Der Wizard in Kodi</span><span lang="en">The wizard in Kodi</span></a>
+      <a href="#tools"><span lang="de">Werkzeuge &amp; Einstellungen</span><span lang="en">Tools &amp; settings</span></a>
+      <a href="faq.html">FAQ →</a>
+    </nav>
+
+    <div>
+      <h1 lang="de">Anleitung</h1><h1 lang="en">Guide</h1>
+      <p class="lead" lang="de">Alles Schritt für Schritt: vom ersten eigenen Kodi-Fork über eigene Addons und ein
+        Repository bis zum Wizard, der deine Builds verteilt. Die Bilder passen sich Sprache und Farbschema an – ein
+        Klick zeigt sie groß.</p>
+      <p class="lead" lang="en">Everything step by step: from your first own Kodi fork to your own add-ons and a
+        repository, up to the wizard that distributes your builds. The pictures follow language and color scheme – a
+        click shows them large.</p>
+
+      <!-- ===================== Erste Schritte ===================== -->
+      <section class="chapter" id="start">
+        <div class="kicker"><span lang="de">Erste Schritte</span><span lang="en">Getting started</span></div>
+        <h2 lang="de">In zehn Minuten zum ersten Fork</h2><h2 lang="en">Your first fork in ten minutes</h2>
+        <p lang="de">sKulls Forge läuft unter Windows. Das Setup installiert das fertig übersetzte Tool samt Java (kein Python nötig) – oder
+          entpackt auf Wunsch eine <strong>portable Version</strong> (z.B. auf einen USB-Stick), die ihre Daten im
+          eigenen Ordner behält.</p>
+        <p lang="en">sKulls Forge runs on Windows. The setup installs the compiled tool including Java (no Python needed) – or, if you
+          like, unpacks a <strong>portable version</strong> (e.g. onto a USB stick) that keeps its data in its own
+          folder.</p>
+        <ol class="steps">
+          <li lang="de"><strong>Projekt-Ordner wählen.</strong> Beim ersten Start fragt der Forge, wo Profile, Builds,
+            Addons und Wizards liegen sollen (Standard: Dokumente\sKulls Forge).</li>
+          <li lang="en"><strong>Choose the project folder.</strong> On first start the Forge asks where profiles, builds,
+            add-ons and wizards should live (default: Documents\sKulls Forge).</li>
+          <li lang="de"><strong>Kodi-APK holen.</strong> Extras → <em>Kodi-APK herunterladen</em> lädt die offizielle
+            APK passend zur Gerätearchitektur (arm64, armv7, x86).</li>
+          <li lang="en"><strong>Get the Kodi APK.</strong> Extras → <em>Download Kodi APK</em> fetches the official APK
+            for your device architecture (arm64, armv7, x86).</li>
+          <li lang="de"><strong>Neuer Fork.</strong> Datei → <em>Assistent: neuer Fork</em> fragt Name, App-Name und
+            Paketname ab – der Paketname macht den Fork zu einer eigenen App neben dem normalen Kodi.</li>
+          <li lang="en"><strong>New fork.</strong> File → <em>Wizard: new fork</em> asks for name, app name and package
+            name – the package name turns the fork into its own app next to regular Kodi.</li>
+          <li lang="de"><strong>Anpassen.</strong> Symbol und Startbild (Branding), Addons einbetten, Sprache und
+            Einstellungen vorgeben – alles optional.</li>
+          <li lang="en"><strong>Customize.</strong> Icon and splash (branding), embed add-ons, set language and
+            settings – all optional.</li>
+          <li lang="de"><strong>Bauen.</strong> <em>FORK BUILD</em> baut, signiert und prüft die APK. Beim ersten Mal
+            legt der Forge einen Signatur-Schlüssel an – <strong>gut aufheben</strong>: Updates lassen sich nur mit
+            demselben Schlüssel installieren.</li>
+          <li lang="en"><strong>Build.</strong> <em>FORK BUILD</em> builds, signs and checks the APK. The first time the
+            Forge creates a signing key – <strong>keep it safe</strong>: updates can only be installed with the same
+            key.</li>
+          <li lang="de"><strong>Installieren.</strong> Gerät per USB oder WLAN (ADB) verbinden und
+            <em>Letzte APK installieren</em> – oder die APK über die Download-Seite verteilen.</li>
+          <li lang="en"><strong>Install.</strong> Connect a device via USB or Wi-Fi (ADB) and <em>Install last APK</em>
+            – or distribute the APK through the download page.</li>
+        </ol>
+        <div class="window"><img data-shot="overview" src="assets/shots/de/skulls/overview.webp" width="1400"
+             height="877" alt="Übersicht / Overview" loading="lazy"></div>
+        <figcaption lang="de">Die Übersicht zeigt alle Forks, Wizards und Repositories mit Stand und Hinweisen.</figcaption>
+        <figcaption lang="en">The overview shows all forks, wizards and repositories with status and hints.</figcaption>
+      </section>
+
+      <!-- ===================== Forks ===================== -->
+      <section class="chapter" id="forks">
+        <div class="kicker">Forks</div>
+        <h2 lang="de">Einen Kodi-Fork bauen</h2><h2 lang="en">Building a Kodi fork</h2>
+        <p lang="de">Ein Fork ist eine Kodi-App mit eigenem Namen, Symbol und vorbereiteter Einrichtung. Die Arbeit
+          ist auf Reiter verteilt – du füllst nur aus, was du brauchst.</p>
+        <p lang="en">A fork is a Kodi app with its own name, icon and prepared setup. The work is split into tabs – you
+          only fill in what you need.</p>
+        <div class="tabs-list">
+          <div lang="de"><b>1 · APKs &amp; Fork</b><span>Kodi-APKs, Name, Paket, Version, Updates des Forks
+            (update.json, Ersatz-Server).</span></div>
+          <div lang="en"><b>1 · APKs &amp; fork</b><span>Kodi APKs, name, package, version, fork updates
+            (update.json, mirror servers).</span></div>
+          <div lang="de"><b>4 · Branding</b><span>App-Symbol, TV-Banner, Startbild und Logo – mit Vorschau.</span></div>
+          <div lang="en"><b>4 · Branding</b><span>App icon, TV banner, splash and logo – with preview.</span></div>
+          <div lang="de"><b>5 · Addons</b><span>ZIPs, Ordner, Addons aus dem Kodi-Repository oder aus eingebetteten
+            Fremd-Repositories.</span></div>
+          <div lang="en"><b>5 · Add-ons</b><span>ZIPs, folders, add-ons from the Kodi repository or from embedded
+            third-party repositories.</span></div>
+          <div lang="de"><b>6 · Kodi-Einstellungen</b><span>Skin, Sprache, weitere Sprachen, Region, Kindersicherung,
+            Quellen, Favoriten.</span></div>
+          <div lang="en"><b>6 · Kodi settings</b><span>Skin, language, extra languages, region, parental lock,
+            sources, favourites.</span></div>
+          <div lang="de"><b>7 · Signatur</b><span>Schlüssel und Signaturverfahren (v1–v4).</span></div>
+          <div lang="en"><b>7 · Signing</b><span>Key and signature schemes (v1–v4).</span></div>
+          <div lang="de"><b>8 · Build &amp; Installation</b><span>Bauen, Varianten, Gerät, Upload.</span></div>
+          <div lang="en"><b>8 · Build &amp; install</b><span>Build, variants, device, upload.</span></div>
+        </div>
+        <div class="window"><img data-shot="fork" src="assets/shots/de/skulls/fork.webp" width="1400" height="877"
+             alt="Fork" loading="lazy"></div>
+        <h3 lang="de">Addons einbetten</h3><h3 lang="en">Embedding add-ons</h3>
+        <p lang="de">Eingebettete Addons sind ab dem ersten Start da. <strong>Aus Kodi-Repository</strong> lädt Addons
+          passend zur Kodi-Version und CPU – auch PVR-Clients und inputstream.adaptive. Steht ein Repository-ZIP in der
+          Liste, durchsucht <strong>Aus Fremd-Repository</strong> dessen Addons genauso. Fehlende Abhängigkeiten holt
+          der Build selbst.</p>
+        <p lang="en">Embedded add-ons are there from the first start. <strong>From Kodi repository</strong> loads
+          add-ons matching the Kodi version and CPU – including PVR clients and inputstream.adaptive. If a repository ZIP
+          is in the list, <strong>From third-party repository</strong> browses its add-ons the same way. The build fetches
+          missing dependencies itself.</p>
+        <div class="window"><img data-shot="embed" src="assets/shots/de/skulls/embed.webp" width="1400" height="877"
+             alt="Addons einbetten / Embed add-ons" loading="lazy"></div>
+        <h3 lang="de">Sprachen</h3><h3 lang="en">Languages</h3>
+        <p lang="de">Wähle im Reiter Kodi-Einstellungen die Startsprache und unter <strong>Weitere Sprachen</strong>
+          alles, was im Fork umschaltbar sein soll. Fehlende Sprachpakete lädt der Build aus dem offiziellen
+          Kodi-Repository.</p>
+        <p lang="en">In the Kodi settings tab choose the start language and under <strong>Extra languages</strong>
+          everything that should be switchable in the fork. The build loads missing language packs from the official
+          Kodi repository.</p>
+        <h3 lang="de">Updates des Forks</h3><h3 lang="en">Fork updates</h3>
+        <p lang="de">Mit einer update.json-Adresse meldet der Fork neue Versionen selbst – auf Wunsch lädt er die APK
+          und öffnet den Android-Installer. <strong>Ersatz-Server</strong> (Fork-Funktionen → App und Updates) sind
+          Kopien von update.json und APKs: fällt der Haupt-Server aus, nimmt der Fork den nächsten. Nur HTTPS.</p>
+        <p lang="en">With an update.json address the fork announces new versions itself – optionally it downloads the
+          APK and opens the Android installer. <strong>Mirror servers</strong> (Fork features → App and updates) are
+          copies of update.json and APKs: if the main server is down, the fork takes the next one. HTTPS only.</p>
+      </section>
+
+      <!-- ===================== Fork-Funktionen ===================== -->
+      <section class="chapter" id="fork-features">
+        <div class="kicker"><span lang="de">Fork-Funktionen</span><span lang="en">Fork features</span></div>
+        <h2 lang="de">Fork-Center und Einrichtungsassistent</h2><h2 lang="en">Fork Center and setup assistant</h2>
+        <p lang="de">Das <strong>Fork-Center</strong> ist ein eigenes Menü im Fork (in den Favoriten): Wartung,
+          Sicherung auf USB oder Netzwerk, Hilfe, Support-Code und Zurücksetzen. Dazu kommen Bildschirmzeit,
+          Kiosk-Modus, Kinderprofil und Mitteilungen an deine Nutzer.</p>
+        <p lang="en">The <strong>Fork Center</strong> is a menu of its own in the fork (in the favourites):
+          maintenance, backup to USB or network, help, support code and reset. On top come screen time, kiosk mode, a
+          kids profile and messages to your users.</p>
+        <div class="window"><img data-shot="forkcenter" src="assets/shots/de/skulls/forkcenter.webp" width="1400"
+             height="877" alt="Fork-Funktionen / Fork features" loading="lazy"></div>
+        <h3 lang="de">Einrichtungsassistent beim ersten Start</h3><h3 lang="en">Setup assistant on first start</h3>
+        <p lang="de">Wähle die Schritte: <strong>Sprache, Region, Wetter-Ort, M3U-Adresse</strong> (z.B. für IPTV
+          Simple) und <strong>Kindersicherungs-Code</strong>. Der Fork fragt sie beim ersten Start ab; „Später“ ist
+          möglich und im Fork-Center lässt sich der Assistent jederzeit wieder starten.</p>
+        <p lang="en">Pick the steps: <strong>language, region, weather location, M3U address</strong> (e.g. for IPTV
+          Simple) and <strong>parental lock code</strong>. The fork asks for them on first start; "Later" is possible and
+          the assistant can be started again any time in the Fork Center.</p>
+        <p class="tip" lang="de">Zugangsdaten (Passwörter, MAC-Adressen) gehören nicht in die APK: unter „Zugangsdaten
+          beim ersten Start abfragen“ fragt der Fork sie ab und speichert sie nur auf dem Gerät.</p>
+        <p class="tip" lang="en">Credentials (passwords, MAC addresses) do not belong in the APK: under "Ask for
+          credentials on first start" the fork asks for them and stores them only on the device.</p>
+      </section>
+
+      <!-- ===================== Addons ===================== -->
+      <section class="chapter" id="addons">
+        <div class="kicker">Addons</div>
+        <h2 lang="de">Eigene Addons</h2><h2 lang="en">Your own add-ons</h2>
+        <p lang="de">Neue Addons entstehen aus Vorlagen (Plugin, Script, Dienst, Kontextmenü …). Die Seite hat vier
+          Reiter:</p>
+        <p lang="en">New add-ons start from templates (plugin, script, service, context menu …). The page has four
+          tabs:</p>
+        <div class="tabs-list">
+          <div lang="de"><b>Angaben</b><span>addon.xml: Name, Version, Beschreibung, Kodi-Version.</span></div>
+          <div lang="en"><b>Details</b><span>addon.xml: name, version, description, Kodi version.</span></div>
+          <div lang="de"><b>Abhängigkeiten</b><span>benötigte Module, online geprüft.</span></div>
+          <div lang="en"><b>Dependencies</b><span>required modules, checked online.</span></div>
+          <div lang="de"><b>Bauen und testen</b><span>prüfen, saubere ZIP bauen, aufs Gerät, Kodi-Log live.</span></div>
+          <div lang="en"><b>Build and test</b><span>check, build a clean ZIP, push to device, live Kodi log.</span></div>
+          <div lang="de"><b>Dateien</b><span>alle Dateien des Addons öffnen.</span></div>
+          <div lang="en"><b>Files</b><span>open every file of the add-on.</span></div>
+        </div>
+        <div class="window"><img data-shot="addons" src="assets/shots/de/skulls/addons.webp" width="1400" height="877"
+             alt="Addons" loading="lazy"></div>
+      </section>
+
+      <!-- ===================== Repository ===================== -->
+      <section class="chapter" id="repository">
+        <div class="kicker">Repository</div>
+        <h2 lang="de">Ein eigenes Repository</h2><h2 lang="en">Your own repository</h2>
+        <p lang="de">Aus deinem Repository installiert Kodi deine Addons und hält sie aktuell. Reiter:
+          <strong>Repository-Addon</strong> (Name, Symbol), <strong>Addons</strong> (was hinein soll),
+          <strong>Adresse und Zweige</strong> (getrennte Ordner für ältere Kodi-Versionen) und
+          <strong>Verteilen</strong> (bauen, hochladen per FTP, SFTP oder GitHub Pages).</p>
+        <p lang="en">Kodi installs your add-ons from your repository and keeps them up to date. Tabs:
+          <strong>Repository add-on</strong> (name, icon), <strong>Add-ons</strong> (what goes in),
+          <strong>Address and branches</strong> (separate folders for older Kodi versions) and
+          <strong>Publish</strong> (build, upload via FTP, SFTP or GitHub Pages).</p>
+        <div class="window"><img data-shot="repo" src="assets/shots/de/skulls/repo.webp" width="1400" height="877"
+             alt="Repository" loading="lazy"></div>
+        <p class="tip" lang="de"><strong>Online prüfen</strong> lädt nach dem Hochladen die addons.xml.md5 jedes Zweigs
+          und prüft jedes Addon-ZIP an der öffentlichen Adresse – so fällt ein vergessener oder halber Upload sofort
+          auf.</p>
+        <p class="tip" lang="en"><strong>Check online</strong> loads the addons.xml.md5 of every branch after uploading
+          and checks every add-on ZIP at the public address – a forgotten or partial upload shows up right away.</p>
+      </section>
+
+      <!-- ===================== Wizard ===================== -->
+      <section class="chapter" id="wizard">
+        <div class="kicker">Wizard</div>
+        <h2 lang="de">Builds verteilen mit dem eigenen Wizard</h2><h2 lang="en">Distributing builds with your own wizard</h2>
+        <p lang="de">Ein Build ist eine fertig eingerichtete Kodi-Installation – z.B. ein portables Kodi auf dem PC.
+          Der Forge packt sie (ohne Cache, Vorschaubilder und Zugangsdaten) und baut dazu ein Wizard-Addon, das deine
+          Builds anzeigt und installiert.</p>
+        <p lang="en">A build is a fully set-up Kodi installation – e.g. a portable Kodi on your PC. The Forge packs it
+          (without cache, thumbnails and credentials) and builds a wizard add-on that shows and installs your builds.</p>
+        <div class="tabs-list">
+          <div lang="de"><b>Addon</b><span>Name, Farbschema, Ansicht, Symbole, Kontakt, Save Data, Repository.</span></div>
+          <div lang="en"><b>Add-on</b><span>Name, color scheme, view, icons, contact, Save Data, repository.</span></div>
+          <div lang="de"><b>Builds</b><span>Builds anlegen, alte Wizards importieren, vergleichen, Größen-Analyse.</span></div>
+          <div lang="en"><b>Builds</b><span>Add builds, import old wizards, compare, size analysis.</span></div>
+          <div lang="de"><b>Verteilen</b><span>Adresse, Upload-Ziel, große Builds als GitHub-Release, Online-Prüfung.</span></div>
+          <div lang="en"><b>Publish</b><span>Address, upload target, big builds as GitHub release, online check.</span></div>
+          <div lang="de"><b>Sicherheit</b><span>Zugangsdaten entfernen, Repositories prüfen, GitHub-Tokens.</span></div>
+          <div lang="en"><b>Security</b><span>Remove credentials, check repositories, GitHub tokens.</span></div>
+        </div>
+        <div class="window"><img data-shot="wizard" src="assets/shots/de/skulls/wizard.webp" width="1400" height="877"
+             alt="Wizard" loading="lazy"></div>
+        <h3 lang="de">Alles veröffentlichen</h3><h3 lang="en">Publish everything</h3>
+        <p lang="de">Ein Knopf für alles: Repository bauen und hochladen, Wizard bauen und hochladen, danach prüfen, ob
+          builds.json, Prüfsummen und Repository online stimmen. Große Uploads zeigen Restzeit und lassen sich
+          abbrechen und fortsetzen.</p>
+        <p lang="en">One button for everything: build and upload the repository, build and upload the wizard, then
+          check that builds.json, checksums and repository are right online. Big uploads show remaining time and can be
+          cancelled and resumed.</p>
+        <h3 lang="de">Größen-Analyse</h3><h3 lang="en">Size analysis</h3>
+        <p lang="de">Zeigt die größten Ordner, Addons und Dateien eines Builds – mit Tipps, wo sich Platz sparen lässt
+          (Caches, große Bilder, Archive, Bibliotheks-Datenbanken).</p>
+        <p lang="en">Shows the largest folders, add-ons and files of a build – with tips on where to save space
+          (caches, large images, archives, library databases).</p>
+        <h3 lang="de">Projekte duplizieren</h3><h3 lang="en">Duplicating projects</h3>
+        <p lang="de"><strong>Projekt duplizieren</strong> legt einen zweiten Wizard mit eigener ID an;
+          <strong>Aus anderem Projekt übernehmen</strong> holt Farbschema, Kontakt, Save Data oder Repository aus einem
+          bestehenden.</p>
+        <p lang="en"><strong>Duplicate project</strong> creates a second wizard with its own ID; <strong>Take over from
+          another project</strong> brings in color scheme, contact, Save Data or repository from an existing one.</p>
+      </section>
+
+      <!-- ===================== Wizard in Kodi ===================== -->
+      <section class="chapter" id="wizard-kodi">
+        <div class="kicker"><span lang="de">Der Wizard in Kodi</span><span lang="en">The wizard in Kodi</span></div>
+        <h2 lang="de">Was deine Nutzer sehen</h2><h2 lang="en">What your users see</h2>
+        <p lang="de">Der Wizard ist ein Vollbild-Fenster, unabhängig vom Skin: Builds mit Galerie und Neuigkeiten,
+          Wartung, Backup, Save Data und Einstellungen. Die <kbd>Info</kbd>-Taste (oder langes Drücken von
+          <kbd>OK</kbd>) erklärt jede Kachel ausführlich.</p>
+        <p lang="en">The wizard is a full-screen window, independent of the skin: builds with gallery and news,
+          maintenance, backup, Save Data and settings. The <kbd>Info</kbd> key (or a long press on <kbd>OK</kbd>)
+          explains every tile in detail.</p>
+        <div class="window"><img src="assets/shots/wizard/builds.webp" width="1400" height="877"
+             alt="Wizard: Builds" loading="lazy"></div>
+        <h3 lang="de">Log filtern und speichern</h3><h3 lang="en">Filtering and saving the log</h3>
+        <p lang="de">Wartung → Logging: das Log nach Fehlern, einem Begriff oder einem Addon filtern und als Datei auf
+          einen USB-Stick oder ins Netzwerk speichern – Passwörter, Tokens und MAC-Adressen werden auf Wunsch
+          unkenntlich gemacht.</p>
+        <p lang="en">Maintenance → Logging: filter the log by errors, a term or an add-on and save it as a file to a USB
+          stick or the network – passwords, tokens and MAC addresses are masked if you like.</p>
+        <div class="window"><img src="assets/shots/wizard/maintenance.webp" width="1400" height="877"
+             alt="Wizard: Wartung / Maintenance" loading="lazy"></div>
+      </section>
+
+      <!-- ===================== Werkzeuge ===================== -->
+      <section class="chapter" id="tools">
+        <div class="kicker"><span lang="de">Werkzeuge &amp; Einstellungen</span><span lang="en">Tools &amp; settings</span></div>
+        <h2 lang="de">Upload-Ziele, Tokens und Sicherungen</h2><h2 lang="en">Upload targets, tokens and backups</h2>
+        <p lang="de">Unter <strong>Einstellungen → Upload-Ziele</strong> legst du FTP-, SFTP- und GitHub-Ziele einmal an;
+          Forks, Repositories und Wizards wählen dann nur noch Ziel und Unterordner. Passwörter und Tokens stehen nie in
+          Profilen oder Projekten.</p>
+        <p lang="en">Under <strong>Settings → Upload targets</strong> you set up FTP, SFTP and GitHub targets once;
+          forks, repositories and wizards then only pick a target and subfolder. Passwords and tokens never end up in
+          profiles or projects.</p>
+        <div class="window"><img data-shot="settings" src="assets/shots/de/skulls/settings.webp" width="1400"
+             height="877" alt="Einstellungen / Settings" loading="lazy"></div>
+        <p class="tip" lang="de"><strong>GitHub-Tokens</strong> prüft der Forge einmal täglich: er warnt rechtzeitig
+          vor dem Ablauf und meldet zu weite Rechte. Für Uploads reicht „repo“ – oder ein fein abgestuftes Token nur für
+          die betroffenen Repositories.</p>
+        <p class="tip" lang="en">The Forge checks <strong>GitHub tokens</strong> once a day: it warns in time before
+          they expire and reports overly broad rights. For uploads "repo" is enough – or a fine-grained token for just
+          the repositories involved.</p>
+        <div class="window"><img data-shot="tools" src="assets/shots/de/skulls/tools.webp" width="1400" height="877"
+             alt="Werkzeuge / Tools" loading="lazy"></div>
+        <p lang="de">Die <strong>Gesamtsicherung</strong> (Datei-Menü) sichert Einstellungen, Profile, Projekte und
+          Schlüssel in eine .skbackup-Datei – ein Doppelklick darauf stellt alles wieder her.</p>
+        <p lang="en">The <strong>full backup</strong> (File menu) saves settings, profiles, projects and keys into a
+          .skbackup file – double-clicking it restores everything.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><a class="brand" href="index.html"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a></div>
+    <nav>
+      <a href="index.html"><span lang="de">Startseite</span><span lang="en">Home</span></a>
+      <a href="faq.html">FAQ</a>
+      <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Legal notice</span></a>
+      <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
+      <a data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Großansicht"><img alt=""></div>
+<script>
+  /* Inhaltsverzeichnis: aktuellen Abschnitt hervorheben */
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll(".toc a[href^='#']"));
+    if (!("IntersectionObserver" in window) || !links.length) return;
+    var byId = {};
+    links.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && byId[entry.target.id]) {
+          links.forEach(function (a) { a.classList.remove("active"); });
+          byId[entry.target.id].classList.add("active");
+        }
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll(".chapter").forEach(function (s) { observer.observe(s); });
+  })();
+</script>
+</body>
+</html>

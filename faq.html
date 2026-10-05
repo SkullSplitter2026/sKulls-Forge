@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="de" data-lang="de" data-scheme="skulls"
+      data-title-de="FAQ – sKulls Forge" data-title-en="FAQ – sKulls Forge">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ – sKulls Forge</title>
+  <meta name="description" content="Häufige Fragen zu sKulls Forge: Forks, Signatur, Updates, Wizard, GitHub, Sicherheit.">
+  <meta name="theme-color" content="#111318">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a>
+    <nav class="nav-links" aria-label="Seiten">
+      <a href="index.html"><span lang="de">Startseite</span><span lang="en">Home</span></a>
+      <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
+      <a href="faq.html" aria-current="page">FAQ</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <button type="button" data-lang="de" aria-pressed="true">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <div class="scheme">
+        <button class="pill" id="scheme-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Farbschema / Color scheme">
+          <i class="scheme-dot" aria-hidden="true"></i><span class="label" id="scheme-label">sKulls Neon</span></button>
+        <div class="scheme-menu" id="scheme-menu" role="menu" aria-label="Farbschema"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="guide faq">
+  <div class="wrap">
+    <nav class="toc" aria-label="Themen">
+      <b><span lang="de">Themen</span><span lang="en">Topics</span></b>
+      <a href="#allgemein"><span lang="de">Allgemein</span><span lang="en">General</span></a>
+      <a href="#forks">Forks</a>
+      <a href="#wizard">Wizard</a>
+      <a href="#upload"><span lang="de">Hochladen</span><span lang="en">Uploading</span></a>
+      <a href="#sicherheit"><span lang="de">Sicherheit</span><span lang="en">Security</span></a>
+      <a href="anleitung.html"><span lang="de">Anleitung →</span><span lang="en">Guide →</span></a>
+    </nav>
+    <div>
+      <h1 lang="de">Häufige Fragen</h1><h1 lang="en">Frequently asked questions</h1>
+      <p class="lead" lang="de">Kurze Antworten – ausführlich steht alles in der <a href="anleitung.html">Anleitung</a>.</p>
+      <p class="lead" lang="en">Short answers – everything in detail is in the <a href="anleitung.html">guide</a>.</p>
+
+      <section class="chapter" id="allgemein">
+        <h2 lang="de">Allgemein</h2><h2 lang="en">General</h2>
+        <details><summary><span lang="de">Was brauche ich zum Starten?</span><span lang="en">What do I need to start?</span></summary>
+          <div lang="de">Windows 10 oder 11. Das Setup bringt das fertig übersetzte Programm, Java und alle Werkzeuge mit – Python brauchst du nicht. Für Installationen
+            auf Android-Geräten brauchst du ADB-Zugriff (USB-Debugging oder Debugging über WLAN).</div>
+          <div lang="en">Windows 10 or 11. The setup ships the compiled program, Java and all tools – you don't need Python. For installing on Android devices
+            you need ADB access (USB debugging or wireless debugging).</div></details>
+        <details><summary><span lang="de">Geht es auch portabel, z.B. vom USB-Stick?</span><span lang="en">Can it run portable, e.g. from a USB stick?</span></summary>
+          <div lang="de">Ja. Im Setup „Portabel entpacken“ wählen – alle Daten bleiben dann im Ordner der portablen
+            Version, nichts landet in der Registry.</div>
+          <div lang="en">Yes. Choose "Unpack portable" in the setup – all data then stays in the portable version's
+            folder, nothing goes into the registry.</div></details>
+        <details><summary><span lang="de">Welche Kodi-Versionen werden unterstützt?</span><span lang="en">Which Kodi versions are supported?</span></summary>
+          <div lang="de">Kodi 18 bis 22. Für aktuelle Geräte empfehlen wir Kodi 20 oder neuer – Kodi 18/19 zeigen auf
+            neuen Android-Versionen teils nur ein schwarzes Bild.</div>
+          <div lang="en">Kodi 18 to 22. For current devices we recommend Kodi 20 or newer – Kodi 18/19 partly show only
+            a black screen on new Android versions.</div></details>
+        <details><summary><span lang="de">Ist sKulls Forge ein offizielles Kodi-Produkt?</span><span lang="en">Is sKulls Forge an official Kodi product?</span></summary>
+          <div lang="de">Nein. Es nutzt offizielle Kodi-APKs als Grundlage. Mit dem Tool erstellte Forks müssen die
+            GPL-Lizenz von Kodi einhalten.</div>
+          <div lang="en">No. It uses official Kodi APKs as its base. Forks created with the tool must comply with Kodi's
+            GPL license.</div></details>
+      </section>
+
+      <section class="chapter" id="forks">
+        <h2>Forks</h2>
+        <details><summary><span lang="de">Läuft der Fork neben dem normalen Kodi?</span><span lang="en">Does the fork run next to regular Kodi?</span></summary>
+          <div lang="de">Ja, mit eigenem Paketnamen ist der Fork eine eigene App mit eigenen Daten.</div>
+          <div lang="en">Yes, with its own package name the fork is a separate app with its own data.</div></details>
+        <details><summary><span lang="de">Warum lässt sich ein Update nicht installieren?</span><span lang="en">Why can't an update be installed?</span></summary>
+          <div lang="de">Android installiert ein Update nur mit demselben Signatur-Schlüssel und einem höheren
+            Version-Code. Der Forge merkt sich das Zertifikat und bricht ab, wenn ein anderer Schlüssel gewählt ist.
+            Keystore-Sicherungen findest du unter Extras.</div>
+          <div lang="en">Android only installs an update with the same signing key and a higher version code. The Forge
+            remembers the certificate and stops if a different key is chosen. Keystore backups are under Extras.</div></details>
+        <details><summary><span lang="de">Wie bekommen meine Nutzer Updates des Forks?</span><span lang="en">How do my users get fork updates?</span></summary>
+          <div lang="de">Mit einer update.json-Adresse prüft der Fork beim Start auf neue Versionen. Ersatz-Server
+            springen ein, wenn der Haupt-Server ausfällt. Der Build legt update.json, Download-Seite und QR-Codes neben
+            die APKs.</div>
+          <div lang="en">With an update.json address the fork checks for new versions on start. Mirror servers step in
+            when the main server is down. The build puts update.json, a download page and QR codes next to the APKs.</div></details>
+        <details><summary><span lang="de">Kann der Fork mehrere Sprachen?</span><span lang="en">Can the fork have several languages?</span></summary>
+          <div lang="de">Ja: Startsprache und „Weitere Sprachen“ im Reiter Kodi-Einstellungen wählen – fehlende
+            Sprachpakete lädt der Build aus dem Kodi-Repository. Der Einrichtungsassistent fragt die Sprache beim
+            ersten Start ab.</div>
+          <div lang="en">Yes: choose the start language and "Extra languages" in the Kodi settings tab – the build loads
+            missing language packs from the Kodi repository. The setup assistant asks for the language on first
+            start.</div></details>
+      </section>
+
+      <section class="chapter" id="wizard">
+        <h2>Wizard</h2>
+        <details><summary><span lang="de">Was kommt nicht in einen Build?</span><span lang="en">What is left out of a build?</span></summary>
+          <div lang="de">Cache, Vorschaubilder, Addon-Pakete, Logs und Datenbanken, die Kodi selbst neu aufbaut – und
+            standardmäßig alle Zugangsdaten. Die Größen-Analyse zeigt vorher, was wie viel Platz braucht.</div>
+          <div lang="en">Cache, thumbnails, add-on packages, logs and databases Kodi rebuilds itself – and by default
+            all credentials. The size analysis shows beforehand what takes how much space.</div></details>
+        <details><summary><span lang="de">Mein Build ist größer als 95 MB – geht GitHub trotzdem?</span><span lang="en">My build is larger than 95 MB – does GitHub still work?</span></summary>
+          <div lang="de">Ja. Große Builds lädt der Forge als Datei eines GitHub-Releases hoch (bis 2 GB); der Wizard
+            lädt sie von dort.</div>
+          <div lang="en">Yes. The Forge uploads large builds as a file of a GitHub release (up to 2 GB); the wizard
+            downloads them from there.</div></details>
+        <details><summary><span lang="de">Funktioniert der Wizard auf allen Geräten?</span><span lang="en">Does the wizard work on every device?</span></summary>
+          <div lang="de">Ja – Android, Windows, macOS und Linux. Binär-Addons (PVR, Inputstream) lädt der Wizard nach
+            dem Neustart passend zum Gerät.</div>
+          <div lang="en">Yes – Android, Windows, macOS and Linux. The wizard loads binary add-ons (PVR, inputstream)
+            matching the device after the restart.</div></details>
+        <details><summary><span lang="de">Wie finden Nutzer Hilfe im Wizard?</span><span lang="en">How do users find help in the wizard?</span></summary>
+          <div lang="de">Die <kbd>Info</kbd>-Taste (oder langes <kbd>OK</kbd>) erklärt jede Kachel. Unter Wartung →
+            Logging lässt sich das Log filtern und ohne Passwörter auf USB oder ins Netzwerk speichern.</div>
+          <div lang="en">The <kbd>Info</kbd> key (or a long <kbd>OK</kbd>) explains every tile. Under Maintenance →
+            Logging the log can be filtered and saved without passwords to USB or the network.</div></details>
+      </section>
+
+      <section class="chapter" id="upload">
+        <h2 lang="de">Hochladen</h2><h2 lang="en">Uploading</h2>
+        <details><summary><span lang="de">Welche Server gehen?</span><span lang="en">Which servers work?</span></summary>
+          <div lang="de">FTP, FTPS, SFTP und GitHub (Repository mit GitHub Pages oder Releases). Upload-Ziele legst du
+            einmal in den Einstellungen an.</div>
+          <div lang="en">FTP, FTPS, SFTP and GitHub (repository with GitHub Pages or releases). You set up upload targets
+            once in the settings.</div></details>
+        <details><summary><span lang="de">Der Upload brach ab – muss alles neu?</span><span lang="en">The upload was interrupted – does everything start over?</span></summary>
+          <div lang="de">Nein. Große Uploads werden beim nächsten Hochladen an der Abbruchstelle fortgesetzt.</div>
+          <div lang="en">No. Large uploads resume where they stopped on the next upload.</div></details>
+        <details><summary><span lang="de">Woher weiß ich, dass alles online ist?</span><span lang="en">How do I know everything is online?</span></summary>
+          <div lang="de">Nach dem Hochladen prüft der Forge builds.json, Prüfsummen, jeden Repository-Zweig und jedes
+            Addon-ZIP an der öffentlichen Adresse – bei GitHub Pages wartet er kurz, bis die neue Fassung da ist.</div>
+          <div lang="en">After uploading the Forge checks builds.json, checksums, every repository branch and every add-on
+            ZIP at the public address – with GitHub Pages it waits briefly until the new version is live.</div></details>
+      </section>
+
+      <section class="chapter" id="sicherheit">
+        <h2 lang="de">Sicherheit</h2><h2 lang="en">Security</h2>
+        <details><summary><span lang="de">Wo stehen meine Passwörter und Tokens?</span><span lang="en">Where are my passwords and tokens stored?</span></summary>
+          <div lang="de">Nur in den Einstellungen auf deinem PC – nie in Profilen, Projekten, Builds oder APKs.</div>
+          <div lang="en">Only in the settings on your PC – never in profiles, projects, builds or APKs.</div></details>
+        <details><summary><span lang="de">Welche Rechte braucht mein GitHub-Token?</span><span lang="en">Which rights does my GitHub token need?</span></summary>
+          <div lang="de">„repo“ (bzw. „public_repo“) – oder ein fein abgestuftes Token nur für die betroffenen
+            Repositories, am besten mit Ablaufdatum. Der Forge warnt vor dem Ablauf und bei zu weiten Rechten.</div>
+          <div lang="en">"repo" (or "public_repo") – or a fine-grained token for just the repositories involved, ideally
+            with an expiry date. The Forge warns before expiry and about overly broad rights.</div></details>
+        <details><summary><span lang="de">Was macht die Sperrliste für Repositories?</span><span lang="en">What does the repository blocklist do?</span></summary>
+          <div lang="de">Sie verhindert, dass Addons aus unerwünschten Quellen in einen Build kommen. Unsichere Quellen
+            (http, IP-Adressen, Kurz-Links) meldet der Forge zusätzlich.</div>
+          <div lang="en">It prevents add-ons from unwanted sources from getting into a build. The Forge also reports
+            insecure sources (http, IP addresses, short links).</div></details>
+        <details><summary><span lang="de">Ist der Quellcode öffentlich?</span><span lang="en">Is the source code public?</span></summary>
+          <div lang="de">Im Moment nicht.</div>
+          <div lang="en">Not at the moment.</div></details>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><a class="brand" href="index.html"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a></div>
+    <nav>
+      <a href="index.html"><span lang="de">Startseite</span><span lang="en">Home</span></a>
+      <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
+      <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Legal notice</span></a>
+      <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
+      <a data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

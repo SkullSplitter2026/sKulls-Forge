@@ -37,6 +37,8 @@
       <a href="#schemes"><span lang="de">Farbschemata</span><span lang="en">Color schemes</span></a>
       <a href="#changelog">Changelog</a>
       <a href="#download">Download</a>
+      <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
+      <a href="faq.html">FAQ</a>
     </nav>
     <div class="nav-tools">
       <a class="pill" data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">
@@ -67,8 +69,8 @@
       <div class="wrap hero-grid">
       <div class="hero-text">
         <div class="eyebrow"><b lang="de">Neu</b><b lang="en">New</b>
-          <span lang="de">Version 2 · jetzt mit eigenen Addons und Repository</span>
-          <span lang="en">Version 2 · now with your own add-ons and repository</span>
+          <span lang="de">Version 3.7 · WebDAV & S3, Ziehen und Ablegen, Wizard mit Rückgängig</span>
+          <span lang="en">Version 3.7 · WebDAV & S3, drag & drop, wizard with undo</span>
         </div>
         <h1 lang="de">Forks. Addons.<br>Repositories.<br><span style="color:var(--accent)">Aus einem Guss.</span></h1>
         <h1 lang="en">Forks. Add-ons.<br>Repositories.<br><span style="color:var(--accent)">Cast in one piece.</span></h1>
@@ -87,6 +89,19 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>
             Download <span class="soon" lang="de">bald</span><span class="soon" lang="en">soon</span>
           </a>
+        </div>
+        <div class="counters hero-counters" aria-live="polite">
+          <div class="counter" data-counter="visits" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            <strong class="value">–</strong>
+            <span lang="de">Besuche</span><span lang="en">Visits</span>
+          </div>
+          <div class="counter" data-counter="downloads">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>
+            <strong class="value">–</strong>
+            <span class="label-some"><span lang="de">Downloads</span><span lang="en">Downloads</span></span>
+            <span class="label-none" hidden><span lang="de">noch keine Downloads</span><span lang="en">no downloads yet</span></span>
+          </div>
         </div>
       </div>
       <div class="hero-col" aria-hidden="true">
@@ -440,6 +455,46 @@
     </div>
     <div class="timeline">
       <article class="release current reveal">
+        <div><div class="ver">3.7.0</div><div class="date">2026-10-05</div></div>
+        <div>
+          <h3 lang="de">Mehr Upload-Ziele, sicherer Wizard</h3><h3 lang="en">More upload targets, safer wizard</h3>
+          <ul lang="de">
+            <li><strong>WebDAV</strong> (Nextcloud, ownCloud …) und <strong>S3-Speicher</strong> (Amazon, R2, B2, Wasabi, MinIO) für Fork, Repository und Wizard</li>
+            <li><strong>Ziehen und Ablegen</strong> aus dem Explorer, <strong>Geräteverwaltung</strong> mit eigenen Namen und automatischer WLAN-Verbindung</li>
+            <li>Fork: <strong>Branding aus einem Logo</strong>, eigene <strong>Oberflächen-Töne</strong>, Quellen gleich als <strong>Filme/Serien-Bibliothek</strong>, Berechtigungen prüfen, IPTV-Quellen prüfen, Addon-Pakete</li>
+            <li>Wizard: <strong>Wiederherstellungspunkt</strong> und <strong>„Letzte Installation rückgängig“</strong>, Plattform-Prüfung, Downloads gehen nach Abbruch weiter, kein Wiedergabeverlauf in Builds</li>
+            <li>Wizard: <strong>Zugänge &amp; API-Schlüssel</strong> einmal eingeben, in alle passenden Addons eintragen; frischere Dialoge · Forge: <strong>alle Repos nach Genre</strong>, <strong>Schlüsselbund</strong> für Signatur-Schlüssel</li>
+          </ul>
+          <ul lang="en">
+            <li><strong>WebDAV</strong> (Nextcloud, ownCloud …) and <strong>S3 storage</strong> (Amazon, R2, B2, Wasabi, MinIO) for fork, repository and wizard</li>
+            <li><strong>Drag & drop</strong> from Explorer, <strong>device manager</strong> with your own names and automatic Wi-Fi connection</li>
+            <li>Fork: <strong>branding from one logo</strong>, custom <strong>UI sounds</strong>, sources as a <strong>movies/TV library</strong> right away, permission check, IPTV source check, add-on bundles</li>
+            <li>Wizard: <strong>restore point</strong> and <strong>“undo last installation”</strong>, platform check, downloads resume after interruption, no playback history in builds</li>
+            <li>Wizard: <strong>logins &amp; API keys</strong> entered once, filled into all matching add-ons; fresher dialogs · Forge: <strong>all repos by genre</strong>, <strong>keyring</strong> for signing keys</li>
+          </ul>
+        </div>
+      </article>
+      <article class="release reveal">
+        <div><div class="ver">3.6.0</div><div class="date">2026-10-05</div></div>
+        <div>
+          <h3 lang="de">Setup ohne Python, große Addons & Reiter</h3><h3 lang="en">Setup without Python, big add-ons & tabs</h3>
+          <ul lang="de">
+            <li><strong>Fertig übersetztes Programm</strong>: <code>sKulls Forge.exe</code> statt Python und Skripten – im Setup steckt keine .py-Datei mehr</li>
+            <li><strong>Addons über 95 MB</strong> im eigenen Repository: kommen bei GitHub automatisch in ein Release, Kodi lädt sie von dort</li>
+            <li><strong>Reiter</strong> für Addons, Repository und Wizard; Wizards in der Übersicht; Symbolstil wählbar</li>
+            <li>Fork: <strong>Einrichtungsassistent</strong> beim ersten Start (Sprache, Region, Wetter, M3U, Kindersicherung), <strong>Sprachpakete automatisch</strong>, Ersatz-Server für Updates</li>
+            <li>Wizard: <strong>Alles veröffentlichen</strong>, Größen-Analyse, Info-Taste mit Hilfe, Log filtern und speichern; GitHub-Tokens werden auf Ablauf und Rechte geprüft</li>
+          </ul>
+          <ul lang="en">
+            <li><strong>Fully compiled program</strong>: <code>sKulls Forge.exe</code> instead of Python and scripts – the setup contains no .py file anymore</li>
+            <li><strong>Add-ons over 95 MB</strong> in your own repository: on GitHub they go into a release automatically, Kodi downloads them from there</li>
+            <li><strong>Tabs</strong> for add-ons, repository and wizard; wizards in the overview; selectable icon style</li>
+            <li>Fork: <strong>setup assistant</strong> on first start (language, region, weather, M3U, parental lock), <strong>automatic language packs</strong>, mirror servers for updates</li>
+            <li>Wizard: <strong>publish everything</strong>, size analysis, Info key help, filter and save the log; GitHub tokens are checked for expiry and scopes</li>
+          </ul>
+        </div>
+      </article>
+      <article class="release reveal">
         <div><div class="ver">3.5.0</div><div class="date">2026-10-04</div></div>
         <div>
           <h3 lang="de">Wizard: alte Builds, Komplett-Backup 1:1 & RSS</h3><h3 lang="en">Wizard: old builds, complete backup 1:1 & RSS</h3>
@@ -622,10 +677,10 @@
         <h2 lang="de">Bald zum<br>Download.</h2><h2 lang="en">Download<br>coming soon.</h2>
       </div>
       <p lang="de">Ein Download für alles: Das Setup installiert sKulls Forge – oder entpackt es auf Wunsch als
-        portable Version, z.B. auf einen USB-Stick. Python und Java kommen mit, jede Datei bekommt ihre
+        portable Version, z.B. auf einen USB-Stick. Das Programm ist fertig übersetzt – kein Python nötig –, Java kommt mit, jede Datei bekommt ihre
         SHA-256-Prüfsumme. Der Installer entsteht, sobald das Tool komplett ausgebaut ist.</p>
       <p lang="en">One download for everything: the setup installs sKulls Forge – or, if you like, unpacks it as a
-        portable version, e.g. onto a USB stick. Python and Java are included, every file gets its SHA-256
+        portable version, e.g. onto a USB stick. The program is fully compiled – no Python needed –, Java is included, every file gets its SHA-256
         checksum. The installer will be built once the tool is complete.</p>
     </div>
     <div class="downloads reveal">
@@ -654,22 +709,9 @@
     </div>
     <div class="req reveal">
       <span lang="de">Windows 10 / 11 (64 Bit)</span><span lang="en">Windows 10 / 11 (64-bit)</span>
-      <span lang="de">Python und Java inklusive</span><span lang="en">Python and Java included</span>
+      <span lang="de">Kein Python nötig, Java inklusive</span><span lang="en">No Python needed, Java included</span>
       <span lang="de">Offizielle Kodi-APKs 18–22</span><span lang="en">Official Kodi APKs 18–22</span>
       <span lang="de">ADB mitgeliefert</span><span lang="en">ADB bundled</span>
-    </div>
-    <div class="counters reveal" aria-live="polite">
-      <div class="counter" data-counter="visits" hidden>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
-        <strong class="value">–</strong>
-        <span lang="de">Besuche</span><span lang="en">Visits</span>
-      </div>
-      <div class="counter" data-counter="downloads">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>
-        <strong class="value">–</strong>
-        <span class="label-some"><span lang="de">Downloads</span><span lang="en">Downloads</span></span>
-        <span class="label-none" hidden><span lang="de">noch keine Downloads</span><span lang="en">no downloads yet</span></span>
-      </div>
     </div>
   </div>
 </section>
@@ -701,6 +743,8 @@
         with the tool must comply with Kodi's GPL license. © 2026 sKulls</p>
     </div>
     <nav aria-label="Fußzeile">
+      <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
+      <a href="faq.html">FAQ</a>
       <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Legal notice</span></a>
       <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
       <a href="#changelog">Changelog</a>
