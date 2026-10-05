@@ -2,6 +2,125 @@
 
 Alle wichtigen Änderungen. Neuere Versionen stehen oben. · *English summary below each version.*
 
+## 3.7.0 – 2026-10-05
+
+Mehr Upload-Ziele, Ziehen und Ablegen, Geräte mit Namen, ein sicherer Wizard mit Wiederherstellungspunkt – und
+Forks mit eigenem Branding, eigenen Tönen und fertiger Bibliothek.
+
+### 📱 Fork
+- **Branding aus einem Logo**: Icon, TV-Banner, Splash und Vendor-Logo in einem Schritt, dazu das passende
+  Estuary-Farbschema aus der Logofarbe
+- **Eigene Oberflächen-Töne**: Ordner mit WAV-Dateien → eigenes `resource.uisounds`-Addon, im Fork gleich aktiv
+- **Quellen mit Inhaltstyp und Scraper**: Medienquellen gleich als Filme/Serien mit TMDb-Scraper (passend zur
+  Kodi-Version), auf Wunsch wird die Bibliothek beim ersten Start einmal eingelesen
+- **Berechtigungen prüfen**: alle Android-Berechtigungen der APK mit Bewertung, unnötige beim Build entfernen –
+  nötige und die einer eingeschalteten Fork-Funktion bleiben immer
+- **IPTV-Quellen prüfen**: M3U und EPG beim Build auf Erreichbarkeit, Senderzahl und gültige Sendungsdaten
+- **Addon-Pakete**: Addon-Zusammenstellungen samt vorbelegter Einstellungen speichern und in andere Profile einfügen
+- **Alle Repos nach Genre**: alle Repositories (Projekt-Ordner, Addon-Liste, offizielles Kodi-Repo) einlesen, Addons
+  nach Genre sortiert (Filme & Serien, Live-TV, Sport, Anime, Kinder, Musik …), auswählen und einfügen
+- **Schlüsselbund**: der Signatur-Schlüssel jeder App wird automatisch gemerkt, neben jeder APK liegt eine
+  `.signatur.txt`; fehlt der Keystore beim nächsten Build, nimmt der Forge die passende Sicherung
+
+### 🧙 Wizard
+- **Wiederherstellungspunkt** vor jeder Build-Installation und jedem Fresh Start (an, die letzten zwei bleiben) und
+  **„Letzte Installation rückgängig machen“**
+- **Plattform-Prüfung**: Builds, die nicht zum Gerät passen (aus den `<platform>`-Angaben der Addons erkannt oder von
+  Hand), sind deutlich markiert, die Installation warnt
+- **Downloads fortsetzen**: ein abgebrochener Build-Download geht beim nächsten Mal an der Stelle weiter
+- **Persönliche Daten**: Wiedergabeverlauf, „Zuletzt gesehen“ und Fortsetzen-Punkte kommen nicht in die Builds
+  (Standard) – wahlweise auch die ganze Bibliothek weglassen
+- Deutsche Reiter in der Wartung: Bereinigen · Addon-Werkzeuge · Protokolle · System-Optimierung · Sonstiges
+- **Zugänge & API-Schlüssel** (Save Data): TMDb, fanart.tv, OMDb, TVDB, Debrid-Schlüssel und Logins einmal eingeben –
+  der Wizard findet die passenden Einstellungen in allen Addons, zeigt sie vorher an und trägt sie ein;
+  Kontoverknüpfungen (Real-Debrid, Trakt …) gehen von einem angemeldeten Addon auf gleichartige über
+- **Frischere Dialoge**: Kopfband im Farbverlauf (rot bei Gefahr), Symbol im leuchtenden Kreis, Logo als
+  Wasserzeichen, weicher Schatten, Knöpfe mit Tiefe, runder Fortschrittsbalken mit Prozent
+
+### 🚚 Hochladen
+- **WebDAV** (Nextcloud, ownCloud, Synology …) und **S3-Speicher** (Amazon, Cloudflare R2, Backblaze B2, Wasabi,
+  MinIO) als Upload-Ziele – für Fork, Repository und Wizard, ohne Zusatzpakete
+
+### 🖱️ Bedienung
+- **Ziehen und Ablegen** aus dem Explorer: APKs, Addon-ZIPs und -Ordner, Repository-Addons und Wizard-Builds
+- **Geräteverwaltung**: eigene Namen („Wohnzimmer-Box“), zuletzt benutzt zuerst, WLAN-Geräte automatisch verbinden
+- **adb.exe** läuft nicht mehr die ganze Sitzung: nach 10 Minuten ohne Geräte-Aktion beendet, beim Schließen immer
+- Seitenleiste: **„Builds“** als eigener Punkt neben „Wizard“
+- Repository: Spalte Kodi-Repo verständlicher – „deine neuer (Kodi-Repo: 1.2.3)“ heißt: das Addon gibt es auch im
+  offiziellen Kodi-Repository, deine Fassung ist aber neuer und bleibt deshalb im eigenen Repository
+
+*English: new upload targets WebDAV/Nextcloud and S3; drag & drop from Explorer; device manager with names and
+automatic Wi-Fi connection; adb.exe is stopped when idle; branding from a logo, custom UI sounds, sources with
+content type and scraper, permission check, IPTV source check and add-on bundles for forks; the wizard creates a
+restore point before installing (undo last installation), warns about builds for other platforms, resumes
+downloads and leaves personal playback history out of builds; wizard: logins & API keys filled into all matching
+add-ons, fresher dialogs; Forge: all repositories by genre, keyring for signing keys, "Builds" in the sidebar.*
+
+## 3.6.0 – 2026-10-05
+
+Neues Setup ohne Python-Skripte, große Addons im eigenen Repository, Reiter für Addons, Repository und Wizard –
+und der Einrichtungsassistent für Forks.
+
+### 📦 Setup
+- **Fertig übersetztes Programm**: `sKulls Forge.exe` statt Python und Quellcode – im Setup steckt keine einzige
+  .py-Datei mehr, die Kodi-Vorlagen (Fork-Center, Bildschirmschoner, Wizard) liegen verschlüsselt in einem Archiv
+- Update über eine ältere Version: Python, Quellcode und alte Vorlagen-Ordner werden dabei entfernt
+- **Arbeitsordner und Cache im Projekt-Ordner** (`Work/`, `Cache/`) statt im Programmordner – werden beim ersten
+  Start automatisch verschoben
+
+### 🗂️ Übersichtlicher
+- **Addons, Repository und Wizard in Reitern**: Addons (Angaben · Abhängigkeiten · Bauen und testen · Dateien),
+  Repository (Repository-Addon · Addons · Adresse und Zweige · Verteilen), Wizard (Addon · Builds · Verteilen ·
+  Sicherheit) – das Protokoll bleibt darunter sichtbar
+- **Wizards in der Übersicht**: eigene Tabelle mit Builds, Größe, letztem Upload und Hinweisen
+- **Symbolstil** wählbar (umrandet, gefüllt, kräftig) für Seitenleiste und Kacheln
+
+### 🧙 Wizard
+- **Alles veröffentlichen**: Repository bauen und hochladen → Wizard bauen und hochladen → online prüfen
+- **Große Builds über GitHub-Releases** (über 95 MB, bis 2 GB); Uploads mit **Restzeit, Abbrechen und Fortsetzen**
+- **Upload-Prüfung**: builds.json und Prüfsummen an der öffentlichen Adresse vergleichen
+- **Build-Vergleich** und **„Was ist neu“-Vorschlag** aus dem Unterschied zur letzten Version
+- **Gesperrte Repositories** (pflegbare Sperrliste) und Hinweise auf unsichere Quellen
+- **Größen-Analyse**: größte Ordner, Addons und Dateien eines Builds mit Tipps zum Platzsparen
+- **Projekt duplizieren** und **Teile aus einem anderen Projekt übernehmen** (Farbschema, Kontakt, Save Data …)
+- **Als Wizard-Build exportieren**: Fork-Profil → Build-ZIP für klassische Wizards oder den eigenen
+- **Symbole im Wizard**: einfarbig im Farbschema, bunte Kacheln oder eigene Bilder (auch ganzer Ordner)
+- Im Wizard: **Info-Taste** erklärt jede Kachel; **Log filtern** (Fehler, Begriff, Addon) und **speichern** auf
+  USB/Netzwerk, Zugangsdaten auf Wunsch unkenntlich
+- Formatierungs-Editor: **Kodis Farbnamen** (alle 139 aus der Farbtabelle) mit Suche
+
+### 📱 Fork
+- **Sprachpakete automatisch**: Startsprache und weitere Sprachen kommen beim Build aus dem Kodi-Repository
+- **Einrichtungsassistent** beim ersten Start: Sprache, Region, Wetter-Ort, M3U-Adresse, Kindersicherungs-Code –
+  Schritte im Forge wählbar, im Fork-Center jederzeit wieder aufrufbar
+- **Ersatz-Server** für Updates: Spiegel-Adressen in der update.json, der Fork nimmt bei Ausfall den nächsten
+- **Fremd-Repositories durchsuchen**: Addon-Browser für eingebettete repository.*-ZIPs
+
+### 🗂️ Repository
+- **Addons über 95 MB auf GitHub**: kommen automatisch in ein GitHub-Release je Addon, das Repository-Addon lädt sie
+  von dort (eigener Eintrag addons-release.xml, Bilder weiter aus dem Zweig) – abschaltbar
+- **Repository online prüfen**: jeder Zweig und jedes Addon-ZIP nach dem Hochladen
+
+### 🔐 Sicherheit
+- **GitHub-Tokens**: Ablaufdatum und zu weite Rechte prüfen (beim Start täglich, Extras, „Verbindung testen“)
+- **GitHub Pages aus?** Die Online-Prüfung des Wizards meldet das sofort, statt minutenlang zu warten
+
+### 🔧 Behoben
+- Bauen brach ab, wenn ein Build ein eigenes Bild hatte (Ordner icons/ fehlte)
+- Start konnte hängen: umbrechende Hinweistexte in nicht sichtbaren Reitern verkleinerten sich endlos
+- Formatierungs-Editor: die Farbpalette blitzte nur kurz oben links auf und schloss sich gleich wieder
+- Fork-Center: der Begrüßungstext des Einrichtungsassistenten war in Kodis Ja/Nein-Dialog abgeschnitten
+
+*English: new setup with a fully compiled program – no Python scripts left; working folder and cache moved to
+the project folder. Repository: add-ons over 95 MB go into GitHub releases automatically. Add-ons, repository and
+wizard pages in tabs; wizards in the overview; icon styles. Wizard: publish
+everything, big builds via GitHub releases, uploads with remaining time/cancel/resume, online verification, build
+comparison and “what's new” suggestion, repository blocklist, size analysis, duplicate/take over projects, export as
+wizard build, wizard icons, Info key help and log filter/export in the wizard, Kodi color names. Fork: automatic
+language packs, setup assistant on first start, mirror servers for updates, browse third-party repositories.
+Security: GitHub token expiry/scope check, repository online check, immediate notice when GitHub Pages is off.
+Fixed: colour palette in the formatting editor closed immediately; setup assistant greeting was cut off.*
+
 ## 3.5.0 – 2026-10-04
 
 Wizard-Update: alte Builds übernehmen, Binär-Addons passend zum Gerät, Komplett-Backups 1:1, RSS-Laufschrift –
