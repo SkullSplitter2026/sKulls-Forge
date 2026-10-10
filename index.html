@@ -69,8 +69,8 @@
       <div class="wrap hero-grid">
       <div class="hero-text">
         <div class="eyebrow"><b lang="de">Neu</b><b lang="en">New</b>
-          <span lang="de">Version 3.7 · WebDAV & S3, Ziehen und Ablegen, Wizard mit Rückgängig</span>
-          <span lang="en">Version 3.7 · WebDAV & S3, drag & drop, wizard with undo</span>
+          <span lang="de">Version 3.10 · Releases nur mit APKs, Download-Seite per GitHub Pages, eigener Wizard-Ordner</span>
+          <span lang="en">Version 3.10 · releases with APKs only, download page via GitHub Pages, separate wizard folder</span>
         </div>
         <h1 lang="de">Forks. Addons.<br>Repositories.<br><span style="color:var(--accent)">Aus einem Guss.</span></h1>
         <h1 lang="en">Forks. Add-ons.<br>Repositories.<br><span style="color:var(--accent)">Cast in one piece.</span></h1>
@@ -455,213 +455,297 @@
     </div>
     <div class="timeline">
       <article class="release current reveal">
-        <div><div class="ver">3.7.0</div><div class="date">2026-10-05</div></div>
+        <div><div class="ver">3.10.0</div><div class="date">2026-10-10</div></div>
         <div>
-          <h3 lang="de">Mehr Upload-Ziele, sicherer Wizard</h3><h3 lang="en">More upload targets, safer wizard</h3>
+          <h3 lang="de">Sauber veröffentlichen</h3><h3 lang="en">Clean publishing</h3>
           <ul lang="de">
-            <li><strong>WebDAV</strong> (Nextcloud, ownCloud …) und <strong>S3-Speicher</strong> (Amazon, R2, B2, Wasabi, MinIO) für Fork, Repository und Wizard</li>
-            <li><strong>Ziehen und Ablegen</strong> aus dem Explorer, <strong>Geräteverwaltung</strong> mit eigenen Namen und automatischer WLAN-Verbindung</li>
-            <li>Fork: <strong>Branding aus einem Logo</strong>, eigene <strong>Oberflächen-Töne</strong>, Quellen gleich als <strong>Filme/Serien-Bibliothek</strong>, Berechtigungen prüfen, IPTV-Quellen prüfen, Addon-Pakete</li>
-            <li>Wizard: <strong>Wiederherstellungspunkt</strong> und <strong>„Letzte Installation rückgängig“</strong>, Plattform-Prüfung, Downloads gehen nach Abbruch weiter, kein Wiedergabeverlauf in Builds</li>
-            <li>Wizard: <strong>Zugänge &amp; API-Schlüssel</strong> einmal eingeben, in alle passenden Addons eintragen; frischere Dialoge · Forge: <strong>alle Repos nach Genre</strong>, <strong>Schlüsselbund</strong> für Signatur-Schlüssel</li>
+            <li>Fork: Mit Unterordner enthält das <strong>GitHub-Release nur noch die APKs</strong> – <strong>update.json</strong>, <strong>Download-Seite</strong>, RSS-Feed und QR-Codes liegen per <strong>GitHub Pages</strong> im Repository, die Download-Seite wahlweise direkt im <strong>Hauptverzeichnis</strong></li>
+            <li>Sanfter Umzug: die update.json meldet den neuen Ordner als <strong>Ersatz-Adresse</strong>, installierte Forks finden ihn selbst; auf Wunsch geht die update.json beim Umstieg noch einmal ins Release</li>
+            <li>Wizard: <strong>eigener Ordner nur für das Wizard-ZIP</strong>, alle Build-Daten im Build-Ordner – mit <strong>Übergang</strong>, damit installierte Wizards bis zu ihrem Update weiterlaufen</li>
+            <li>Behoben: <strong>APK-Links</strong> in update.json, Download-Seite und QR-Code stimmen jetzt auch, wenn GitHub Dateinamen ändert (z.B. „ß“ → „ss“); kein Fehlalarm „GitHub Pages ist nicht eingeschaltet“ mehr bei neuen Ordnern</li>
           </ul>
           <ul lang="en">
-            <li><strong>WebDAV</strong> (Nextcloud, ownCloud …) and <strong>S3 storage</strong> (Amazon, R2, B2, Wasabi, MinIO) for fork, repository and wizard</li>
-            <li><strong>Drag & drop</strong> from Explorer, <strong>device manager</strong> with your own names and automatic Wi-Fi connection</li>
-            <li>Fork: <strong>branding from one logo</strong>, custom <strong>UI sounds</strong>, sources as a <strong>movies/TV library</strong> right away, permission check, IPTV source check, add-on bundles</li>
-            <li>Wizard: <strong>restore point</strong> and <strong>“undo last installation”</strong>, platform check, downloads resume after interruption, no playback history in builds</li>
-            <li>Wizard: <strong>logins &amp; API keys</strong> entered once, filled into all matching add-ons; fresher dialogs · Forge: <strong>all repos by genre</strong>, <strong>keyring</strong> for signing keys</li>
+            <li>Fork: with a subfolder the <strong>GitHub release only contains the APKs</strong> – <strong>update.json</strong>, the <strong>download page</strong>, RSS feed and QR codes live in the repository via <strong>GitHub Pages</strong>, the download page optionally right in the <strong>root</strong></li>
+            <li>Smooth move: update.json announces the new folder as a <strong>fallback address</strong>, installed forks find it by themselves; optionally update.json goes into the release once more when switching</li>
+            <li>Wizard: a <strong>separate folder for the wizard ZIP only</strong>, all build data in the build folder – with a <strong>transition</strong> so installed wizards keep working until they update</li>
+            <li>Fixed: <strong>APK links</strong> in update.json, download page and QR code are now correct even when GitHub renames files (e.g. “ß” → “ss”); no more false “GitHub Pages is not enabled” alarm for new folders</li>
           </ul>
+        </div>
+      </article>
+      <article class="release reveal">
+        <div><div class="ver">3.9.0</div><div class="date">2026-10-10</div></div>
+        <div>
+          <details class="rel-more">
+            <summary><h3 lang="de">Repositories &amp; Verteilung</h3><h3 lang="en">Repositories &amp; distribution</h3></summary>
+            <ul lang="de">
+              <li>Builds: <strong>Kompatibilitätstabelle</strong> (auch als Webseite, mit <strong>QR-Code</strong> je Build für die Downloader-App), <strong>benötigte Repositories</strong> mit Online-Prüfung vor dem Upload, <strong>Vorschaubilder</strong> im Genre-Browser, <strong>Datenschutz-Bericht</strong> je Build</li>
+              <li>Repository: <strong>Statistik</strong> (Addons, Größen, Updates je Monat), <strong>Assistent</strong> für ein komplettes Repository mit README und Download-Seite, alle Listen per Klick <strong>sortierbar</strong> (▲/▼)</li>
+              <li><strong>Fremd-Repos überwachen</strong> (täglich), <strong>Repository-Spiegel</strong> mit Lizenz-Hinweis, <strong>Server-Ampel</strong>; Addons: <strong>Übersetzungen ergänzen</strong> und <strong>eigene Vorlagen</strong>; Fork: <strong>Fernbedienung</strong> beim ersten Start wählbar</li>
+              <li><strong>QR-Code</strong> zur Repository-ZIP auf der Repository-Seite, <strong>Selbstprüfung</strong> der Programmdateien beim Start</li>
+              <li>Behoben: große Dateien (über 30 MB) gehen bei GitHub jetzt per eingebautem <strong>Git-Push</strong> direkt ins Repository – ohne installiertes Git</li>
+            </ul>
+            <ul lang="en">
+              <li>Builds: a <strong>compatibility table</strong> (also as a web page, with a <strong>QR code</strong> per build for the Downloader app), <strong>required repositories</strong> checked online before uploading, <strong>preview images</strong> in the genre browser, a per-build <strong>privacy report</strong></li>
+              <li>Repository: <strong>statistics</strong> (add-ons, sizes, updates per month), an <strong>assistant</strong> for a complete repository with README and download page, every list <strong>sortable</strong> by clicking a column (▲/▼)</li>
+              <li><strong>Foreign-repo monitoring</strong> (daily), a <strong>repository mirror</strong> with licence notes, a <strong>server status</strong> overview; add-ons: <strong>complete translations</strong> and <strong>own templates</strong>; fork: <strong>remote control</strong> chosen on first start</li>
+              <li>A <strong>QR code</strong> for the repository ZIP on the repository page, a start-up <strong>self-check</strong> of the program files</li>
+              <li>Fixed: large files (over 30 MB) now go to GitHub via a built-in <strong>Git push</strong> straight into the repository – no Git installation needed</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+      <article class="release reveal">
+        <div><div class="ver">3.8.0</div><div class="date">2026-10-05</div></div>
+        <div>
+          <details class="rel-more">
+            <summary><h3 lang="de">Builds sortieren, Wizard-Komfort</h3><h3 lang="en">Sort builds, wizard comfort</h3></summary>
+            <ul lang="de">
+              <li>Wizard: <strong>Build-Kategorien &amp; Filter</strong> (Leicht, Sport, Kinder, Musik, 4K, Film, Live-TV), <strong>Zeitfenster</strong> je Build (z.B. Beta), <strong>benötigte Zugänge</strong> werden angezeigt und nach der Installation abgefragt</li>
+              <li>Wizard: <strong>weitere Dienste</strong> (MDBList, Simkl, AniList, OpenSubtitles.com, Plex, Jellyfin), <strong>Ruhe bei Wiedergabe</strong>, <strong>Systeminfo-Seite</strong>, <strong>„Was ist neu“</strong> vor dem Wizard-Update, <strong>kurze Tour</strong> beim ersten Start</li>
+              <li>Fork/Forge: jedes Farbschema zusätzlich <strong>hell</strong>, <strong>Versionsnummer</strong> auf Splash und Banner, <strong>interne Build-Notizen</strong> (nie veröffentlicht), <strong>alte Addons</strong> (nur Kodi ≤18) markiert</li>
+              <li>Wizard: <strong>Favoriten übertragen</strong> per Datei, <strong>Fehlerhilfe mit QR-Code</strong>, Dialoge für den <strong>Screenreader</strong> beschriftet, <strong>ältere Build-Version installieren</strong></li>
+              <li>Builds: <strong>Vorlagen-Galerie</strong> für Profile, <strong>Build-Vorlagen</strong> (Leicht, Sport, Kinder, Musik), <strong>tote Verweise prüfen</strong></li>
+            </ul>
+            <ul lang="en">
+              <li>Wizard: <strong>build categories &amp; filter</strong> (light, sport, kids, music, 4K, movies, live TV), per-build <strong>visibility window</strong> (e.g. beta), <strong>required logins</strong> shown and asked for after install</li>
+              <li>Wizard: <strong>more services</strong> (MDBList, Simkl, AniList, OpenSubtitles.com, Plex, Jellyfin), <strong>quiet during playback</strong>, a <strong>system-info page</strong>, <strong>“what's new”</strong> before the wizard update, a <strong>short tour</strong> on first start</li>
+              <li>Fork/Forge: each colour scheme also in <strong>light</strong>, the <strong>version number</strong> on splash and banner, <strong>private build notes</strong> (never published), <strong>old add-ons</strong> (Kodi ≤18 only) flagged</li>
+              <li>Wizard: <strong>transfer favourites</strong> via file, <strong>error help with QR code</strong>, dialogs labelled for the <strong>screen reader</strong>, <strong>install an older build version</strong></li>
+              <li>Builds: a <strong>template gallery</strong> for profiles, <strong>build templates</strong> (light, sport, kids, music), <strong>dead-link check</strong></li>
+            </ul>
+          </details>
+        </div>
+      </article>
+      <article class="release reveal">
+        <div><div class="ver">3.7.0</div><div class="date">2026-10-05</div></div>
+        <div>
+          <details class="rel-more">
+            <summary><h3 lang="de">Mehr Upload-Ziele, sicherer Wizard</h3><h3 lang="en">More upload targets, safer wizard</h3></summary>
+            <ul lang="de">
+              <li><strong>WebDAV</strong> (Nextcloud, ownCloud …) und <strong>S3-Speicher</strong> (Amazon, R2, B2, Wasabi, MinIO) für Fork, Repository und Wizard</li>
+              <li><strong>Ziehen und Ablegen</strong> aus dem Explorer, <strong>Geräteverwaltung</strong> mit eigenen Namen und automatischer WLAN-Verbindung</li>
+              <li>Fork: <strong>Branding aus einem Logo</strong>, eigene <strong>Oberflächen-Töne</strong>, Quellen gleich als <strong>Filme/Serien-Bibliothek</strong>, Berechtigungen prüfen, IPTV-Quellen prüfen, Addon-Pakete</li>
+              <li>Wizard: <strong>Wiederherstellungspunkt</strong> und <strong>„Letzte Installation rückgängig“</strong>, Plattform-Prüfung, Downloads gehen nach Abbruch weiter, kein Wiedergabeverlauf in Builds</li>
+              <li>Wizard: <strong>Zugänge &amp; API-Schlüssel</strong> einmal eingeben, in alle passenden Addons eintragen; frischere Dialoge · Forge: <strong>alle Repos nach Genre</strong>, <strong>Schlüsselbund</strong> für Signatur-Schlüssel</li>
+            </ul>
+            <ul lang="en">
+              <li><strong>WebDAV</strong> (Nextcloud, ownCloud …) and <strong>S3 storage</strong> (Amazon, R2, B2, Wasabi, MinIO) for fork, repository and wizard</li>
+              <li><strong>Drag & drop</strong> from Explorer, <strong>device manager</strong> with your own names and automatic Wi-Fi connection</li>
+              <li>Fork: <strong>branding from one logo</strong>, custom <strong>UI sounds</strong>, sources as a <strong>movies/TV library</strong> right away, permission check, IPTV source check, add-on bundles</li>
+              <li>Wizard: <strong>restore point</strong> and <strong>“undo last installation”</strong>, platform check, downloads resume after interruption, no playback history in builds</li>
+              <li>Wizard: <strong>logins &amp; API keys</strong> entered once, filled into all matching add-ons; fresher dialogs · Forge: <strong>all repos by genre</strong>, <strong>keyring</strong> for signing keys</li>
+            </ul>
+          </details>
         </div>
       </article>
       <article class="release reveal">
         <div><div class="ver">3.6.0</div><div class="date">2026-10-05</div></div>
         <div>
-          <h3 lang="de">Setup ohne Python, große Addons & Reiter</h3><h3 lang="en">Setup without Python, big add-ons & tabs</h3>
-          <ul lang="de">
-            <li><strong>Fertig übersetztes Programm</strong>: <code>sKulls Forge.exe</code> statt Python und Skripten – im Setup steckt keine .py-Datei mehr</li>
-            <li><strong>Addons über 95 MB</strong> im eigenen Repository: kommen bei GitHub automatisch in ein Release, Kodi lädt sie von dort</li>
-            <li><strong>Reiter</strong> für Addons, Repository und Wizard; Wizards in der Übersicht; Symbolstil wählbar</li>
-            <li>Fork: <strong>Einrichtungsassistent</strong> beim ersten Start (Sprache, Region, Wetter, M3U, Kindersicherung), <strong>Sprachpakete automatisch</strong>, Ersatz-Server für Updates</li>
-            <li>Wizard: <strong>Alles veröffentlichen</strong>, Größen-Analyse, Info-Taste mit Hilfe, Log filtern und speichern; GitHub-Tokens werden auf Ablauf und Rechte geprüft</li>
-          </ul>
-          <ul lang="en">
-            <li><strong>Fully compiled program</strong>: <code>sKulls Forge.exe</code> instead of Python and scripts – the setup contains no .py file anymore</li>
-            <li><strong>Add-ons over 95 MB</strong> in your own repository: on GitHub they go into a release automatically, Kodi downloads them from there</li>
-            <li><strong>Tabs</strong> for add-ons, repository and wizard; wizards in the overview; selectable icon style</li>
-            <li>Fork: <strong>setup assistant</strong> on first start (language, region, weather, M3U, parental lock), <strong>automatic language packs</strong>, mirror servers for updates</li>
-            <li>Wizard: <strong>publish everything</strong>, size analysis, Info key help, filter and save the log; GitHub tokens are checked for expiry and scopes</li>
-          </ul>
+          <details class="rel-more">
+            <summary><h3 lang="de">Setup ohne Python, große Addons & Reiter</h3><h3 lang="en">Setup without Python, big add-ons & tabs</h3></summary>
+            <ul lang="de">
+              <li><strong>Fertig übersetztes Programm</strong>: <code>sKulls Forge.exe</code> statt Python und Skripten – im Setup steckt keine .py-Datei mehr</li>
+              <li><strong>Addons über 95 MB</strong> im eigenen Repository: kommen bei GitHub automatisch in ein Release, Kodi lädt sie von dort</li>
+              <li><strong>Reiter</strong> für Addons, Repository und Wizard; Wizards in der Übersicht; Symbolstil wählbar</li>
+              <li>Fork: <strong>Einrichtungsassistent</strong> beim ersten Start (Sprache, Region, Wetter, M3U, Kindersicherung), <strong>Sprachpakete automatisch</strong>, Ersatz-Server für Updates</li>
+              <li>Wizard: <strong>Alles veröffentlichen</strong>, Größen-Analyse, Info-Taste mit Hilfe, Log filtern und speichern; GitHub-Tokens werden auf Ablauf und Rechte geprüft</li>
+            </ul>
+            <ul lang="en">
+              <li><strong>Fully compiled program</strong>: <code>sKulls Forge.exe</code> instead of Python and scripts – the setup contains no .py file anymore</li>
+              <li><strong>Add-ons over 95 MB</strong> in your own repository: on GitHub they go into a release automatically, Kodi downloads them from there</li>
+              <li><strong>Tabs</strong> for add-ons, repository and wizard; wizards in the overview; selectable icon style</li>
+              <li>Fork: <strong>setup assistant</strong> on first start (language, region, weather, M3U, parental lock), <strong>automatic language packs</strong>, mirror servers for updates</li>
+              <li>Wizard: <strong>publish everything</strong>, size analysis, Info key help, filter and save the log; GitHub tokens are checked for expiry and scopes</li>
+            </ul>
+          </details>
         </div>
       </article>
       <article class="release reveal">
         <div><div class="ver">3.5.0</div><div class="date">2026-10-04</div></div>
         <div>
-          <h3 lang="de">Wizard: alte Builds, Komplett-Backup 1:1 & RSS</h3><h3 lang="en">Wizard: old builds, complete backup 1:1 & RSS</h3>
-          <ul lang="de">
-            <li><strong>Formatierungs-Editor</strong> für Addon-, Repository- und Wizard-Texte: Fett, Kursiv, Farbe mit eigener Palette, Groß-/Kleinschreibung, Vorschau</li>
-            <li>Builds <strong>aus dem alten Wizard übernehmen</strong> – Binär-Addons (PVR, Inputstream) lädt der Wizard nach dem Neustart <strong>passend zum Gerät</strong></li>
-            <li><strong>Kompletter Build 1:1</strong> – auch Passwörter, API-Keys und MAC-Adressen; Backup von einem anderen System klappt ebenso. <strong>Wizard und Repository bleiben immer</strong></li>
-            <li><strong>RSS-Feed</strong>: Build-News als Laufschrift auf Kodis Startseite – im Forge bearbeitet, vom Wizard eingetragen</li>
-          </ul>
-          <ul lang="en">
-            <li><strong>Formatting editor</strong> for add-on, repository and wizard texts: bold, italic, colour with its own palette, case, preview</li>
-            <li><strong>Import builds from the old wizard</strong> – binary add-ons (PVR, inputstream) are installed after the restart <strong>to match the device</strong></li>
-            <li><strong>Complete build 1:1</strong> – including passwords, API keys and MAC addresses; backups from another system work too. <strong>Wizard and repository always stay</strong></li>
-            <li><strong>RSS feed</strong>: build news as ticker on Kodi's home screen – edited in the Forge, set up by the wizard</li>
-          </ul>
+          <details class="rel-more">
+            <summary><h3 lang="de">Wizard: alte Builds, Komplett-Backup 1:1 & RSS</h3><h3 lang="en">Wizard: old builds, complete backup 1:1 & RSS</h3></summary>
+            <ul lang="de">
+              <li><strong>Formatierungs-Editor</strong> für Addon-, Repository- und Wizard-Texte: Fett, Kursiv, Farbe mit eigener Palette, Groß-/Kleinschreibung, Vorschau</li>
+              <li>Builds <strong>aus dem alten Wizard übernehmen</strong> – Binär-Addons (PVR, Inputstream) lädt der Wizard nach dem Neustart <strong>passend zum Gerät</strong></li>
+              <li><strong>Kompletter Build 1:1</strong> – auch Passwörter, API-Keys und MAC-Adressen; Backup von einem anderen System klappt ebenso. <strong>Wizard und Repository bleiben immer</strong></li>
+              <li><strong>RSS-Feed</strong>: Build-News als Laufschrift auf Kodis Startseite – im Forge bearbeitet, vom Wizard eingetragen</li>
+            </ul>
+            <ul lang="en">
+              <li><strong>Formatting editor</strong> for add-on, repository and wizard texts: bold, italic, colour with its own palette, case, preview</li>
+              <li><strong>Import builds from the old wizard</strong> – binary add-ons (PVR, inputstream) are installed after the restart <strong>to match the device</strong></li>
+              <li><strong>Complete build 1:1</strong> – including passwords, API keys and MAC addresses; backups from another system work too. <strong>Wizard and repository always stay</strong></li>
+              <li><strong>RSS feed</strong>: build news as ticker on Kodi's home screen – edited in the Forge, set up by the wizard</li>
+            </ul>
+          </details>
         </div>
       </article>
       <article class="release reveal">
         <div><div class="ver">3.4.0</div><div class="date">2026-10-04</div></div>
         <div>
-          <h3 lang="de">Fork-Center, Familie & neue Werkzeuge</h3><h3 lang="en">Fork Center, family & new tools</h3>
-          <ul lang="de">
-            <li><strong>Fork-Center</strong> im Fork: Wartung, Sicherung auf USB/Netzwerk, Hilfe/FAQ, Support-Code, Zurücksetzen – dazu Mitteilungen vom Server, Absturzberichte mit Zustimmung und Speicherpflege</li>
-            <li><strong>Kinderprofil</strong> mit Bildschirmzeit, <strong>Kiosk-Modus</strong>, Geräteprofile, Zugangsdaten beim ersten Start statt im APK, Bildschirmschoner, Autostart</li>
-            <li><strong>In-App-Update</strong>, Pflicht-Update, Rollback, Download-Seite mit Fire-TV-Anleitung, Versionshistorie und RSS-Feed, Portal-Seite</li>
-            <li>Werkzeuge: APK-Größe, Kodi-Log-Analyse, Abhängigkeitsbaum, Skin-Einstellungen, Nightly-Vorschau, <strong>Windows-Portable</strong>, QR-Kopplung, Bildschirm spiegeln, Benachrichtigung per Telegram/Discord/E-Mail, paralleles Bauen mit Build-Cache und <strong>Web-Oberfläche</strong></li>
-          </ul>
-          <ul lang="en">
-            <li><strong>Fork Center</strong> in the fork: maintenance, backup to USB/network, help/FAQ, support code, reset – plus server messages, opt-in crash reports and storage care</li>
-            <li><strong>Kids profile</strong> with screen time, <strong>kiosk mode</strong>, device profiles, credentials asked on first start instead of in the APK, screensaver, autostart</li>
-            <li><strong>In-app update</strong>, mandatory update, rollback, download page with Fire TV guide, version history and RSS feed, portal page</li>
-            <li>Tools: APK size, Kodi log analysis, dependency tree, skin settings, nightly preview, <strong>Windows portable</strong>, QR pairing, screen mirroring, notifications via Telegram/Discord/email, parallel builds with build cache and a <strong>web interface</strong></li>
-          </ul>
+          <details class="rel-more">
+            <summary><h3 lang="de">Fork-Center, Familie & neue Werkzeuge</h3><h3 lang="en">Fork Center, family & new tools</h3></summary>
+            <ul lang="de">
+              <li><strong>Fork-Center</strong> im Fork: Wartung, Sicherung auf USB/Netzwerk, Hilfe/FAQ, Support-Code, Zurücksetzen – dazu Mitteilungen vom Server, Absturzberichte mit Zustimmung und Speicherpflege</li>
+              <li><strong>Kinderprofil</strong> mit Bildschirmzeit, <strong>Kiosk-Modus</strong>, Geräteprofile, Zugangsdaten beim ersten Start statt im APK, Bildschirmschoner, Autostart</li>
+              <li><strong>In-App-Update</strong>, Pflicht-Update, Rollback, Download-Seite mit Fire-TV-Anleitung, Versionshistorie und RSS-Feed, Portal-Seite</li>
+              <li>Werkzeuge: APK-Größe, Kodi-Log-Analyse, Abhängigkeitsbaum, Skin-Einstellungen, Nightly-Vorschau, <strong>Windows-Portable</strong>, QR-Kopplung, Bildschirm spiegeln, Benachrichtigung per Telegram/Discord/E-Mail, paralleles Bauen mit Build-Cache und <strong>Web-Oberfläche</strong></li>
+            </ul>
+            <ul lang="en">
+              <li><strong>Fork Center</strong> in the fork: maintenance, backup to USB/network, help/FAQ, support code, reset – plus server messages, opt-in crash reports and storage care</li>
+              <li><strong>Kids profile</strong> with screen time, <strong>kiosk mode</strong>, device profiles, credentials asked on first start instead of in the APK, screensaver, autostart</li>
+              <li><strong>In-app update</strong>, mandatory update, rollback, download page with Fire TV guide, version history and RSS feed, portal page</li>
+              <li>Tools: APK size, Kodi log analysis, dependency tree, skin settings, nightly preview, <strong>Windows portable</strong>, QR pairing, screen mirroring, notifications via Telegram/Discord/email, parallel builds with build cache and a <strong>web interface</strong></li>
+            </ul>
+          </details>
         </div>
       </article>
       <article class="release reveal">
         <div><div class="ver">3.3.1</div><div class="date">2026-10-04</div></div>
         <div>
-          <h3 lang="de">Backups übersichtlicher</h3><h3 lang="en">Clearer backups</h3>
-          <ul lang="de">
-            <li><strong>Kompletter Build ohne Addon-Daten</strong> als eigene Backup-Art statt einer Rückfrage – auch für automatische Backups</li>
-            <li>Beim Wiederherstellen eines solchen Backups bleiben die vorhandenen Addon-Daten und Anmeldungen erhalten</li>
-            <li>Website: <strong>Besucher- und Download-Zähler</strong> – ohne Cookies, Download-Zahlen direkt aus den GitHub-Releases</li>
-          </ul>
-          <ul lang="en">
-            <li><strong>Complete build without add-on data</strong> as its own backup kind instead of a question – also for scheduled backups</li>
-            <li>Restoring such a backup keeps the existing add-on data and logins</li>
-            <li>Website: <strong>visitor and download counter</strong> – without cookies, download numbers straight from the GitHub releases</li>
-          </ul>
+          <details class="rel-more">
+            <summary><h3 lang="de">Backups übersichtlicher</h3><h3 lang="en">Clearer backups</h3></summary>
+            <ul lang="de">
+              <li><strong>Kompletter Build ohne Addon-Daten</strong> als eigene Backup-Art statt einer Rückfrage – auch für automatische Backups</li>
+              <li>Beim Wiederherstellen eines solchen Backups bleiben die vorhandenen Addon-Daten und Anmeldungen erhalten</li>
+              <li>Website: <strong>Besucher- und Download-Zähler</strong> – ohne Cookies, Download-Zahlen direkt aus den GitHub-Releases</li>
+            </ul>
+            <ul lang="en">
+              <li><strong>Complete build without add-on data</strong> as its own backup kind instead of a question – also for scheduled backups</li>
+              <li>Restoring such a backup keeps the existing add-on data and logins</li>
+              <li>Website: <strong>visitor and download counter</strong> – without cookies, download numbers straight from the GitHub releases</li>
+            </ul>
+          </details>
         </div>
       </article>
       <article class="release reveal">
         <div><div class="ver">3.3.0</div><div class="date">2026-10-04</div></div>
         <div>
-          <h3 lang="de">Wizard: Komfort und Sicherheit</h3><h3 lang="en">Wizard: comfort and security</h3>
-          <ul lang="de">
-            <li><strong>Einrichtungsassistent</strong>, Suche in Listen, Schnellzugriff, Ansicht groß/klein/Liste, Build-Kacheln mit Fanart und Abzeichen, Bildergalerie</li>
-            <li><strong>Aufräumen mit Auswahl</strong>, unbenutzte Datenbanken markiert, advancedsettings.xml von Hand mit Tipps, Abhängigkeiten reparieren</li>
-            <li>Build-Backup <strong>mit oder ohne Addon-Daten</strong> und mit Namen, automatische Backups, Build-Wechsel mit Parken</li>
-            <li><strong>PIN</strong> für gefährliche Aktionen, <strong>Selbstschutz</strong> mit Prüfsummen, Passwort wird beim Einspielen automatisch erkannt</li>
-          </ul>
-          <ul lang="en">
-            <li><strong>Setup assistant</strong>, search in lists, quick access, large/small/list view, build tiles with fanart and badges, picture gallery</li>
-            <li><strong>Clean-up with a choice</strong>, unused databases marked, advancedsettings.xml by hand with tips, dependency repair</li>
-            <li>Build backup <strong>with or without add-on data</strong> and with a name, scheduled backups, build switch with parking</li>
-            <li><strong>PIN</strong> for dangerous actions, <strong>self-protection</strong> with checksums, the password is detected automatically when installing</li>
-          </ul>
+          <details class="rel-more">
+            <summary><h3 lang="de">Wizard: Komfort und Sicherheit</h3><h3 lang="en">Wizard: comfort and security</h3></summary>
+            <ul lang="de">
+              <li><strong>Einrichtungsassistent</strong>, Suche in Listen, Schnellzugriff, Ansicht groß/klein/Liste, Build-Kacheln mit Fanart und Abzeichen, Bildergalerie</li>
+              <li><strong>Aufräumen mit Auswahl</strong>, unbenutzte Datenbanken markiert, advancedsettings.xml von Hand mit Tipps, Abhängigkeiten reparieren</li>
+              <li>Build-Backup <strong>mit oder ohne Addon-Daten</strong> und mit Namen, automatische Backups, Build-Wechsel mit Parken</li>
+              <li><strong>PIN</strong> für gefährliche Aktionen, <strong>Selbstschutz</strong> mit Prüfsummen, Passwort wird beim Einspielen automatisch erkannt</li>
+            </ul>
+            <ul lang="en">
+              <li><strong>Setup assistant</strong>, search in lists, quick access, large/small/list view, build tiles with fanart and badges, picture gallery</li>
+              <li><strong>Clean-up with a choice</strong>, unused databases marked, advancedsettings.xml by hand with tips, dependency repair</li>
+              <li>Build backup <strong>with or without add-on data</strong> and with a name, scheduled backups, build switch with parking</li>
+              <li><strong>PIN</strong> for dangerous actions, <strong>self-protection</strong> with checksums, the password is detected automatically when installing</li>
+            </ul>
+          </details>
         </div>
       </article>
       <article class="release reveal">
         <div><div class="ver">3.2.0</div><div class="date">2026-10-04</div></div>
         <div>
-          <h3 lang="de">Passwortschutz, Build-Info und Update-Hinweise</h3><h3 lang="en">Password protection, build info and update notices</h3>
-          <ul lang="de">
-            <li><strong>Passwortschutz je Build</strong>: online liegt nur eine verschlüsselte Datei – der Wizard fragt nach dem Passwort und kann sich den Schlüssel für Updates merken</li>
-            <li><strong>Build-Info</strong>: Version, Datum, Kodi, Skin und alle Addons des Builds im Vergleich zum aktuellen Stand, auch als Textdatei</li>
-            <li><strong>Update-Hinweise</strong> für Wizard, Repository und Build – in der Kopfzeile, in den Einstellungen und als Benachrichtigung</li>
-            <li>Beim Hochladen werden veraltete Dateien auf dem Server entfernt</li>
-          </ul>
-          <ul lang="en">
-            <li><strong>Password protection per build</strong>: only an encrypted file is online – the wizard asks for the password and can remember the key for updates</li>
-            <li><strong>Build info</strong>: version, date, Kodi, skin and all add-ons of the build compared to the current state, also as a text file</li>
-            <li><strong>Update notices</strong> for wizard, repository and build – in the header, in the settings and as a notification</li>
-            <li>Outdated files are removed from the server when uploading</li>
-          </ul>
+          <details class="rel-more">
+            <summary><h3 lang="de">Passwortschutz, Build-Info und Update-Hinweise</h3><h3 lang="en">Password protection, build info and update notices</h3></summary>
+            <ul lang="de">
+              <li><strong>Passwortschutz je Build</strong>: online liegt nur eine verschlüsselte Datei – der Wizard fragt nach dem Passwort und kann sich den Schlüssel für Updates merken</li>
+              <li><strong>Build-Info</strong>: Version, Datum, Kodi, Skin und alle Addons des Builds im Vergleich zum aktuellen Stand, auch als Textdatei</li>
+              <li><strong>Update-Hinweise</strong> für Wizard, Repository und Build – in der Kopfzeile, in den Einstellungen und als Benachrichtigung</li>
+              <li>Beim Hochladen werden veraltete Dateien auf dem Server entfernt</li>
+            </ul>
+            <ul lang="en">
+              <li><strong>Password protection per build</strong>: only an encrypted file is online – the wizard asks for the password and can remember the key for updates</li>
+              <li><strong>Build info</strong>: version, date, Kodi, skin and all add-ons of the build compared to the current state, also as a text file</li>
+              <li><strong>Update notices</strong> for wizard, repository and build – in the header, in the settings and as a notification</li>
+              <li>Outdated files are removed from the server when uploading</li>
+            </ul>
+          </details>
         </div>
       </article>
       <article class="release reveal">
         <div><div class="ver">3.1.0</div><div class="date">2026-10-04</div></div>
         <div>
-          <h3 lang="de">Repositories, Updates und Backups im Wizard</h3><h3 lang="en">Repositories, updates and backups in the wizard</h3>
-          <ul lang="de">
-            <li><strong>Repositories prüfen</strong>: jede Adresse aller Repositories, auch des offiziellen – OK, teilweise oder nicht erreichbar</li>
-            <li><strong>Alle Addons aktualisieren</strong> mit einem Knopf – auch wenn Kodi Updates sonst nur meldet</li>
-            <li><strong>Backups</strong> wahlweise nur Addons, Addons mit Daten oder nur Daten; zurückspielen aus dem Backup-Ordner oder aus einer Datei</li>
-            <li><strong>Build aus Datei</strong>: lokale Build-ZIP ohne Server installieren</li>
-            <li><strong>Wizard und Repository bleiben</strong> bei Build-Installation, Fresh Start und Restore immer erhalten; das eigene Repository kommt mit dem Wizard</li>
-            <li><strong>Repository</strong>: Addons aus dem offiziellen Kodi-Repository werden markiert und auf Wunsch weggelassen</li>
-            <li>Für alle Systeme, auf denen Kodi läuft: Windows, Android, macOS, Linux</li>
-          </ul>
-          <ul lang="en">
-            <li><strong>Check repositories</strong>: every address of all repositories, also the official one – OK, partly or not reachable</li>
-            <li><strong>Update all add-ons</strong> with one button – even if Kodi otherwise only notifies</li>
-            <li><strong>Backups</strong> of add-ons only, add-ons with data or data only; restore from the backup folder or from a file</li>
-            <li><strong>Build from file</strong>: install a local build ZIP without a server</li>
-            <li><strong>Wizard and repository are kept</strong> on build installation, fresh start and restore; your own repository comes with the wizard</li>
-            <li><strong>Repository</strong>: add-ons from the official Kodi repository are marked and left out if you like</li>
-            <li>For every system Kodi runs on: Windows, Android, macOS, Linux</li>
-          </ul>
+          <details class="rel-more">
+            <summary><h3 lang="de">Repositories, Updates und Backups im Wizard</h3><h3 lang="en">Repositories, updates and backups in the wizard</h3></summary>
+            <ul lang="de">
+              <li><strong>Repositories prüfen</strong>: jede Adresse aller Repositories, auch des offiziellen – OK, teilweise oder nicht erreichbar</li>
+              <li><strong>Alle Addons aktualisieren</strong> mit einem Knopf – auch wenn Kodi Updates sonst nur meldet</li>
+              <li><strong>Backups</strong> wahlweise nur Addons, Addons mit Daten oder nur Daten; zurückspielen aus dem Backup-Ordner oder aus einer Datei</li>
+              <li><strong>Build aus Datei</strong>: lokale Build-ZIP ohne Server installieren</li>
+              <li><strong>Wizard und Repository bleiben</strong> bei Build-Installation, Fresh Start und Restore immer erhalten; das eigene Repository kommt mit dem Wizard</li>
+              <li><strong>Repository</strong>: Addons aus dem offiziellen Kodi-Repository werden markiert und auf Wunsch weggelassen</li>
+              <li>Für alle Systeme, auf denen Kodi läuft: Windows, Android, macOS, Linux</li>
+            </ul>
+            <ul lang="en">
+              <li><strong>Check repositories</strong>: every address of all repositories, also the official one – OK, partly or not reachable</li>
+              <li><strong>Update all add-ons</strong> with one button – even if Kodi otherwise only notifies</li>
+              <li><strong>Backups</strong> of add-ons only, add-ons with data or data only; restore from the backup folder or from a file</li>
+              <li><strong>Build from file</strong>: install a local build ZIP without a server</li>
+              <li><strong>Wizard and repository are kept</strong> on build installation, fresh start and restore; your own repository comes with the wizard</li>
+              <li><strong>Repository</strong>: add-ons from the official Kodi repository are marked and left out if you like</li>
+              <li>For every system Kodi runs on: Windows, Android, macOS, Linux</li>
+            </ul>
+          </details>
         </div>
       </article>
       <article class="release reveal">
         <div><div class="ver">3.0.0</div><div class="date">2026-10-04</div></div>
         <div>
-          <h3 lang="de">Addons, Repository, Wizard und neue Oberfläche</h3><h3 lang="en">Add-ons, repository, wizard and a new interface</h3>
-          <ul lang="de">
-            <li><strong>Neuer Name sKulls Forge</strong> – „Aus einem Guss: Forks, Addons und Repositories für Kodi“</li>
-            <li><strong>Seitenleiste</strong> mit Übersicht, Forks, Addons, Repository, Wizard, Einstellungen, Werkzeugen und Detail-Log – einklappbar auf Symbole</li>
-            <li>Neue Seiten <strong>Einstellungen</strong> und <strong>Werkzeuge</strong>, Fork-Tabs scrollen bei niedrigem Fenster</li>
-            <li><strong>Eigene Addons</strong>: 5 Vorlagen, Übernehmen und Bearbeiten, Prüfung für Kodi 18–22 (auch online), Version und Changelog, saubere ZIP, Test per ADB mit Kodi-Log live</li>
-            <li><strong>Eigenes Repository</strong>: addons.xml mit Prüfsummen, Zweige für Kodi 18 und 19+, Upload per FTP/SFTP oder in einem Commit zu GitHub Pages</li>
-            <li><strong>Eigener Wizard</strong>: Builds aus einem Kodi-Ordner schnüren – Zugangsdaten (Passwörter, Tokens, MAC-Adressen) werden dabei automatisch entfernt –, Wizard-Addon mit sicherer Installation (Prüfsumme, Save Data), Wartung, Backup, Updates und <em>Leistung &amp; Speicher</em> (RAM und Speicher als Balken, passende Puffer- und Bild-Einstellungen per Vorschlag)</li>
-            <li><strong>Projekt-Ordner</strong> in Dokumente mit je einem Ordner pro Projekt, „Neues Projekt…“, zentrale <strong>Upload-Ziele</strong> mit Verbindungstest, Bereinigen und Werkseinstellung</li>
-            <li>Übernahme der alten Daten beim ersten Start – jetzt mit <strong>Abbrechen</strong>; Protokolle im Projekt-Ordner unter <code>Logs/</code></li>
-            <li><strong>Übersicht</strong> mit Repositories und Addons, <strong>Tooltips</strong> mit dem vollständigen Text in allen Tabellen</li>
-            <li>Diese <strong>Website</strong>: Kamerafahrt, Funktions-Tour, Farbschemata wie im Tool, Deutsch/Englisch</li>
-          </ul>
-          <ul lang="en">
-            <li><strong>New name sKulls Forge</strong> – “Cast in one piece: forks, add-ons and repositories for Kodi”</li>
-            <li><strong>Sidebar</strong> with overview, forks, add-ons, repository, wizard, settings, tools and detail log – collapsible to icons</li>
-            <li>New <strong>Settings</strong> and <strong>Tools</strong> pages, fork tabs scroll in low windows</li>
-            <li><strong>Your own add-ons</strong>: 5 templates, import and edit, check for Kodi 18–22 (online too), version and changelog, clean ZIP, test via ADB with live Kodi log</li>
-            <li><strong>Your own repository</strong>: addons.xml with checksums, branches for Kodi 18 and 19+, upload via FTP/SFTP or in one commit to GitHub Pages</li>
-            <li><strong>Your own wizard</strong>: pack builds from a Kodi folder – credentials (passwords, tokens, MAC addresses) are removed automatically –, wizard add-on with safe installation (checksum, save data), maintenance, backup, updates and <em>performance &amp; storage</em> (memory and storage as bars, suggested buffer and image settings)</li>
-            <li><strong>Project folder</strong> in Documents with one folder per project, “New project…”, central <strong>upload targets</strong> with connection test, clean-up and factory reset</li>
-            <li>Taking over old data on first start – now with <strong>Cancel</strong>; logs in the project folder under <code>Logs/</code></li>
-            <li><strong>Overview</strong> with repositories and add-ons, <strong>tooltips</strong> with the full text in all tables</li>
-            <li>This <strong>website</strong>: camera flight, feature tour, color schemes like the tool, German/English</li>
-          </ul>
+          <details class="rel-more">
+            <summary><h3 lang="de">Addons, Repository, Wizard und neue Oberfläche</h3><h3 lang="en">Add-ons, repository, wizard and a new interface</h3></summary>
+            <ul lang="de">
+              <li><strong>Neuer Name sKulls Forge</strong> – „Aus einem Guss: Forks, Addons und Repositories für Kodi“</li>
+              <li><strong>Seitenleiste</strong> mit Übersicht, Forks, Addons, Repository, Wizard, Einstellungen, Werkzeugen und Detail-Log – einklappbar auf Symbole</li>
+              <li>Neue Seiten <strong>Einstellungen</strong> und <strong>Werkzeuge</strong>, Fork-Tabs scrollen bei niedrigem Fenster</li>
+              <li><strong>Eigene Addons</strong>: 5 Vorlagen, Übernehmen und Bearbeiten, Prüfung für Kodi 18–22 (auch online), Version und Changelog, saubere ZIP, Test per ADB mit Kodi-Log live</li>
+              <li><strong>Eigenes Repository</strong>: addons.xml mit Prüfsummen, Zweige für Kodi 18 und 19+, Upload per FTP/SFTP oder in einem Commit zu GitHub Pages</li>
+              <li><strong>Eigener Wizard</strong>: Builds aus einem Kodi-Ordner schnüren – Zugangsdaten (Passwörter, Tokens, MAC-Adressen) werden dabei automatisch entfernt –, Wizard-Addon mit sicherer Installation (Prüfsumme, Save Data), Wartung, Backup, Updates und <em>Leistung &amp; Speicher</em> (RAM und Speicher als Balken, passende Puffer- und Bild-Einstellungen per Vorschlag)</li>
+              <li><strong>Projekt-Ordner</strong> in Dokumente mit je einem Ordner pro Projekt, „Neues Projekt…“, zentrale <strong>Upload-Ziele</strong> mit Verbindungstest, Bereinigen und Werkseinstellung</li>
+              <li>Übernahme der alten Daten beim ersten Start – jetzt mit <strong>Abbrechen</strong>; Protokolle im Projekt-Ordner unter <code>Logs/</code></li>
+              <li><strong>Übersicht</strong> mit Repositories und Addons, <strong>Tooltips</strong> mit dem vollständigen Text in allen Tabellen</li>
+              <li>Diese <strong>Website</strong>: Kamerafahrt, Funktions-Tour, Farbschemata wie im Tool, Deutsch/Englisch</li>
+            </ul>
+            <ul lang="en">
+              <li><strong>New name sKulls Forge</strong> – “Cast in one piece: forks, add-ons and repositories for Kodi”</li>
+              <li><strong>Sidebar</strong> with overview, forks, add-ons, repository, wizard, settings, tools and detail log – collapsible to icons</li>
+              <li>New <strong>Settings</strong> and <strong>Tools</strong> pages, fork tabs scroll in low windows</li>
+              <li><strong>Your own add-ons</strong>: 5 templates, import and edit, check for Kodi 18–22 (online too), version and changelog, clean ZIP, test via ADB with live Kodi log</li>
+              <li><strong>Your own repository</strong>: addons.xml with checksums, branches for Kodi 18 and 19+, upload via FTP/SFTP or in one commit to GitHub Pages</li>
+              <li><strong>Your own wizard</strong>: pack builds from a Kodi folder – credentials (passwords, tokens, MAC addresses) are removed automatically –, wizard add-on with safe installation (checksum, save data), maintenance, backup, updates and <em>performance &amp; storage</em> (memory and storage as bars, suggested buffer and image settings)</li>
+              <li><strong>Project folder</strong> in Documents with one folder per project, “New project…”, central <strong>upload targets</strong> with connection test, clean-up and factory reset</li>
+              <li>Taking over old data on first start – now with <strong>Cancel</strong>; logs in the project folder under <code>Logs/</code></li>
+              <li><strong>Overview</strong> with repositories and add-ons, <strong>tooltips</strong> with the full text in all tables</li>
+              <li>This <strong>website</strong>: camera flight, feature tour, color schemes like the tool, German/English</li>
+            </ul>
+          </details>
         </div>
       </article>
       <article class="release reveal">
         <div><div class="ver">2.0.0</div><div class="date">2026-09-29</div></div>
         <div>
-          <h3 lang="de">Großes Update</h3><h3 lang="en">Big update</h3>
-          <ul lang="de">
-            <li><strong>8 Farbschemata</strong>, Startbildschirm, Symbole an Tabs, Menüs und Knöpfen</li>
-            <li><strong>Übersicht aller Forks</strong> als Startseite, Rückgängig/Wiederholen, Tastenkürzel</li>
-            <li>Übersetzungen als <strong>.po-Dateien</strong> und ein Sprach-Server für weitere Sprachen</li>
-            <li>Verschlüsselte <strong>Gesamtsicherung</strong> (AES-256) und bereinigtes Diagnosepaket</li>
-            <li><strong>Kindersicherung</strong>, „Was ist neu“ nach Updates, Download-Seite mit abgesicherter update.json</li>
-          </ul>
-          <ul lang="en">
-            <li><strong>8 color schemes</strong>, splash screen, icons on tabs, menus and buttons</li>
-            <li><strong>Overview of all forks</strong> as start page, undo/redo, keyboard shortcuts</li>
-            <li>Translations as <strong>.po files</strong> and a language server for more languages</li>
-            <li>Encrypted <strong>full backup</strong> (AES-256) and a cleaned diagnostic package</li>
-            <li><strong>Parental lock</strong>, “What's new” after updates, download page with a secured update.json</li>
-          </ul>
+          <details class="rel-more">
+            <summary><h3 lang="de">Großes Update</h3><h3 lang="en">Big update</h3></summary>
+            <ul lang="de">
+              <li><strong>8 Farbschemata</strong>, Startbildschirm, Symbole an Tabs, Menüs und Knöpfen</li>
+              <li><strong>Übersicht aller Forks</strong> als Startseite, Rückgängig/Wiederholen, Tastenkürzel</li>
+              <li>Übersetzungen als <strong>.po-Dateien</strong> und ein Sprach-Server für weitere Sprachen</li>
+              <li>Verschlüsselte <strong>Gesamtsicherung</strong> (AES-256) und bereinigtes Diagnosepaket</li>
+              <li><strong>Kindersicherung</strong>, „Was ist neu“ nach Updates, Download-Seite mit abgesicherter update.json</li>
+            </ul>
+            <ul lang="en">
+              <li><strong>8 color schemes</strong>, splash screen, icons on tabs, menus and buttons</li>
+              <li><strong>Overview of all forks</strong> as start page, undo/redo, keyboard shortcuts</li>
+              <li>Translations as <strong>.po files</strong> and a language server for more languages</li>
+              <li>Encrypted <strong>full backup</strong> (AES-256) and a cleaned diagnostic package</li>
+              <li><strong>Parental lock</strong>, “What's new” after updates, download page with a secured update.json</li>
+            </ul>
+          </details>
         </div>
       </article>
       <article class="release reveal">
         <div><div class="ver">1.0.0</div><div class="date" lang="de">Erste Version</div><div class="date" lang="en">First release</div></div>
         <div>
-          <h3>sKulls Kodi Fork Builder</h3>
-          <ul lang="de"><li>Fork aus offiziellen Kodi-APKs mit neuem Package-Namen, Branding, eingebetteten Addons, Kodi-Einstellungen, Signatur, Update-Builds, ADB-Installation und Gerätetest</li></ul>
-          <ul lang="en"><li>Fork from official Kodi APKs with a new package name, branding, embedded add-ons, Kodi settings, signing, update builds, ADB install and device test</li></ul>
+          <details class="rel-more">
+            <summary><h3>sKulls Kodi Fork Builder</h3></summary>
+            <ul lang="de"><li>Fork aus offiziellen Kodi-APKs mit neuem Package-Namen, Branding, eingebetteten Addons, Kodi-Einstellungen, Signatur, Update-Builds, ADB-Installation und Gerätetest</li></ul>
+            <ul lang="en"><li>Fork from official Kodi APKs with a new package name, branding, embedded add-ons, Kodi settings, signing, update builds, ADB install and device test</li></ul>
+          </details>
         </div>
       </article>
     </div>

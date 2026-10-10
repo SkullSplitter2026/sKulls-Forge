@@ -2,6 +2,151 @@
 
 Alle wichtigen Änderungen. Neuere Versionen stehen oben. · *English summary below each version.*
 
+## 3.10.0 – 2026-10-10
+
+Aufgeräumte Veröffentlichung auf GitHub: Fork-Releases enthalten nur noch die APKs, update.json und Download-Seite
+liegen per GitHub Pages im Repository, der Wizard bekommt einen eigenen Ordner nur für sein ZIP – dazu korrekte
+APK-Links bei Sonderzeichen im Dateinamen.
+
+### 📱 Fork & Forge
+- **GitHub-Upload mit Ordner für update.json & Co.**: Ist beim GitHub-Upload ein *Unterordner* eingetragen
+  (z.B. `apk`), enthält das Release nur noch die APKs. `update.json`, Download-Seite (`index.html`), RSS-Feed und
+  QR-Codes gehen per Commit in diesen Ordner des Repositories und sind über GitHub Pages erreichbar
+  (`https://<owner>.github.io/<repo>/apk/` – die Download-Seite ist dort eine echte Seite). *GitHub-Adresse als
+  update.json übernehmen* setzt dann die Pages-Adresse. Ohne Unterordner bleibt alles wie bisher im Release
+- **Übergang für installierte Forks**: Die `update.json` meldet den Ordner als Ersatz-Adresse – Forks mit der alten
+  Release-Adresse merken sie sich und fragen dort nach, sobald das Release keine `update.json` mehr hat. Mit dem
+  Häkchen *update.json einmal zusätzlich ins Release* geht sie beim nächsten Upload noch einmal ins Release
+  (danach schaltet sich das Häkchen selbst aus)
+- **Download-Seite ins Hauptverzeichnis**: Mit dem Häkchen *Download-Seite (index.html) ins Hauptverzeichnis des
+  Repositories* liegt die Seite direkt unter `https://<owner>.github.io/<repo>/`; QR-Codes und Feed bleiben im
+  Ordner, die Seite verweist darauf
+
+### 🧙 Wizard
+- **Eigener Ordner nur für das Wizard-ZIP**: Neues Feld *Ordner nur für das Wizard-ZIP* (GitHub). Das ZIP liegt dann
+  allein in diesem Ordner des Repositories (z.B. `wizard/`), alle Build-Daten (`builds.json`, Builds, Symbole, Fanart,
+  RSS, Kompatibilitätstabelle, mitgeliefertes Repository) im Build-Ordner (z.B. `Build/`); `builds.json` verweist
+  mit voller Adresse auf das ZIP. Beim Hochladen entfernt der Forge im Wizard-Ordner alles andere – mit dem Häkchen
+  *Übergang* bleiben alte Dateien einmal stehen, damit schon installierte Wizards bis zu ihrem Update weiterlaufen
+
+### 🔧 Behoben
+- **Fehlalarm „GitHub Pages ist nicht eingeschaltet“** bei der Online-Prüfung neuer Ordner: Die GitHub-Schnittstelle
+  antwortet ohne Anmeldung auch bei eingeschaltetem Pages mit 404. Ist die Startseite der Pages-Seite erreichbar,
+  wartet die Prüfung jetzt wie vorgesehen, bis der neue Ordner veröffentlicht ist
+- **Kaputte APK-Links bei Sonderzeichen**: GitHub benennt Release-Dateien beim Hochladen teils um (z.B. „ß“ → „ss“).
+  Die Links in `update.json`, Download-Seite und QR-Codes zeigten dann ins Leere (404). Der Forge lädt jetzt erst
+  die APKs hoch und erzeugt die Begleitdateien mit den tatsächlich vergebenen Adressen
+- Knopf „Online prüfen“ hatte zwei Symbole eingetragen (jetzt einheitlich die Wolke), ein doppelter Eintrag in
+  `lang/en.po` entfernt
+
+*English: with a subfolder set for the GitHub upload (e.g. `apk`), the release only contains the APKs; update.json,
+download page, RSS feed and QR codes are committed to that folder and served via GitHub Pages. The update.json
+announces the folder as a fallback address so installed forks switch over; optionally update.json goes into the
+release once more as a transition. Optionally the download page goes into the repository root. Wizard: optional folder for the wizard ZIP only
+(build data stays in the build folder). Fixed: false “GitHub Pages is not enabled” alarm when checking new folders; APK links were broken when GitHub renamed release files (e.g. ß → ss).*
+
+## 3.9.0 – 2026-10-10
+
+Repositories und Verteilung: Repository-Assistent mit Statistik und Spiegel, Überwachung fremder Repos,
+Kompatibilitätstabelle mit QR-Codes, Server-Ampel, Selbstprüfung und Datenschutz-Bericht – dazu sortierbare
+Listen und große Dateien per eingebautem Git-Push direkt ins GitHub-Repository.
+
+### 📦 Repository, Builds & Forge
+- **Kompatibilitätstabelle**: welcher Build auf welchem Kodi und System läuft – im Forge als Übersicht und beim Bauen
+  als `compat.html` neben `builds.json` (zum Verlinken von der Download-Seite, hell/dunkel, handytauglich) *(202)*
+- **Benötigte Repositories**: die Repositories je Build stehen in `builds.json`; vor dem Hochladen prüft der Forge,
+  ob ihre Adressen erreichbar sind, und fragt bei Problemen nach (abschaltbar). Im Dialog „Repositories prüfen“ gibt
+  es dafür den Knopf „Online prüfen“ *(203)*
+- **Vorschaubilder im Genre-Browser**: Icon und Fanart des ausgewählten Addons werden aus dem Repository geladen und
+  zwischengespeichert *(210)*
+- **Repository-Statistik**: Addons mit Version, Größe, Stand und behaltenen Versionen, Gesamtgröße und Updates je
+  Monat (Knopf „Statistik…“; der Verlauf bleibt lokal) *(214)*
+- **Repository komplett erzeugen**: „Neu mit Assistent…“ legt Repository-Addon, Adresse (GitHub Pages), Zweige und
+  Addons in einem Schritt an und baut gleich – mit `README.md` (Installationsanleitung Deutsch/Englisch, Addon-Liste)
+  und neuer Download-Seite `index.html` (Anleitung, Addon-Liste, hell/dunkel). Die README ist bei bestehenden
+  Projekten abschaltbar und standardmäßig aus, damit keine eigene README überschrieben wird *(215)*
+- **Sortierbare Listen**: alle Tabellen lassen sich per Klick auf die Spaltenüberschrift sortieren (▲/▼) – natürlich
+  nach Zahlen, Versionen und Größen; die Sortierung bleibt beim Neu-Füllen erhalten. Listen mit fester Reihenfolge
+  (Repository-Zweige, Player-Regeln, Fragen beim ersten Start, Hoch/Runter-Listen) bleiben unverändert
+- **Fremd-Repos überwachen**: einmal am Tag beim Start (abschaltbar) werden die Repositories aller Builds geprüft –
+  erreichbar? Gibt es die daraus installierten Addons dort noch? Ergebnis in der Statuszeile und im Dialog
+  „Repositories prüfen“ *(206)*
+- **Repository-Spiegel**: „Fremd-Addons spiegeln…“ übernimmt Addons aus fremden Repositories (Genre-Browser) ins
+  eigene Repository – mit Lizenz-Hinweis je Addon; offizielle Addons werden nicht gespiegelt *(213)*
+- **Übersetzungen ergänzen**: zeigt je Sprache, was im eigenen Addon fehlt, und legt Vorlagen an bzw. ergänzt
+  fehlende Einträge – vorhandene Übersetzungen bleiben *(216)*
+- **Eigene Addon-Vorlagen**: ein Addon „Als Vorlage speichern…“ – „Neu aus Vorlage…“ bietet es an, mit neuer ID,
+  neuem Namen und Version 1.0.0 *(217)*
+- **Fernbedienung beim ersten Start wählbar**: neuer Schritt im Einrichtungsassistenten des Forks (Fire TV, Shield,
+  Xiaomi, Air-Mouse oder Kodi-Standard), wirkt sofort *(228)*
+- **Server-Ampel** (Extras): sind update.json, builds.json und alle Repository-Zweige erreichbar? *(246)*
+- Repository-Startseite mit Addon-Liste und Installationshilfe ist mit dem Repository-Assistenten erledigt *(245)*
+- **QR-Codes für die Downloader-App**: die Repository-Startseite zeigt einen QR-Code zur Repository-ZIP, die
+  Kompatibilitätstabelle (compat.html) einen je Build – eingebettet, keine Extra-Datei *(237)*
+- **Selbstprüfung**: Setup und portable Fassung prüfen beim Start ihre Programmdateien gegen die mitgelieferte
+  SHA256SUMS.txt und warnen bei veränderten oder fehlenden Dateien *(254)*
+- **Datenschutz-Bericht je Build** (Builds → „Datenschutz-Bericht…“): welche Addons Statistik-, Tracking-,
+  Absturzbericht- oder Telemetrie-Code bzw. Gerätekennungen enthalten – reine Textsuche, ohne Netz *(252)*
+
+### 🔧 Behoben
+- **Große Dateien bei GitHub**: Addon-ZIPs und Builds über 30 MB scheiterten mit „422 input too large“ (die
+  GitHub-Schnittstelle schafft trotz 100-MB-Grenze nur deutlich weniger). Sie gehen jetzt per eingebautem Git-Push
+  direkt ins Repository – kein Release, kein installiertes Git nötig (Windows, macOS, Linux, Setup und portabel);
+  bis 95 MB je Datei, darüber wie bisher als Release-Datei
+- Englische Oberfläche: 211 ältere Übersetzungen in `lang/en.po` wurden wegen eines leeren Kontexts nicht gelesen –
+  sie wirken jetzt (28 doppelte Einträge entfernt)
+
+*English: a build compatibility table (also as compat.html, with a QR code per build), required repositories
+checked online before uploading, icon/fanart previews in the genre browser; repository statistics, a repository
+assistant (README with install guide, download page with QR code), daily foreign-repo monitoring and a repository
+mirror with licence notes; translation completion and own templates for add-ons; remote-control choice on first
+start; a server status overview, a start-up self-check of the program files, a per-build privacy report and
+sortable columns in every list. Fixed: GitHub uploads of files over 30 MB (now via a built-in Git push straight
+into the repository, no Git installation needed) and 211 English translations that were not being loaded.*
+
+## 3.8.0 – 2026-10-05
+
+Mehr Komfort im Wizard und mehr Ordnung bei den Builds: Builds nach Zweck filtern, Zeitfenster, benötigte Zugänge,
+interne Notizen – dazu helle Farbvarianten, weitere Dienste und eine kurze Tour beim ersten Start.
+
+### 🧙 Wizard
+- **Build-Kategorien & Filter**: Builds nach Zweck markieren (Leicht, Sport, Kinder, Musik, 4K, Film, Live-TV) und
+  im Wizard danach filtern *(166)*
+- **Benötigte Zugänge je Build**: ein Build zeigt, welche Logins/Schlüssel er braucht, und der Wizard fragt nach der
+  Installation danach *(188)*
+- **Zeitfenster für Builds**: Builds erst ab/bis zu einem Datum sichtbar (z.B. Beta-Test) *(242)*
+- **Weitere Dienste** in „Zugänge & API-Schlüssel“: MDBList, Simkl, AniList, OpenSubtitles.com-API, Plex, Jellyfin/Emby *(187)*
+- **Ruhe bei Wiedergabe**: keine automatischen Hinweise, solange ein Film oder Sender läuft *(180)*
+- **Systeminfo** auf der Build-Info-Seite (Kodi, Python, System, Gerätename, IP, freier Speicher) – mit in der Textdatei *(178)*
+- **„Was ist neu“ beim Wizard-Update**: die Änderungen werden vor dem Update angezeigt *(179)*
+- **Kurze geführte Tour** beim ersten Start (Builds, Wartung, Backup, Zugänge), jederzeit unter „Kontakt“ wiederholbar *(174)*
+- **Build-Beliebtheit**: Downloadzahl je Build und Abzeichen „beliebt“ (Zahlen aus der GitHub-Statistik, Knopf „Downloadzahlen aktualisieren“) *(165)*
+- **Vorschau-Video je Build**: kurzer Clip (URL oder Datei), vor der Installation abspielbar *(167)*
+- **Mehrsprachige Build-Texte**: Beschreibung und „Was ist neu“ je Sprache – der Wizard zeigt die passende *(176)*
+- **Favoriten übertragen**: Favoriten & Quellen als kleine Datei auf USB/Netzwerk exportieren und auf einem anderen Gerät einspielen *(106)*
+- **Fehlerhilfe mit QR-Code**: bei Netzfehlern zeigt der Wizard die FAQ-/Support-Adresse und einen QR-Code dorthin *(175)*
+- **Sprachausgabe**: Dialoge sind für Kodis Screenreader beschriftet (Überschrift + Text werden beim Öffnen vorgelesen) *(173)*
+- Links/Rechts in Auswahl-Dialogen springt direkt zu den Knöpfen (Abbrechen/OK)
+
+### 📱 Fork & Forge
+- **Helle Farbvarianten**: jedes Wizard-Farbschema zusätzlich als helle Variante *(154)*
+- **Versionsnummer im Bild**: Splash und TV-Banner des Forks werden automatisch mit der Versionsnummer beschriftet *(201)*
+- **Interne Build-Notizen**: private Notizen je Build-Version – werden nie veröffentlicht *(197)*
+- **Alte Addons markieren**: Addons, die nur bis Kodi 18 (Python 2) laufen, sind im Genre-Browser und im Bericht gekennzeichnet *(211)*
+- **Vorlagen-Galerie**: Profile als teilbare Vorlagen speichern und laden – ohne Passwörter, Keystore und Upload-Zugänge *(99)*
+- **Build-Vorlagen**: neue Builds aus Startpaketen (Leicht, Sport, Kinder, Musik) – Kategorie, Skin und empfohlene
+  Addons aus dem offiziellen Kodi-Repository sind vorbelegt *(190)*
+- **Ältere Build-Versionen**: auf Wunsch bleiben die letzten Versionen je Build online, der Wizard bietet „Ältere
+  Version installieren“ *(191)*
+- **Tote Verweise prüfen**: Favoriten, Quellen und Menü-Einträge, die auf im Build fehlende Addons zeigen *(192)*
+
+*English: build categories with filter, per-build required logins (wizard asks after install), build visibility
+time windows, more account services (MDBList, Simkl, AniList, OpenSubtitles.com, Plex, Jellyfin), quiet during
+playback, a system-info page, wizard changelog shown before updating, a short guided tour on first start, build
+popularity, preview videos, multilingual build texts, favourites transfer, error help with QR code, screen-reader
+labels; plus light colour-scheme variants, the version number drawn on splash/banner, private build notes,
+Python-2/Kodi-18 add-ons flagged, a template gallery, build starters, older build versions and a dead-link check.*
+
 ## 3.7.0 – 2026-10-05
 
 Mehr Upload-Ziele, Ziehen und Ablegen, Geräte mit Namen, ein sicherer Wizard mit Wiederherstellungspunkt – und

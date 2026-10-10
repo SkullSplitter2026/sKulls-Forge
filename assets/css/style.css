@@ -238,6 +238,18 @@ section { padding: 110px 0; }
 .release ul { margin: 0; padding-left: 18px; color: var(--muted); }
 .release li { margin: 5px 0; }
 .release li strong { color: var(--fg); font-weight: 600; }
+/* ältere Versionen als Spoiler zum Ein-/Ausklappen */
+.rel-more > summary { cursor: pointer; list-style: none; display: flex; gap: 10px; align-items: baseline; }
+.rel-more > summary::-webkit-details-marker { display: none; }
+.rel-more > summary::before { content: "+"; color: var(--accent); font-size: 20px; width: 16px; flex: none;
+  transition: transform .2s ease; }
+.rel-more[open] > summary::before { transform: rotate(45deg); }
+.rel-more > summary h3 { margin-bottom: 0; }
+.rel-more > summary:hover h3 { color: var(--accent); }
+.rel-more > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+.rel-more[open] > summary { margin-bottom: 10px; }
+.rel-more > ul { padding-left: 44px; }
+.release:has(> div > .rel-more:not([open])) { padding-bottom: 22px; }
 
 /* Download */
 .downloads { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
