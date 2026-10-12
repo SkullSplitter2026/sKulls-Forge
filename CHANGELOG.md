@@ -44,6 +44,8 @@ Kodi-22-Vorbereitung, tote Menüverweise beheben und farbige Namen, die Kodi wir
   FTP/FTPS/SFTP/WebDAV/S3: der Zielordner), und löscht nur die ausgewählten Einträge nach Rückfrage. Bei GitHub in
   einem Commit, ganze Releases samt Tag; fremde Ordner im Repository werden weder angezeigt noch angefasst
 - **adb.exe** wird erst nach 20 statt 10 Minuten ohne Geräte-Aktion beendet
+- **Nur noch Setup/Portable**: README, Hilfe und Hinweise zeigen Befehle als `"sKulls Forge.exe" …` (Eingabeaufforderung
+  im Programmordner `app`), keine `python main.py`- und `pip install`-Hinweise mehr – alles ist im Setup enthalten
 - Warnungen und Protokoll beim Build-Bau zeigen den Build-Namen ohne Kodi-Formatierung (`[COLOR]`, `[B]`)
 - **Build direkt vom Android-Gerät**: Builds → „Vom Android-Gerät...“ holt Kodi-Daten einer App per ADB, legt sie als
   Kodi-Datenordner unter `Builds/Devices/<App>-<Datum>` ab und öffnet gleich den Build-Dialog – Kodi-Version aus der

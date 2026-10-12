@@ -151,10 +151,8 @@ selbst, nicht am Fork. Auf älteren Geräten laufen diese Versionen normal. Der 
 
 - 🪟 **Windows 10/11** (64 Bit). Das **Setup** bringt alles mit: Das Programm ist fertig übersetzt (kein Python
   nötig, keine Skripte), eine passende **Java-Laufzeit** liegt bei.
-- 🐍 Nur für den Start aus dem Quellcode: **Python 3.9+** und `pip install -r requirements.txt` (Pillow für
-  Branding und Vorschaubilder; optional `paramiko` für SFTP-Upload und `cryptography` für
-  die verschlüsselte Gesamtsicherung) sowie ein **Java JDK** (für `keytool` und die mitgelieferten JARs).
-  Kern-Funktionen laufen so auch unter Linux/macOS, die ADB-Tools liegen aber als `.exe` bei.
+- 📦 **Ein Download für alles**: `sKulls-Forge-Setup-<Version>.exe` von GitHub – installieren oder *Portable* in
+  einen Ordner deiner Wahl (z.B. USB-Stick). Ein Update installierst du einfach darüber.
 
 Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor PATH bzw. Android SDK:
 
@@ -167,7 +165,7 @@ Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor 
 | 🔍 aapt2 | `aapt2.exe` | Build-Report, Original-Grafiken (Package, Version, SDK, Icons) |
 | 📲 adb | `adb.exe` + `AdbWin*.dll` | Installation, Start, Gerätetest |
 
-> 🛠️ `python main.py tools` bzw. *Einstellungen → Werkzeuge* (`Strg+,`) zeigt, welche Werkzeuge gefunden wurden.
+> 🛠️ `"sKulls Forge.exe" tools` bzw. *Einstellungen → Werkzeuge* (`Strg+,`) zeigt, welche Werkzeuge gefunden wurden.
 
 [⬆️ nach oben](#top)
 
@@ -297,11 +295,11 @@ Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor 
 1. Profil fertig einrichten und speichern, Passwörter in Tab 7 speichern, ggf. Upload in Tab 8 einrichten.
 2. *Extras → Automatisch bauen (Zeitplan)…*: Uhrzeit, täglich oder *nur wöchentlich (sonntags)*, *danach hochladen*,
    *Varianten mitbauen* → **Einrichten / ändern**.
-3. Windows startet dann `main.py auto <Profil>` ohne Fenster: neue Kodi-Version **derselben Hauptversion** und
-   Addon-Updates übernehmen, bauen, hochladen. Das Protokoll steht in `Logs/auto.log`, jeder Build im **Build-Verlauf**.
+3. Windows startet dann `"sKulls Forge.exe" auto <Profil>` ohne Fenster: neue Kodi-Version **derselben Hauptversion** und
+   Addon-Updates übernehmen, bauen, hochladen. Das Protokoll steht in `Tool/Logs/auto.log`, jeder Build im **Build-Verlauf**.
 
 > 💡 Der Rechner muss zur eingestellten Zeit laufen. Eine neue Hauptversion (z.B. Kodi 22) wird nur mit
-> `python main.py auto <Profil> --major` übernommen – so gibt es keine Überraschungen.
+> `"sKulls Forge.exe" auto <Profil> --major` übernommen – so gibt es keine Überraschungen.
 
 <a id="de-howto-umzug"></a>
 
@@ -309,8 +307,7 @@ Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor 
 
 1. Auf dem alten PC *Datei → Gesamtsicherung erstellen…*: ein Passwort (mind. 8 Zeichen) festlegen, optional
    die Kodi-APKs mitsichern, Datei speichern (z.B. auf einen USB-Stick).
-2. Auf dem neuen PC das Tool installieren (Setup `sKulls-Forge-Setup-<Version>.exe` von GitHub) und
-   `pip install cryptography` ausführen.
+2. Auf dem neuen PC das Tool installieren (Setup `sKulls-Forge-Setup-<Version>.exe` von GitHub).
 3. *Datei → Gesamtsicherung wiederherstellen…*, Datei wählen, Passwort eingeben. Das Tool zeigt Datum und Umfang
    und fragt, ob es wiederherstellen soll.
 4. Fertig: Profile, Keystores, gespeicherte Passwörter, Build-Verlauf und alle verwendeten Dateien sind da.
@@ -471,7 +468,7 @@ Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor 
 | Feature | Erklärung |
 |---|---|
 | 🗝️ **Keystore** | Vorhandenen Keystore (`.jks`, `.keystore`, `.p12`) wählen oder neu erstellen (RSA 2048, 10 000 Tage, frei wählbarer DName). *Aliases anzeigen* liest den Keystore aus. |
-| 🔑 **Passwörter** | Werden nur in `config/settings.json` gespeichert – **nie im Profil**. Für die CLI auch per Umgebungsvariable. Bei PKCS12 gilt das Store-Passwort auch als Key-Passwort. |
+| 🔑 **Passwörter** | Werden nur in `Tool/Config/settings.json` gespeichert – **nie im Profil**. Für die CLI auch per Umgebungsvariable. Bei PKCS12 gilt das Store-Passwort auch als Key-Passwort. |
 | ✍️ **Signatur-Methode** | *zipalign + apksigner* (empfohlen) oder *uber-apk-signer*. Schemas v1 (Android < 7), v2 (7+), v3 (9+), v4 (11+, `.idsig`). |
 | 🧬 **Zertifikat-Schutz** | Der SHA-256-Fingerabdruck wird beim ersten Build im Profil gemerkt. Ein späterer Build mit einem **anderen Keystore bricht ab** – ein solches Update ließe sich nicht über die installierte App installieren. *Zertifikat zurücksetzen* nur bei Absicht. |
 | 💾 **Automatische Sicherung** | Jeder neue bzw. geänderte Keystore wird nach `backups/keystores/` kopiert (mit Infodatei: Alias, Fingerabdruck – ohne Passwort). |
@@ -493,7 +490,7 @@ Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor 
 | 🩺 **Gerätetest** | Installiert, startet (Start-Activity per Paketmanager, Handy **und** Android-TV) und beobachtet den Fork 60 s: läuft der Prozess, Absturzmeldungen im Logcat, Fehler und Ersteinrichtung im `kodi.log`, Screenshot. Erkennt gesperrte Bildschirme. Ergebnis als `*_devicetest.txt` + `.png` neben der APK. |
 | 🔌 **ADB** | Geräteliste, WLAN-Verbindung (*IP[:Port]*), letzte APK installieren, APK wählen und installieren, Starten, Deinstallieren. Klare Hinweise bei typischen Installationsfehlern. |
 | 🧬 **Build-Varianten** | Aus einem Profil zusätzlich Varianten bauen (z.B. „Kids“): eigener Package-Name, App-Name, Icon, Sprache, **Addons weglassen**, zusätzliche Kodi-Einstellungen. Gleicher Version-Code und Keystore; Ausgabe und Update-Adressen im Unterordner der Variante (bei GitHub: `update-<variante>.json` im selben Release). |
-| ☁️ **Upload** | FTP, FTPS, SFTP (`pip install paramiko`), **WebDAV** (Nextcloud, ownCloud …), **S3** (Amazon, Cloudflare R2, Backblaze B2, Wasabi, MinIO) oder **GitHub-Release** (Release wird angelegt bzw. ersetzt, Links in `update.json` zeigen auf die Release-Downloads). Automatisch nach dem Build oder per *Letzten Build jetzt hochladen*; *Online löschen...* entfernt ausgewählte Fork-Releases oder Dateien im Upload-Ordner. Passwort/Token nur in `Tool/Config/settings.json`. |
+| ☁️ **Upload** | FTP, FTPS, SFTP, **WebDAV** (Nextcloud, ownCloud …), **S3** (Amazon, Cloudflare R2, Backblaze B2, Wasabi, MinIO) oder **GitHub-Release** (Release wird angelegt bzw. ersetzt, Links in `update.json` zeigen auf die Release-Downloads). Automatisch nach dem Build oder per *Letzten Build jetzt hochladen*; *Online löschen...* entfernt ausgewählte Fork-Releases oder Dateien im Upload-Ordner. Passwort/Token nur in `Tool/Config/settings.json`. |
 | 🔳 **QR-Codes** | Zu jeder APK ein `…_qr.png` mit dem Download-Link (sobald eine Download-Adresse bekannt ist) – zum Abscannen mit dem Handy (eingebauter Erzeuger, kein Zusatzpaket). |
 | 📜 **Log** | Alle Ausgaben farbig (Fehler, Warnungen, Erfolg), löschen und speichern. |
 
@@ -598,9 +595,9 @@ gespeichert) oder **Neu bauen** (diesen Stand sofort bauen – z.B. um eine ält
 „sKulls Forge“) – täglich oder wöchentlich (sonntags) zur gewählten Uhrzeit, optional mit Upload und
 Varianten. Der Dialog zeigt, ob und wann die Aufgabe eingerichtet ist; *Entfernen* löscht sie wieder.
 
-Ablauf von `main.py auto`: neue Kodi-Version derselben Hauptversion laden und im Profil eintragen → Addon-Updates
+Ablauf von `"sKulls Forge.exe" auto`: neue Kodi-Version derselben Hauptversion laden und im Profil eintragen → Addon-Updates
 laden → Version-Code erhöhen (falls aktiviert) → bauen (ggf. mit Varianten) → hochladen → Profil speichern.
-Protokoll: `Logs/auto.log`. Die Keystore-Passwörter und Upload-Zugänge kommen aus `config/settings.json`.
+Protokoll: `Tool/Logs/auto.log`. Die Keystore-Passwörter und Upload-Zugänge kommen aus `Tool/Config/settings.json`.
 
 <a id="de-f-kodiupdate"></a>
 
@@ -713,7 +710,7 @@ und automatisch aktualisiert. Das Projekt liegt in `Repository/<Name>/`, das Erg
 | 🪞 **Fremd-Addons spiegeln…** | Übernimmt Addons aus fremden Repositories (Genre-Browser) ins eigene Repository – mit Lizenz-Hinweis je Addon. |
 | 👁️ **Fremd-Repos überwachen** | Einmal am Tag beim Start (abschaltbar, Dialog *Repositories prüfen*): sind die Repositories der Builds erreichbar und bieten sie die Addons noch an? |
 
-> 💡 Kommandozeile: `python main.py repo-build <projekt> [--upload]` und `python main.py repo-list`.
+> 💡 Kommandozeile: `"sKulls Forge.exe" repo-build <projekt> [--upload]` und `"sKulls Forge.exe" repo-list`.
 
 <a id="de-f-wizard"></a>
 
@@ -792,7 +789,7 @@ abwählbar. Der Puffer richtet sich nach dem RAM (Kodi belegt etwa das Dreifache
 ab Kodi 20 landen die Werte in Kodis Einstellungen, bei Kodi 19 in der advancedsettings.xml. *Zurücksetzen* stellt
 den Stand vor dem ersten Übernehmen wieder her.
 
-> 💡 Kommandozeile: `python main.py wizard-build <projekt> [--upload] [--repack]` und `python main.py wizard-list`.
+> 💡 Kommandozeile: `"sKulls Forge.exe" wizard-build <projekt> [--upload] [--repack]` und `"sKulls Forge.exe" wizard-list`.
 
 <a id="de-f-gesamtsicherung"></a>
 
@@ -804,7 +801,7 @@ den Stand vor dem ersten Übernehmen wieder her.
 |---|---|
 | 🗂️ Profile, Presets, Build-Verlauf, Sprachdateien | Ordner `profiles/`, `presets/`, `history/`, `lang/` |
 | 🔐 Keystores | `backups/keystores/` und jeder Keystore, auf den ein Profil verweist – auch außerhalb des Projekts |
-| ⚙️ Einstellungen | `config/settings.json` **mit** Keystore- und Upload-Passwörtern |
+| ⚙️ Einstellungen | `Tool/Config/settings.json` **mit** Keystore- und Upload-Passwörtern |
 | 🖼️ Verwendete Dateien | Grafiken, Addons, Userdata-Vorlagen und zusätzliche Dateien der Profile (auch außerhalb des Projekts) |
 | 📦 Kodi-APKs | optional (lassen sich sonst neu herunterladen) |
 
@@ -814,7 +811,7 @@ den Stand vor dem ersten Übernehmen wieder her.
   Umfang. Vorhandene Dateien, die sich unterscheiden, werden vorher nach `backups/restore_<Zeit>/` verschoben,
   gleiche übersprungen. Dateien von außerhalb des Projekts kommen an ihren alten Ort – fehlt der Ordner (neuer PC),
   landen sie in `restored/` und Profile/Einstellungen werden angepasst. Danach lädt das Tool Einstellungen und Profil neu.
-- 💻 CLI: `python main.py backup ZIEL.skbackup [--apks]` und `python main.py restore DATEI.skbackup` (Passwort per
+- 💻 CLI: `"sKulls Forge.exe" backup ZIEL.skbackup [--apks]` und `"sKulls Forge.exe" restore DATEI.skbackup` (Passwort per
   Abfrage oder Umgebungsvariable `SKFORGE_BACKUP_PASS`).
 
 <a id="de-f-tastatur"></a>
@@ -846,7 +843,7 @@ farbig umrandet. In Dialogen schließt `Esc` den Dialog.
 
 ### 🩺 Diagnosepaket
 
-*About → Diagnosepaket erstellen…* (oder `python main.py diagnose`) erzeugt ein ZIP für den Support: Systeminfo
+*About → Diagnosepaket erstellen…* (oder `"sKulls Forge.exe" diagnose`) erzeugt ein ZIP für den Support: Systeminfo
 (Windows, Python, Java, Pakete), Werkzeug-Status, Logs, das Build-Log des Fensters, die letzten 5 Build-Reports und
 3 Gerätetests, Einstellungen und das aktuelle Profil. **Automatisch bereinigt**: Passwörter, Tokens, Upload-Zugänge,
 geheime Addon-Einstellungen (Passwort, MAC, Token …) und Zugangsdaten in Adressen werden durch `***` ersetzt, der
@@ -884,7 +881,7 @@ Nach einem Update des Tools ergänzt „aktualisieren“ neue Texte, fertige Üb
 **Sprach-Server:** *Weitere Sprachen herunterladen …* zeigt die Sprachen auf dem Server mit Fortschritt, Version und
 Status (*neu*, *installiert*, *Update verfügbar*) und lädt die gewählten herunter. Auf dem Server liegen eine
 `languages.json` (Liste mit Version, Fortschritt und SHA-256) und die `.po`-Dateien – z.B. in einem GitHub-Repository.
-`python main.py lang-index` erzeugt alles fertig zum Hochladen in `server/languages/` (mit Anleitung `README.md`).
+`"sKulls Forge.exe" lang-index` erzeugt alles fertig zum Hochladen in `server/languages/` (mit Anleitung `README.md`).
 
 🔒 **Sicherheit:** Geladen wird nur über HTTPS, Größe und SHA-256 werden geprüft. Sprachdateien enthalten nur Text:
 Suchausdrücke kommen immer aus dem Programm, und Übersetzungen mit anderen Platzhaltern als `{0}`, `{1}` … werden
@@ -898,53 +895,56 @@ verworfen.
 
 ## 💻 Kommandozeile (CLI)
 
+Im Programmordner (installiert bzw. portabel: Unterordner `app`) eine Eingabeaufforderung öffnen – die Ausgaben
+erscheinen im selben Fenster. `"sKulls Forge.exe" --help` zeigt alle Befehle.
+
 ```bash
-python main.py                                            # GUI
-python main.py gui profiles/meinfork.json                 # GUI mit Profil
-python main.py build profiles/meinfork.json               # alle APKs aus dem Profil bauen
-python main.py build profiles/meinfork.json --install --launch
-python main.py build profiles/meinfork.json --test        # danach Gerätetest (60 s)
-python main.py build profiles/meinfork.json --variants --upload   # mit Varianten, danach hochladen
-python main.py build profiles/meinfork.json --install --device all   # auf allen verbundenen Geräten
-python main.py auto profiles/meinfork.json [--upload] [--variants] [--major]   # Kodi/Addons aktualisieren + bauen
-python main.py schedule profiles/meinfork.json --time 03:00 [--weekly] [--upload] [--variants]
-python main.py schedule profiles/meinfork.json --remove   # Zeitplan entfernen
-python main.py compare output/alt_signed.apk output/neu_signed.apk
-python main.py check-addons profiles/meinfork.json [--update]     # Addon-Updates suchen/laden
-python main.py build profiles/meinfork.json --apk input/kodi-21.3-Omega-arm64-v8a.apk
-python main.py devicetest output/xyz_signed.apk [--device SERIAL] [--seconds 60]
-python main.py check-kodi profiles/meinfork.json [--download]
-python main.py export-profile profiles/meinfork.json meinfork.zip [--apks] [--keystore]
-python main.py import-profile meinfork.zip
-python main.py download --list --abi armeabi-v7a          # verfügbare Kodi-Versionen
-python main.py download --version 21.3 --abi arm64-v8a    # nach input/ laden
-python main.py devices --connect 192.168.1.50             # ADB per WLAN
-python main.py install output/xyz_signed.apk --launch org.meinfork.kodi
-python main.py tools                                      # gefundene Werkzeuge
-python main.py overview [--online]                        # Übersicht aller Forks
-python main.py backup D:\sicherung.skbackup [--apks]      # verschlüsselte Gesamtsicherung
-python main.py restore D:\sicherung.skbackup [--yes]      # Gesamtsicherung wiederherstellen
-python main.py diagnose [ZIEL.zip]                        # bereinigtes Diagnosepaket
-python main.py lang-template fr Français                  # Sprachdatei lang/fr.po anlegen/ergänzen
-python main.py lang-index                                 # Dateien für den Sprach-Server (server/languages/)
-python main.py site-stats --site ORDNER --repo BESITZER/REPO  # Download-Zahlen für die Website (assets/stats.json)
-python main.py web [--port 8765]                          # Web-Oberfläche (Passwort in den Einstellungen)
-python main.py apk-size output/xyz_signed.apk             # Größen-Analyse mit Spar-Tipps
-python main.py log-check kodi.log                         # bekannte Fehler im Kodi-Log erklären
-python main.py download-stats BESITZER/REPO               # Downloads je Version/CPU mit Verlauf
-python main.py portal [--out ORDNER]                      # Übersichtsseite aller Forks
-python main.py nightly-check profiles/meinfork.json       # Addons gegen die neueste Kodi-Nightly prüfen
-python main.py win-portable profiles/meinfork.json [--kodi ORDNER]   # portables Kodi für Windows (ZIP)
-python main.py lang-list [--url URL]                      # Sprachen auf dem Sprach-Server
-python main.py lang-download fr [--url URL]               # Sprache laden bzw. aktualisieren
-python main.py repo-build meinrepo [--upload] [--full]    # eigenes Repository bauen (und hochladen)
-python main.py repo-list                                  # Repository-Projekte anzeigen
-python main.py wizard-build meinwizard [--upload] [--repack]  # Wizard bauen: Builds, Wizard-Addon, builds.json
-python main.py wizard-list                                # Wizard-Projekte anzeigen
-python main.py wizard-check meinwizard                    # prüfen, welche Zugangsdaten beim Packen entfernt werden
-python main.py addon-list                                 # eigene Addons mit Kurzprüfung
-python main.py addon-check plugin.video.x [--kodi 21]     # Addon prüfen
-python main.py addon-build plugin.video.x [--kodi 21]     # prüfen und ZIP nach Addons/ZIPs bauen
+"sKulls Forge.exe"                                        # GUI
+"sKulls Forge.exe" gui profiles/meinfork.json             # GUI mit Profil
+"sKulls Forge.exe" build profiles/meinfork.json           # alle APKs aus dem Profil bauen
+"sKulls Forge.exe" build profiles/meinfork.json --install --launch
+"sKulls Forge.exe" build profiles/meinfork.json --test    # danach Gerätetest (60 s)
+"sKulls Forge.exe" build profiles/meinfork.json --variants --upload   # mit Varianten, danach hochladen
+"sKulls Forge.exe" build profiles/meinfork.json --install --device all   # auf allen verbundenen Geräten
+"sKulls Forge.exe" auto profiles/meinfork.json [--upload] [--variants] [--major]   # Kodi/Addons aktualisieren + bauen
+"sKulls Forge.exe" schedule profiles/meinfork.json --time 03:00 [--weekly] [--upload] [--variants]
+"sKulls Forge.exe" schedule profiles/meinfork.json --remove   # Zeitplan entfernen
+"sKulls Forge.exe" compare output/alt_signed.apk output/neu_signed.apk
+"sKulls Forge.exe" check-addons profiles/meinfork.json [--update]     # Addon-Updates suchen/laden
+"sKulls Forge.exe" build profiles/meinfork.json --apk input/kodi-21.3-Omega-arm64-v8a.apk
+"sKulls Forge.exe" devicetest output/xyz_signed.apk [--device SERIAL] [--seconds 60]
+"sKulls Forge.exe" check-kodi profiles/meinfork.json [--download]
+"sKulls Forge.exe" export-profile profiles/meinfork.json meinfork.zip [--apks] [--keystore]
+"sKulls Forge.exe" import-profile meinfork.zip
+"sKulls Forge.exe" download --list --abi armeabi-v7a      # verfügbare Kodi-Versionen
+"sKulls Forge.exe" download --version 21.3 --abi arm64-v8a    # nach input/ laden
+"sKulls Forge.exe" devices --connect 192.168.1.50         # ADB per WLAN
+"sKulls Forge.exe" install output/xyz_signed.apk --launch org.meinfork.kodi
+"sKulls Forge.exe" tools                                  # gefundene Werkzeuge
+"sKulls Forge.exe" overview [--online]                    # Übersicht aller Forks
+"sKulls Forge.exe" backup D:\sicherung.skbackup [--apks]  # verschlüsselte Gesamtsicherung
+"sKulls Forge.exe" restore D:\sicherung.skbackup [--yes]  # Gesamtsicherung wiederherstellen
+"sKulls Forge.exe" diagnose [ZIEL.zip]                    # bereinigtes Diagnosepaket
+"sKulls Forge.exe" lang-template fr Français              # Sprachdatei lang/fr.po anlegen/ergänzen
+"sKulls Forge.exe" lang-index                             # Dateien für den Sprach-Server (server/languages/)
+"sKulls Forge.exe" site-stats --site ORDNER --repo BESITZER/REPO  # Download-Zahlen für die Website (assets/stats.json)
+"sKulls Forge.exe" web [--port 8765]                      # Web-Oberfläche (Passwort in den Einstellungen)
+"sKulls Forge.exe" apk-size output/xyz_signed.apk         # Größen-Analyse mit Spar-Tipps
+"sKulls Forge.exe" log-check kodi.log                     # bekannte Fehler im Kodi-Log erklären
+"sKulls Forge.exe" download-stats BESITZER/REPO           # Downloads je Version/CPU mit Verlauf
+"sKulls Forge.exe" portal [--out ORDNER]                  # Übersichtsseite aller Forks
+"sKulls Forge.exe" nightly-check profiles/meinfork.json   # Addons gegen die neueste Kodi-Nightly prüfen
+"sKulls Forge.exe" win-portable profiles/meinfork.json [--kodi ORDNER]   # portables Kodi für Windows (ZIP)
+"sKulls Forge.exe" lang-list [--url URL]                  # Sprachen auf dem Sprach-Server
+"sKulls Forge.exe" lang-download fr [--url URL]           # Sprache laden bzw. aktualisieren
+"sKulls Forge.exe" repo-build meinrepo [--upload] [--full]    # eigenes Repository bauen (und hochladen)
+"sKulls Forge.exe" repo-list                              # Repository-Projekte anzeigen
+"sKulls Forge.exe" wizard-build meinwizard [--upload] [--repack]  # Wizard bauen: Builds, Wizard-Addon, builds.json
+"sKulls Forge.exe" wizard-list                            # Wizard-Projekte anzeigen
+"sKulls Forge.exe" wizard-check meinwizard                # prüfen, welche Zugangsdaten beim Packen entfernt werden
+"sKulls Forge.exe" addon-list                             # eigene Addons mit Kurzprüfung
+"sKulls Forge.exe" addon-check plugin.video.x [--kodi 21]     # Addon prüfen
+"sKulls Forge.exe" addon-build plugin.video.x [--kodi 21]     # prüfen und ZIP nach Addons/ZIPs bauen
 ```
 
 - 🔑 Keystore-Passwort: Umgebungsvariable `SKFORGE_KS_PASS` (optional `SKFORGE_KEY_PASS`),
@@ -995,8 +995,8 @@ wird: Fork-Einstellungen und Keystore. Bilder, Addons, Repositories und Wizard s
 |---|---|
 | 📂 `resources/` | mitgelieferte Werkzeuge |
 | 📂 `lang/` | Sprachdateien: `en.po` (mitgeliefert), eigene und heruntergeladene `<code>.po` |
-| 📂 `server/languages/` | Dateien für den Sprach-Server zum Hochladen (`python main.py lang-index`) |
-| 📄 `sKulls Forge.exe` | das Programm (aus dem Quellcode: `main.py` + `modules/`) |
+| 📂 `server/languages/` | Dateien für den Sprach-Server zum Hochladen (`"sKulls Forge.exe" lang-index`) |
+| 📄 `sKulls Forge.exe` | das Programm |
 
 > ℹ️ Ältere Installationen hatten alles im Programmordner (`config/`, `presets/`, `profiles/`, `input/`, `output/`,
 > `repos/`, `AddToFork/`).
@@ -1057,9 +1057,8 @@ wird: Fork-Einstellungen und Keystore. Bilder, Addons, Repositories und Wizard s
 | 🔒 Kindersicherung greift nicht | Sie ist erst **ab dem zweiten Start** aktiv. Eine bereits installierte Version ohne Sperre bekommt sie nach dem Update ebenfalls beim nächsten Neustart. |
 | 🔑 Kindersicherungs-Code vergessen | Fork deinstallieren und neu installieren (Daten gehen verloren) – der Code ist nur als Prüfsumme gespeichert. |
 | 🔒 „Falsches Passwort“ bei der Gesamtsicherung | Das Passwort lässt sich nicht wiederherstellen – ohne es ist die Sicherung nicht lesbar. |
-| 📦 „Paket 'cryptography' benötigt“ | `pip install cryptography` ausführen. |
 | 🆘 Hilfe anfragen | *About → Diagnosepaket erstellen…* und das ZIP mitschicken – Passwörter sind entfernt. |
-| ⏰ Zeitplan baut nicht | `Logs/auto.log` im Projekt-Ordner prüfen; Passwörter in Tab 7 gespeichert? Rechner lief zur Uhrzeit? *Aufgabenplanung → sKulls Forge*. |
+| ⏰ Zeitplan baut nicht | `Tool/Logs/auto.log` im Projekt-Ordner prüfen; Passwörter in Tab 7 gespeichert? Rechner lief zur Uhrzeit? *Aufgabenplanung → sKulls Forge*. |
 | 🔔 Update-Hinweis kommt nicht | Die update.json-Adresse muss mit `https://` beginnen – `http://` wird aus Sicherheitsgründen ignoriert. |
 
 [⬆️ nach oben](#top)
@@ -1200,10 +1199,8 @@ the fork. On older devices these versions run normally. The build warns automati
 
 - 🪟 **Windows 10/11** (64-bit). The **setup** brings everything: the program is fully compiled (no Python needed,
   no scripts) and a matching **Java runtime** is included.
-- 🐍 Only for running from source: **Python 3.9+** and `pip install -r requirements.txt` (Pillow for branding and
-  previews; optionally `paramiko` for SFTP upload and `cryptography` for the encrypted full
-  backup) plus a **Java JDK** (for `keytool` and the bundled JARs). The core also runs on Linux/macOS this way,
-  but the bundled ADB tools are `.exe` files.
+- 📦 **One download for everything**: `sKulls-Forge-Setup-<version>.exe` from GitHub – install it or choose
+  *Portable* for a folder of your choice (e.g. a USB stick). To update, simply install over it.
 
 All other tools are located in `resources/` and take **precedence** over PATH or the Android SDK:
 
@@ -1216,7 +1213,7 @@ All other tools are located in `resources/` and take **precedence** over PATH or
 | 🔍 aapt2 | `aapt2.exe` | build report, original graphics (package, version, SDK, icons) |
 | 📲 adb | `adb.exe` + `AdbWin*.dll` | installation, launch, device test |
 
-> 🛠️ `python main.py tools` or *Settings → Tools* (`Ctrl+,`) shows which tools were found.
+> 🛠️ `"sKulls Forge.exe" tools` or *Settings → Tools* (`Ctrl+,`) shows which tools were found.
 
 [⬆️ back to top](#top)
 
@@ -1346,11 +1343,11 @@ All other tools are located in `resources/` and take **precedence** over PATH or
 1. Finish and save the profile, save the passwords in tab 7, set up the upload in tab 8 if needed.
 2. *Tools → Build automatically (schedule)…*: time, daily or *weekly only (Sundays)*, *upload afterwards*,
    *Also build variants* → **Set up / change**.
-3. Windows then runs `main.py auto <profile>` without a window: take over a new Kodi release of **the same major
-   version** and add-on updates, build, upload. The log is in `Logs/auto.log`, every build in the **build history**.
+3. Windows then runs `"sKulls Forge.exe" auto <profile>` without a window: take over a new Kodi release of **the same major
+   version** and add-on updates, build, upload. The log is in `Tool/Logs/auto.log`, every build in the **build history**.
 
 > 💡 The PC must be running at the scheduled time. A new major version (e.g. Kodi 22) is only taken over with
-> `python main.py auto <profile> --major` – no surprises.
+> `"sKulls Forge.exe" auto <profile> --major` – no surprises.
 
 <a id="en-howto-move"></a>
 
@@ -1358,7 +1355,7 @@ All other tools are located in `resources/` and take **precedence** over PATH or
 
 1. On the old PC *File → Create full backup…*: set a password (at least 8 characters), optionally include the Kodi
    APKs, save the file (e.g. to a USB stick).
-2. On the new PC install the tool (setup `sKulls-Forge-Setup-<version>.exe` from GitHub) and run `pip install cryptography`.
+2. On the new PC install the tool (setup `sKulls-Forge-Setup-<version>.exe` from GitHub).
 3. *File → Restore full backup…*, choose the file, enter the password. The tool shows date and size and asks whether
    to restore.
 4. Done: profiles, keystores, saved passwords, build history and all used files are back. Files whose old folder is
@@ -1519,7 +1516,7 @@ All other tools are located in `resources/` and take **precedence** over PATH or
 | Feature | Description |
 |---|---|
 | 🗝️ **Keystore** | Choose an existing keystore (`.jks`, `.keystore`, `.p12`) or create a new one (RSA 2048, 10,000 days, custom DName). *Show aliases* reads the keystore. |
-| 🔑 **Passwords** | Stored only in `config/settings.json` – **never in the profile**. For the CLI also via environment variable. With PKCS12 the store password is also the key password. |
+| 🔑 **Passwords** | Stored only in `Tool/Config/settings.json` – **never in the profile**. For the CLI also via environment variable. With PKCS12 the store password is also the key password. |
 | ✍️ **Signing method** | *zipalign + apksigner* (recommended) or *uber-apk-signer*. Schemes v1 (Android < 7), v2 (7+), v3 (9+), v4 (11+, `.idsig`). |
 | 🧬 **Certificate protection** | The SHA-256 fingerprint is stored in the profile on the first build. A later build with a **different keystore is aborted** – such an update could not be installed over the installed app. *Reset certificate* only on purpose. |
 | 💾 **Automatic backup** | Every new or changed keystore is copied to `backups/keystores/` (with an info file: alias, fingerprint – no password). |
@@ -1541,7 +1538,7 @@ All other tools are located in `resources/` and take **precedence** over PATH or
 | 🩺 **Device test** | Installs, launches (launch activity via the package manager, phone **and** Android TV) and watches the fork for 60 s: is the process running, crash messages in logcat, errors and first-run setup in `kodi.log`, screenshot. Detects locked screens. Result as `*_devicetest.txt` + `.png` next to the APK. |
 | 🔌 **ADB** | Device list, Wi-Fi connection (*IP[:port]*), install last APK, choose & install APK, launch, uninstall. Clear hints for typical installation errors. |
 | 🧬 **Build variants** | Build additional variants from one profile (e.g. "Kids"): own package name, app name, icon, language, **leave out add-ons**, additional Kodi settings. Same version code and keystore; output and update addresses in the variant's subfolder (with GitHub: `update-<variant>.json` in the same release). |
-| ☁️ **Upload** | FTP, FTPS, SFTP (`pip install paramiko`), **WebDAV** (Nextcloud, ownCloud …), **S3** (Amazon, Cloudflare R2, Backblaze B2, Wasabi, MinIO) or **GitHub release** (release is created or replaced, links in `update.json` point to the release downloads). Automatically after the build or via *Upload last build now*. Password/token only in `config/settings.json`. |
+| ☁️ **Upload** | FTP, FTPS, SFTP, **WebDAV** (Nextcloud, ownCloud …), **S3** (Amazon, Cloudflare R2, Backblaze B2, Wasabi, MinIO) or **GitHub release** (release is created or replaced, links in `update.json` point to the release downloads). Automatically after the build or via *Upload last build now*. Password/token only in `Tool/Config/settings.json`. |
 | 🔳 **QR codes** | For every APK a `…_qr.png` with the download link (as soon as a download address is known) – to scan with a phone (built-in generator, no extra package). |
 | 📜 **Log** | All output colored (errors, warnings, success), clear and save. |
 
@@ -1646,9 +1643,9 @@ report**, **Open folder**, **Load state** (settings from back then into the inte
 "sKulls Forge") – daily or weekly (Sundays) at the chosen time, optionally with upload and variants.
 The dialog shows whether and when the task is set up; *Remove* deletes it again.
 
-What `main.py auto` does: download a new Kodi release of the same major version and put it into the profile →
+What `"sKulls Forge.exe" auto` does: download a new Kodi release of the same major version and put it into the profile →
 download add-on updates → increase the version code (if enabled) → build (with variants if requested) → upload →
-save the profile. Log: `Logs/auto.log`. Keystore passwords and upload credentials come from `config/settings.json`.
+save the profile. Log: `Tool/Logs/auto.log`. Keystore passwords and upload credentials come from `Tool/Config/settings.json`.
 
 <a id="en-f-kodiupdate"></a>
 
@@ -1761,7 +1758,7 @@ updates them automatically. The project is stored in `Repository/<name>/`, the r
 | 🪞 **Mirror foreign add-ons…** | Copies add-ons from foreign repositories (genre browser) into your own repository – with a licence note per add-on. |
 | 👁️ **Watch foreign repos** | Once a day at start (can be switched off, dialog *Check repositories*): are the builds' repositories reachable and do they still offer the add-ons? |
 
-> 💡 Command line: `python main.py repo-build <project> [--upload]` and `python main.py repo-list`.
+> 💡 Command line: `"sKulls Forge.exe" repo-build <project> [--upload]` and `"sKulls Forge.exe" repo-list`.
 
 <a id="en-f-wizard-addon"></a>
 
@@ -1837,7 +1834,7 @@ profiles (light, balanced, maximum), every row with a reason and individually se
 (Kodi uses about three times the size) and stays smaller with 32-bit Kodi; from Kodi 20 the values go into Kodi's
 settings, with Kodi 19 into advancedsettings.xml. *Reset* restores the state from before the first apply.
 
-> 💡 Command line: `python main.py wizard-build <project> [--upload] [--repack]` and `python main.py wizard-list`.
+> 💡 Command line: `"sKulls Forge.exe" wizard-build <project> [--upload] [--repack]` and `"sKulls Forge.exe" wizard-list`.
 
 <a id="en-f-fullbackup"></a>
 
@@ -1849,7 +1846,7 @@ settings, with Kodi 19 into advancedsettings.xml. *Reset* restores the state fro
 |---|---|
 | 🗂️ Profiles, presets, build history, language files | folders `profiles/`, `presets/`, `history/`, `lang/` |
 | 🔐 Keystores | `backups/keystores/` and every keystore a profile refers to – also outside the project |
-| ⚙️ Settings | `config/settings.json` **including** keystore and upload passwords |
+| ⚙️ Settings | `Tool/Config/settings.json` **including** keystore and upload passwords |
 | 🖼️ Used files | graphics, add-ons, userdata templates and additional files of the profiles (also outside the project) |
 | 📦 Kodi APKs | optional (can otherwise be downloaded again) |
 
@@ -1859,7 +1856,7 @@ settings, with Kodi 19 into advancedsettings.xml. *Reset* restores the state fro
   differ are moved to `backups/restore_<time>/` first, identical ones are skipped. Files from outside the project go
   back to their old place – if the folder is missing (new PC) they go to `restored/` and profiles/settings are
   updated. Afterwards the tool reloads settings and profile.
-- 💻 CLI: `python main.py backup TARGET.skbackup [--apks]` and `python main.py restore FILE.skbackup` (password is
+- 💻 CLI: `"sKulls Forge.exe" backup TARGET.skbackup [--apks]` and `"sKulls Forge.exe" restore FILE.skbackup` (password is
   asked for or taken from the environment variable `SKFORGE_BACKUP_PASS`).
 
 <a id="en-f-keyboard"></a>
@@ -1890,7 +1887,7 @@ border. In dialogs `Esc` closes the dialog.
 
 ### 🩺 Diagnostic package
 
-*About → Create diagnostic package…* (or `python main.py diagnose`) creates a ZIP for support: system info (Windows,
+*About → Create diagnostic package…* (or `"sKulls Forge.exe" diagnose`) creates a ZIP for support: system info (Windows,
 Python, Java, packages), tool status, logs, the build log of the window, the last 5 build reports and 3 device tests,
 settings and the current profile. **Cleaned automatically**: passwords, tokens, upload credentials, secret add-on
 settings (password, MAC, token …) and credentials in addresses are replaced by `***`, the user folder by `~`.
@@ -1926,7 +1923,7 @@ After a tool update, "update" adds new texts and keeps finished translations.
 
 **Language server:** *Download more languages …* lists the languages on the server with progress, version and status
 (*new*, *installed*, *update available*) and downloads the selected ones. The server holds a `languages.json` (list
-with version, progress and SHA-256) and the `.po` files – e.g. in a GitHub repository. `python main.py lang-index`
+with version, progress and SHA-256) and the `.po` files – e.g. in a GitHub repository. `"sKulls Forge.exe" lang-index`
 creates everything ready for upload in `server/languages/` (with instructions in `README.md`).
 
 🔒 **Security:** downloads use HTTPS only, size and SHA-256 are verified. Language files contain text only: search
@@ -1941,53 +1938,56 @@ discarded.
 
 ## 💻 Command line (CLI)
 
+Open a command prompt in the program folder (installed or portable: subfolder `app`) – the output appears in the
+same window. `"sKulls Forge.exe" --help` lists all commands.
+
 ```bash
-python main.py                                            # GUI
-python main.py gui profiles/myfork.json                   # GUI with profile
-python main.py build profiles/myfork.json                 # build all APKs of the profile
-python main.py build profiles/myfork.json --install --launch
-python main.py build profiles/myfork.json --test          # device test afterwards (60 s)
-python main.py build profiles/myfork.json --variants --upload     # with variants, then upload
-python main.py build profiles/myfork.json --install --device all  # on all connected devices
-python main.py auto profiles/myfork.json [--upload] [--variants] [--major]   # update Kodi/add-ons + build
-python main.py schedule profiles/myfork.json --time 03:00 [--weekly] [--upload] [--variants]
-python main.py schedule profiles/myfork.json --remove     # remove the schedule
-python main.py compare output/old_signed.apk output/new_signed.apk
-python main.py check-addons profiles/myfork.json [--update]       # check/download add-on updates
-python main.py build profiles/myfork.json --apk input/kodi-21.3-Omega-arm64-v8a.apk
-python main.py devicetest output/xyz_signed.apk [--device SERIAL] [--seconds 60]
-python main.py check-kodi profiles/myfork.json [--download]
-python main.py export-profile profiles/myfork.json myfork.zip [--apks] [--keystore]
-python main.py import-profile myfork.zip
-python main.py download --list --abi armeabi-v7a          # available Kodi versions
-python main.py download --version 21.3 --abi arm64-v8a    # download to input/
-python main.py devices --connect 192.168.1.50             # ADB via Wi-Fi
-python main.py install output/xyz_signed.apk --launch org.myfork.kodi
-python main.py tools                                      # found tools
-python main.py overview [--online]                        # overview of all forks
-python main.py backup D:\backup.skbackup [--apks]         # encrypted full backup
-python main.py restore D:\backup.skbackup [--yes]         # restore full backup
-python main.py diagnose [TARGET.zip]                      # cleaned diagnostic package
-python main.py lang-template fr Français                  # create/update lang/fr.po
-python main.py lang-index                                 # files for the language server (server/languages/)
-python main.py site-stats --site FOLDER --repo OWNER/REPO # download numbers for the website (assets/stats.json)
-python main.py web [--port 8765]                          # web interface (password in the settings)
-python main.py apk-size output/xyz_signed.apk             # size analysis with tips
-python main.py log-check kodi.log                         # explain known errors in a Kodi log
-python main.py download-stats OWNER/REPO                  # downloads per version/CPU with history
-python main.py portal [--out FOLDER]                      # overview page of all forks
-python main.py nightly-check profiles/myfork.json         # check add-ons against the latest Kodi nightly
-python main.py win-portable profiles/myfork.json [--kodi FOLDER]   # portable Kodi for Windows (ZIP)
-python main.py lang-list [--url URL]                      # languages on the language server
-python main.py lang-download fr [--url URL]               # download or update a language
-python main.py repo-build myrepo [--upload] [--full]      # build your own repository (and upload it)
-python main.py repo-list                                  # show repository projects
-python main.py wizard-build mywizard [--upload] [--repack]    # build the wizard: builds, wizard add-on, builds.json
-python main.py wizard-list                                # show wizard projects
-python main.py wizard-check mywizard                      # check which credentials are removed when packing
-python main.py addon-list                                 # your own add-ons with a quick check
-python main.py addon-check plugin.video.x [--kodi 21]     # check an add-on
-python main.py addon-build plugin.video.x [--kodi 21]     # check and build the ZIP into Addons/ZIPs
+"sKulls Forge.exe"                                        # GUI
+"sKulls Forge.exe" gui profiles/myfork.json               # GUI with profile
+"sKulls Forge.exe" build profiles/myfork.json             # build all APKs of the profile
+"sKulls Forge.exe" build profiles/myfork.json --install --launch
+"sKulls Forge.exe" build profiles/myfork.json --test      # device test afterwards (60 s)
+"sKulls Forge.exe" build profiles/myfork.json --variants --upload     # with variants, then upload
+"sKulls Forge.exe" build profiles/myfork.json --install --device all  # on all connected devices
+"sKulls Forge.exe" auto profiles/myfork.json [--upload] [--variants] [--major]   # update Kodi/add-ons + build
+"sKulls Forge.exe" schedule profiles/myfork.json --time 03:00 [--weekly] [--upload] [--variants]
+"sKulls Forge.exe" schedule profiles/myfork.json --remove     # remove the schedule
+"sKulls Forge.exe" compare output/old_signed.apk output/new_signed.apk
+"sKulls Forge.exe" check-addons profiles/myfork.json [--update]   # check/download add-on updates
+"sKulls Forge.exe" build profiles/myfork.json --apk input/kodi-21.3-Omega-arm64-v8a.apk
+"sKulls Forge.exe" devicetest output/xyz_signed.apk [--device SERIAL] [--seconds 60]
+"sKulls Forge.exe" check-kodi profiles/myfork.json [--download]
+"sKulls Forge.exe" export-profile profiles/myfork.json myfork.zip [--apks] [--keystore]
+"sKulls Forge.exe" import-profile myfork.zip
+"sKulls Forge.exe" download --list --abi armeabi-v7a      # available Kodi versions
+"sKulls Forge.exe" download --version 21.3 --abi arm64-v8a    # download to input/
+"sKulls Forge.exe" devices --connect 192.168.1.50         # ADB via Wi-Fi
+"sKulls Forge.exe" install output/xyz_signed.apk --launch org.myfork.kodi
+"sKulls Forge.exe" tools                                  # found tools
+"sKulls Forge.exe" overview [--online]                    # overview of all forks
+"sKulls Forge.exe" backup D:\backup.skbackup [--apks]     # encrypted full backup
+"sKulls Forge.exe" restore D:\backup.skbackup [--yes]     # restore full backup
+"sKulls Forge.exe" diagnose [TARGET.zip]                  # cleaned diagnostic package
+"sKulls Forge.exe" lang-template fr Français              # create/update lang/fr.po
+"sKulls Forge.exe" lang-index                             # files for the language server (server/languages/)
+"sKulls Forge.exe" site-stats --site FOLDER --repo OWNER/REPO # download numbers for the website (assets/stats.json)
+"sKulls Forge.exe" web [--port 8765]                      # web interface (password in the settings)
+"sKulls Forge.exe" apk-size output/xyz_signed.apk         # size analysis with tips
+"sKulls Forge.exe" log-check kodi.log                     # explain known errors in a Kodi log
+"sKulls Forge.exe" download-stats OWNER/REPO              # downloads per version/CPU with history
+"sKulls Forge.exe" portal [--out FOLDER]                  # overview page of all forks
+"sKulls Forge.exe" nightly-check profiles/myfork.json     # check add-ons against the latest Kodi nightly
+"sKulls Forge.exe" win-portable profiles/myfork.json [--kodi FOLDER]   # portable Kodi for Windows (ZIP)
+"sKulls Forge.exe" lang-list [--url URL]                  # languages on the language server
+"sKulls Forge.exe" lang-download fr [--url URL]           # download or update a language
+"sKulls Forge.exe" repo-build myrepo [--upload] [--full]  # build your own repository (and upload it)
+"sKulls Forge.exe" repo-list                              # show repository projects
+"sKulls Forge.exe" wizard-build mywizard [--upload] [--repack]    # build the wizard: builds, wizard add-on, builds.json
+"sKulls Forge.exe" wizard-list                            # show wizard projects
+"sKulls Forge.exe" wizard-check mywizard                  # check which credentials are removed when packing
+"sKulls Forge.exe" addon-list                             # your own add-ons with a quick check
+"sKulls Forge.exe" addon-check plugin.video.x [--kodi 21]     # check an add-on
+"sKulls Forge.exe" addon-build plugin.video.x [--kodi 21]     # check and build the ZIP into Addons/ZIPs
 ```
 
 - 🔑 Keystore password: environment variable `SKFORGE_KS_PASS` (optionally `SKFORGE_KEY_PASS`),
@@ -2038,8 +2038,8 @@ keystore. Images, add-ons, repositories and wizard are available to all projects
 |---|---|
 | 📂 `resources/` | bundled tools |
 | 📂 `lang/` | language files: `en.po` (bundled), your own and downloaded `<code>.po` |
-| 📂 `server/languages/` | files for the language server to upload (`python main.py lang-index`) |
-| 📄 `sKulls Forge.exe` | the program (from source: `main.py` + `modules/`) |
+| 📂 `server/languages/` | files for the language server to upload (`"sKulls Forge.exe" lang-index`) |
+| 📄 `sKulls Forge.exe` | the program |
 
 > ℹ️ Older installations kept everything in the program folder (`config/`, `presets/`, `profiles/`, `input/`,
 > `output/`, `repos/`, `AddToFork/`). On the first start the tool **copies** the data into the project folder at the push of a
@@ -2097,9 +2097,8 @@ keystore. Images, add-ons, repositories and wizard are available to all projects
 | 🔒 Parental lock not active | It is active **from the second start**. An installed version without the lock also gets it on the next restart after the update. |
 | 🔑 Parental lock code forgotten | Uninstall and reinstall the fork (data is lost) – the code is only stored as a checksum. |
 | 🔒 "Wrong password" for the full backup | The password cannot be recovered – without it the backup cannot be read. |
-| 📦 "needs the package 'cryptography'" | Run `pip install cryptography`. |
 | 🆘 Asking for help | *About → Create diagnostic package…* and send the ZIP – passwords are removed. |
-| ⏰ Schedule does not build | Check `Logs/auto.log` in the project folder; passwords saved in tab 7? Was the PC running at that time? *Task Scheduler → sKulls Forge*. |
+| ⏰ Schedule does not build | Check `Tool/Logs/auto.log` in the project folder; passwords saved in tab 7? Was the PC running at that time? *Task Scheduler → sKulls Forge*. |
 | 🔔 No update notice | The update.json address must start with `https://` – `http://` is ignored for security reasons. |
 
 [⬆️ back to top](#top)

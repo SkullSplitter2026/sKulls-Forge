@@ -18,7 +18,7 @@ window.FORGE_SITE = {
   counter: { service: "abacus", base: "https://abacus.jasoncameron.dev", namespace: "skullsplitter2026-skulls-forge",
              key: "visits" },
 
-  // Download-Zähler: Datei auf dieser Website, schreibt der Forge (python main.py site-stats ...)
+  // Download-Zähler: Datei auf dieser Website, schreibt der Forge ("sKulls Forge.exe" site-stats ...)
   stats: "assets/stats.json",
 
   // Rückmeldungen (Fehler melden / Wünsche): GitHub-Issues dieser Website, Vorlagen in .github/ISSUE_TEMPLATE/
