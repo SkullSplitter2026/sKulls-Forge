@@ -40,7 +40,6 @@
 - [✨ Überblick](#de-ueberblick)
 - [🧩 Unterstützte Kodi-Versionen](#de-versionen)
 - [⚙️ Voraussetzungen](#de-voraussetzungen)
-- [🚀 Installation & Start](#de-start)
 - [📖 How to use – Anleitung](#de-howto)
   - [⚡ Der erste Fork in 10 Schritten](#de-howto-erster-fork)
   - [🔄 Ein Update veröffentlichen](#de-howto-update)
@@ -169,31 +168,6 @@ Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor 
 | 📲 adb | `adb.exe` + `AdbWin*.dll` | Installation, Start, Gerätetest |
 
 > 🛠️ `python main.py tools` bzw. *Einstellungen → Werkzeuge* (`Strg+,`) zeigt, welche Werkzeuge gefunden wurden.
-
-[⬆️ nach oben](#top)
-
----
-
-<a id="de-start"></a>
-
-## 🚀 Installation & Start
-
-**Mit dem Setup (empfohlen):** `sKulls-Forge-Setup-<Version>.exe` starten – installieren oder *Portable* in einen
-Ordner deiner Wahl (z.B. USB-Stick). Danach über das Startmenü bzw. `sKulls Forge.exe` starten. Ein Update
-installierst du einfach darüber; Reste älterer Versionen (Python, Quellcode) entfernt das Setup dabei.
-
-**Aus dem Quellcode:**
-
-```bash
-pip install -r requirements.txt
-python main.py
-```
-
-- ▶️ `python main.py` (oder Doppelklick auf `main.py`) startet die GUI **ohne Konsolenfenster**.
-- 🐞 `python main.py --console` lässt die Konsole für die Fehlersuche offen.
-- 🧹 Beim Start räumt das Tool alte Reste in `Tool/Work/Temp/` auf; beim Beenden wird der eigene **ADB-Server beendet**
-  (andere adb-Installationen, z.B. von Android Studio, bleiben unberührt).
-- 💾 Das zuletzt benutzte Profil wird beim Start automatisch geladen.
 
 [⬆️ nach oben](#top)
 
@@ -335,7 +309,7 @@ python main.py
 
 1. Auf dem alten PC *Datei → Gesamtsicherung erstellen…*: ein Passwort (mind. 8 Zeichen) festlegen, optional
    die Kodi-APKs mitsichern, Datei speichern (z.B. auf einen USB-Stick).
-2. Auf dem neuen PC das Tool installieren (siehe [Installation & Start](#de-start)) und
+2. Auf dem neuen PC das Tool installieren (Setup `sKulls-Forge-Setup-<Version>.exe` von GitHub) und
    `pip install cryptography` ausführen.
 3. *Datei → Gesamtsicherung wiederherstellen…*, Datei wählen, Passwort eingeben. Das Tool zeigt Datum und Umfang
    und fragt, ob es wiederherstellen soll.
@@ -1115,7 +1089,6 @@ offizielles Kodi-Produkt. Mit dem Tool erstellte Forks müssen die **GPL-Lizenz*
 - [✨ Overview](#en-overview)
 - [🧩 Supported Kodi versions](#en-versions)
 - [⚙️ Requirements](#en-requirements)
-- [🚀 Installation & start](#en-start)
 - [📖 How to use](#en-howto)
   - [⚡ Your first fork in 10 steps](#en-howto-first-fork)
   - [🔄 Publishing an update](#en-howto-update)
@@ -1244,31 +1217,6 @@ All other tools are located in `resources/` and take **precedence** over PATH or
 | 📲 adb | `adb.exe` + `AdbWin*.dll` | installation, launch, device test |
 
 > 🛠️ `python main.py tools` or *Settings → Tools* (`Ctrl+,`) shows which tools were found.
-
-[⬆️ back to top](#top)
-
----
-
-<a id="en-start"></a>
-
-## 🚀 Installation & start
-
-**With the setup (recommended):** run `sKulls-Forge-Setup-<version>.exe` – install it or choose *Portable* for a
-folder of your choice (e.g. a USB stick). Then start it from the Start menu or via `sKulls Forge.exe`. To update,
-simply install over it; the setup removes leftovers of older versions (Python, source code).
-
-**From source:**
-
-```bash
-pip install -r requirements.txt
-python main.py
-```
-
-- ▶️ `python main.py` (or double-clicking `main.py`) starts the GUI **without a console window**.
-- 🐞 `python main.py --console` keeps the console open for troubleshooting.
-- 🧹 On start the tool cleans up leftovers in `Tool/Work/Temp/`; on exit its own **ADB server is stopped** (other adb
-  installations, e.g. Android Studio's, are left alone).
-- 💾 The last used profile is loaded automatically.
 
 [⬆️ back to top](#top)
 
@@ -1410,7 +1358,7 @@ python main.py
 
 1. On the old PC *File → Create full backup…*: set a password (at least 8 characters), optionally include the Kodi
    APKs, save the file (e.g. to a USB stick).
-2. On the new PC install the tool (see [Installation & start](#en-start)) and run `pip install cryptography`.
+2. On the new PC install the tool (setup `sKulls-Forge-Setup-<version>.exe` from GitHub) and run `pip install cryptography`.
 3. *File → Restore full backup…*, choose the file, enter the password. The tool shows date and size and asks whether
    to restore.
 4. Done: profiles, keystores, saved passwords, build history and all used files are back. Files whose old folder is

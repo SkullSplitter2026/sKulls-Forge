@@ -23,6 +23,7 @@ Kodi-22-Vorbereitung, tote Menüverweise beheben und farbige Namen, die Kodi wir
   Importieren, Prüfen & Analysieren, Ausgewählter Build); neu *Build erstellen* / *Alle Builds erstellen* (nur die Build-ZIPs, das Wizard-Addon
   bleibt) und *Build hochladen* / *Builds hochladen* – „Build hochladen“ prüft vorher, ob die anderen Builds
   online aktuell sind; „Zum Wizard (bauen & verteilen)“ entfällt
+- **Build bearbeiten**: neben *Version* der Knopf *Build-Version erhöhen* (wie im Reiter Verwalten)
 - **Build-ZIPs im Projekt** liegen nur noch dort – kein dauerhafter Spiegel mehr in `Wizard/<Name>/Build/builds`
   (nur während des Hochladens)
 - **Build-Anforderungen**: je Build Mindest-RAM und nötigen freien Speicher festlegen (Build bearbeiten, leer =
