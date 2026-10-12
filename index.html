@@ -19,10 +19,10 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="assets/img/logo-64.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/logo-256.png">
-  <link rel="stylesheet" href="assets/css/style.css?v=3.11.0">
-  <script src="assets/js/config.js?v=3.11.0"></script>
-  <script src="assets/js/main.js?v=3.11.0"></script>
-  <script src="assets/js/pages.js?v=3.11.0"></script>
+  <link rel="stylesheet" href="assets/css/style.css?v=3.11.0b1">
+  <script src="assets/js/config.js?v=3.11.0b1"></script>
+  <script src="assets/js/main.js?v=3.11.0b1"></script>
+  <script src="assets/js/pages.js?v=3.11.0b1"></script>
 </head>
 <body>
 <!-- Punktraster im Hintergrund (läuft beim Scrollen mit) -->
@@ -43,7 +43,7 @@
       <a href="builds.html">Builds</a>
     </nav>
     <div class="nav-tools">
-      <a class="pill" data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">
+      <a class="pill" data-github href="https://skullsplitter2026.github.io/sKulls-Forge/" target="_blank" rel="noopener">
         <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
         <span class="label">GitHub</span>
       </a>
@@ -89,7 +89,7 @@
           </a>
           <a class="btn btn-ghost" href="#download">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>
-            Download <span class="soon" lang="de">bald</span><span class="soon" lang="en">soon</span>
+            Download <span class="soon" lang="de" data-dl-tag="installer">bald</span><span class="soon" lang="en" data-dl-tag="installer">soon</span>
           </a>
         </div>
         <div class="counters hero-counters" aria-live="polite">
@@ -782,14 +782,17 @@
     <div class="section-head reveal">
       <div>
         <div class="kicker">Download</div>
-        <h2 lang="de">Bald zum<br>Download.</h2><h2 lang="en">Download<br>coming soon.</h2>
+        <h2 lang="de" data-dl-soon>Bald zum<br>Download.</h2><h2 lang="en" data-dl-soon>Download<br>coming soon.</h2>
+        <h2 lang="de" data-dl-ready hidden>Jetzt als<br>Beta laden.</h2><h2 lang="en" data-dl-ready hidden>Get the<br>beta now.</h2>
       </div>
       <p lang="de">Ein Download für alles: Das Setup installiert sKulls Forge – oder entpackt es auf Wunsch als
         portable Version, z.B. auf einen USB-Stick. Das Programm ist fertig übersetzt – kein Python nötig –, Java kommt mit, jede Datei bekommt ihre
-        SHA-256-Prüfsumme. Der Installer entsteht, sobald das Tool komplett ausgebaut ist.</p>
+        SHA-256-Prüfsumme. Die aktuelle Version ist eine <strong>Beta</strong> – Fehler und Wünsche gern über
+        <a href="#mitmachen">Rückmeldungen</a>.</p>
       <p lang="en">One download for everything: the setup installs sKulls Forge – or, if you like, unpacks it as a
         portable version, e.g. onto a USB stick. The program is fully compiled – no Python needed –, Java is included, every file gets its SHA-256
-        checksum. The installer will be built once the tool is complete.</p>
+        checksum. The current version is a <strong>beta</strong> – please report bugs and wishes via
+        <a href="#mitmachen">feedback</a>.</p>
     </div>
     <div class="downloads reveal">
       <div class="dl" data-download="installer">
@@ -800,6 +803,10 @@
         <p lang="en">During setup you choose: <strong>install</strong> – with shortcuts, file association for .skbackup
           and a safe uninstall, your keystores are kept – or <strong>portable</strong>: everything in one folder,
           no traces in the system.</p>
+        <p class="dl-note" lang="de">Das Setup ist (noch) nicht signiert: Zeigt Windows „Der Computer wurde durch
+          Windows geschützt“, auf <em>Weitere Informationen</em> → <em>Trotzdem ausführen</em> klicken.</p>
+        <p class="dl-note" lang="en">The setup is not signed (yet): if Windows shows “Windows protected your PC”,
+          click <em>More info</em> → <em>Run anyway</em>.</p>
         <code class="file">sKulls-Forge-Setup-3.x.exe</code><span class="hash"></span>
         <span class="dl-count" data-dl-count="installer" hidden></span>
         <a class="btn btn-ghost" href="#download" aria-disabled="true">
@@ -830,7 +837,7 @@
     <h2 lang="de">Schmiede mit.</h2><h2 lang="en">Forge with us.</h2>
     <p lang="de">sKulls Forge wächst mit seinen Nutzern. Ideen, Fehler oder Wünsche? Schau auf GitHub vorbei.</p>
     <p lang="en">sKulls Forge grows with its users. Ideas, bugs or wishes? Drop by on GitHub.</p>
-    <a class="btn btn-primary" data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">
+    <a class="btn btn-primary" data-github href="https://skullsplitter2026.github.io/sKulls-Forge/" target="_blank" rel="noopener">
       <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       <span lang="de">Auf GitHub</span><span lang="en">On GitHub</span>
     </a>
@@ -869,7 +876,7 @@
       <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Legal notice</span></a>
       <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
       <a href="#changelog">Changelog</a>
-      <a data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">GitHub</a>
+      <a data-github href="https://skullsplitter2026.github.io/sKulls-Forge/" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </div>
 </footer>

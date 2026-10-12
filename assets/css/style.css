@@ -551,3 +551,6 @@ kbd { font: 12px/1 ui-monospace, Consolas, monospace; background: var(--surface2
   .st-row { grid-template-columns: 14px minmax(0, 1fr); }
   .st-info { grid-column: 2; text-align: left; }
 }
+
+/* Download: Hinweis zu SmartScreen */
+.dl-note { font-size: 13px; color: var(--muted); margin: 4px 0 8px; }

@@ -14,7 +14,7 @@
 <br>
 **Build your own Kodi forks from official Kodi APKs – with branding, add-ons, settings, signing and ADB install**
 
-![Version](https://img.shields.io/badge/version-3.11.0-2f6fb5?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-3.11.0--beta1-2f6fb5?style=for-the-badge)
 ![Python](https://img.shields.io/badge/python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Kodi](https://img.shields.io/badge/Kodi-18%20Leia%20→%2022%20Piers-17B2E7?style=for-the-badge&logo=kodi&logoColor=white)
 ![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D6?style=for-the-badge&logo=windows&logoColor=white)
@@ -181,7 +181,7 @@ Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor 
 
 1. **📥 Kodi holen** – *Extras → Kodi-APK herunterladen…*: ABI wählen (`arm64-v8a` = aktuelle Geräte,
    `armeabi-v7a` = ältere/32-bit TV-Boxen), Version markieren, *Herunterladen & hinzufügen*. Die APK landet in
-   `input/` und in der Liste von **Tab 1**. Für einen Batch-Build einfach beide ABIs laden.
+   `Kodi-APKs/` und in der Liste von **Tab 1**. Für einen Batch-Build einfach beide ABIs laden.
 2. **🏷️ Fork benennen** – in **Tab 1** *Package-Name* (z.B. `skulls.fusion.build`, muss sich von
    `org.xbmc.kodi` unterscheiden) und *App-Name* eintragen. Leere Felder übernehmen die Werte der Original-APK;
    Version und SDK werden beim Einlesen automatisch vorbelegt.
@@ -197,7 +197,7 @@ Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor 
    *Keystore erstellen*. **Passwort notieren** und mit *Keystore sichern unter…* auf einen USB-Stick/in die Cloud kopieren.
 8. **💾 Profil speichern** – *Datei → Profil speichern* (`Strg+S`). Damit lässt sich der Fork jederzeit neu bauen.
 9. **🏗️ Bauen** – in **Tab 8** *▶ FORK BUILD (alle APKs)*. Im Log stehen alle Schritte, am Ende der Build-Report.
-   Die fertigen APKs liegen in `output/` (`…_signed.apk` + `…_report.txt`).
+   Die fertigen APKs liegen in `Projects/<Projekt>/Kodi-APKs/` (`…_signed.apk` + `…_report.txt`).
 10. **📲 Installieren & testen** – Gerät per USB-Debugging oder WLAN (*IP[:Port]* → *Verbinden*) verbinden,
     *Gerätetest (letzte APK)* klicken: das Tool installiert, startet und beobachtet den Fork 60 Sekunden und zeigt
     das Ergebnis mit Screenshot. Alternativ vor dem Build *Danach per ADB installieren* (+ *und starten*) bzw.
@@ -229,7 +229,7 @@ Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor 
    `addons/`, auch in Unterordnern wie `Backup/.kodi/`) und zeigt, was es gefunden hat.
 3. Auswählen: *Userdata als Vorlage*, *Addons einbetten*, *geänderte Einstellungen übernehmen*.
    Thumbnails, Datenbanken, Caches, Logs und gerätespezifische Einstellungen werden automatisch weggelassen.
-4. Das Backup wird nach `profiles/<Profil>_backup/` entpackt und in das Profil eingetragen → Profil speichern → bauen.
+4. Das Backup wird nach `Projects/<Profil>_backup/` entpackt und in das Profil eingetragen → Profil speichern → bauen.
 
 > 📲 **Noch einfacher:** Kodi (oder den Fork) ganz normal am Gerät einrichten und dann **Tab 6 → Vom Gerät
 > übernehmen…** – das Tool holt die Kodi-Daten per ADB und übernimmt sie genauso wie ein Backup.
@@ -270,7 +270,7 @@ Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor 
 
 - **Exportieren**: *Datei → Profil als ZIP exportieren…* – packt Profil, Grafiken, Addons, Userdata-Vorlage und
   zusätzliche Dateien in ein ZIP. Kodi-APKs und Keystore nur auf Wunsch, **Passwörter nie**.
-- **Importieren**: *Datei → Profil aus ZIP importieren…* – entpackt nach `profiles/<Name>/` und lädt das Profil.
+- **Importieren**: *Datei → Profil aus ZIP importieren…* – entpackt nach `Projects/<Name>/` und lädt das Profil.
   Fehlende Kodi-APKs meldet das Tool (über *Extras → Kodi-APK herunterladen* nachladen), ohne Keystore
   im Tab Signatur einen wählen oder erstellen.
 
@@ -282,7 +282,7 @@ Alle weiteren Werkzeuge liegen im Ordner `resources/` und haben **Vorrang** vor 
 
 - **Assistent**: *Datei → Assistent: neuer Fork…* führt in 6 Schritten zum fertigen Fork – Kodi-APK (mit Download),
   App-Name/Package/Version, Icon und Hintergrundbild, Vorlage, Keystore (vorhandenen verwenden oder neu anlegen),
-  Zusammenfassung. *Fertig* speichert das Profil unter `profiles/<name>.json` und baut auf Wunsch sofort.
+  Zusammenfassung. *Fertig* speichert das Profil unter `Projects/<Name>/<Name>.json` und baut auf Wunsch sofort.
   Sprache und Region sind auf Deutsch voreingestellt.
 - **Vorlage**: *Datei → Neues Profil aus Vorlage…* setzt ein neues Profil nach Vorlage auf. APKs, Ausgabeordner,
   Keystore und das deutsche Sprachpaket des aktuellen Profils bleiben erhalten. Bei *Kids* fragt das Tool direkt
@@ -554,7 +554,7 @@ Kodi-Standardeinstellungen, Dateien der Ersteinrichtung, native Bibliotheken –
 
 | Feature | Erklärung |
 |---|---|
-| 💾 **Speichern / Öffnen** | Alle Tabs zusammen bilden ein Profil (`profiles/*.json`), `Strg+N`/`Strg+O`/`Strg+S`. Ungespeicherte Änderungen werden beim Schließen abgefragt. |
+| 💾 **Speichern / Öffnen** | Alle Tabs zusammen bilden ein Profil (`Projects/<Projekt>/<Projekt>.json`), `Strg+N`/`Strg+O`/`Strg+S`. Ungespeicherte Änderungen werden beim Schließen abgefragt. |
 | 🧭 **Portable Pfade** | Pfade im Projektordner werden relativ gespeichert – das Projekt kann umbenannt oder verschoben werden. |
 | 🙈 **Ohne Passwörter** | Passwörter stehen nie im Profil. |
 | 🗜️ **Als ZIP exportieren / importieren** | Profil mit allen Grafiken, Addons, Userdata-Vorlage und Dateien in einer ZIP – APKs und Keystore optional. |
@@ -641,7 +641,7 @@ eingebettete Addons, gesetzte Standard-Einstellungen, Userdata und **alle Warnun
 
 ### 🧭 Übersicht aller Forks
 
-Die **Übersicht** (erster Eintrag der Seitenleiste) ist die Startseite des Tools. Sie zeigt alle Profile aus `profiles/` (auch importierte
+Die **Übersicht** (erster Eintrag der Seitenleiste) ist die Startseite des Tools. Sie zeigt alle Profile aus `Projects/` (auch importierte
 in Unterordnern) auf einen Blick:
 
 | Spalte / Kachel | Inhalt |
@@ -799,8 +799,8 @@ den Stand vor dem ersten Übernehmen wieder her.
 
 | Enthalten | Details |
 |---|---|
-| 🗂️ Profile, Presets, Build-Verlauf, Sprachdateien | Ordner `profiles/`, `presets/`, `history/`, `lang/` |
-| 🔐 Keystores | `backups/keystores/` und jeder Keystore, auf den ein Profil verweist – auch außerhalb des Projekts |
+| 🗂️ Profile, Presets, Build-Verlauf, Sprachdateien | Ordner `Projects/`, `Tool/Presets/`, `Tool/History/`, `lang/` |
+| 🔐 Keystores | `Tool/Backups/Keystores/` und jeder Keystore, auf den ein Profil verweist – auch außerhalb des Projekts |
 | ⚙️ Einstellungen | `Tool/Config/settings.json` **mit** Keystore- und Upload-Passwörtern |
 | 🖼️ Verwendete Dateien | Grafiken, Addons, Userdata-Vorlagen und zusätzliche Dateien der Profile (auch außerhalb des Projekts) |
 | 📦 Kodi-APKs | optional (lassen sich sonst neu herunterladen) |
@@ -896,55 +896,57 @@ verworfen.
 ## 💻 Kommandozeile (CLI)
 
 Im Programmordner (installiert bzw. portabel: Unterordner `app`) eine Eingabeaufforderung öffnen – die Ausgaben
-erscheinen im selben Fenster. `"sKulls Forge.exe" --help` zeigt alle Befehle.
+erscheinen im selben Fenster. `"sKulls Forge.exe" --help` zeigt alle Befehle. Statt einer Profil-Datei reicht der
+**Projektname** (`Projects/<Name>/<Name>.json` im Projekt-Ordner). Andere Pfade gelten ab dem Projekt-Ordner
+(`Dokumente\sKulls Forge`) bzw. dem aktuellen Ordner – im Zweifel den vollen Pfad angeben.
 
 ```bash
-"sKulls Forge.exe"                                        # GUI
-"sKulls Forge.exe" gui profiles/meinfork.json             # GUI mit Profil
-"sKulls Forge.exe" build profiles/meinfork.json           # alle APKs aus dem Profil bauen
-"sKulls Forge.exe" build profiles/meinfork.json --install --launch
-"sKulls Forge.exe" build profiles/meinfork.json --test    # danach Gerätetest (60 s)
-"sKulls Forge.exe" build profiles/meinfork.json --variants --upload   # mit Varianten, danach hochladen
-"sKulls Forge.exe" build profiles/meinfork.json --install --device all   # auf allen verbundenen Geräten
-"sKulls Forge.exe" auto profiles/meinfork.json [--upload] [--variants] [--major]   # Kodi/Addons aktualisieren + bauen
-"sKulls Forge.exe" schedule profiles/meinfork.json --time 03:00 [--weekly] [--upload] [--variants]
-"sKulls Forge.exe" schedule profiles/meinfork.json --remove   # Zeitplan entfernen
-"sKulls Forge.exe" compare output/alt_signed.apk output/neu_signed.apk
-"sKulls Forge.exe" check-addons profiles/meinfork.json [--update]     # Addon-Updates suchen/laden
-"sKulls Forge.exe" build profiles/meinfork.json --apk input/kodi-21.3-Omega-arm64-v8a.apk
-"sKulls Forge.exe" devicetest output/xyz_signed.apk [--device SERIAL] [--seconds 60]
-"sKulls Forge.exe" check-kodi profiles/meinfork.json [--download]
-"sKulls Forge.exe" export-profile profiles/meinfork.json meinfork.zip [--apks] [--keystore]
+"sKulls Forge.exe"                                      # GUI
+"sKulls Forge.exe" gui "Mein Fork"                      # GUI mit Profil
+"sKulls Forge.exe" build "Mein Fork"                    # alle APKs aus dem Profil bauen
+"sKulls Forge.exe" build "Mein Fork" --install --launch
+"sKulls Forge.exe" build "Mein Fork" --test             # danach Gerätetest (60 s)
+"sKulls Forge.exe" build "Mein Fork" --variants --upload  # mit Varianten, danach hochladen
+"sKulls Forge.exe" build "Mein Fork" --install --device all  # auf allen verbundenen Geräten
+"sKulls Forge.exe" auto "Mein Fork" [--upload] [--variants] [--major]  # Kodi/Addons aktualisieren + bauen
+"sKulls Forge.exe" schedule "Mein Fork" --time 03:00 [--weekly] [--upload] [--variants]
+"sKulls Forge.exe" schedule "Mein Fork" --remove        # Zeitplan entfernen
+"sKulls Forge.exe" compare "Projects\Mein Fork\Kodi-APKs\alt_signed.apk" "Projects\Mein Fork\Kodi-APKs\neu_signed.apk"
+"sKulls Forge.exe" check-addons "Mein Fork" [--update]  # Addon-Updates suchen/laden
+"sKulls Forge.exe" build "Mein Fork" --apk Kodi-APKs\kodi-21.3-Omega-arm64-v8a.apk
+"sKulls Forge.exe" devicetest "Projects\Mein Fork\Kodi-APKs\xyz_signed.apk" [--device SERIAL] [--seconds 60]
+"sKulls Forge.exe" check-kodi "Mein Fork" [--download]
+"sKulls Forge.exe" export-profile "Mein Fork" meinfork.zip [--apks] [--keystore]
 "sKulls Forge.exe" import-profile meinfork.zip
-"sKulls Forge.exe" download --list --abi armeabi-v7a      # verfügbare Kodi-Versionen
-"sKulls Forge.exe" download --version 21.3 --abi arm64-v8a    # nach input/ laden
-"sKulls Forge.exe" devices --connect 192.168.1.50         # ADB per WLAN
-"sKulls Forge.exe" install output/xyz_signed.apk --launch org.meinfork.kodi
-"sKulls Forge.exe" tools                                  # gefundene Werkzeuge
-"sKulls Forge.exe" overview [--online]                    # Übersicht aller Forks
+"sKulls Forge.exe" download --list --abi armeabi-v7a    # verfügbare Kodi-Versionen
+"sKulls Forge.exe" download --version 21.3 --abi arm64-v8a  # nach Kodi-APKs/ laden
+"sKulls Forge.exe" devices --connect 192.168.1.50       # ADB per WLAN
+"sKulls Forge.exe" install "Projects\Mein Fork\Kodi-APKs\xyz_signed.apk" --launch org.meinfork.kodi
+"sKulls Forge.exe" tools                                # gefundene Werkzeuge
+"sKulls Forge.exe" overview [--online]                  # Übersicht aller Forks
 "sKulls Forge.exe" backup D:\sicherung.skbackup [--apks]  # verschlüsselte Gesamtsicherung
 "sKulls Forge.exe" restore D:\sicherung.skbackup [--yes]  # Gesamtsicherung wiederherstellen
-"sKulls Forge.exe" diagnose [ZIEL.zip]                    # bereinigtes Diagnosepaket
-"sKulls Forge.exe" lang-template fr Français              # Sprachdatei lang/fr.po anlegen/ergänzen
-"sKulls Forge.exe" lang-index                             # Dateien für den Sprach-Server (server/languages/)
+"sKulls Forge.exe" diagnose [ZIEL.zip]                  # bereinigtes Diagnosepaket
+"sKulls Forge.exe" lang-template fr Français            # Sprachdatei lang/fr.po anlegen/ergänzen
+"sKulls Forge.exe" lang-index                           # Dateien für den Sprach-Server (server/languages/)
 "sKulls Forge.exe" site-stats --site ORDNER --repo BESITZER/REPO  # Download-Zahlen für die Website (assets/stats.json)
-"sKulls Forge.exe" web [--port 8765]                      # Web-Oberfläche (Passwort in den Einstellungen)
-"sKulls Forge.exe" apk-size output/xyz_signed.apk         # Größen-Analyse mit Spar-Tipps
-"sKulls Forge.exe" log-check kodi.log                     # bekannte Fehler im Kodi-Log erklären
-"sKulls Forge.exe" download-stats BESITZER/REPO           # Downloads je Version/CPU mit Verlauf
-"sKulls Forge.exe" portal [--out ORDNER]                  # Übersichtsseite aller Forks
-"sKulls Forge.exe" nightly-check profiles/meinfork.json   # Addons gegen die neueste Kodi-Nightly prüfen
-"sKulls Forge.exe" win-portable profiles/meinfork.json [--kodi ORDNER]   # portables Kodi für Windows (ZIP)
-"sKulls Forge.exe" lang-list [--url URL]                  # Sprachen auf dem Sprach-Server
-"sKulls Forge.exe" lang-download fr [--url URL]           # Sprache laden bzw. aktualisieren
-"sKulls Forge.exe" repo-build meinrepo [--upload] [--full]    # eigenes Repository bauen (und hochladen)
-"sKulls Forge.exe" repo-list                              # Repository-Projekte anzeigen
+"sKulls Forge.exe" web [--port 8765]                    # Web-Oberfläche (Passwort in den Einstellungen)
+"sKulls Forge.exe" apk-size "Projects\Mein Fork\Kodi-APKs\xyz_signed.apk"  # Größen-Analyse mit Spar-Tipps
+"sKulls Forge.exe" log-check kodi.log                   # bekannte Fehler im Kodi-Log erklären
+"sKulls Forge.exe" download-stats BESITZER/REPO         # Downloads je Version/CPU mit Verlauf
+"sKulls Forge.exe" portal [--out ORDNER]                # Übersichtsseite aller Forks
+"sKulls Forge.exe" nightly-check "Mein Fork"            # Addons gegen die neueste Kodi-Nightly prüfen
+"sKulls Forge.exe" win-portable "Mein Fork" [--kodi ORDNER]  # portables Kodi für Windows (ZIP)
+"sKulls Forge.exe" lang-list [--url URL]                # Sprachen auf dem Sprach-Server
+"sKulls Forge.exe" lang-download fr [--url URL]         # Sprache laden bzw. aktualisieren
+"sKulls Forge.exe" repo-build meinrepo [--upload] [--full]  # eigenes Repository bauen (und hochladen)
+"sKulls Forge.exe" repo-list                            # Repository-Projekte anzeigen
 "sKulls Forge.exe" wizard-build meinwizard [--upload] [--repack]  # Wizard bauen: Builds, Wizard-Addon, builds.json
-"sKulls Forge.exe" wizard-list                            # Wizard-Projekte anzeigen
-"sKulls Forge.exe" wizard-check meinwizard                # prüfen, welche Zugangsdaten beim Packen entfernt werden
-"sKulls Forge.exe" addon-list                             # eigene Addons mit Kurzprüfung
-"sKulls Forge.exe" addon-check plugin.video.x [--kodi 21]     # Addon prüfen
-"sKulls Forge.exe" addon-build plugin.video.x [--kodi 21]     # prüfen und ZIP nach Addons/ZIPs bauen
+"sKulls Forge.exe" wizard-list                          # Wizard-Projekte anzeigen
+"sKulls Forge.exe" wizard-check meinwizard              # prüfen, welche Zugangsdaten beim Packen entfernt werden
+"sKulls Forge.exe" addon-list                           # eigene Addons mit Kurzprüfung
+"sKulls Forge.exe" addon-check plugin.video.x [--kodi 21]  # Addon prüfen
+"sKulls Forge.exe" addon-build plugin.video.x [--kodi 21]  # prüfen und ZIP nach Addons/ZIPs bauen
 ```
 
 - 🔑 Keystore-Passwort: Umgebungsvariable `SKFORGE_KS_PASS` (optional `SKFORGE_KEY_PASS`),
@@ -1228,7 +1230,7 @@ All other tools are located in `resources/` and take **precedence** over PATH or
 ### ⚡ Your first fork in 10 steps
 
 1. **📥 Get Kodi** – *Tools → Download Kodi APK…*: choose the ABI (`arm64-v8a` = current devices,
-   `armeabi-v7a` = older/32-bit TV boxes), select a version, *Download & add*. The APK goes to `input/` and into
+   `armeabi-v7a` = older/32-bit TV boxes), select a version, *Download & add*. The APK goes to `Kodi-APKs/` and into
    the list in **tab 1**. For a batch build simply download both ABIs.
 2. **🏷️ Name the fork** – in **tab 1** enter the *package name* (e.g. `skulls.fusion.build`, must differ from
    `org.xbmc.kodi`) and the *app name*. Empty fields keep the values of the original APK; version and SDK are
@@ -1245,7 +1247,7 @@ All other tools are located in `resources/` and take **precedence** over PATH or
    **Write down the password** and copy the keystore to a USB stick/cloud with *Back up keystore to…*.
 8. **💾 Save the profile** – *File → Save profile* (`Ctrl+S`), so the fork can be rebuilt at any time.
 9. **🏗️ Build** – in **tab 8** click *▶ FORK BUILD (all APKs)*. The log shows every step and finally the build report.
-   Finished APKs are in `output/` (`…_signed.apk` + `…_report.txt`).
+   Finished APKs are in `Projects/<project>/Kodi-APKs/` (`…_signed.apk` + `…_report.txt`).
 10. **📲 Install & test** – connect the device via USB debugging or Wi-Fi (*IP[:port]* → *Connect*) and click
     *Device test (last APK)*: the tool installs, launches and watches the fork for 60 seconds and shows the result
     with a screenshot. Alternatively tick *Install via ADB afterwards* (+ *and launch*) or *or device test (60 s)*
@@ -1277,7 +1279,7 @@ All other tools are located in `resources/` and take **precedence** over PATH or
    also inside subfolders such as `Backup/.kodi/`) and shows what it found.
 3. Choose: *use userdata as template*, *embed add-ons*, *take over changed settings*. Thumbnails, databases,
    caches, logs and device-specific settings are left out automatically.
-4. The backup is extracted to `profiles/<profile>_backup/` and added to the profile → save the profile → build.
+4. The backup is extracted to `Projects/<profile>_backup/` and added to the profile → save the profile → build.
 
 > 📲 **Even easier:** set up Kodi (or the fork) on the device as usual, then **tab 6 → Take over from device…** –
 > the tool pulls the Kodi data via ADB and imports it just like a backup.
@@ -1318,7 +1320,7 @@ All other tools are located in `resources/` and take **precedence** over PATH or
 
 - **Export**: *File → Export profile as ZIP…* – packs profile, graphics, add-ons, userdata template and additional
   files into one ZIP. Kodi APKs and keystore only on request, **passwords never**.
-- **Import**: *File → Import profile from ZIP…* – extracts to `profiles/<name>/` and loads the profile. Missing Kodi
+- **Import**: *File → Import profile from ZIP…* – extracts to `Projects/<name>/` and loads the profile. Missing Kodi
   APKs are reported (download them via *Tools → Download Kodi APK*); without a keystore choose or create one in the
   Signing tab.
 
@@ -1330,7 +1332,7 @@ All other tools are located in `resources/` and take **precedence** over PATH or
 
 - **Wizard**: *File → Wizard: new fork…* leads to a finished fork in 6 steps – Kodi APK (with download),
   app name/package/version, icon and background image, template, keystore (use the existing one or create a new
-  one), summary. *Finish* saves the profile as `profiles/<name>.json` and builds right away on request. Language and
+  one), summary. *Finish* saves the profile as `Projects/<name>/<name>.json` and builds right away on request. Language and
   region are preset to German.
 - **Template**: *File → New profile from template…* sets up a new profile from a template. APKs, output folder,
   keystore and the German language pack of the current profile are kept. With *Kids* the tool asks for the parental
@@ -1602,7 +1604,7 @@ tab 1). Result saved as `…_vergleich.txt`.
 
 | Feature | Description |
 |---|---|
-| 💾 **Save / open** | All tabs together form a profile (`profiles/*.json`), `Ctrl+N`/`Ctrl+O`/`Ctrl+S`. Unsaved changes are confirmed on close. |
+| 💾 **Save / open** | All tabs together form a profile (`Projects/<project>/<project>.json`), `Ctrl+N`/`Ctrl+O`/`Ctrl+S`. Unsaved changes are confirmed on close. |
 | 🧭 **Portable paths** | Paths inside the project folder are stored relatively – the project can be renamed or moved. |
 | 🙈 **No passwords** | Passwords are never stored in the profile. |
 | 🗜️ **Export / import as ZIP** | Profile with all graphics, add-ons, userdata template and files in one ZIP – APKs and keystore optional. |
@@ -1689,7 +1691,7 @@ default settings, userdata and **all warnings**.
 
 ### 🧭 Overview of all forks
 
-The **Overview** (first entry of the sidebar) is the tool's start page. It shows all profiles in `profiles/` (including imported ones in
+The **Overview** (first entry of the sidebar) is the tool's start page. It shows all profiles in `Projects/` (including imported ones in
 subfolders) at a glance:
 
 | Column / tile | Content |
@@ -1844,8 +1846,8 @@ settings, with Kodi 19 into advancedsettings.xml. *Reset* restores the state fro
 
 | Included | Details |
 |---|---|
-| 🗂️ Profiles, presets, build history, language files | folders `profiles/`, `presets/`, `history/`, `lang/` |
-| 🔐 Keystores | `backups/keystores/` and every keystore a profile refers to – also outside the project |
+| 🗂️ Profiles, presets, build history, language files | folders `Projects/`, `Tool/Presets/`, `Tool/History/`, `lang/` |
+| 🔐 Keystores | `Tool/Backups/Keystores/` and every keystore a profile refers to – also outside the project |
 | ⚙️ Settings | `Tool/Config/settings.json` **including** keystore and upload passwords |
 | 🖼️ Used files | graphics, add-ons, userdata templates and additional files of the profiles (also outside the project) |
 | 📦 Kodi APKs | optional (can otherwise be downloaded again) |
@@ -1939,55 +1941,57 @@ discarded.
 ## 💻 Command line (CLI)
 
 Open a command prompt in the program folder (installed or portable: subfolder `app`) – the output appears in the
-same window. `"sKulls Forge.exe" --help` lists all commands.
+same window. `"sKulls Forge.exe" --help` lists all commands. Instead of a profile file the **project name** is
+enough (`Projects/<name>/<name>.json` in the data folder). Other paths are relative to the data folder
+(`Documents\sKulls Forge`) or the current folder – if in doubt, give the full path.
 
 ```bash
-"sKulls Forge.exe"                                        # GUI
-"sKulls Forge.exe" gui profiles/myfork.json               # GUI with profile
-"sKulls Forge.exe" build profiles/myfork.json             # build all APKs of the profile
-"sKulls Forge.exe" build profiles/myfork.json --install --launch
-"sKulls Forge.exe" build profiles/myfork.json --test      # device test afterwards (60 s)
-"sKulls Forge.exe" build profiles/myfork.json --variants --upload     # with variants, then upload
-"sKulls Forge.exe" build profiles/myfork.json --install --device all  # on all connected devices
-"sKulls Forge.exe" auto profiles/myfork.json [--upload] [--variants] [--major]   # update Kodi/add-ons + build
-"sKulls Forge.exe" schedule profiles/myfork.json --time 03:00 [--weekly] [--upload] [--variants]
-"sKulls Forge.exe" schedule profiles/myfork.json --remove     # remove the schedule
-"sKulls Forge.exe" compare output/old_signed.apk output/new_signed.apk
-"sKulls Forge.exe" check-addons profiles/myfork.json [--update]   # check/download add-on updates
-"sKulls Forge.exe" build profiles/myfork.json --apk input/kodi-21.3-Omega-arm64-v8a.apk
-"sKulls Forge.exe" devicetest output/xyz_signed.apk [--device SERIAL] [--seconds 60]
-"sKulls Forge.exe" check-kodi profiles/myfork.json [--download]
-"sKulls Forge.exe" export-profile profiles/myfork.json myfork.zip [--apks] [--keystore]
+"sKulls Forge.exe"                                      # GUI
+"sKulls Forge.exe" gui "My Fork"                        # GUI with profile
+"sKulls Forge.exe" build "My Fork"                      # build all APKs of the profile
+"sKulls Forge.exe" build "My Fork" --install --launch
+"sKulls Forge.exe" build "My Fork" --test               # device test afterwards (60 s)
+"sKulls Forge.exe" build "My Fork" --variants --upload  # with variants, then upload
+"sKulls Forge.exe" build "My Fork" --install --device all  # on all connected devices
+"sKulls Forge.exe" auto "My Fork" [--upload] [--variants] [--major]  # update Kodi/add-ons + build
+"sKulls Forge.exe" schedule "My Fork" --time 03:00 [--weekly] [--upload] [--variants]
+"sKulls Forge.exe" schedule "My Fork" --remove          # remove the schedule
+"sKulls Forge.exe" compare "Projects\My Fork\Kodi-APKs\old_signed.apk" "Projects\My Fork\Kodi-APKs\new_signed.apk"
+"sKulls Forge.exe" check-addons "My Fork" [--update]    # check/download add-on updates
+"sKulls Forge.exe" build "My Fork" --apk Kodi-APKs\kodi-21.3-Omega-arm64-v8a.apk
+"sKulls Forge.exe" devicetest "Projects\My Fork\Kodi-APKs\xyz_signed.apk" [--device SERIAL] [--seconds 60]
+"sKulls Forge.exe" check-kodi "My Fork" [--download]
+"sKulls Forge.exe" export-profile "My Fork" myfork.zip [--apks] [--keystore]
 "sKulls Forge.exe" import-profile myfork.zip
-"sKulls Forge.exe" download --list --abi armeabi-v7a      # available Kodi versions
-"sKulls Forge.exe" download --version 21.3 --abi arm64-v8a    # download to input/
-"sKulls Forge.exe" devices --connect 192.168.1.50         # ADB via Wi-Fi
-"sKulls Forge.exe" install output/xyz_signed.apk --launch org.myfork.kodi
-"sKulls Forge.exe" tools                                  # found tools
-"sKulls Forge.exe" overview [--online]                    # overview of all forks
-"sKulls Forge.exe" backup D:\backup.skbackup [--apks]     # encrypted full backup
-"sKulls Forge.exe" restore D:\backup.skbackup [--yes]     # restore full backup
-"sKulls Forge.exe" diagnose [TARGET.zip]                  # cleaned diagnostic package
-"sKulls Forge.exe" lang-template fr Français              # create/update lang/fr.po
-"sKulls Forge.exe" lang-index                             # files for the language server (server/languages/)
+"sKulls Forge.exe" download --list --abi armeabi-v7a    # available Kodi versions
+"sKulls Forge.exe" download --version 21.3 --abi arm64-v8a  # download to Kodi-APKs/
+"sKulls Forge.exe" devices --connect 192.168.1.50       # ADB via Wi-Fi
+"sKulls Forge.exe" install "Projects\My Fork\Kodi-APKs\xyz_signed.apk" --launch org.myfork.kodi
+"sKulls Forge.exe" tools                                # found tools
+"sKulls Forge.exe" overview [--online]                  # overview of all forks
+"sKulls Forge.exe" backup D:\backup.skbackup [--apks]   # encrypted full backup
+"sKulls Forge.exe" restore D:\backup.skbackup [--yes]   # restore full backup
+"sKulls Forge.exe" diagnose [TARGET.zip]                # cleaned diagnostic package
+"sKulls Forge.exe" lang-template fr Français            # create/update lang/fr.po
+"sKulls Forge.exe" lang-index                           # files for the language server (server/languages/)
 "sKulls Forge.exe" site-stats --site FOLDER --repo OWNER/REPO # download numbers for the website (assets/stats.json)
-"sKulls Forge.exe" web [--port 8765]                      # web interface (password in the settings)
-"sKulls Forge.exe" apk-size output/xyz_signed.apk         # size analysis with tips
-"sKulls Forge.exe" log-check kodi.log                     # explain known errors in a Kodi log
-"sKulls Forge.exe" download-stats OWNER/REPO              # downloads per version/CPU with history
-"sKulls Forge.exe" portal [--out FOLDER]                  # overview page of all forks
-"sKulls Forge.exe" nightly-check profiles/myfork.json     # check add-ons against the latest Kodi nightly
-"sKulls Forge.exe" win-portable profiles/myfork.json [--kodi FOLDER]   # portable Kodi for Windows (ZIP)
-"sKulls Forge.exe" lang-list [--url URL]                  # languages on the language server
-"sKulls Forge.exe" lang-download fr [--url URL]           # download or update a language
+"sKulls Forge.exe" web [--port 8765]                    # web interface (password in the settings)
+"sKulls Forge.exe" apk-size "Projects\My Fork\Kodi-APKs\xyz_signed.apk"  # size analysis with tips
+"sKulls Forge.exe" log-check kodi.log                   # explain known errors in a Kodi log
+"sKulls Forge.exe" download-stats OWNER/REPO            # downloads per version/CPU with history
+"sKulls Forge.exe" portal [--out FOLDER]                # overview page of all forks
+"sKulls Forge.exe" nightly-check "My Fork"              # check add-ons against the latest Kodi nightly
+"sKulls Forge.exe" win-portable "My Fork" [--kodi FOLDER]  # portable Kodi for Windows (ZIP)
+"sKulls Forge.exe" lang-list [--url URL]                # languages on the language server
+"sKulls Forge.exe" lang-download fr [--url URL]         # download or update a language
 "sKulls Forge.exe" repo-build myrepo [--upload] [--full]  # build your own repository (and upload it)
-"sKulls Forge.exe" repo-list                              # show repository projects
-"sKulls Forge.exe" wizard-build mywizard [--upload] [--repack]    # build the wizard: builds, wizard add-on, builds.json
-"sKulls Forge.exe" wizard-list                            # show wizard projects
-"sKulls Forge.exe" wizard-check mywizard                  # check which credentials are removed when packing
-"sKulls Forge.exe" addon-list                             # your own add-ons with a quick check
-"sKulls Forge.exe" addon-check plugin.video.x [--kodi 21]     # check an add-on
-"sKulls Forge.exe" addon-build plugin.video.x [--kodi 21]     # check and build the ZIP into Addons/ZIPs
+"sKulls Forge.exe" repo-list                            # show repository projects
+"sKulls Forge.exe" wizard-build mywizard [--upload] [--repack]  # build the wizard: builds, wizard add-on, builds.json
+"sKulls Forge.exe" wizard-list                          # show wizard projects
+"sKulls Forge.exe" wizard-check mywizard                # check which credentials are removed when packing
+"sKulls Forge.exe" addon-list                           # your own add-ons with a quick check
+"sKulls Forge.exe" addon-check plugin.video.x [--kodi 21]  # check an add-on
+"sKulls Forge.exe" addon-build plugin.video.x [--kodi 21]  # check and build the ZIP into Addons/ZIPs
 ```
 
 - 🔑 Keystore password: environment variable `SKFORGE_KS_PASS` (optionally `SKFORGE_KEY_PASS`),

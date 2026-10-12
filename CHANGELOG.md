@@ -46,6 +46,8 @@ Kodi-22-Vorbereitung, tote Menüverweise beheben und farbige Namen, die Kodi wir
 - **adb.exe** wird erst nach 20 statt 10 Minuten ohne Geräte-Aktion beendet
 - **Nur noch Setup/Portable**: README, Hilfe und Hinweise zeigen Befehle als `"sKulls Forge.exe" …` (Eingabeaufforderung
   im Programmordner `app`), keine `python main.py`- und `pip install`-Hinweise mehr – alles ist im Setup enthalten
+- **Kommandozeile mit Projektnamen**: statt der Profil-Datei reicht der Projektname (`build "Mein Fork"`),
+  APK-Angaben gelten auch relativ zum Projekt-Ordner; README-Beispiele auf `Projects/…`, `Kodi-APKs/` und `Tool/…`
 - Warnungen und Protokoll beim Build-Bau zeigen den Build-Namen ohne Kodi-Formatierung (`[COLOR]`, `[B]`)
 - **Build direkt vom Android-Gerät**: Builds → „Vom Android-Gerät...“ holt Kodi-Daten einer App per ADB, legt sie als
   Kodi-Datenordner unter `Builds/Devices/<App>-<Datum>` ab und öffnet gleich den Build-Dialog – Kodi-Version aus der

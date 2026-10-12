@@ -171,7 +171,12 @@
       if (file && d.file) file.textContent = d.file;
       if (d.url) {
         btn.href = d.url; btn.removeAttribute("aria-disabled"); btn.classList.add("btn-primary"); btn.classList.remove("btn-ghost");
-        $all(".soon", card).forEach(function (s) { s.remove(); });
+        $all(".soon", card).forEach(function (s) { if (d.label) s.textContent = d.label; else s.remove(); });
+        $all("[data-dl-tag='" + card.getAttribute("data-download") + "']").forEach(function (s) {
+          if (d.label) s.textContent = d.label; else s.remove();
+        });
+        $all("[data-dl-ready]").forEach(function (s) { s.hidden = false; });
+        $all("[data-dl-soon]").forEach(function (s) { s.remove(); });
         $all("[data-when='soon']", btn).forEach(function (s) { s.remove(); });
       } else {
         btn.addEventListener("click", function (e) { e.preventDefault(); });

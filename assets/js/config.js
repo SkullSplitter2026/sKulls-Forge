@@ -4,12 +4,13 @@ window.FORGE_SITE = {
   site: "https://skullsplitter2026.github.io/sKulls-Forge/",
 
   // GitHub-Link oben, im Mitmach-Bereich und in der Fußzeile (später z.B. das Repo des Tools)
-  github: "https://github.com/SkullSplitter2026",
+  github: "https://skullsplitter2026.github.io/sKulls-Forge/",
 
-  // Download: solange url leer ist, steht dort „Bald verfügbar“. Ein Setup für alles - es installiert oder
+  // Download: solange url leer ist, steht dort „Bald verfügbar“. label: Kennzeichen statt „bald“ (z.B. „Beta“). Ein Setup für alles - es installiert oder
   // entpackt auf Wunsch eine portable Version (keine eigene Portable-ZIP mehr)
   downloads: {
-    installer: { url: "", file: "sKulls-Forge-Setup-3.x.exe", sha256: "" }
+    installer: { url: "https://github.com/SkullSplitter2026/sKulls-Forge/releases/download/v3.11.0-beta1/sKulls-Forge-Setup-3.11.0-beta1.exe",
+                 file: "sKulls-Forge-Setup-3.11.0-beta1.exe", sha256: "69f9a9452e7d3e6303b3265dfadcef174095d82ac9e1393d8795084ef4ffa272", label: "Beta" }
     // Quellcode: momentan nicht öffentlich (eigene Karte ohne Download in index.html)
   },
 
