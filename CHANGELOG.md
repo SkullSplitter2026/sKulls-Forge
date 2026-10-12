@@ -112,6 +112,8 @@ Kodi-22-Vorbereitung, tote Menüverweise beheben und farbige Namen, die Kodi wir
   Umwandlung nach HDR10 (Kodi 21+) *(227)*
 
 ### 🔧 Behoben
+- **Release-Dateien hießen „sha256:…“**: große Builds im GitHub-Release zeigen wieder ihren Dateinamen – die Prüfsumme
+  liefert GitHub selbst; ältere Uploads werden beim nächsten Hochladen ohne erneutes Senden umbenannt
 - **repo/index.html nach Umschalten der Startseite**: vor jedem Hochladen schreibt der Forge sie passend zur Einstellung
   neu – Weiterleitung auf `#repository` der Startseite oder die ausführliche Seite (vorher ging der Stand vom letzten
   Bauen hoch)
@@ -163,7 +165,7 @@ migration. Wizard: minimum RAM/free space per build, custom menu order and link 
 intro animation, news tile, Kodi 22 readiness, sound and picture assistants, one build for several Kodi versions,
 add-on conflicts, publish flow, built-in QR codes. Fixed: Kodi colour names must be lower case (names showed black),
 adaptive app icon and TV banner on Kodi 22, GitHub upload into an emptied repository, duplicate objects in git push,
-root upload deleting other folders, repo/index.html after switching the start page. Website: build showcase, feedback
+root upload deleting other folders, repo/index.html after switching the start page. GitHub release files showed "sha256:…" instead of their file name. Website: build showcase, feedback
 forms, video guides, status page, example projects, features-by-version table.*
 
 ## 3.10.0 – 2026-10-10
