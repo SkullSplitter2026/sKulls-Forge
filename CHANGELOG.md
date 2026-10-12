@@ -38,6 +38,10 @@ Kodi-22-Vorbereitung, tote Menüverweise beheben und farbige Namen, die Kodi wir
   eingetragene, mit Fundstelle *(186)*
 
 ### 🛠️ Forge
+- **Online löschen**: Fork, Repository, Wizard und Builds haben einen Knopf *Online löschen...* – das Fenster zeigt, was
+  das Projekt am Upload-Ziel abgelegt hat (GitHub: Dateien in seinen Ordnern und seine Releases mit allen Dateien;
+  FTP/FTPS/SFTP/WebDAV/S3: der Zielordner), und löscht nur die ausgewählten Einträge nach Rückfrage. Bei GitHub in
+  einem Commit, ganze Releases samt Tag; fremde Ordner im Repository werden weder angezeigt noch angefasst
 - **adb.exe** wird erst nach 20 statt 10 Minuten ohne Geräte-Aktion beendet
 - Warnungen und Protokoll beim Build-Bau zeigen den Build-Namen ohne Kodi-Formatierung (`[COLOR]`, `[B]`)
 - **Build direkt vom Android-Gerät**: Builds → „Vom Android-Gerät...“ holt Kodi-Daten einer App per ADB, legt sie als
@@ -156,7 +160,7 @@ Kodi-22-Vorbereitung, tote Menüverweise beheben und farbige Namen, die Kodi wir
 *English: shared start page in the GitHub root (fork, repository, wizard) with redirects from `repo/` and `wizard/`;
 two update channels (stable `update.json`, beta `update-beta.json`, detected from RC/beta versions) and all fork
 versions of a folder on one download page (`releases.json`); the fork never overwrites a foreign root `index.html`.
-Standalone Builds page with tabs (create/upload single or all builds without rebuilding the wizard add-on); build ZIPs
+"Delete online..." on the fork, repository, wizard and builds pages lists what the project stored at the upload target (files of its folders, its releases) and deletes only the selected entries. Standalone Builds page with tabs (create/upload single or all builds without rebuilding the wizard add-on); build ZIPs
 kept only in the chosen project. Dead menu links: old wizards point to the new one, optional removal of entries for
 missing add-ons (build ZIP only), more precise check. One place for the wizard add-on ("Add to fork" instead of a copy
 under add-ons). Tidier data folder (`Builds/Lokal`, `Builds/Devices`, `Builds-Import`, `Projects/<p>/Kodi-APKs`,
