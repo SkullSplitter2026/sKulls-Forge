@@ -21,6 +21,32 @@ window.FORGE_SITE = {
   // Download-Zähler: Datei auf dieser Website, schreibt der Forge (python main.py site-stats ...)
   stats: "assets/stats.json",
 
+  // Rückmeldungen (Fehler melden / Wünsche): GitHub-Issues dieser Website, Vorlagen in .github/ISSUE_TEMPLATE/
+  issues: "https://github.com/SkullSplitter2026/sKulls-Forge/issues",
+
+  // Build-Schaufenster (builds.html): builds.json von Wizards, die mit dem Forge gebaut wurden.
+  // install = Seite mit der Installationsanleitung (z.B. die Startseite des Repositorys)
+  showcase: [
+    { url: "https://skullsplitter2026.github.io/sKulls.Kodi.Build/Build/builds.json",
+      install: "https://skullsplitter2026.github.io/sKulls.Kodi.Build/repo/" }
+  ],
+
+  // Statusseite (status.html): Adressen, die der Browser der Besucher live prüft.
+  // type: json (Datei laden), text (nur erreichbar?), release (neuestes GitHub-Release), githubstatus
+  status: [
+    { de: "Website", en: "Website", url: "index.html", type: "text" },
+    { de: "Kodi-Repository (addons.xml)", en: "Kodi repository (addons.xml)",
+      url: "https://skullsplitter2026.github.io/sKulls.Kodi.Build/repo/zips/addons.xml", type: "text" },
+    { de: "Wizard: Build-Liste", en: "Wizard: build list",
+      url: "https://skullsplitter2026.github.io/sKulls.Kodi.Build/Build/builds.json", type: "json" },
+    { de: "Fork: Update-Hinweis (update.json)", en: "Fork: update notice (update.json)",
+      url: "https://skullsplitter2026.github.io/sKulls.Kodi.Build/apk/update.json", type: "json" },
+    { de: "Downloads (GitHub-Releases)", en: "Downloads (GitHub releases)",
+      url: "https://api.github.com/repos/SkullSplitter2026/sKulls.Kodi.Build/releases/latest", type: "release" },
+    { de: "GitHub (Dienst)", en: "GitHub (service)",
+      url: "https://www.githubstatus.com/api/v2/status.json", type: "githubstatus" }
+  ],
+
   // Standard beim ersten Besuch
   defaultScheme: "skulls",
   // Farbschemata: Name (DE/EN), Screenshots aus assets/shots/<sprache>/<shots>/

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de" data-lang="de" data-scheme="skulls"
+      data-title-de="Beispielprojekte – sKulls Forge" data-title-en="Example projects – sKulls Forge"
+      data-desc-de="Beispiel-Profile, -Wizard und -Repository für sKulls Forge zum Ausprobieren." data-desc-en="Example profile, wizard and repository for sKulls Forge to try out.">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beispielprojekte – sKulls Forge</title>
+  <meta name="description" content="Beispiel-Profile, -Wizard und -Repository für sKulls Forge zum Ausprobieren.">
+  <meta name="theme-color" content="#111318">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.11.0">
+  <script src="assets/js/config.js?v=3.11.0"></script>
+  <script src="assets/js/main.js?v=3.11.0"></script>
+  <script src="assets/js/pages.js?v=3.11.0"></script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a>
+    <nav class="nav-links" aria-label="Seiten">
+      <a href="index.html"><span lang="de">Startseite</span><span lang="en">Home</span></a>
+      <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
+      <a href="faq.html">FAQ</a>
+      <a href="builds.html">Builds</a>
+      <a href="funktionen.html"><span lang="de">Funktionen</span><span lang="en">Features</span></a>
+    </nav>
+    <div class="nav-tools">
+      <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <button type="button" data-lang="de" aria-pressed="true">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <div class="scheme">
+        <button class="pill" id="scheme-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Farbschema / Color scheme">
+          <i class="scheme-dot" aria-hidden="true"></i><span class="label" id="scheme-label">sKulls Neon</span></button>
+        <div class="scheme-menu" id="scheme-menu" role="menu" aria-label="Farbschema"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="guide">
+  <div class="wrap">
+    <nav class="toc" aria-label="Seiten">
+      <b><span lang="de">Mehr</span><span lang="en">More</span></b>
+      <a href="builds.html"><span lang="de">Build-Schaufenster</span><span lang="en">Build showcase</span></a>
+      <a href="funktionen.html"><span lang="de">Funktionen je Version</span><span lang="en">Features by version</span></a>
+      <a href="beispiele.html" class="active"><span lang="de">Beispielprojekte</span><span lang="en">Example projects</span></a>
+      <a href="status.html">Status</a>
+      <a href="anleitung.html#videos"><span lang="de">Video-Anleitungen</span><span lang="en">Video guides</span></a>
+      <a href="index.html#mitmachen">Feedback</a>
+    </nav>
+    <div>
+      <h1 lang="de">Beispielprojekte</h1><h1 lang="en">Example projects</h1>
+      <p class="lead" lang="de">Fertige Beispiele zum Ausprobieren – ohne Passwörter, Keystore und Upload-Zugänge. Sie
+        zeigen, wie ein Fork-Profil, ein Wizard und ein Repository aufgebaut sind; eigene Angaben trägst du danach ein.</p>
+      <p class="lead" lang="en">Ready-made examples to try out – without passwords, keystore or upload logins. They show
+        how a fork profile, a wizard and a repository are set up; you fill in your own details afterwards.</p>
+      <div class="examples">
+        <article class="example">
+          <h3 lang="de">Fork-Profil „Mein Kodi“</h3><h3 lang="en">Fork profile “Mein Kodi”</h3>
+          <p lang="de">App-Name, Paketname, Sprache und Region, eine NAS-Quelle für Filme und YouTube als Favorit.</p>
+          <p lang="en">App name, package name, language and region, a NAS source for movies and YouTube as a favourite.</p>
+          <a class="btn btn-primary" href="assets/examples/beispiel-fork-vorlage.json" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg><span lang="de">Vorlage (JSON)</span><span lang="en">Template (JSON)</span></a>
+        </article>
+        <article class="example">
+          <h3 lang="de">Wizard mit zwei Builds</h3><h3 lang="en">Wizard with two builds</h3>
+          <p lang="de">Wizard-Projekt mit den Build-Vorlagen „Leicht“ und „Kinder“ – nur noch den Kodi-Ordner wählen.</p>
+          <p lang="en">Wizard project with the build templates “Light” and “Kids” – just pick the Kodi folder.</p>
+          <a class="btn btn-primary" href="assets/examples/beispiel-wizard.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg><span lang="de">Wizard (ZIP)</span><span lang="en">Wizard (ZIP)</span></a>
+        </article>
+        <article class="example">
+          <h3 lang="de">Repository</h3><h3 lang="en">Repository</h3>
+          <p lang="de">Repository-Projekt mit Name, Anbieter und Adresse – Addons fügst du selbst hinzu.</p>
+          <p lang="en">Repository project with name, provider and address – you add the add-ons yourself.</p>
+          <a class="btn btn-primary" href="assets/examples/beispiel-repository.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg><span lang="de">Repository (ZIP)</span><span lang="en">Repository (ZIP)</span></a>
+        </article>
+      </div>
+      <section class="chapter" id="import">
+        <h2 lang="de">So übernimmst du die Beispiele</h2><h2 lang="en">How to use the examples</h2>
+        <ol class="steps" lang="de">
+          <li><strong>Fork-Profil:</strong> im Forge <em>Datei → Vorlagen-Galerie → Datei importieren…</em>, die JSON-Datei
+            wählen und „Neues Profil aus Vorlage“ – danach Kodi-APK und Keystore wählen.</li>
+          <li><strong>Wizard und Repository:</strong> die ZIP in deinen Projekt-Ordner entpacken (Standard:
+            <code>Dokumente\sKulls Forge</code>). Nach dem nächsten Start stehen die Projekte in den Bereichen Wizard
+            bzw. Repository.</li>
+          <li>Platzhalter wie <code>DEINNAME</code> und <code>DEIN-REPOSITORY</code> durch deine Angaben ersetzen und
+            ein Upload-Ziel wählen – dann bauen.</li>
+        </ol>
+        <ol class="steps" lang="en">
+          <li><strong>Fork profile:</strong> in the Forge choose <em>File → Template gallery → Import file…</em>, pick the
+            JSON file and “New profile from template” – then choose the Kodi APK and keystore.</li>
+          <li><strong>Wizard and repository:</strong> unzip into your project folder (default
+            <code>Documents\sKulls Forge</code>). After the next start the projects appear in the Wizard and Repository
+            areas.</li>
+          <li>Replace placeholders like <code>DEINNAME</code> and <code>DEIN-REPOSITORY</code> with your details and pick
+            an upload target – then build.</li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><a class="brand" href="index.html"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a></div>
+    <nav aria-label="Fußzeile">
+      <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
+      <a href="faq.html">FAQ</a>
+      <a href="builds.html">Builds</a>
+      <a href="funktionen.html"><span lang="de">Funktionen je Version</span><span lang="en">Features by version</span></a>
+      <a href="beispiele.html"><span lang="de">Beispiele</span><span lang="en">Examples</span></a>
+      <a href="status.html">Status</a>
+      <a href="index.html#mitmachen">Feedback</a>
+      <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Legal notice</span></a>
+      <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
+      <a data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

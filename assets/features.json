@@ -1,0 +1,2154 @@
+{
+ "generated": "2026-10-12",
+ "versions": [
+  {
+   "v": "3.11.0",
+   "date": "2026-10-12",
+   "count": 52
+  },
+  {
+   "v": "3.10.0",
+   "date": "2026-10-10",
+   "count": 7
+  },
+  {
+   "v": "3.9.0",
+   "date": "2026-10-10",
+   "count": 18
+  },
+  {
+   "v": "3.8.0",
+   "date": "2026-10-05",
+   "count": 23
+  },
+  {
+   "v": "3.7.0",
+   "date": "2026-10-05",
+   "count": 21
+  },
+  {
+   "v": "3.6.0",
+   "date": "2026-10-05",
+   "count": 29
+  },
+  {
+   "v": "3.5.0",
+   "date": "2026-10-04",
+   "count": 17
+  },
+  {
+   "v": "3.4.0",
+   "date": "2026-10-04",
+   "count": 23
+  },
+  {
+   "v": "3.3.1",
+   "date": "2026-10-04",
+   "count": 6
+  },
+  {
+   "v": "3.3.0",
+   "date": "2026-10-04",
+   "count": 26
+  },
+  {
+   "v": "3.2.0",
+   "date": "2026-10-04",
+   "count": 7
+  },
+  {
+   "v": "3.1.0",
+   "date": "2026-10-04",
+   "count": 10
+  },
+  {
+   "v": "3.0.0",
+   "date": "2026-10-04",
+   "count": 39
+  },
+  {
+   "v": "2.0.0",
+   "date": "2026-09-29",
+   "count": 18
+  },
+  {
+   "v": "1.0.0",
+   "date": "",
+   "count": 0
+  }
+ ],
+ "items": [
+  {
+   "v": "3.11.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "wizard/index.html",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Ein Ort für das Wizard-Addon",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Tote Verweise beheben",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Builds-Seite eigenständig",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Build-ZIPs im Projekt",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Build-Anforderungen",
+   "n": 168
+  },
+  {
+   "v": "3.11.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Eigene Startseite",
+   "n": 177
+  },
+  {
+   "v": "3.11.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Debrid-Ablauf",
+   "n": 183
+  },
+  {
+   "v": "3.11.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Schlüssel testen",
+   "n": 186
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "adb.exe",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Warnungen und Protokoll beim Build-Bau zeigen den Build-Namen ohne Kodi-Formatierung ([…",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Build direkt vom Android-Gerät",
+   "n": 189
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Ein Build für mehrere Kodi-Versionen",
+   "n": 199
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Doppelte Addons",
+   "n": 208
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Genres als Paket",
+   "n": 205
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Addon-Changelog ansehen",
+   "n": 209
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Addon-Konflikte",
+   "n": 212
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Build-Dialog scrollt jetzt; OK und Abbrechen stehen fest unten (vorher auf kleinen Bild…",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Wizard veröffentlichen",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Wizard-Ablage aufgeräumt",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Wizard → „In Repo übernehmen“",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Repository",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Repository",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Aufgeräumter Projekt-Ordner",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "QR-Codes ohne Zusatzpaket",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Zwei Update-Kanäle",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Mehrere Versionen in einem Ordner",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Intro nach dem Start",
+   "n": 221
+  },
+  {
+   "v": "3.11.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Neuigkeiten-Kachel",
+   "n": 222
+  },
+  {
+   "v": "3.11.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Bereit für Kodi 22 „Piers“",
+   "n": 223
+  },
+  {
+   "v": "3.11.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Ton-Assistent",
+   "n": 226
+  },
+  {
+   "v": "3.11.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Bild-Assistent",
+   "n": 227
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "repo/index.html nach Umschalten der Startseite",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Startseite überschrieben",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Farbige Namen in Kodi schwarz",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Wizard",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Forge",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "App-Icon ab Android 8",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "„Alles veröffentlichen“ baute das Repository vor dem Wizard",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "GitHub-Upload in ein Repository, in dem alle Dateien entfernt wurden, brach mit „404 ge…",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Builds → „Inhalt anzeigen“ zeigte nach dem ersten Bau immer die Liste dieses Baus",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Git-Push (Dateien über 30 MB)",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Repository ins Hauptverzeichnis eines GitHub-Repositorys mit „Dateien entfernen“",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Vorlagen-Galerie",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Website",
+   "n": null
+  },
+  {
+   "v": "3.11.0",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Build-Schaufenster",
+   "n": 267
+  },
+  {
+   "v": "3.11.0",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Rückmeldungen",
+   "n": 268
+  },
+  {
+   "v": "3.11.0",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Video-Anleitungen",
+   "n": 269
+  },
+  {
+   "v": "3.11.0",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Statusseite",
+   "n": 271
+  },
+  {
+   "v": "3.11.0",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Beispielprojekte",
+   "n": 272
+  },
+  {
+   "v": "3.11.0",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Funktionen je Version",
+   "n": 273
+  },
+  {
+   "v": "3.11.0",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Datenschutzerklärung um Statusseite, Schaufenster und Rückmeldungen ergänzt",
+   "n": null
+  },
+  {
+   "v": "3.10.0",
+   "area": "Fork & Forge",
+   "area_en": "Fork & Forge",
+   "name": "GitHub-Upload mit Ordner für update.json & Co.",
+   "n": null
+  },
+  {
+   "v": "3.10.0",
+   "area": "Fork & Forge",
+   "area_en": "Fork & Forge",
+   "name": "Übergang für installierte Forks",
+   "n": null
+  },
+  {
+   "v": "3.10.0",
+   "area": "Fork & Forge",
+   "area_en": "Fork & Forge",
+   "name": "Download-Seite ins Hauptverzeichnis",
+   "n": null
+  },
+  {
+   "v": "3.10.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Eigener Ordner nur für das Wizard-ZIP",
+   "n": null
+  },
+  {
+   "v": "3.10.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Fehlalarm „GitHub Pages ist nicht eingeschaltet“",
+   "n": null
+  },
+  {
+   "v": "3.10.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Kaputte APK-Links bei Sonderzeichen",
+   "n": null
+  },
+  {
+   "v": "3.10.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Knopf „Online prüfen“ hatte zwei Symbole eingetragen (jetzt einheitlich die Wolke), ein…",
+   "n": null
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Kompatibilitätstabelle",
+   "n": 202
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Benötigte Repositories",
+   "n": 203
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Vorschaubilder im Genre-Browser",
+   "n": 210
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Repository-Statistik",
+   "n": 214
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Repository komplett erzeugen",
+   "n": 215
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Sortierbare Listen",
+   "n": null
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Fremd-Repos überwachen",
+   "n": 206
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Repository-Spiegel",
+   "n": 213
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Übersetzungen ergänzen",
+   "n": 216
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Eigene Addon-Vorlagen",
+   "n": 217
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Fernbedienung beim ersten Start wählbar",
+   "n": 228
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Server-Ampel",
+   "n": 246
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Repository-Startseite mit Addon-Liste und Installationshilfe ist mit dem Repository-Ass…",
+   "n": 245
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "QR-Codes für die Downloader-App",
+   "n": 237
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Selbstprüfung",
+   "n": 254
+  },
+  {
+   "v": "3.9.0",
+   "area": "Repository, Builds & Forge",
+   "area_en": "Repository, builds & Forge",
+   "name": "Datenschutz-Bericht je Build",
+   "n": 252
+  },
+  {
+   "v": "3.9.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Große Dateien bei GitHub",
+   "n": null
+  },
+  {
+   "v": "3.9.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Englische Oberfläche",
+   "n": null
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Build-Kategorien & Filter",
+   "n": 166
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Benötigte Zugänge je Build",
+   "n": 188
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Zeitfenster für Builds",
+   "n": 242
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Weitere Dienste",
+   "n": 187
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Ruhe bei Wiedergabe",
+   "n": 180
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Systeminfo",
+   "n": 178
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "„Was ist neu“ beim Wizard-Update",
+   "n": 179
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Kurze geführte Tour",
+   "n": 174
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Build-Beliebtheit",
+   "n": 165
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Vorschau-Video je Build",
+   "n": 167
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Mehrsprachige Build-Texte",
+   "n": 176
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Favoriten übertragen",
+   "n": 106
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Fehlerhilfe mit QR-Code",
+   "n": 175
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Sprachausgabe",
+   "n": 173
+  },
+  {
+   "v": "3.8.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Links/Rechts in Auswahl-Dialogen springt direkt zu den Knöpfen (Abbrechen/OK)",
+   "n": null
+  },
+  {
+   "v": "3.8.0",
+   "area": "Fork & Forge",
+   "area_en": "Fork & Forge",
+   "name": "Helle Farbvarianten",
+   "n": 154
+  },
+  {
+   "v": "3.8.0",
+   "area": "Fork & Forge",
+   "area_en": "Fork & Forge",
+   "name": "Versionsnummer im Bild",
+   "n": 201
+  },
+  {
+   "v": "3.8.0",
+   "area": "Fork & Forge",
+   "area_en": "Fork & Forge",
+   "name": "Interne Build-Notizen",
+   "n": 197
+  },
+  {
+   "v": "3.8.0",
+   "area": "Fork & Forge",
+   "area_en": "Fork & Forge",
+   "name": "Alte Addons markieren",
+   "n": 211
+  },
+  {
+   "v": "3.8.0",
+   "area": "Fork & Forge",
+   "area_en": "Fork & Forge",
+   "name": "Vorlagen-Galerie",
+   "n": 99
+  },
+  {
+   "v": "3.8.0",
+   "area": "Fork & Forge",
+   "area_en": "Fork & Forge",
+   "name": "Build-Vorlagen",
+   "n": 190
+  },
+  {
+   "v": "3.8.0",
+   "area": "Fork & Forge",
+   "area_en": "Fork & Forge",
+   "name": "Ältere Build-Versionen",
+   "n": 191
+  },
+  {
+   "v": "3.8.0",
+   "area": "Fork & Forge",
+   "area_en": "Fork & Forge",
+   "name": "Tote Verweise prüfen",
+   "n": 192
+  },
+  {
+   "v": "3.7.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Branding aus einem Logo",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Eigene Oberflächen-Töne",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Quellen mit Inhaltstyp und Scraper",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Berechtigungen prüfen",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "IPTV-Quellen prüfen",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Addon-Pakete",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Alle Repos nach Genre",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Schlüsselbund",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Wiederherstellungspunkt",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Plattform-Prüfung",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Downloads fortsetzen",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Persönliche Daten",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Deutsche Reiter in der Wartung",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Zugänge & API-Schlüssel",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Frischere Dialoge",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Hochladen",
+   "area_en": "Uploading",
+   "name": "WebDAV",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Bedienung",
+   "area_en": "Handling",
+   "name": "Ziehen und Ablegen",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Bedienung",
+   "area_en": "Handling",
+   "name": "Geräteverwaltung",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Bedienung",
+   "area_en": "Handling",
+   "name": "adb.exe",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Bedienung",
+   "area_en": "Handling",
+   "name": "Seitenleiste",
+   "n": null
+  },
+  {
+   "v": "3.7.0",
+   "area": "Bedienung",
+   "area_en": "Handling",
+   "name": "Repository",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Setup",
+   "area_en": "Setup",
+   "name": "Fertig übersetztes Programm",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Setup",
+   "area_en": "Setup",
+   "name": "Update über eine ältere Version",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Setup",
+   "area_en": "Setup",
+   "name": "Arbeitsordner und Cache im Projekt-Ordner",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Übersichtlicher",
+   "area_en": "Clearer layout",
+   "name": "Addons, Repository und Wizard in Reitern",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Übersichtlicher",
+   "area_en": "Clearer layout",
+   "name": "Wizards in der Übersicht",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Übersichtlicher",
+   "area_en": "Clearer layout",
+   "name": "Symbolstil",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Alles veröffentlichen",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Große Builds über GitHub-Releases",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Upload-Prüfung",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Build-Vergleich",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Gesperrte Repositories",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Größen-Analyse",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Projekt duplizieren",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Als Wizard-Build exportieren",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Symbole im Wizard",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Im Wizard",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Formatierungs-Editor",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Sprachpakete automatisch",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Einrichtungsassistent",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Ersatz-Server",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Fremd-Repositories durchsuchen",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Repository",
+   "area_en": "Repository",
+   "name": "Addons über 95 MB auf GitHub",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Repository",
+   "area_en": "Repository",
+   "name": "Repository online prüfen",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Sicherheit",
+   "area_en": "Security",
+   "name": "GitHub-Tokens",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Sicherheit",
+   "area_en": "Security",
+   "name": "GitHub Pages aus?",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Bauen brach ab, wenn ein Build ein eigenes Bild hatte (Ordner icons/ fehlte)",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Start konnte hängen",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Formatierungs-Editor",
+   "n": null
+  },
+  {
+   "v": "3.6.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Fork-Center",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Formatierungs-Editor",
+   "area_en": "Formatting editor",
+   "name": "✎-Knopf",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Formatierungs-Editor",
+   "area_en": "Formatting editor",
+   "name": "Bearbeiten wie in Kodi auf dunklem Kodi-Hintergrund",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Formatierungs-Editor",
+   "area_en": "Formatting editor",
+   "name": "Eigene Farbpalette",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Formatierungs-Editor",
+   "area_en": "Formatting editor",
+   "name": "Für Dateinamen, IDs, Listen und Logs wird die Formatierung entfernt; die index.html des…",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Wizard – Builds",
+   "area_en": "Wizard – builds",
+   "name": "Aus altem Wizard importieren…",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Wizard – Builds",
+   "area_en": "Wizard – builds",
+   "name": "Binär-Addons",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Wizard – Builds",
+   "area_en": "Wizard – builds",
+   "name": "GUI-Fix",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Wizard – Builds",
+   "area_en": "Wizard – builds",
+   "name": "📰 RSS-Feed",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Wizard – Backup & Schutz",
+   "area_en": "Wizard – backup & protection",
+   "name": "Kompletter Build 1:1",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Wizard – Backup & Schutz",
+   "area_en": "Wizard – backup & protection",
+   "name": "Backup von einem anderen System (z.B",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Wizard – Backup & Schutz",
+   "area_en": "Wizard – backup & protection",
+   "name": "Windows",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Wizard – Backup & Schutz",
+   "area_en": "Wizard – backup & protection",
+   "name": "Wizard und Repository bleiben immer",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Kodi hing beim Nachinstallieren an seiner eigenen Rückfrage und ließ sich nicht beenden",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Fortschrittsbalken in Skins wie Arctic Zephyr verzerrt (eigener Balken, unabhängig vom…",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Abschlussmeldung mit langer Addon-Liste wurde abgeschnitten",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Behoben",
+   "area_en": "Fixed",
+   "name": "Pfeil „→“ erschien in manchen Skin-Schriften als Kästchen",
+   "n": null
+  },
+  {
+   "v": "3.5.0",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Ein Download",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Im Fork",
+   "area_en": "In the fork",
+   "name": "Fork-Center",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Im Fork",
+   "area_en": "In the fork",
+   "name": "Mitteilungen vom Server",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Im Fork",
+   "area_en": "In the fork",
+   "name": "Absturzberichte",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Im Fork",
+   "area_en": "In the fork",
+   "name": "Speicherpflege-Dienst",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Im Fork",
+   "area_en": "In the fork",
+   "name": "Geräteprofile",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Im Fork",
+   "area_en": "In the fork",
+   "name": "Zugangsdaten beim ersten Start abfragen",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Im Fork",
+   "area_en": "In the fork",
+   "name": "Kinderprofil",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Im Fork",
+   "area_en": "In the fork",
+   "name": "Bildschirmschoner",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Im Fork",
+   "area_en": "In the fork",
+   "name": "Autostart",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Im Fork",
+   "area_en": "In the fork",
+   "name": "App-Name je Sprache",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Updates & Verteilung",
+   "area_en": "Updates & distribution",
+   "name": "In-App-Update",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Updates & Verteilung",
+   "area_en": "Updates & distribution",
+   "name": "Pflicht-Update",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Updates & Verteilung",
+   "area_en": "Updates & distribution",
+   "name": "Download-Seite mit Fire-TV-Downloader-Anleitung, Versionshistorie und RSS-Feed (feed.xml)",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Updates & Verteilung",
+   "area_en": "Updates & distribution",
+   "name": "Portal-Seite",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Updates & Verteilung",
+   "area_en": "Updates & distribution",
+   "name": "Benachrichtigung",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Werkzeuge",
+   "area_en": "Tools",
+   "name": "APK-Größe",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Werkzeuge",
+   "area_en": "Tools",
+   "name": "Kodi-Nightly-Vorschau",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Werkzeuge",
+   "area_en": "Tools",
+   "name": "Windows-Portable-Fork",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Werkzeuge",
+   "area_en": "Tools",
+   "name": "Geräte",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Werkzeuge",
+   "area_en": "Tools",
+   "name": "Paralleles Bauen",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Werkzeuge",
+   "area_en": "Tools",
+   "name": "Web-Oberfläche",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Werkzeuge",
+   "area_en": "Tools",
+   "name": "Neue Befehle",
+   "n": null
+  },
+  {
+   "v": "3.4.0",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Wizard-Rundgang",
+   "n": null
+  },
+  {
+   "v": "3.3.1",
+   "area": "Wizard – Backups",
+   "area_en": "Wizard – backups",
+   "name": "Kompletter Build ohne Addon-Daten",
+   "n": null
+  },
+  {
+   "v": "3.3.1",
+   "area": "Wizard – Backups",
+   "area_en": "Wizard – backups",
+   "name": "Auch als Art für die automatischen Backups wählbar",
+   "n": null
+  },
+  {
+   "v": "3.3.1",
+   "area": "Wizard – Backups",
+   "area_en": "Wizard – backups",
+   "name": "Beim Wiederherstellen eines Backups ohne Addon-Daten bleiben die vorhandenen Addon-Date…",
+   "n": null
+  },
+  {
+   "v": "3.3.1",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Besucherzähler",
+   "n": null
+  },
+  {
+   "v": "3.3.1",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Besuche zählt der Dienst Abacus ohne Cookies und ohne Speicherung im Browser (in assets…",
+   "n": null
+  },
+  {
+   "v": "3.3.1",
+   "area": "Website",
+   "area_en": "Website",
+   "name": "Download-Zahlen kommen ohne fremde Anfrage aus assets/stats.json",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Bedienung",
+   "area_en": "Wizard – handling",
+   "name": "Einrichtungsassistent",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Bedienung",
+   "area_en": "Wizard – handling",
+   "name": "Suche",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Bedienung",
+   "area_en": "Wizard – handling",
+   "name": "Schnellzugriff",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Bedienung",
+   "area_en": "Wizard – handling",
+   "name": "Ansicht",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Bedienung",
+   "area_en": "Wizard – handling",
+   "name": "Build-Kacheln mit Fanart",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Bedienung",
+   "area_en": "Wizard – handling",
+   "name": "Bildergalerie",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Bedienung",
+   "area_en": "Wizard – handling",
+   "name": "Startbild",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Bedienung",
+   "area_en": "Wizard – handling",
+   "name": "Downloadzeit",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Bedienung",
+   "area_en": "Wizard – handling",
+   "name": "Herkunft (Repository) jedes Addons in den Addon-Werkzeugen, „Kodi“ für mitgelieferte Ad…",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Wartung",
+   "area_en": "Wizard – maintenance",
+   "name": "Alles aufräumen mit Auswahl",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Wartung",
+   "area_en": "Wizard – maintenance",
+   "name": "Datenbanken",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Wartung",
+   "area_en": "Wizard – maintenance",
+   "name": "advancedsettings.xml von Hand",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Wartung",
+   "area_en": "Wizard – maintenance",
+   "name": "Speicher-Assistent",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Wartung",
+   "area_en": "Wizard – maintenance",
+   "name": "Abhängigkeiten prüfen",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Wartung",
+   "area_en": "Wizard – maintenance",
+   "name": "Ergebnisliste",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Backups",
+   "area_en": "Wizard – backups",
+   "name": "Build-Backup mit oder ohne Addon-Daten (ohne",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Backups",
+   "area_en": "Wizard – backups",
+   "name": "Automatische Backups",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Backups",
+   "area_en": "Wizard – backups",
+   "name": "Build-Wechsel mit Parken",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Backups",
+   "area_en": "Wizard – backups",
+   "name": "Fortschritt beim Backup in Schritten mit Dateizähler; zwei Backups in derselben Minute…",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Sicherheit",
+   "area_en": "Wizard – security",
+   "name": "PIN",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Sicherheit",
+   "area_en": "Wizard – security",
+   "name": "Bei gefährlichen Fragen ist „Nein“ vorausgewählt",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Sicherheit",
+   "area_en": "Wizard – security",
+   "name": "Selbstschutz",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Wizard – Sicherheit",
+   "area_en": "Wizard – security",
+   "name": "Passwort automatisch erkannt",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Neuer Build",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Build-Dialog",
+   "n": null
+  },
+  {
+   "v": "3.3.0",
+   "area": "Forge",
+   "area_en": "Forge",
+   "name": "Builds laden Fanart (fanart/) und Galerie (gallery/) mit hoch, veraltete Bilder werden…",
+   "n": null
+  },
+  {
+   "v": "3.2.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Passwortschutz je Build",
+   "n": null
+  },
+  {
+   "v": "3.2.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Build-Info",
+   "n": null
+  },
+  {
+   "v": "3.2.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Update-Hinweise",
+   "n": null
+  },
+  {
+   "v": "3.2.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Im Forge",
+   "n": null
+  },
+  {
+   "v": "3.2.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Hochladen",
+   "n": null
+  },
+  {
+   "v": "3.2.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Build-Liste behält nach dem Bearbeiten die Auswahl",
+   "n": null
+  },
+  {
+   "v": "3.2.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Im echten Kodi 21 geprüft",
+   "n": null
+  },
+  {
+   "v": "3.1.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Repositories prüfen",
+   "n": null
+  },
+  {
+   "v": "3.1.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Alle Addons aktualisieren",
+   "n": null
+  },
+  {
+   "v": "3.1.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Neue Backup-Arten",
+   "n": null
+  },
+  {
+   "v": "3.1.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Build aus Datei",
+   "n": null
+  },
+  {
+   "v": "3.1.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Wizard und Repository bleiben",
+   "n": null
+  },
+  {
+   "v": "3.1.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Im Wizard-Projekt",
+   "n": null
+  },
+  {
+   "v": "3.1.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Addon-Kacheln zeigen „installiert“; Texte zu Fresh Start nennen Wizard und Repository",
+   "n": null
+  },
+  {
+   "v": "3.1.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Für alle Systeme, auf denen Kodi läuft (Windows, Android, macOS, Linux)",
+   "n": null
+  },
+  {
+   "v": "3.1.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Im echten Kodi 21 geprüft",
+   "n": null
+  },
+  {
+   "v": "3.1.0",
+   "area": "Repository",
+   "area_en": "Repository",
+   "name": "Offizielle Kodi-Addons markieren",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Neuer Name",
+   "area_en": "New name",
+   "name": "sKulls Forge",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Neuer Name",
+   "area_en": "New name",
+   "name": "Umgebungsvariablen heißen jetzt SKFORGE_… (FORKFORGE_… und ältere Namen gelten weiter),…",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "Seitenleiste",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "Neue Seite Einstellungen (Strg+,)",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "Neue Seite Werkzeuge",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "Fork-Tabs lassen sich scrollen, wenn das Fenster zu niedrig ist; größeres Startfenster",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "Tooltips in allen Tabellen",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "Übersicht",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Projekt-Ordner und Upload-Ziele",
+   "area_en": "Project folder & upload targets",
+   "name": "Eigene Daten liegen jetzt im Projekt-Ordner (Standard Dokumente\\sKulls Forge, änderbar)",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Projekt-Ordner und Upload-Ziele",
+   "area_en": "Project folder & upload targets",
+   "name": "Neues Projekt…",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Projekt-Ordner und Upload-Ziele",
+   "area_en": "Project folder & upload targets",
+   "name": "Bereinigen / Werkseinstellung",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Projekt-Ordner und Upload-Ziele",
+   "area_en": "Project folder & upload targets",
+   "name": "Beim ersten Start",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Projekt-Ordner und Upload-Ziele",
+   "area_en": "Project folder & upload targets",
+   "name": "Übernahme-Dialog beim ersten Start mit Abbrechen",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Projekt-Ordner und Upload-Ziele",
+   "area_en": "Project folder & upload targets",
+   "name": "Protokolle",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Projekt-Ordner und Upload-Ziele",
+   "area_en": "Project folder & upload targets",
+   "name": "Upload-Ziele",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Projekt-Ordner und Upload-Ziele",
+   "area_en": "Project folder & upload targets",
+   "name": "Dateiauswahl öffnet im passenden Unterordner (Bilder, Addons, Keystores, Kodi-APKs)",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Addons",
+   "area_en": "Add-ons",
+   "name": "Eigene Addons aus Vorlagen",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Addons",
+   "area_en": "Add-ons",
+   "name": "Vorhandene Addons (ZIP oder Ordner) übernehmen und bearbeiten",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Addons",
+   "area_en": "Add-ons",
+   "name": "Prüfung",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Addons",
+   "area_en": "Add-ons",
+   "name": "Version erhöhen",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Addons",
+   "area_en": "Add-ons",
+   "name": "Zum Fork oder Repository hinzufügen; auf dem Gerät testen",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Addons",
+   "area_en": "Add-ons",
+   "name": "Befehle addon-list, addon-check und addon-build",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Repository",
+   "area_en": "Repository",
+   "name": "Eigenes Kodi-Repository bauen",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Repository",
+   "area_en": "Repository",
+   "name": "Prüfung von ID, Version, Python-Version je Zweig und Bildern; Hinweis bei geändertem In…",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Repository",
+   "area_en": "Repository",
+   "name": "Hochladen per FTP/FTPS/SFTP (nur Änderungen) oder als ein Commit in ein GitHub-Reposito…",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Repository",
+   "area_en": "Repository",
+   "name": "Vorhandenes Repository-Addon übernehmen, „Zum Fork hinzufügen“, Addons aus dem Fork übe…",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Repository",
+   "area_en": "Repository",
+   "name": "Repository-Projekte (repos/) sind Teil der Gesamtsicherung",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Eigenes Wizard-Addon für Kodi 19 und neuer",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Bauen erzeugt builds.json (Größe, SHA-256), die Build-ZIPs und das Wizard-Addon (Farbsc…",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Im Kodi",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Leistung & Speicher",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Im echten Kodi 21 getestet; dabei behoben",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Ebenfalls im echten Kodi geprüft",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Deutsche Oberfläche und Addons-Seite im echten Kodi geprüft (Sprachpaket über den Wizar…",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Zugangsdaten entfernen",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Wizard",
+   "area_en": "Wizard",
+   "name": "Hochladen über die Upload-Ziele (FTP/SFTP oder GitHub), „In Addons übernehmen“ für Repo…",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Projekt-Website",
+   "area_en": "Project website",
+   "name": "Statische Website zum Tool (Ordner sKulls-Forge-Website neben dem Programmordner) im St…",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Projekt-Website",
+   "area_en": "Project website",
+   "name": "Screenshots mit Demo-Daten per tools/make_screenshots.py (alle 8 Farbschemata, Deutsch…",
+   "n": null
+  },
+  {
+   "v": "3.0.0",
+   "area": "Projekt-Website",
+   "area_en": "Project website",
+   "name": "Adresse",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "Neuer Name sKulls ForkForge (vorher sKulls Kodi Fork Builder) mit Slogan „Schmiede für…",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "Startbildschirm",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "Symbole",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "8 Farbschemata",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "Übersicht aller Forks",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Oberfläche",
+   "area_en": "Interface",
+   "name": "Rückgängig / Wiederholen",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Sprachen",
+   "area_en": "Languages",
+   "name": "Sprachauswahl als Aufklappmenü, beim ersten Start die Windows-Sprache",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Sprachen",
+   "area_en": "Languages",
+   "name": "Alle Übersetzungen als gettext-Dateien (lang/.po), eigene Sprachen per Vorlage",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Sprachen",
+   "area_en": "Languages",
+   "name": "Sprach-Server",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Werkzeuge",
+   "area_en": "Tools",
+   "name": "Verschlüsselte Gesamtsicherung (AES-256) und Wiederherstellung",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Werkzeuge",
+   "area_en": "Tools",
+   "name": "Bereinigtes Diagnosepaket für den Support",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Werkzeuge",
+   "area_en": "Tools",
+   "name": "Neue Befehle",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Kindersicherung",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Download-Seite",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Fork",
+   "area_en": "Fork",
+   "name": "Kompatibilitätsprüfung, Kodi-Einstellungen-Explorer, Build-Verlauf, automatische Builds…",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Technik",
+   "area_en": "Technical",
+   "name": "Umgebungsvariablen heißen jetzt FORKFORGE_… (die alten KODI_FORK_BUILDER_… gelten weiter)",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Technik",
+   "area_en": "Technical",
+   "name": "Logdatei logs/forkforge.log, Zeitplan-Ordner „sKulls ForkForge“ (alte Aufgaben werden ü…",
+   "n": null
+  },
+  {
+   "v": "2.0.0",
+   "area": "Technik",
+   "area_en": "Technical",
+   "name": "Mindestgröße des Fensters 1200 × 720",
+   "n": null
+  }
+ ]
+}

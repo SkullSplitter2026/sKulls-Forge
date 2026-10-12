@@ -8,9 +8,10 @@
   <meta name="description" content="Anleitung zu sKulls Forge: Erste Schritte, Forks, Fork-Funktionen, Addons, Repository, Wizard, Werkzeuge.">
   <meta name="theme-color" content="#111318">
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/config.js"></script>
-  <script src="assets/js/main.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css?v=3.11.0">
+  <script src="assets/js/config.js?v=3.11.0"></script>
+  <script src="assets/js/main.js?v=3.11.0"></script>
+  <script src="assets/js/pages.js?v=3.11.0"></script>
 </head>
 <body>
 <header class="nav">
@@ -20,6 +21,8 @@
       <a href="index.html"><span lang="de">Startseite</span><span lang="en">Home</span></a>
       <a href="anleitung.html" aria-current="page"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
       <a href="faq.html">FAQ</a>
+      <a href="builds.html">Builds</a>
+      <a href="funktionen.html"><span lang="de">Funktionen</span><span lang="en">Features</span></a>
     </nav>
     <div class="nav-tools">
       <div class="lang-switch" role="group" aria-label="Sprache / Language">
@@ -40,6 +43,7 @@
     <nav class="toc" aria-label="Inhalt">
       <b><span lang="de">Inhalt</span><span lang="en">Contents</span></b>
       <a href="#start"><span lang="de">Erste Schritte</span><span lang="en">Getting started</span></a>
+      <a href="#videos"><span lang="de">Video-Anleitungen</span><span lang="en">Video guides</span></a>
       <a href="#forks">Forks</a>
       <a href="#fork-features"><span lang="de">Fork-Funktionen</span><span lang="en">Fork features</span></a>
       <a href="#addons">Addons</a>
@@ -104,6 +108,41 @@
       </section>
 
       <!-- ===================== Forks ===================== -->
+      <section class="chapter" id="videos">
+        <h2 lang="de">Video-Anleitungen</h2><h2 lang="en">Video guides</h2>
+        <p lang="de">Kurze Clips zu den wichtigsten Arbeitsschritten – zum Starten auf das Bild klicken, noch einmal
+          klicken hält an. Die Schritte stehen jeweils darunter.</p>
+        <p lang="en">Short clips for the main steps – click the picture to start, click again to stop. The steps are
+          listed below each clip.</p>
+        <h3 lang="de">Fork bauen</h3><h3 lang="en">Building a fork</h3>
+        <figure class="clip" data-clip="fork">
+          <div class="clip-frame">
+            <img lang="de" src="assets/clips/de/fork-poster.webp" data-anim="assets/clips/de/fork.webp" alt="Fork bauen: Clip in 6 Schritten" width="1120" height="760">
+            <img lang="en" src="assets/clips/en/fork-poster.webp" data-anim="assets/clips/en/fork.webp" alt="Building a fork: clip in 6 steps" width="1120" height="760">
+            <button class="clip-play" type="button" aria-pressed="false" aria-label="Clip abspielen / Play clip"><span class="ring"><svg class="play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></span></button>
+          </div>
+          <figcaption><ol lang="de"><li>Projekt anlegen oder öffnen</li><li>Kodi-APK, App-Name und Paketname festlegen</li><li>Branding: Icon, TV-Banner, Startbild</li><li>Addons, Einstellungen, Quellen und Favoriten einbetten</li><li>Fork-Funktionen wählen</li><li>Bauen, signieren, installieren, hochladen</li></ol><ol lang="en"><li>Create or open a project</li><li>Set Kodi APK, app name and package name</li><li>Branding: icon, TV banner, splash</li><li>Embed add-ons, settings, sources and favourites</li><li>Choose fork features</li><li>Build, sign, install, upload</li></ol></figcaption>
+        </figure>
+        <h3 lang="de">Repository einrichten</h3><h3 lang="en">Setting up a repository</h3>
+        <figure class="clip" data-clip="repo">
+          <div class="clip-frame">
+            <img lang="de" src="assets/clips/de/repo-poster.webp" data-anim="assets/clips/de/repo.webp" alt="Repository einrichten: Clip in 3 Schritten" width="1120" height="760">
+            <img lang="en" src="assets/clips/en/repo-poster.webp" data-anim="assets/clips/en/repo.webp" alt="Setting up a repository: clip in 3 steps" width="1120" height="760">
+            <button class="clip-play" type="button" aria-pressed="false" aria-label="Clip abspielen / Play clip"><span class="ring"><svg class="play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></span></button>
+          </div>
+          <figcaption><ol lang="de"><li>Addons anlegen, prüfen und als ZIP bauen</li><li>Repository: Addons, Adresse und Upload-Ziel</li><li>Bauen und hochladen – Kodi holt Updates selbst</li></ol><ol lang="en"><li>Create, check and zip add-ons</li><li>Repository: add-ons, address and upload target</li><li>Build and upload – Kodi fetches updates itself</li></ol></figcaption>
+        </figure>
+        <h3 lang="de">Wizard veröffentlichen</h3><h3 lang="en">Publishing a wizard</h3>
+        <figure class="clip" data-clip="wizard">
+          <div class="clip-frame">
+            <img lang="de" src="assets/clips/de/wizard-poster.webp" data-anim="assets/clips/de/wizard.webp" alt="Wizard veröffentlichen: Clip in 5 Schritten" width="1120" height="760">
+            <img lang="en" src="assets/clips/en/wizard-poster.webp" data-anim="assets/clips/en/wizard.webp" alt="Publishing a wizard: clip in 5 steps" width="1120" height="760">
+            <button class="clip-play" type="button" aria-pressed="false" aria-label="Clip abspielen / Play clip"><span class="ring"><svg class="play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></span></button>
+          </div>
+          <figcaption><ol lang="de"><li>Wizard-Projekt anlegen, Builds hinzufügen</li><li>„Alles veröffentlichen“: bauen, hochladen, online prüfen</li><li>In Kodi: Build auswählen</li><li>Build-Menü: installieren, Vorschau, Neuigkeiten</li><li>Wartung, Aufräumen und Backups im Wizard</li></ol><ol lang="en"><li>Create a wizard project, add builds</li><li>“Publish everything”: build, upload, check online</li><li>In Kodi: choose a build</li><li>Build menu: install, preview, what's new</li><li>Maintenance, cleanup and backups in the wizard</li></ol></figcaption>
+        </figure>
+      </section>
+
       <section class="chapter" id="forks">
         <div class="kicker">Forks</div>
         <h2 lang="de">Einen Kodi-Fork bauen</h2><h2 lang="en">Building a Kodi fork</h2>
@@ -323,9 +362,14 @@
 <footer>
   <div class="wrap">
     <div><a class="brand" href="index.html"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a></div>
-    <nav>
-      <a href="index.html"><span lang="de">Startseite</span><span lang="en">Home</span></a>
+    <nav aria-label="Fußzeile">
+      <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
       <a href="faq.html">FAQ</a>
+      <a href="builds.html">Builds</a>
+      <a href="funktionen.html"><span lang="de">Funktionen je Version</span><span lang="en">Features by version</span></a>
+      <a href="beispiele.html"><span lang="de">Beispiele</span><span lang="en">Examples</span></a>
+      <a href="status.html">Status</a>
+      <a href="index.html#mitmachen">Feedback</a>
       <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Legal notice</span></a>
       <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
       <a data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">GitHub</a>

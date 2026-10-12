@@ -19,9 +19,10 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="assets/img/logo-64.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/logo-256.png">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/config.js"></script>
-  <script src="assets/js/main.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css?v=3.11.0">
+  <script src="assets/js/config.js?v=3.11.0"></script>
+  <script src="assets/js/main.js?v=3.11.0"></script>
+  <script src="assets/js/pages.js?v=3.11.0"></script>
 </head>
 <body>
 <!-- Punktraster im Hintergrund (läuft beim Scrollen mit) -->
@@ -39,6 +40,7 @@
       <a href="#download">Download</a>
       <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
       <a href="faq.html">FAQ</a>
+      <a href="builds.html">Builds</a>
     </nav>
     <div class="nav-tools">
       <a class="pill" data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">
@@ -69,8 +71,8 @@
       <div class="wrap hero-grid">
       <div class="hero-text">
         <div class="eyebrow"><b lang="de">Neu</b><b lang="en">New</b>
-          <span lang="de">Version 3.10 · Releases nur mit APKs, Download-Seite per GitHub Pages, eigener Wizard-Ordner</span>
-          <span lang="en">Version 3.10 · releases with APKs only, download page via GitHub Pages, separate wizard folder</span>
+          <span lang="de">Version 3.11 · gemeinsame Startseite, Update-Kanäle Stabil/Beta, eigene Builds-Seite</span>
+          <span lang="en">Version 3.11 · shared start page, stable/beta update channels, standalone builds page</span>
         </div>
         <h1 lang="de">Forks. Addons.<br>Repositories.<br><span style="color:var(--accent)">Aus einem Guss.</span></h1>
         <h1 lang="en">Forks. Add-ons.<br>Repositories.<br><span style="color:var(--accent)">Cast in one piece.</span></h1>
@@ -455,9 +457,30 @@
     </div>
     <div class="timeline">
       <article class="release current reveal">
+        <div><div class="ver">3.11.0</div><div class="date">2026-10-12</div></div>
+        <div>
+          <h3 lang="de">Alles auf einer Seite</h3><h3 lang="en">Everything on one page</h3>
+          <ul lang="de">
+            <li><strong>Gemeinsame Startseite</strong> im GitHub-Repository: Kodi-App, Repository und Wizard mit Sprungmarken – <code>repo/</code> und <code>wizard/</code> leiten dorthin weiter, ein Fork-Upload überschreibt sie nie mehr</li>
+            <li><strong>Zwei Update-Kanäle</strong>: Stabil (<code>update.json</code>) und Beta (<code>update-beta.json</code>), automatisch an RC/Beta-Versionen erkannt – <strong>alle Fork-Versionen</strong> stehen zusammen auf der Download-Seite</li>
+            <li><strong>Eigene Builds-Seite</strong> mit Reitern: Builds einzeln oder alle erstellen und hochladen, ohne den Wizard neu zu bauen; <strong>tote Menüverweise</strong> beheben (alte Wizards → neuer Wizard, fehlende Addons wahlweise entfernen)</li>
+            <li><strong>Aufgeräumter Projekt-Ordner</strong> (<code>Builds/</code>, <code>Projects/</code>, <code>Tool/</code>) mit automatischem Umzug, <strong>ein Ort für das Wizard-Addon</strong>, Wizard-Extras (Mindest-RAM je Build, eigene Startseite, Debrid-Ablauf), Fork-Intro, Neuigkeiten-Kachel, Ton- und Bild-Assistent, <strong>bereit für Kodi 22</strong></li>
+            <li>Behoben: <strong>farbige Namen</strong> zeigte Kodi schwarz (Farbnamen müssen klein geschrieben sein), App-Icon und TV-Banner bei Kodi 22, mehrere GitHub-Upload-Fehler</li>
+          </ul>
+          <ul lang="en">
+            <li>A <strong>shared start page</strong> in the GitHub repository: Kodi app, repository and wizard with anchors – <code>repo/</code> and <code>wizard/</code> redirect there, a fork upload never overwrites it again</li>
+            <li><strong>Two update channels</strong>: stable (<code>update.json</code>) and beta (<code>update-beta.json</code>), detected automatically from RC/beta versions – <strong>all fork versions</strong> appear together on the download page</li>
+            <li>A <strong>standalone builds page</strong> with tabs: create and upload single or all builds without rebuilding the wizard; fix <strong>dead menu links</strong> (old wizards → new wizard, optionally drop missing add-ons)</li>
+            <li>A <strong>tidier data folder</strong> (<code>Builds/</code>, <code>Projects/</code>, <code>Tool/</code>) with automatic migration, <strong>one place for the wizard add-on</strong>, wizard extras (minimum RAM per build, custom start page, debrid expiry), fork intro, news tile, sound and picture assistants, <strong>ready for Kodi 22</strong></li>
+            <li>Fixed: Kodi showed <strong>coloured names</strong> in black (colour names must be lower case), app icon and TV banner on Kodi 22, several GitHub upload errors</li>
+          </ul>
+        </div>
+      </article>
+      <article class="release reveal">
         <div><div class="ver">3.10.0</div><div class="date">2026-10-10</div></div>
         <div>
-          <h3 lang="de">Sauber veröffentlichen</h3><h3 lang="en">Clean publishing</h3>
+          <details class="rel-more">
+          <summary><h3 lang="de">Sauber veröffentlichen</h3><h3 lang="en">Clean publishing</h3></summary>
           <ul lang="de">
             <li>Fork: Mit Unterordner enthält das <strong>GitHub-Release nur noch die APKs</strong> – <strong>update.json</strong>, <strong>Download-Seite</strong>, RSS-Feed und QR-Codes liegen per <strong>GitHub Pages</strong> im Repository, die Download-Seite wahlweise direkt im <strong>Hauptverzeichnis</strong></li>
             <li>Sanfter Umzug: die update.json meldet den neuen Ordner als <strong>Ersatz-Adresse</strong>, installierte Forks finden ihn selbst; auf Wunsch geht die update.json beim Umstieg noch einmal ins Release</li>
@@ -470,6 +493,7 @@
             <li>Wizard: a <strong>separate folder for the wizard ZIP only</strong>, all build data in the build folder – with a <strong>transition</strong> so installed wizards keep working until they update</li>
             <li>Fixed: <strong>APK links</strong> in update.json, download page and QR code are now correct even when GitHub renames files (e.g. “ß” → “ss”); no more false “GitHub Pages is not enabled” alarm for new folders</li>
           </ul>
+          </details>
         </div>
       </article>
       <article class="release reveal">
@@ -801,7 +825,7 @@
 </section>
 
 <!-- ============ Mitmachen ============ -->
-<section class="cta">
+<section class="cta" id="mitmachen">
   <div class="wrap reveal">
     <h2 lang="de">Schmiede mit.</h2><h2 lang="en">Forge with us.</h2>
     <p lang="de">sKulls Forge wächst mit seinen Nutzern. Ideen, Fehler oder Wünsche? Schau auf GitHub vorbei.</p>
@@ -810,6 +834,14 @@
       <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       <span lang="de">Auf GitHub</span><span lang="en">On GitHub</span>
     </a>
+    <div class="feedback-buttons">
+      <a class="btn btn-ghost" data-issue="fehler.yml" href="https://github.com/SkullSplitter2026/sKulls-Forge/issues" target="_blank" rel="noopener">
+        <span lang="de">Fehler melden</span><span lang="en">Report a bug</span></a>
+      <a class="btn btn-ghost" data-issue="wunsch.yml" href="https://github.com/SkullSplitter2026/sKulls-Forge/issues" target="_blank" rel="noopener">
+        <span lang="de">Wunsch äußern</span><span lang="en">Suggest a feature</span></a>
+    </div>
+    <p class="muted small" lang="de">Bitte keine persönlichen Daten, Passwörter oder Zugänge – für Logs das Diagnosepaket des Forge nutzen, es entfernt sie.</p>
+    <p class="muted small" lang="en">Please no personal data, passwords or logins – for logs use the Forge's diagnostics package, it removes them.</p>
   </div>
 </section>
 
@@ -829,6 +861,11 @@
     <nav aria-label="Fußzeile">
       <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
       <a href="faq.html">FAQ</a>
+      <a href="builds.html">Builds</a>
+      <a href="funktionen.html"><span lang="de">Funktionen je Version</span><span lang="en">Features by version</span></a>
+      <a href="beispiele.html"><span lang="de">Beispiele</span><span lang="en">Examples</span></a>
+      <a href="status.html">Status</a>
+      <a href="index.html#mitmachen">Feedback</a>
       <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Legal notice</span></a>
       <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
       <a href="#changelog">Changelog</a>

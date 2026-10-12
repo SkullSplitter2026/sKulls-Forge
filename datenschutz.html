@@ -9,9 +9,10 @@
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#111318">
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/config.js"></script>
-  <script src="assets/js/main.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css?v=3.11.0">
+  <script src="assets/js/config.js?v=3.11.0"></script>
+  <script src="assets/js/main.js?v=3.11.0"></script>
+  <script src="assets/js/pages.js?v=3.11.0"></script>
 </head>
 <body>
 <header class="nav">
@@ -95,7 +96,26 @@
       <p lang="de">Links zu GitHub öffnen die Website von GitHub; erst dann gelten dort deren Datenschutzbestimmungen.</p>
       <p lang="en">Links to GitHub open GitHub's website; only then do their privacy terms apply.</p>
 
-      <h2 lang="de">7. Deine Rechte</h2><h2 lang="en">7. Your rights</h2>
+      <h2 lang="de">7. Statusseite, Build-Schaufenster und Rückmeldungen</h2><h2 lang="en">7. Status page, build showcase and feedback</h2>
+      <p lang="de">Die <a href="status.html">Statusseite</a> und das <a href="builds.html">Build-Schaufenster</a> laden
+        ihre Angaben beim Aufruf direkt in deinem Browser: von GitHub Pages (skullsplitter2026.github.io), der
+        GitHub-Schnittstelle (api.github.com) und der Statusseite von GitHub (www.githubstatus.com, betrieben von
+        Atlassian für GitHub). Dabei erhalten diese Dienste technisch bedingt deine IP-Adresse; es werden keine Cookies
+        gesetzt und keine Referrer-Angaben mitgesendet. Rechtsgrundlage ist unser berechtigtes Interesse, aktuelle
+        Angaben zu zeigen (Art. 6 Abs. 1 lit. f DSGVO); eine Übermittlung in die USA ist möglich. Die übrigen Seiten
+        sind davon nicht betroffen. Rückmeldungen („Fehler melden“, „Wunsch äußern“) laufen über GitHub-Issues und
+        brauchen ein GitHub-Konto; dort gelten die Datenschutzbestimmungen von GitHub. Bitte schreibe keine
+        persönlichen Daten in Rückmeldungen.</p>
+      <p lang="en">The <a href="status.html">status page</a> and the <a href="builds.html">build showcase</a> load their
+        details directly in your browser when you open them: from GitHub Pages (skullsplitter2026.github.io), the GitHub
+        API (api.github.com) and GitHub's status page (www.githubstatus.com, operated by Atlassian for GitHub). For
+        technical reasons these services receive your IP address; no cookies are set and no referrer is sent. The legal
+        basis is our legitimate interest in showing current details (Art. 6 (1) (f) GDPR); a transfer to the USA is
+        possible. The other pages are not affected. Feedback (“report a bug”, “suggest a feature”) runs through GitHub
+        issues and needs a GitHub account; GitHub's privacy terms apply there. Please don't write personal data into
+        feedback.</p>
+
+      <h2 lang="de">8. Deine Rechte</h2><h2 lang="en">8. Your rights</h2>
       <p lang="de">Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch und
         Datenübertragbarkeit (Art. 15–21 DSGVO) sowie das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren
         (Art. 77 DSGVO).</p>
@@ -103,7 +123,7 @@
         portability (Art. 15–21 GDPR) as well as the right to lodge a complaint with a data protection supervisory
         authority (Art. 77 GDPR).</p>
 
-      <h2 lang="de">8. Das Tool selbst</h2><h2 lang="en">8. The tool itself</h2>
+      <h2 lang="de">9. Das Tool selbst</h2><h2 lang="en">9. The tool itself</h2>
       <p lang="de">sKulls Forge läuft lokal auf deinem PC. Es speichert Daten nur im Programmordner und im Projekt-Ordner
         (Standard: Dokumente\sKulls Forge) und überträgt nichts, außer du lädst selbst etwas hoch (z.B. zu deinem
         FTP-Server oder GitHub) oder prüfst auf neue Kodi-Versionen.</p>
@@ -120,11 +140,16 @@
 <footer>
   <div class="wrap">
     <div><a class="brand" href="index.html"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a></div>
-    <nav>
-      <a href="index.html"><span lang="de">Startseite</span><span lang="en">Home</span></a>
+    <nav aria-label="Fußzeile">
       <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
       <a href="faq.html">FAQ</a>
+      <a href="builds.html">Builds</a>
+      <a href="funktionen.html"><span lang="de">Funktionen je Version</span><span lang="en">Features by version</span></a>
+      <a href="beispiele.html"><span lang="de">Beispiele</span><span lang="en">Examples</span></a>
+      <a href="status.html">Status</a>
+      <a href="index.html#mitmachen">Feedback</a>
       <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Legal notice</span></a>
+      <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
       <a data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </div>

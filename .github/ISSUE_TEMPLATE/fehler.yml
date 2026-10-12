@@ -1,0 +1,42 @@
+name: Fehler melden / Report a bug
+description: Etwas funktioniert nicht wie erwartet / Something doesn't work as expected
+title: "[Fehler] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Bitte keine persönlichen Daten, Passwörter, MAC-Adressen, Tokens oder Zugänge eintragen.**
+        Logs am besten als *Diagnosepaket* aus dem Forge anhängen (Seite Werkzeuge → Diagnosepaket) – es entfernt solche Angaben.
+        *Please don't include personal data, passwords, MAC addresses, tokens or logins. Attach logs as the Forge's diagnostics package (Tools page) – it removes them.*
+  - type: input
+    id: version
+    attributes:
+      label: Version von sKulls Forge / sKulls Forge version
+      placeholder: "z.B. 3.10.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Bereich / Area
+      options: ["Fork", "Addons", "Repository", "Wizard (Forge)", "Wizard (Kodi)", "Hochladen / Upload", "Website", "Sonstiges / Other"]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Was ist passiert? / What happened?
+      description: Was hast du gemacht, was hast du erwartet, was kam stattdessen? / What did you do, what did you expect, what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte zum Nachstellen / Steps to reproduce
+      placeholder: "1. …\n2. …\n3. …"
+  - type: input
+    id: system
+    attributes:
+      label: System / System
+      placeholder: "z.B. Windows 11, Kodi 21.3 auf Fire TV Stick 4K"

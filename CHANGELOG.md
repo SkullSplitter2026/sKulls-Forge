@@ -2,6 +2,170 @@
 
 Alle wichtigen Änderungen. Neuere Versionen stehen oben. · *English summary below each version.*
 
+## 3.11.0 – 2026-10-12
+
+Ein Guss für die Veröffentlichung: **gemeinsame Startseite** (Kodi-App, Repository, Wizard) mit Weiterleitungen aus
+`repo/` und `wizard/`, **zwei Update-Kanäle** (Stabil/Beta) mit allen Fork-Versionen auf einer Download-Seite, eine
+**eigenständige Builds-Seite** und ein **aufgeräumter Projekt-Ordner** (`Builds/`, `Projects/`, `Tool/`). Dazu
+Kodi-22-Vorbereitung, tote Menüverweise beheben und farbige Namen, die Kodi wirklich farbig zeigt.
+
+### 🧙 Wizard
+- **wizard/index.html**: mit gemeinsamer Startseite legt der Forge im Wizard-Ordner eine Weiterleitung auf `#wizard` an
+  und lädt sie mit dem Wizard hoch (vorher: 404). Eine eigene index.html bleibt unangetastet
+- **Ein Ort für das Wizard-Addon**: bearbeitet und gebaut wird es nur auf der Wizard-Seite. *In Fork übernehmen* ersetzt
+  *In Addons übernehmen* – der Fork bettet `Wizard/<Name>/Source` ein und hat so immer die aktuelle Version (wie das
+  Repository). Die Addons-Seite weist bei einer Kopie des Wizard-Addons darauf hin (*Zur Wizard-Seite*)
+- **Tote Verweise beheben**: beim Erstellen zeigen Menüpunkte zu alten Wizards (fehlen im Build) auf den neuen
+  Wizard (`RunAddon`); neue Build-Option *Tote Menüeinträge entfernen* – Einträge zu fehlenden Addons kommen nicht
+  in die Build-ZIP (die Quelle bleibt unverändert). *Tote Verweise prüfen* meldet `pvr://` nicht mehr, zeigt die
+  Menüs des aktiven Skins zuerst und den Rest als vermutlich unbenutzt; Fenster und Protokolle ohne `[COLOR]`-Codes
+- **Builds-Seite eigenständig**: Knöpfe in Reitern mit kurzer Erklärung je Knopf (Erstellen & Hochladen, Verwalten,
+  Importieren, Prüfen & Analysieren, Ausgewählter Build); neu *Build erstellen* / *Alle Builds erstellen* (nur die Build-ZIPs, das Wizard-Addon
+  bleibt) und *Build hochladen* / *Builds hochladen* – „Build hochladen“ prüft vorher, ob die anderen Builds
+  online aktuell sind; „Zum Wizard (bauen & verteilen)“ entfällt
+- **Build-ZIPs im Projekt** liegen nur noch dort – kein dauerhafter Spiegel mehr in `Wizard/<Name>/Build/builds`
+  (nur während des Hochladens)
+- **Build-Anforderungen**: je Build Mindest-RAM und nötigen freien Speicher festlegen (Build bearbeiten, leer =
+  Platzbedarf automatisch aus der Build-Größe). Der Wizard zeigt knappe Geräte an der Kachel, prüft vor dem Download,
+  bietet bei zu wenig Platz Aufräumen an und warnt bei zu wenig RAM *(168)*
+- **Eigene Startseite**: Reihenfolge der Menüpunkte festlegen und Punkte ausblenden – der erste ist die Startseite des
+  Wizards; dazu eigene **Link-Kacheln** (z.B. Telegram, Support-Seite) unter „Links“ mit QR-Code, auf Android direkt
+  im Browser zu öffnen (Wizard-Seite → Startseite: Menü und Links) *(177)*
+- **Debrid-Ablauf**: Save Data → „Debrid-Konten“ zeigt die Restlaufzeit von Real-Debrid, Premiumize, AllDebrid,
+  TorBox und Debrid-Link (Anmeldung aus den Addons, gespeichert wird nur das Ablaufdatum); der Wizard erinnert
+  einmal täglich ab 3, 7 oder 14 Tagen vorher *(183)*
+- **Schlüssel testen**: TMDb-, fanart.tv- und OMDb-Schlüssel online prüfen – gespeicherte und in Addons
+  eingetragene, mit Fundstelle *(186)*
+
+### 🛠️ Forge
+- **adb.exe** wird erst nach 20 statt 10 Minuten ohne Geräte-Aktion beendet
+- Warnungen und Protokoll beim Build-Bau zeigen den Build-Namen ohne Kodi-Formatierung (`[COLOR]`, `[B]`)
+- **Build direkt vom Android-Gerät**: Builds → „Vom Android-Gerät...“ holt Kodi-Daten einer App per ADB, legt sie als
+  Kodi-Datenordner unter `Builds/Devices/<App>-<Datum>` ab und öffnet gleich den Build-Dialog – Kodi-Version aus der
+  App erkannt *(189)*
+- **Ein Build für mehrere Kodi-Versionen**: im Build-Dialog „Auch für Kodi“ (z.B. 20, 22) – je Version entsteht aus
+  derselben Quelle eine eigene ZIP mit den Addon-Versionen aus den Repositories für diese Kodi-Version (Repositories im
+  Build mit Ordnern je Version, dann das offizielle Kodi-Repository); Einstellungen bleiben. Geschützte Builds bleiben
+  geschützt, unveränderte Varianten werden nicht neu gebaut. Der Wizard nimmt automatisch die Fassung für die
+  Kodi-Version des Geräts *(199)*
+- **Doppelte Addons** in „Alle Repos nach Genre“: neue Ansicht „Mehrfach vorhanden“ mit allen Fundstellen
+  (Repositories und Versionen); gewählt wird automatisch die beste (läuft unter der Kodi-Version, neueste Version,
+  bei Gleichstand das Kodi-Repository) – mit Begründung in der Vorschau, „Quelle wählen“ ändert sie *(208)*
+- **Genres als Paket**: „Als Paket speichern“ legt ein ganzes Genre (oder die Auswahl) als Addon-Paket ab – fremde
+  Addons werden dabei geladen, offizielle passen sich beim Build der Kodi-Version an *(205)*
+- **Addon-Changelog ansehen**: „Changelog...“ im Genre-Dialog und in den Repository-Browsern – aus dem Repository,
+  aus der Addon-ZIP oder aus `<news>` *(209)*
+- **Addon-Konflikte**: „Konflikte prüfen...“ (Fork-Addons) und „Addon-Konflikte...“ (Builds) finden Addons, die sich
+  stören oder dasselbe doppelt erledigen – mehrere Wizards, Aufräum-Dienste, VPN-Manager, Trakt-Scrobbler,
+  URLResolver neben ResolveURL, mehrere PVR-Clients, als defekt markierte Addons; ernste Konflikte meldet auch der
+  Wizard-Bau *(212)*
+- Build-Dialog scrollt jetzt; OK und Abbrechen stehen fest unten (vorher auf kleinen Bildschirmen abgeschnitten)
+- **Wizard veröffentlichen** statt „Alles veröffentlichen“: Wizard bauen → Wizard ins Repository übernehmen und
+  Repository bauen → erst Repository, dann Wizard hochladen → online prüfen. Der Wizard steht als Ordner im
+  Repository – jede neue Wizard-Version kommt beim nächsten Bau automatisch mit (kein Nachziehen der ZIP mehr)
+- **Wizard-Ablage aufgeräumt**: builds.json, rss.xml, Kompatibilitätstabelle und nur die benötigten Bilder liegen
+  flach im Wizard-Ordner (`<build>-icon.png`, `<build>-fanart.jpg`); die Builds auf Wunsch in einem eigenen Ordner
+  (z.B. `Build/`), das Wizard-ZIP auf Wunsch nur über das Repository; builds.json zusätzlich in alten Ordnern für
+  ältere Wizard-Versionen
+- **Wizard → „In Repo übernehmen“**: trägt den Wizard in die Addons des eigenen Repositorys ein (ältere Wizard-ZIPs
+  werden ersetzt)
+- Repository: die Addon-Liste zeigt jetzt auch das Repository-Addon selbst (kommt bei jedem Bau automatisch hinein,
+  damit Kodi es aktualisieren kann)
+- **Repository**: „Nur ZIP bauen“ (nur die Repository-ZIP, ohne alle Addons neu zu packen) und
+  eine **gemeinsame Startseite** im Hauptverzeichnis des GitHub-Repositorys – Kodi-App, Repository und Wizard auf
+  einer Seite (Deutsch/Englisch), Versionen und Builds live aus update.json/builds.json; die Repository-ZIP liegt
+  daneben, die Hauptadresse taugt so als Quelle in Kodi. Im Repository-Ordner bleibt nur der Link für Kodi – alte
+  Quellen funktionieren weiter
+- **Aufgeräumter Projekt-Ordner** (Umzug beim ersten Start automatisch, Pfade in allen Projekten werden angepasst):
+  `Builds/Lokal` (Kodi-Datenordner als Build-Quelle), `Builds/Devices` (vom Android-Gerät geholt), `Builds-Import`
+  (importierte Builds anderer Wizards), fertige Fork-APKs in `Projects/<Projekt>/Kodi-APKs`, Wizard-Addon in
+  `Wizard/<Name>/Source`, Wizard-ZIP in `Wizard/<Name>/Zip`, fertiges Repository in `Repository/<Name>/repo`,
+  Repository-Addon zum Einbetten in `Repository/<Name>/Source`, Daten des Programms (Config, Presets, Backups, History, Logs, Work mit Temp und Cache) in `Tool/`;
+  neu im Wizard „Build-ZIPs lokal im Projekt“ – Build-ZIPs
+  und Inhaltslisten dann in `Projects/<Projekt>/Builds` und `Build-Info`
+- **QR-Codes ohne Zusatzpaket**: der Forge erzeugt sie selbst (vorher war `pip install qrcode` nötig, ohne fehlten
+  die QR-Codes auf Download-Seite, Repository-Seite und Kompatibilitätstabelle)
+
+### 📱 Fork
+- **Zwei Update-Kanäle**: Stabil (`update.json`) und Beta (`update-beta.json`). „Automatisch“ erkennt Vorabversionen
+  (RC/Beta/Alpha) – stabile Forks bekommen nie eine Beta angeboten, Beta-Forks auch neuere stabile Versionen;
+  fest einstellbar unter *Update-Kanal*
+- **Mehrere Versionen in einem Ordner**: baust du nacheinander z.B. Kodi 22.0 und 21.3 in denselben Ordner, führt `releases.json`
+  alle Versionen zusammen – die Download-Seite zeigt sie untereinander (neueste zuerst), die Startseite ebenso. Eine
+  Version bleibt, solange ihre APK im Ausgabe-Ordner liegt
+- **Intro nach dem Start**: Kodi zeigt beim Laden nur ein Standbild – sobald das Hauptmenü da ist, spielt der Fork
+  einmal eine kurze Animation (Splash als Hintergrund, Logo eingeblendet, herangezoomt, hereingleitend oder
+  pulsierend), mit Kodis eigenen Skin-Animationen, ohne Video; eine Taste überspringt sie. Branding → „Intro nach dem
+  Start“ mit Vorschau im Forge *(221)*
+- **Neuigkeiten-Kachel**: eigener Menüpunkt im Estuary-Hauptmenü (vor den Favoriten) mit den vier neuesten Einträgen;
+  Quelle eine news.json oder ein RSS-Feed, ohne Adresse der RSS-Feed neuer Versionen. Neue Einträge meldet der Fork
+  einmal, auch im Fork-Center unter „Neuigkeiten“ (Fork-Funktionen → Fork-Center) *(222)*
+- **Bereit für Kodi 22 „Piers“**: Kodi 22 bringt Python 3.14, xbmc.python 3.1.0 und xbmc.gui 5.18 mit. Addons werden
+  auf Module und Funktionen geprüft, die es ab Python 3.12–3.14 nicht mehr gibt (Fork-Bau, „Kompatibilität prüfen“,
+  Wizard-Bau inkl. Kodi-Varianten); der Wizard warnt vor Skins, die unter der Ziel-Version nicht starten;
+  umbenannte Einstellungen stellt der Fork-Bau um (ReplayGain in dB), entfernte werden gemeldet *(223)*
+- **Ton-Assistent** im Fork-Center und als Schritt „Ton“ im Einrichtungsassistenten: Fernseher, Soundbar,
+  AV-Receiver (5.1 oder TrueHD/DTS-HD 7.1) oder Kopfhörer – Passthrough und Kanäle passend, auf Android mit „RAW“;
+  ein Receiver wird am Gerätenamen erkannt *(226)*
+- **Bild-Assistent** im Fork-Center und als Schritt „Bild“: zeigt Auflösung und HDR des Fernsehers, stellt die
+  Bildwiederholrate ein, auf 4K-Boxen die Oberfläche in 1080p und bei HDR10-Fernsehern ohne Dolby Vision die
+  Umwandlung nach HDR10 (Kodi 21+) *(227)*
+
+### 🔧 Behoben
+- **repo/index.html nach Umschalten der Startseite**: vor jedem Hochladen schreibt der Forge sie passend zur Einstellung
+  neu – Weiterleitung auf `#repository` der Startseite oder die ausführliche Seite (vorher ging der Stand vom letzten
+  Bauen hoch)
+- **Startseite überschrieben**: der Fork-Upload legt seine Download-Seite nie mehr über eine fremde `index.html` im Hauptverzeichnis
+  (z.B. die Startseite des Repositorys) – er prüft das vorher online
+- **Farbige Namen in Kodi schwarz**: Kodi kennt Farbnamen nur klein geschrieben (`[COLOR indianred]`), `[COLOR INDIANRED]`
+  wurde als Hex-Zahl gelesen = schwarz. Der Forge schreibt Farbnamen beim Bauen jetzt klein (Wizard-Addon, builds.json,
+  RSS, Repository-Addon); der Text-Editor weist auf großgeschriebene Farbnamen hin
+- Wizard: „Bildwiederholrate“ war vertauscht – Kodi bedeutet 1 = Immer, 2 = Beim Start/Ende; dazu „Nur beim Start“
+- Forge: der Schalter „Startbildschirm anzeigen“ las das Splash-Bild des Profils statt seines Häkchens und ließ sich
+  mit eingetragenem Bild nicht ausschalten
+- **App-Icon ab Android 8** (Kodi 22): das adaptive Icon zeigte weiter das Kodi-Logo – es bekommt jetzt eigene
+  Ebenen aus deinem Icon (auch für themenfarbige Icons); das **TV-Banner** liegt bei Kodi 22 unter `mipmap` und wurde
+  nicht ersetzt
+- „Alles veröffentlichen“ baute das Repository vor dem Wizard – das Repository bekam so die alte Wizard-Version
+- GitHub-Upload in ein Repository, in dem alle Dateien entfernt wurden, brach mit „404 get-a-tree“ ab
+- Builds → „Inhalt anzeigen“ zeigte nach dem ersten Bau immer die Liste dieses Baus – gelöschte oder neue Addons erschienen erst nach dem nächsten Bau. Jetzt: immer die aktuelle Quelle, oben die Unterschiede zum letzten Bau, dazu „Neu einlesen“
+- Git-Push (Dateien über 30 MB): Dateien mit gleichem Inhalt (z.B. dasselbe icon.png in mehreren Addons) kamen doppelt ins Paket – GitHub lehnte den Upload ab („index-pack failed“)
+- Repository ins **Hauptverzeichnis** eines GitHub-Repositorys mit „Dateien entfernen“: hätte alle anderen Ordner (Fork, Wizard, Builds) gelöscht – entfernt wird dort jetzt nur noch Veraltetes in den Zweig-Ordnern und ältere Repository-ZIPs
+- **Vorlagen-Galerie** (Datei-Menü) öffnete nicht – ihr Ordner fehlte; die Vorlagen liegen jetzt in
+  `Presets/Vorlagen` im Projekt-Ordner
+- Website: die Anleitung ließ sich auf dem Handy seitlich verschieben; Stylesheet und Skripte tragen eine
+  Versionskennung, damit Browser keine alte Fassung aus dem Zwischenspeicher nehmen
+
+### 🌐 Website
+- **Build-Schaufenster** (`builds.html`): alle Builds eines Wizards mit Bild, Kodi-Version, System, Größe, Addons
+  und Änderungen – live aus dessen `builds.json`; Quellen in `assets/js/config.js` *(267)*
+- **Rückmeldungen**: „Fehler melden“ und „Wunsch äußern“ im Mitmach-Bereich und in den FAQ – GitHub-Issues mit
+  Vorlagen, die ausdrücklich keine persönlichen Daten oder Zugänge abfragen *(268)*
+- **Video-Anleitungen** in der Anleitung: kurze Clips (Fork bauen, Repository einrichten, Wizard veröffentlichen) auf
+  Deutsch und Englisch, laden erst beim Klick; erzeugt mit `tools/make_clips.py` *(269)*
+- **Statusseite** (`status.html`): Repository, Wizard, Fork-Updates, GitHub-Downloads und GitHub selbst werden live
+  im Browser geprüft, jede Minute neu *(271)*
+- **Beispielprojekte** (`beispiele.html`): Fork-Vorlage, Wizard mit zwei Build-Vorlagen und Repository zum
+  Ausprobieren – ohne Passwörter, Keystore und Zugänge; erzeugt mit `tools/make_examples.py` *(272)*
+- **Funktionen je Version** (`funktionen.html`): durchsuchbare Tabelle aus diesem Changelog, filterbar nach Version
+  und Bereich; erzeugt mit `tools/build_features.py` *(273)*
+- Datenschutzerklärung um Statusseite, Schaufenster und Rückmeldungen ergänzt
+
+*English: shared start page in the GitHub root (fork, repository, wizard) with redirects from `repo/` and `wizard/`;
+two update channels (stable `update.json`, beta `update-beta.json`, detected from RC/beta versions) and all fork
+versions of a folder on one download page (`releases.json`); the fork never overwrites a foreign root `index.html`.
+Standalone Builds page with tabs (create/upload single or all builds without rebuilding the wizard add-on); build ZIPs
+kept only in the chosen project. Dead menu links: old wizards point to the new one, optional removal of entries for
+missing add-ons (build ZIP only), more precise check. One place for the wizard add-on ("Add to fork" instead of a copy
+under add-ons). Tidier data folder (`Builds/Lokal`, `Builds/Devices`, `Builds-Import`, `Projects/<p>/Kodi-APKs`,
+`Repository/<n>/repo` + `Source`, `Tool/` for config, presets, backups, history, logs and work) with automatic
+migration. Wizard: minimum RAM/free space per build, custom menu order and link tiles, debrid expiry, key test. Fork:
+intro animation, news tile, Kodi 22 readiness, sound and picture assistants, one build for several Kodi versions,
+add-on conflicts, publish flow, built-in QR codes. Fixed: Kodi colour names must be lower case (names showed black),
+adaptive app icon and TV banner on Kodi 22, GitHub upload into an emptied repository, duplicate objects in git push,
+root upload deleting other folders, repo/index.html after switching the start page. Website: build showcase, feedback
+forms, video guides, status page, example projects, features-by-version table.*
+
 ## 3.10.0 – 2026-10-10
 
 Aufgeräumte Veröffentlichung auf GitHub: Fork-Releases enthalten nur noch die APKs, update.json und Download-Seite

@@ -1,0 +1,28 @@
+name: Wunsch äußern / Suggest a feature
+description: Idee für eine neue Funktion / Idea for a new feature
+title: "[Wunsch] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke für deine Idee! **Bitte keine persönlichen Daten oder Zugänge eintragen.**
+        *Thanks for your idea! Please don't include personal data or logins.*
+  - type: dropdown
+    id: area
+    attributes:
+      label: Bereich / Area
+      options: ["Fork", "Addons", "Repository", "Wizard (Forge)", "Wizard (Kodi)", "Hochladen / Upload", "Website", "Sonstiges / Other"]
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Was wünschst du dir? / What would you like?
+      description: Beschreibe die Funktion und wofür du sie brauchst / Describe the feature and what you need it for
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Wie machst du es bisher? / How do you do it today?

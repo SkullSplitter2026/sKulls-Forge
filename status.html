@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de" data-lang="de" data-scheme="skulls"
+      data-title-de="Status – sKulls Forge" data-title-en="Status – sKulls Forge"
+      data-desc-de="Live-Status der Download-Server: Repository, Wizard, Fork-Updates und GitHub." data-desc-en="Live status of the download servers: repository, wizard, fork updates and GitHub.">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Status – sKulls Forge</title>
+  <meta name="description" content="Live-Status der Download-Server: Repository, Wizard, Fork-Updates und GitHub.">
+  <meta name="theme-color" content="#111318">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.11.0">
+  <script src="assets/js/config.js?v=3.11.0"></script>
+  <script src="assets/js/main.js?v=3.11.0"></script>
+  <script src="assets/js/pages.js?v=3.11.0"></script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a>
+    <nav class="nav-links" aria-label="Seiten">
+      <a href="index.html"><span lang="de">Startseite</span><span lang="en">Home</span></a>
+      <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
+      <a href="faq.html">FAQ</a>
+      <a href="builds.html">Builds</a>
+      <a href="funktionen.html"><span lang="de">Funktionen</span><span lang="en">Features</span></a>
+    </nav>
+    <div class="nav-tools">
+      <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <button type="button" data-lang="de" aria-pressed="true">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <div class="scheme">
+        <button class="pill" id="scheme-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Farbschema / Color scheme">
+          <i class="scheme-dot" aria-hidden="true"></i><span class="label" id="scheme-label">sKulls Neon</span></button>
+        <div class="scheme-menu" id="scheme-menu" role="menu" aria-label="Farbschema"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="guide">
+  <div class="wrap">
+    <nav class="toc" aria-label="Seiten">
+      <b><span lang="de">Mehr</span><span lang="en">More</span></b>
+      <a href="builds.html"><span lang="de">Build-Schaufenster</span><span lang="en">Build showcase</span></a>
+      <a href="funktionen.html"><span lang="de">Funktionen je Version</span><span lang="en">Features by version</span></a>
+      <a href="beispiele.html"><span lang="de">Beispielprojekte</span><span lang="en">Example projects</span></a>
+      <a href="status.html" class="active">Status</a>
+      <a href="anleitung.html#videos"><span lang="de">Video-Anleitungen</span><span lang="en">Video guides</span></a>
+      <a href="index.html#mitmachen">Feedback</a>
+    </nav>
+    <div>
+      <h1>Status</h1>
+      <p class="lead" lang="de">Sind die Download-Server erreichbar? Dein Browser prüft jede Adresse jetzt live –
+        Repository, Wizard, Fork-Updates und die Downloads auf GitHub. Die Seite prüft jede Minute erneut.</p>
+      <p class="lead" lang="en">Are the download servers reachable? Your browser checks every address live right now –
+        repository, wizard, fork updates and the downloads on GitHub. The page checks again every minute.</p>
+      <div id="status-summary" class="st-summary"><span lang="de">Prüfe …</span><span lang="en">Checking …</span></div>
+      <ul class="st-list" id="status-list"></ul>
+      <div class="st-tools">
+        <button class="btn btn-ghost" id="status-refresh" type="button"><span lang="de">Jetzt erneut prüfen</span><span lang="en">Check again now</span></button>
+        <span class="muted small" id="status-time"></span>
+      </div>
+      <p class="tip" lang="de">Ist etwas rot, liegt es oft nur an deiner Verbindung oder einem Inhaltsblocker. Nach dem
+        Hochladen braucht GitHub Pages außerdem ein paar Minuten, bis neue Dateien erreichbar sind.</p>
+      <p class="tip" lang="en">If something is red, it is often just your connection or a content blocker. After an
+        upload GitHub Pages also needs a few minutes until new files are reachable.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><a class="brand" href="index.html"><img src="assets/img/logo-64.png" alt="">sKulls Forge</a></div>
+    <nav aria-label="Fußzeile">
+      <a href="anleitung.html"><span lang="de">Anleitung</span><span lang="en">Guide</span></a>
+      <a href="faq.html">FAQ</a>
+      <a href="builds.html">Builds</a>
+      <a href="funktionen.html"><span lang="de">Funktionen je Version</span><span lang="en">Features by version</span></a>
+      <a href="beispiele.html"><span lang="de">Beispiele</span><span lang="en">Examples</span></a>
+      <a href="status.html">Status</a>
+      <a href="index.html#mitmachen">Feedback</a>
+      <a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Legal notice</span></a>
+      <a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
+      <a data-github href="https://github.com/SkullSplitter2026" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
